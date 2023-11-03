@@ -15,6 +15,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class ModBlocks
 {
     public static final Block CITRINE = registerBlock("block_citrine",
@@ -62,37 +66,40 @@ public class ModBlocks
     public static final Block CHUNK_LOADER = registerBlock("chunk_loader",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
-    public static final Block SHULKER_NORMAL = registerShulkerBlock("enderite_shulker_", "normal",
+    public static final HashMap<DyeColor, EnderiteShulkerBoxBlock> SHULKER_BLOCKS = new HashMap<>();
+    //public static List<EnderiteShulkerBoxBlock> enderiteShulkerBlocks = new ArrayList<>();
+
+    public static final Block SHULKER_NORMAL = registerShulkerBlock("enderite_shulker_", null,
             new EnderiteShulkerBoxBlock(null));
-    public static final Block SHULKER_BLACK = registerShulkerBlock("enderite_shulker_", "black",
+    public static final Block SHULKER_BLACK = registerShulkerBlock("enderite_shulker_", DyeColor.BLACK,
             new EnderiteShulkerBoxBlock(DyeColor.BLACK));
-    public static final Block SHULKER_BLUE = registerShulkerBlock("enderite_shulker_", "blue",
+    public static final Block SHULKER_BLUE = registerShulkerBlock("enderite_shulker_", DyeColor.BLUE,
             new EnderiteShulkerBoxBlock(DyeColor.BLUE));
-    public static final Block SHULKER_BROWN = registerShulkerBlock("enderite_shulker_", "brown",
+    public static final Block SHULKER_BROWN = registerShulkerBlock("enderite_shulker_", DyeColor.BROWN,
             new EnderiteShulkerBoxBlock(DyeColor.BROWN));
-    public static final Block SHULKER_CYAN = registerShulkerBlock("enderite_shulker_", "cyan",
+    public static final Block SHULKER_CYAN = registerShulkerBlock("enderite_shulker_", DyeColor.CYAN,
             new EnderiteShulkerBoxBlock(DyeColor.CYAN));
-    public static final Block SHULKER_GRAY = registerShulkerBlock("enderite_shulker_", "gray",
+    public static final Block SHULKER_GRAY = registerShulkerBlock("enderite_shulker_", DyeColor.GRAY,
             new EnderiteShulkerBoxBlock(DyeColor.GRAY));
-    public static final Block SHULKER_GREEN = registerShulkerBlock("enderite_shulker_", "green",
+    public static final Block SHULKER_GREEN = registerShulkerBlock("enderite_shulker_", DyeColor.GREEN,
             new EnderiteShulkerBoxBlock(DyeColor.GREEN));
-    public static final Block SHULKER_LIGHT_BLUE = registerShulkerBlock("enderite_shulker_", "light_blue",
+    public static final Block SHULKER_LIGHT_BLUE = registerShulkerBlock("enderite_shulker_", DyeColor.LIGHT_BLUE,
             new EnderiteShulkerBoxBlock(DyeColor.LIGHT_BLUE));
-    public static final Block SHULKER_LIGHT_GRAY = registerShulkerBlock("enderite_shulker_", "light_gray",
+    public static final Block SHULKER_LIGHT_GRAY = registerShulkerBlock("enderite_shulker_", DyeColor.LIGHT_GRAY,
             new EnderiteShulkerBoxBlock(DyeColor.LIGHT_GRAY));
-    public static final Block SHULKER_LIME = registerShulkerBlock("enderite_shulker_", "lime",
+    public static final Block SHULKER_LIME = registerShulkerBlock("enderite_shulker_", DyeColor.LIME,
             new EnderiteShulkerBoxBlock(DyeColor.LIME));
-    public static final Block SHULKER_MAGENTA = registerShulkerBlock("enderite_shulker_", "magenta",
+    public static final Block SHULKER_MAGENTA = registerShulkerBlock("enderite_shulker_", DyeColor.MAGENTA,
             new EnderiteShulkerBoxBlock(DyeColor.MAGENTA));
-    public static final Block SHULKER_ORANGE = registerShulkerBlock("enderite_shulker_", "orange",
+    public static final Block SHULKER_ORANGE = registerShulkerBlock("enderite_shulker_", DyeColor.ORANGE,
             new EnderiteShulkerBoxBlock(DyeColor.ORANGE));
-    public static final Block SHULKER_PINK = registerShulkerBlock("enderite_shulker_", "pink",
+    public static final Block SHULKER_PINK = registerShulkerBlock("enderite_shulker_", DyeColor.PINK,
             new EnderiteShulkerBoxBlock(DyeColor.PINK));
-    public static final Block SHULKER_RED = registerShulkerBlock("enderite_shulker_", "red",
+    public static final Block SHULKER_RED = registerShulkerBlock("enderite_shulker_", DyeColor.RED,
             new EnderiteShulkerBoxBlock(DyeColor.RED));
-    public static final Block SHULKER_WHITE = registerShulkerBlock("enderite_shulker_", "white",
+    public static final Block SHULKER_WHITE = registerShulkerBlock("enderite_shulker_", DyeColor.WHITE,
             new EnderiteShulkerBoxBlock(DyeColor.WHITE));
-    public static final Block SHULKER_YELLOW = registerShulkerBlock("enderite_shulker_", "yellow",
+    public static final Block SHULKER_YELLOW = registerShulkerBlock("enderite_shulker_", DyeColor.YELLOW,
             new EnderiteShulkerBoxBlock(DyeColor.YELLOW));
 
     //region Helper Methods
@@ -102,17 +109,44 @@ public class ModBlocks
         return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name), block);
     }
 
-    private static Block registerShulkerBlock(String name, String color, Block block)
+    private static Block registerShulkerBlock(String name, DyeColor color, Block block)
     {
-        Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + color),
+        if(color == null)
+            Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + "normal"),
                 new BlockItem(block, new FabricItemSettings().fireproof()));
-        return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + color), block);
+        else
+            Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + color),
+                    new BlockItem(block, new FabricItemSettings().fireproof()));
+        Block bl;
+
+        if(color == null)
+            bl = Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + "normal"), block);
+        else
+            bl = Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + color.getName()), block);
+
+        //enderiteShulkerBlocks.add((EnderiteShulkerBoxBlock) bl);
+        SHULKER_BLOCKS.put(color, (EnderiteShulkerBoxBlock) bl);
+
+        return bl;
     }
 
     private static Item registerBlockItem(String name, Block block)
     {
         return Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name),
                 new BlockItem(block, new FabricItemSettings()));
+    }
+
+    public static EnderiteShulkerBoxBlock getShulkerBlock(DyeColor color)
+    {
+        if (color == null)
+            return (EnderiteShulkerBoxBlock)SHULKER_NORMAL;
+        return SHULKER_BLOCKS.get(color);
+    }
+
+    public static Identifier getTextureForShulker(DyeColor color)
+    {
+        String colorName = color != null ? color.getName() : "normal";
+        return new Identifier(AllThatMatters.ModID, "shulker/enderite_shulker_" + colorName);
     }
 
     public static void register()
