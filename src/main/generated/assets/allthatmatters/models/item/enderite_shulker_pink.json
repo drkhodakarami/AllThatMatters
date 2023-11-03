@@ -1,3 +1,6 @@
 {
-  "parent": "allthatmatters:block/enderite_shulker_pink"
+  "parent": "minecraft:item/template_shulker_box",
+  "textures": {
+    "particle": "allthatmatters:block/enderite_shulker_pink"
+  }
 }

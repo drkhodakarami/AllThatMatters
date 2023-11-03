@@ -44,22 +44,23 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSingleton(ModBlocks.ORE_ENDERITE, TexturedModel.CUBE_BOTTOM_TOP);
         blockStateModelGenerator.registerSingleton(ModBlocks.CHUNK_LOADER, TexturedModel.CUBE_BOTTOM_TOP);
 
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_NORMAL, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_BLACK, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_BLUE, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_BROWN, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_CYAN, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_GRAY, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_GREEN, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_LIGHT_BLUE, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_LIGHT_GRAY, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_LIME, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_MAGENTA, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_ORANGE, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_PINK, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_RED, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_WHITE, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.SHULKER_YELLOW, TexturedModel.CUBE_COLUMN);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_NORMAL);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BLACK);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BLUE);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BROWN);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_CYAN);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_GRAY);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_GREEN);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIGHT_BLUE);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIGHT_GRAY);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIME);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_MAGENTA);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_ORANGE);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_PINK);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_PURPLE);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_RED);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_WHITE);
+        blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_YELLOW);
     }
 
     /**

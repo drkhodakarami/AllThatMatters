@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.block.entity;
 
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.AbstractBlock;
@@ -27,35 +28,15 @@ public class ModBlockEntities
         AllThatMatters.LOGGER.info(">>> Registering Block Entities for : " + AllThatMatters.ModID);
 
         List<EnderiteShulkerBoxBlock> boxes = new ArrayList<>();
-        EnderiteShulkerBoxBlock baseShulker = createShulkerBoxBlock(null);
-        boxes.add(baseShulker);
+        boxes.add(ModBlocks.getShulkerBlock(null));
         for (DyeColor color : DyeColor.values())
         {
-            EnderiteShulkerBoxBlock block = createShulkerBoxBlock(color);
-            boxes.add(block);
+            boxes.add(ModBlocks.getShulkerBlock(color));
         }
 
         ENDERITE_SHULKER_ENTITY =
                 Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":shulker",
                         FabricBlockEntityTypeBuilder.create(EnderiteShulkerBlockEntity::new,
                                 boxes.toArray(new EnderiteShulkerBoxBlock[0])).build(null));
-    }
-
-    private static EnderiteShulkerBoxBlock createShulkerBoxBlock(DyeColor color)
-    {
-        AbstractBlock.ContextPredicate contextPredicate = (blockState, blockView, blockPos) ->
-        {
-            BlockEntity blockEntity = blockView.getBlockEntity(blockPos);
-            if (!(blockEntity instanceof ShulkerBoxBlockEntity))
-            {
-                return true;
-            }
-            else
-            {
-                ShulkerBoxBlockEntity shulkerBoxBlockEntity = (ShulkerBoxBlockEntity) blockEntity;
-                return shulkerBoxBlockEntity.suffocates();
-            }
-        };
-        return new EnderiteShulkerBoxBlock(color);
     }
 }

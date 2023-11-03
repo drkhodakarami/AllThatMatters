@@ -66,9 +66,6 @@ public class ModBlocks
     public static final Block CHUNK_LOADER = registerBlock("chunk_loader",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
-    public static final HashMap<DyeColor, EnderiteShulkerBoxBlock> SHULKER_BLOCKS = new HashMap<>();
-    //public static List<EnderiteShulkerBoxBlock> enderiteShulkerBlocks = new ArrayList<>();
-
     public static final Block SHULKER_NORMAL = registerShulkerBlock("enderite_shulker_", null,
             new EnderiteShulkerBoxBlock(null));
     public static final Block SHULKER_BLACK = registerShulkerBlock("enderite_shulker_", DyeColor.BLACK,
@@ -95,6 +92,8 @@ public class ModBlocks
             new EnderiteShulkerBoxBlock(DyeColor.ORANGE));
     public static final Block SHULKER_PINK = registerShulkerBlock("enderite_shulker_", DyeColor.PINK,
             new EnderiteShulkerBoxBlock(DyeColor.PINK));
+    public static final Block SHULKER_PURPLE = registerShulkerBlock("enderite_shulker_", DyeColor.PURPLE,
+            new EnderiteShulkerBoxBlock(DyeColor.PURPLE));
     public static final Block SHULKER_RED = registerShulkerBlock("enderite_shulker_", DyeColor.RED,
             new EnderiteShulkerBoxBlock(DyeColor.RED));
     public static final Block SHULKER_WHITE = registerShulkerBlock("enderite_shulker_", DyeColor.WHITE,
@@ -117,17 +116,11 @@ public class ModBlocks
         else
             Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + color),
                     new BlockItem(block, new FabricItemSettings().fireproof()));
-        Block bl;
 
         if(color == null)
-            bl = Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + "normal"), block);
+            return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + "normal"), block);
         else
-            bl = Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + color.getName()), block);
-
-        //enderiteShulkerBlocks.add((EnderiteShulkerBoxBlock) bl);
-        SHULKER_BLOCKS.put(color, (EnderiteShulkerBoxBlock) bl);
-
-        return bl;
+            return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + color.getName()), block);
     }
 
     private static Item registerBlockItem(String name, Block block)
@@ -138,9 +131,28 @@ public class ModBlocks
 
     public static EnderiteShulkerBoxBlock getShulkerBlock(DyeColor color)
     {
-        if (color == null)
+        if(color == null)
             return (EnderiteShulkerBoxBlock)SHULKER_NORMAL;
-        return SHULKER_BLOCKS.get(color);
+        switch (color)
+        {
+            case BLACK -> { return (EnderiteShulkerBoxBlock)SHULKER_BLACK; }
+            case BLUE -> { return (EnderiteShulkerBoxBlock)SHULKER_BLUE; }
+            case BROWN -> { return (EnderiteShulkerBoxBlock)SHULKER_BROWN; }
+            case CYAN -> { return (EnderiteShulkerBoxBlock)SHULKER_CYAN; }
+            case GRAY -> { return (EnderiteShulkerBoxBlock)SHULKER_GRAY; }
+            case GREEN -> { return (EnderiteShulkerBoxBlock)SHULKER_GREEN; }
+            case LIGHT_BLUE -> { return (EnderiteShulkerBoxBlock)SHULKER_LIGHT_BLUE; }
+            case LIGHT_GRAY -> { return (EnderiteShulkerBoxBlock)SHULKER_LIGHT_GRAY; }
+            case LIME -> { return (EnderiteShulkerBoxBlock)SHULKER_LIME; }
+            case MAGENTA -> { return (EnderiteShulkerBoxBlock)SHULKER_MAGENTA; }
+            case ORANGE -> { return (EnderiteShulkerBoxBlock)SHULKER_ORANGE; }
+            case PINK -> { return (EnderiteShulkerBoxBlock)SHULKER_PINK; }
+            case PURPLE -> { return (EnderiteShulkerBoxBlock)SHULKER_PURPLE; }
+            case RED -> { return (EnderiteShulkerBoxBlock)SHULKER_RED; }
+            case WHITE -> { return (EnderiteShulkerBoxBlock)SHULKER_WHITE; }
+            case YELLOW -> { return (EnderiteShulkerBoxBlock)SHULKER_YELLOW; }
+            default -> { return (EnderiteShulkerBoxBlock)SHULKER_NORMAL; }
+        }
     }
 
     public static Identifier getTextureForShulker(DyeColor color)

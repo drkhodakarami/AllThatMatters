@@ -35,9 +35,9 @@ public class ATMClient implements ClientModInitializer
         BuiltinItemRendererRegistry.INSTANCE.register(ModBlocks.getShulkerBlock(color), (stack, mode, matrices, vertexConsumers, light, overlay) ->
         {
             EnderiteShulkerBlockEntity be = new EnderiteShulkerBlockEntity(color, BlockPos.ORIGIN, ModBlocks.getShulkerBlock(color).getDefaultState());
-            NbtCompound tag = stack.getSubNbt(EnderiteShulkerBoxBlock.KEY);
-            if (tag != null)
-                be.appendUpgrades(tag);
+            //NbtCompound tag = stack.getSubNbt(EnderiteShulkerBoxBlock.KEY);
+            //if (tag != null)
+                //be.appendUpgrades(tag);
             MinecraftClient.getInstance().getBlockEntityRenderDispatcher().renderEntity(be, matrices, vertexConsumers, light, overlay);
         });
     }

@@ -1,7 +1,5 @@
 {
-  "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "allthatmatters:block/enderite_shulker_normal_top",
-    "side": "allthatmatters:block/enderite_shulker_normal_side"
+    "particle": "allthatmatters:block/enderite_shulker_normal"
   }
 }

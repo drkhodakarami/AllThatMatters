@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.block.entity;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     public EnderiteShulkerBlockEntity(@Nullable DyeColor color, BlockPos pos, BlockState state)
     {
         super(color, pos, state);
-        //this.type = ShulkersRegistry.UPGRADEDSHULKERENTITYTYPE;
         this.AVAILABLE_SLOTS = IntStream.range(0, 108).toArray();
         this.setInvStackList(DefaultedList.ofSize(108, ItemStack.EMPTY));
     }
@@ -33,19 +33,40 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
         this(null, pos, state);
     }
 
+    @Override
+    public BlockEntityType<?> getType()
+    {
+        return ModBlockEntities.ENDERITE_SHULKER_ENTITY;
+    }
+
+    @Override
     public void readNbt(NbtCompound tag)
     {
         super.readNbt(tag);
     }
 
+    @Override
     public void writeNbt(NbtCompound tag)
     {
         super.writeNbt(tag);
     }
 
+    @Override
     public int[] getAvailableSlots(Direction side)
     {
         return this.AVAILABLE_SLOTS;
+    }
+
+    @Override
+    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory)
+    {
+        return null;
+    }
+
+    @Override
+    protected Text getContainerName()
+    {
+        return Text.translatable("block.enderiteshulkers.shulker");
     }
 
     public void appendUpgrades(NbtCompound tag)
@@ -61,17 +82,5 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     public NbtCompound getUpgrades()
     {
         return this.upgrades;
-    }
-
-    @Override
-    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory)
-    {
-        return null;
-    }
-
-    @Override
-    protected Text getContainerName()
-    {
-        return Text.translatable("block.enderiteshulkers.shulker");
     }
 }

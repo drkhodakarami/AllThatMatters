@@ -46,6 +46,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.ORE_WORLD_RUBY)
                 .add(ModBlocks.ORE_WORLD_SAPPHIRE)
                 .add(ModBlocks.ORE_ENDERITE)
+                .add(ModBlocks.SHULKER_NORMAL)
+                .add(ModBlocks.SHULKER_BLACK)
+                .add(ModBlocks.SHULKER_BLUE)
+                .add(ModBlocks.SHULKER_BROWN)
+                .add(ModBlocks.SHULKER_CYAN)
+                .add(ModBlocks.SHULKER_GRAY)
+                .add(ModBlocks.SHULKER_GREEN)
+                .add(ModBlocks.SHULKER_LIGHT_BLUE)
+                .add(ModBlocks.SHULKER_LIGHT_GRAY)
+                .add(ModBlocks.SHULKER_LIME)
+                .add(ModBlocks.SHULKER_MAGENTA)
+                .add(ModBlocks.SHULKER_ORANGE)
+                .add(ModBlocks.SHULKER_PINK)
+                .add(ModBlocks.SHULKER_PURPLE)
+                .add(ModBlocks.SHULKER_RED)
+                .add(ModBlocks.SHULKER_WHITE)
+                .add(ModBlocks.SHULKER_YELLOW)
                 .add(ModBlocks.CHUNK_LOADER);
 
         /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/

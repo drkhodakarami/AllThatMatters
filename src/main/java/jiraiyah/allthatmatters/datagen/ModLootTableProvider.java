@@ -44,6 +44,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.SHULKER_MAGENTA);
         addDrop(ModBlocks.SHULKER_ORANGE);
         addDrop(ModBlocks.SHULKER_PINK);
+        addDrop(ModBlocks.SHULKER_PURPLE);
         addDrop(ModBlocks.SHULKER_RED);
         addDrop(ModBlocks.SHULKER_WHITE);
         addDrop(ModBlocks.SHULKER_YELLOW);

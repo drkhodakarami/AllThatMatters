@@ -3,7 +3,9 @@
 	"package": "jiraiyah.allthatmatters.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ModMixin"
+		"ModMixin",
+		"ItemEntityMixin",
+		"ShulkerBoxBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

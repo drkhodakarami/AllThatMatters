@@ -19,6 +19,23 @@
     "allthatmatters:ore_world_ruby",
     "allthatmatters:ore_world_sapphire",
     "allthatmatters:ore_enderite",
+    "allthatmatters:enderite_shulker_normal",
+    "allthatmatters:enderite_shulker_black",
+    "allthatmatters:enderite_shulker_blue",
+    "allthatmatters:enderite_shulker_brown",
+    "allthatmatters:enderite_shulker_cyan",
+    "allthatmatters:enderite_shulker_gray",
+    "allthatmatters:enderite_shulker_green",
+    "allthatmatters:enderite_shulker_light_blue",
+    "allthatmatters:enderite_shulker_light_gray",
+    "allthatmatters:enderite_shulker_lime",
+    "allthatmatters:enderite_shulker_magenta",
+    "allthatmatters:enderite_shulker_orange",
+    "allthatmatters:enderite_shulker_pink",
+    "allthatmatters:enderite_shulker_purple",
+    "allthatmatters:enderite_shulker_red",
+    "allthatmatters:enderite_shulker_white",
+    "allthatmatters:enderite_shulker_yellow",
     "allthatmatters:chunk_loader"
   ]
 }

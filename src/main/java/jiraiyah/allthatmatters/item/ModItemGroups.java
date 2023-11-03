@@ -61,6 +61,7 @@ public class ModItemGroups
                         entries.add(ModBlocks.SHULKER_MAGENTA);
                         entries.add(ModBlocks.SHULKER_ORANGE);
                         entries.add(ModBlocks.SHULKER_PINK);
+                        entries.add(ModBlocks.SHULKER_PURPLE);
                         entries.add(ModBlocks.SHULKER_RED);
                         entries.add(ModBlocks.SHULKER_WHITE);
                         entries.add(ModBlocks.SHULKER_YELLOW);

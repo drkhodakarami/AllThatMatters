@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.block.custom;
 
 
+import jiraiyah.allthatmatters.block.UpgradedShulker;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.entity.ModBlockEntities;
 import jiraiyah.allthatmatters.screen.EnderiteShulkerScreenHandler;
@@ -38,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock
+public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements UpgradedShulker
 {
     public static final String KEY = "upgradedenderiteshulker";
 
@@ -223,6 +224,11 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock
             }
         }
 
+    }
+
+    @Override
+    public boolean isUpgradedShulker() {
+        return true;
     }
 
     public int getInventorySize()
