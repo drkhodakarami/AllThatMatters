@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_enderite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:raw_enderite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ingot_enderite_from_blasting_raw_enderite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_enderite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ingot_enderite_from_blasting_raw_enderite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "allthatmatters:block_sapphire"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "allthatmatters:gem_sapphire"
+  }
+}

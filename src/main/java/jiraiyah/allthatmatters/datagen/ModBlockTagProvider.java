@@ -1,0 +1,83 @@
+package jiraiyah.allthatmatters.datagen;
+
+import jiraiyah.allthatmatters.block.ModBlocks;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BlockTags;
+
+import java.util.concurrent.CompletableFuture;
+
+public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
+{
+    public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture)
+    {
+        super(output, registriesFuture);
+    }
+
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup arg)
+    {
+        /*getOrCreateTagBuilder(ModTags.Blocks.GEM_BLOCKS)
+                .add(ModBlocks.RUBY_BLOCK)
+                .add(ModBlocks.SAPPHIRE_BLOCK)
+                .add(ModBlocks.CITRINE_BLOCK)
+                .forceAddTag(BlockTags.EMERALD_ORES)
+                .forceAddTag(BlockTags.REDSTONE_ORES)
+                .forceAddTag(BlockTags.LAPIS_ORES)
+                .forceAddTag(BlockTags.DIAMOND_ORES);*/
+
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.CITRINE)
+                .add(ModBlocks.ENDERITE)
+                .add(ModBlocks.RUBY)
+                .add(ModBlocks.SAPPHIRE)
+                .add(ModBlocks.ORE_DEEP_CITRINE)
+                .add(ModBlocks.ORE_DEEP_RUBY)
+                .add(ModBlocks.ORE_DEEP_SAPPHIRE)
+                .add(ModBlocks.ORE_END_CITRINE)
+                .add(ModBlocks.ORE_END_ENDERITE)
+                .add(ModBlocks.ORE_END_RUBY)
+                .add(ModBlocks.ORE_END_SAPPHIRE)
+                .add(ModBlocks.ORE_NETHER_CITRINE)
+                .add(ModBlocks.ORE_NETHER_RUBY)
+                .add(ModBlocks.ORE_NETHER_SAPPHIRE)
+                .add(ModBlocks.ORE_WORLD_CITRINE)
+                .add(ModBlocks.ORE_WORLD_RUBY)
+                .add(ModBlocks.ORE_WORLD_SAPPHIRE)
+                .add(ModBlocks.ORE_ENDERITE)
+                .add(ModBlocks.CHUNK_LOADER);
+
+        /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
+
+        /*getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE);*/
+
+        /*getOrCreateTagBuilder(BlockTags.HOE_MINEABLE);*/
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.CITRINE)
+                .add(ModBlocks.RUBY)
+                .add(ModBlocks.SAPPHIRE)
+                .add(ModBlocks.ORE_DEEP_CITRINE)
+                .add(ModBlocks.ORE_DEEP_RUBY)
+                .add(ModBlocks.ORE_DEEP_SAPPHIRE)
+                .add(ModBlocks.ORE_END_CITRINE)
+                .add(ModBlocks.ORE_END_RUBY)
+                .add(ModBlocks.ORE_END_SAPPHIRE)
+                .add(ModBlocks.ORE_NETHER_CITRINE)
+                .add(ModBlocks.ORE_NETHER_RUBY)
+                .add(ModBlocks.ORE_NETHER_SAPPHIRE)
+                .add(ModBlocks.ORE_WORLD_CITRINE)
+                .add(ModBlocks.ORE_WORLD_RUBY)
+                .add(ModBlocks.ORE_WORLD_SAPPHIRE)
+                .add(ModBlocks.CHUNK_LOADER);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.ENDERITE);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.ORE_ENDERITE);
+
+        /*getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));*/
+    }
+}

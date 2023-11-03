@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "allthatmatters:block/ore_enderite_bottom",
+    "side": "allthatmatters:block/ore_enderite_side",
+    "top": "allthatmatters:block/ore_enderite_top"
+  }
+}

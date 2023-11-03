@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "allthatmatters:block/enderite_shulker_light_blue_top",
+    "side": "allthatmatters:block/enderite_shulker_light_blue_side"
+  }
+}

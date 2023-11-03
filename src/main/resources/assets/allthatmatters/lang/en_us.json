@@ -1,0 +1,44 @@
+{
+  "item.allthatmatters.gem_citrine": "Citrine Gem",
+  "item.allthatmatters.raw_citrine": "RAW Citrine",
+  "item.allthatmatters.gem_ruby": "Ruby Gem",
+  "item.allthatmatters.raw_ruby": "RAW Ruby",
+  "item.allthatmatters.gem_sapphire": "Sapphire Gem",
+  "item.allthatmatters.raw_sapphire": "RAW Sapphire",
+
+  "item.allthatmatters.ingot_enderite": "Enderite",
+  "item.allthatmatters.raw_enderite": "Raw Enderite",
+
+  "block.allthatmatters.block_citrine": "Citrine Block",
+  "block.allthatmatters.block_ruby": "Ruby Block",
+  "block.allthatmatters.block_sapphire": "Sapphire Block",
+
+  "block.allthatmatters.ore_deep_citrine": "Deepslate Citrine Ore",
+  "block.allthatmatters.ore_deep_ruby": "Deepslate Ruby Ore",
+  "block.allthatmatters.ore_deep_sapphire": "Deepslate Sapphire Ore",
+
+  "block.allthatmatters.ore_end_citrine": "Citrine Endstone",
+  "block.allthatmatters.ore_end_ruby": "Ruby Endstone",
+  "block.allthatmatters.ore_end_sapphire": "Sapphire Endstone",
+
+  "block.allthatmatters.ore_nether_citrine": "Citrine Nether Rack",
+  "block.allthatmatters.ore_nether_ruby": "Ruby Nether Rack",
+  "block.allthatmatters.ore_nether_sapphire": "Sapphire Nether Rack",
+
+  "block.allthatmatters.ore_world_citrine": "Citrine Ore",
+  "block.allthatmatters.ore_world_ruby": "Ruby Ore",
+  "block.allthatmatters.ore_world_sapphire": "Sapphire Ore",
+
+  "block.allthatmatters.ore_end_enderite": "Enderite Endstone",
+  "block.allthatmatters.ore_enderite": "Enderite Debris",
+
+  "block.allthatmatters.chunk_loader": "Chunk Loader",
+  "block.allthatmatters.enderite_shulker_normal": "Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_black": "Black Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_blue": "Blue Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_brown": "Brown Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_cyan": "Cyan Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_gray": "Gray Enderite Shulker Box",
+
+  "itemgroup.allthatmattersgroup": "All That Matters"
+}

@@ -12,12 +12,17 @@ import net.minecraft.util.Identifier;
 
 public class ModItems
 {
-    //public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
+    public static final Item RUBY = registerItem("gem_ruby", new Item(new FabricItemSettings()));
+    public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
 
-    /*private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries)
-    {
-        //entries.add(RUBY);
-    }*/
+    public static final Item CITRINE = registerItem("gem_citrine", new Item(new FabricItemSettings()));
+    public static final Item RAW_CITRINE = registerItem("raw_citrine", new Item(new FabricItemSettings()));
+
+    public static final Item SAPPHIRE = registerItem("gem_sapphire", new Item(new FabricItemSettings()));
+    public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
+
+    public static final Item ENDERITE = registerItem("ingot_enderite", new Item(new FabricItemSettings()));
+    public static final Item RAW_ENDERITE = registerItem("raw_enderite", new Item(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item)
     {
@@ -26,8 +31,6 @@ public class ModItems
 
     public static void register()
     {
-        AllThatMatters.LOGGER.info(">>> Registering Items for : " + AllThatMatters.ModID);
-
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+        AllThatMatters.LOGGER.info(">>> Registering Items");
     }
 }

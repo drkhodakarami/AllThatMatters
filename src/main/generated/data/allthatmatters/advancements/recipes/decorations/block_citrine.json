@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gem_citrine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gem_citrine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:block_citrine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gem_citrine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:block_citrine"
+    ]
+  },
+  "sends_telemetry_event": false
+}

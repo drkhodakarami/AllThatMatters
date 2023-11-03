@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:block_citrine",
+    "allthatmatters:block_enderite",
+    "allthatmatters:block_ruby",
+    "allthatmatters:block_sapphire",
+    "allthatmatters:ore_deep_citrine",
+    "allthatmatters:ore_deep_ruby",
+    "allthatmatters:ore_deep_sapphire",
+    "allthatmatters:ore_end_citrine",
+    "allthatmatters:ore_end_enderite",
+    "allthatmatters:ore_end_ruby",
+    "allthatmatters:ore_end_sapphire",
+    "allthatmatters:ore_nether_citrine",
+    "allthatmatters:ore_nether_ruby",
+    "allthatmatters:ore_nether_sapphire",
+    "allthatmatters:ore_world_citrine",
+    "allthatmatters:ore_world_ruby",
+    "allthatmatters:ore_world_sapphire",
+    "allthatmatters:ore_enderite",
+    "allthatmatters:chunk_loader"
+  ]
+}
