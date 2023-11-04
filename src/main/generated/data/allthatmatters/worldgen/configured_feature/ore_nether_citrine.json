@@ -6,11 +6,11 @@
     "targets": [
       {
         "state": {
-          "Name": "allthatmatters:ore_end_citrine"
+          "Name": "allthatmatters:ore_nether_citrine"
         },
         "target": {
-          "predicate_type": "minecraft:block_match",
-          "block": "minecraft:end_stone"
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_nether"
         }
       }
     ]

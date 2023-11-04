@@ -6,11 +6,11 @@
     "targets": [
       {
         "state": {
-          "Name": "allthatmatters:ore_nether_sapphire"
+          "Name": "allthatmatters:ore_nether_ruby"
         },
         "target": {
-          "predicate_type": "minecraft:block_match",
-          "block": "minecraft:netherrack"
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_nether"
         }
       }
     ]

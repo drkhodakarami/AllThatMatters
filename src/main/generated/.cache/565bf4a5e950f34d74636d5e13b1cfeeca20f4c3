@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-04T08:38:54.1962936	All That Matters/Model Definitions
+// 1.20.2	2023-11-04T18:42:59.8225509	All That Matters/Model Definitions
 505af0b11a86c5508aaeb171175624baeb1a252c assets\allthatmatters\models\item\ore_deep_citrine.json
 d07692a8e450714bfc173a15a7a97982c5c4df29 assets\allthatmatters\models\item\ore_nether_ruby.json
 8f6137d59b6b750e250bc94e860a4ad3bcc70b38 assets\allthatmatters\blockstates\ore_deep_sapphire.json
@@ -59,8 +59,8 @@ dfc18d6051518148d84e52814bfbcd5493a7fa2e assets\allthatmatters\models\block\ore_
 0b8ba4b8aed81259da52486c4d573617bdcbd7f7 assets\allthatmatters\models\item\chunk_loader.json
 1c84e01c0ea7abb502a300c887fdf549f68c53ee assets\allthatmatters\models\block\block_enderite.json
 34255a045704a254fcf7fc17d49c8fef725e0c85 assets\allthatmatters\models\block\ore_nether_citrine.json
-8eaba19f44fa62f5f5f241b7119f5b6469e6ea29 assets\allthatmatters\models\item\raw_citrine.json
 4c63718563bbf9668c406a8d6964f6dee385d8f2 assets\allthatmatters\models\item\ore_enderite.json
+8eaba19f44fa62f5f5f241b7119f5b6469e6ea29 assets\allthatmatters\models\item\raw_citrine.json
 47ecf23672def92e50c72989084be903a502a18a assets\allthatmatters\blockstates\ore_deep_citrine.json
 8ee6d822073e611b6558580eb294780c809329a2 assets\allthatmatters\blockstates\chunk_loader.json
 93b7a86eb20c3ab01fe726a95d16fb6c3f8fc542 assets\allthatmatters\models\block\chunk_loader.json

@@ -1,9 +1,9 @@
 {
-  "feature": "allthatmatters:ore_nether_ruby",
+  "feature": "allthatmatters:ore_nether_citrine",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 4
+      "count": 6
     },
     {
       "type": "minecraft:in_square"

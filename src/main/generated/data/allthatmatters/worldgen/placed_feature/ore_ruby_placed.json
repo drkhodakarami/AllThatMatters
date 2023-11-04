@@ -1,9 +1,9 @@
 {
-  "feature": "allthatmatters:ore_end_sapphire",
+  "feature": "allthatmatters:ore_ruby",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 4
+      "count": 8
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 60
+          "above_bottom": 110
         },
         "min_inclusive": {
-          "absolute": 40
+          "above_bottom": 20
         }
       }
     },
