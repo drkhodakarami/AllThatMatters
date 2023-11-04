@@ -1,18 +1,19 @@
 package jiraiyah.allthatmatters.screen;
 
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreenHandler;
+import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.screen.ScreenHandlerType;
-import net.minecraft.screen.ShulkerBoxScreenHandler;
 import net.minecraft.util.Identifier;
 
 public class ModScreenHandlers
 {
-    /*public static final ScreenHandlerType<StripperBlockScreenHandler> STRIPPER_SCREEN_HANDLER =
-            Registry.register(Registries.SCREEN_HANDLER, new Identifier(StripBlock.ModID, "stripper"),
-                    new ExtendedScreenHandlerType<>(StripperBlockScreenHandler::new));*/
+    public static final ScreenHandlerType<InfusingStationScreenHandler> INFUSING_POLISHING_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, new Identifier(AllThatMatters.ModID, "infusing_station"),
+                    new ExtendedScreenHandlerType<>(InfusingStationScreenHandler::new));
 
     public static ScreenHandlerType<EnderiteShulkerScreenHandler> ENDERITE_SCREEN_HANDLER_TYPE =
             Registry.register(Registries.SCREEN_HANDLER, new Identifier(AllThatMatters.ModID, "enderiteshulker"),

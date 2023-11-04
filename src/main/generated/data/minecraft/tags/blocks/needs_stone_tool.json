@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    "allthatmatters:block_citrine",
-    "allthatmatters:block_ruby",
-    "allthatmatters:block_sapphire",
     "allthatmatters:ore_deep_citrine",
     "allthatmatters:ore_deep_ruby",
     "allthatmatters:ore_deep_sapphire",
@@ -16,6 +13,7 @@
     "allthatmatters:ore_world_citrine",
     "allthatmatters:ore_world_ruby",
     "allthatmatters:ore_world_sapphire",
-    "allthatmatters:chunk_loader"
+    "allthatmatters:chunk_loader",
+    "allthatmatters:infusing_station"
   ]
 }

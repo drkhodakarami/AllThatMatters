@@ -1,6 +1,6 @@
 package jiraiyah.allthatmatters.mixin;
 
-import jiraiyah.allthatmatters.block.UpgradedShulker;
+import jiraiyah.allthatmatters.utils.UpgradedShulker;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;

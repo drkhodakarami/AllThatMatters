@@ -1,5 +1,8 @@
 package jiraiyah.allthatmatters.compat;
 
+import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
+import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
@@ -12,21 +15,21 @@ public class ATMREIClientPlugin implements REIClientPlugin
     @Override
     public void registerCategories(CategoryRegistry registry)
     {
-//        registry.add(new StripperBlockCategory());
-//        registry.addWorkstations(StripperBlockCategory.WOOD_STRIPPING, EntryStacks.of(ModBlocks.STRIPPER_BLOCK));
+        registry.add(new InfusingStationCategory());
+        registry.addWorkstations(InfusingStationCategory.ADVANCE_INFUSING, EntryStacks.of(ModBlocks.INFUSING_STATION));
     }
 
     @Override
     public void registerDisplays(DisplayRegistry registry)
     {
-//        registry.registerRecipeFiller(StripperBlockRecipe.class, StripperBlockRecipe.Type.INSTANCE, StripperBlockDisplay::new);
+        registry.registerRecipeFiller(InfusingStationCraftingRecipe.class, InfusingStationCraftingRecipe.Type.INSTANCE, InfusingStationDisplay::new);
     }
 
     @Override
     public void registerScreens(ScreenRegistry registry)
     {
-//        registry.registerClickArea(screen ->
-//                        new Rectangle(75, 30, 20, 30),
-//                        StripperBlockScreen.class, StripperBlockCategory.WOOD_STRIPPING);
+        registry.registerClickArea(screen ->
+                        new Rectangle(75, 30, 20, 30),
+                        InfusingStationScreen.class, InfusingStationCategory.ADVANCE_INFUSING);
     }
 }

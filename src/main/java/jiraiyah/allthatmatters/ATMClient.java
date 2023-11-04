@@ -2,11 +2,12 @@ package jiraiyah.allthatmatters;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
-import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
-import jiraiyah.allthatmatters.block.entity.ModBlockEntities;
+import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
+import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.client.EnderiteShulkerBoxRenderer;
-import jiraiyah.allthatmatters.screen.EnderiteShulkerScreen;
+import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreen;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
+import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.minecraft.client.MinecraftClient;
@@ -21,7 +22,7 @@ public class ATMClient implements ClientModInitializer
     @Override
     public void onInitializeClient()
     {
-        //HandledScreens.register(ModScreenHandlers.STRIPPER_SCREEN_HANDLER, StripperBlockScreen::new);
+        HandledScreens.register(ModScreenHandlers.INFUSING_POLISHING_SCREEN_HANDLER, InfusingStationScreen::new);
 
         HandledScreens.register(ModScreenHandlers.ENDERITE_SCREEN_HANDLER_TYPE, EnderiteShulkerScreen::new);
         registerShulkerWith(null);
@@ -35,9 +36,9 @@ public class ATMClient implements ClientModInitializer
         BuiltinItemRendererRegistry.INSTANCE.register(ModBlocks.getShulkerBlock(color), (stack, mode, matrices, vertexConsumers, light, overlay) ->
         {
             EnderiteShulkerBlockEntity be = new EnderiteShulkerBlockEntity(color, BlockPos.ORIGIN, ModBlocks.getShulkerBlock(color).getDefaultState());
-            //NbtCompound tag = stack.getSubNbt(EnderiteShulkerBoxBlock.KEY);
-            //if (tag != null)
-                //be.appendUpgrades(tag);
+            NbtCompound tag = stack.getSubNbt(EnderiteShulkerBoxBlock.KEY);
+            if (tag != null)
+                be.appendUpgrades(tag);
             MinecraftClient.getInstance().getBlockEntityRenderDispatcher().renderEntity(be, matrices, vertexConsumers, light, overlay);
         });
     }

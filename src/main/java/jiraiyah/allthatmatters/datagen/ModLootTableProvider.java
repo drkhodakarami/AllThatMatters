@@ -31,23 +31,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.RUBY);
         addDrop(ModBlocks.SAPPHIRE);
         addDrop(ModBlocks.CHUNK_LOADER);
-        addDrop(ModBlocks.SHULKER_NORMAL);
-        addDrop(ModBlocks.SHULKER_BLACK);
-        addDrop(ModBlocks.SHULKER_BLUE);
-        addDrop(ModBlocks.SHULKER_BROWN);
-        addDrop(ModBlocks.SHULKER_CYAN);
-        addDrop(ModBlocks.SHULKER_GRAY);
-        addDrop(ModBlocks.SHULKER_GREEN);
-        addDrop(ModBlocks.SHULKER_LIGHT_BLUE);
-        addDrop(ModBlocks.SHULKER_LIGHT_GRAY);
-        addDrop(ModBlocks.SHULKER_LIME);
-        addDrop(ModBlocks.SHULKER_MAGENTA);
-        addDrop(ModBlocks.SHULKER_ORANGE);
-        addDrop(ModBlocks.SHULKER_PINK);
-        addDrop(ModBlocks.SHULKER_PURPLE);
-        addDrop(ModBlocks.SHULKER_RED);
-        addDrop(ModBlocks.SHULKER_WHITE);
-        addDrop(ModBlocks.SHULKER_YELLOW);
+        addDrop(ModBlocks.INFUSING_STATION);
 
         addDrop(ModBlocks.ORE_DEEP_CITRINE, customOreDrops(ModBlocks.ORE_DEEP_CITRINE, ModItems.RAW_CITRINE));
         addDrop(ModBlocks.ORE_END_CITRINE, customOreDrops(ModBlocks.ORE_END_CITRINE, ModItems.RAW_CITRINE));

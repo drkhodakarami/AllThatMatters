@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:black_dye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_enderite_shulker_normal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:enderite_shulker_normal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:enderite_shulker_blackshapeless"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_black_dye",
+      "has_enderite_shulker_normal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:enderite_shulker_blackshapeless"
+    ]
+  },
+  "sends_telemetry_event": false
+}

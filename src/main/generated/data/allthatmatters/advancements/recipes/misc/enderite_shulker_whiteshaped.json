@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ingot_enderite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:ingot_enderite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:enderite_shulker_whiteshaped"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_shulker_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:white_shulker_box"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_shulker_box",
+      "has_ingot_enderite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:enderite_shulker_whiteshaped"
+    ]
+  },
+  "sends_telemetry_event": false
+}

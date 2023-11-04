@@ -1,10 +1,10 @@
 package jiraiyah.allthatmatters.block.custom;
 
 
-import jiraiyah.allthatmatters.block.UpgradedShulker;
-import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
-import jiraiyah.allthatmatters.block.entity.ModBlockEntities;
-import jiraiyah.allthatmatters.screen.EnderiteShulkerScreenHandler;
+import jiraiyah.allthatmatters.utils.UpgradedShulker;
+import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
+import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreenHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;

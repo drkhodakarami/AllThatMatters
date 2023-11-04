@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "sapphire",
+  "ingredient": {
+    "item": "allthatmatters:ore_world_sapphire"
+  },
+  "result": "allthatmatters:gem_sapphire"
+}

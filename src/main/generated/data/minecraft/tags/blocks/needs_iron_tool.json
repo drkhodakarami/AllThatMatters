@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "allthatmatters:block_citrine",
+    "allthatmatters:block_ruby",
+    "allthatmatters:block_sapphire",
     "allthatmatters:block_enderite"
   ]
 }

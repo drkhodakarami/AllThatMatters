@@ -1,8 +1,7 @@
 package jiraiyah.allthatmatters.client;
 
-import jiraiyah.allthatmatters.ATMClient;
 import jiraiyah.allthatmatters.block.ModBlocks;
-import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
+import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.client.model.ModelPart;

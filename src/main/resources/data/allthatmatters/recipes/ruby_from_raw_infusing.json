@@ -1,0 +1,12 @@
+{
+  "type": "allthatmatters:advance_infusing",
+  "ingredients": [
+    {
+      "item": "allthatmatters:raw_ruby"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gem_ruby",
+    "count": 3
+  }
+}

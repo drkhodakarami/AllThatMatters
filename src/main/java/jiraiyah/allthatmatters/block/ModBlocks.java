@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.custom.EnderiteOre;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
+import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -66,6 +67,7 @@ public class ModBlocks
     public static final Block CHUNK_LOADER = registerBlock("chunk_loader",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
+    //region SHULKER BOXES
     public static final Block SHULKER_NORMAL = registerShulkerBlock("enderite_shulker_", null,
             new EnderiteShulkerBoxBlock(null));
     public static final Block SHULKER_BLACK = registerShulkerBlock("enderite_shulker_", DyeColor.BLACK,
@@ -100,6 +102,10 @@ public class ModBlocks
             new EnderiteShulkerBoxBlock(DyeColor.WHITE));
     public static final Block SHULKER_YELLOW = registerShulkerBlock("enderite_shulker_", DyeColor.YELLOW,
             new EnderiteShulkerBoxBlock(DyeColor.YELLOW));
+    //endregion
+
+    public static final Block INFUSING_STATION = registerBlock("infusing_station",
+            new InfusingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     //region Helper Methods
     private static Block registerBlock(String name, Block block)

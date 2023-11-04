@@ -1,5 +1,5 @@
-// 1.20.2	2023-11-03T12:53:38.1956183	All That Matters/Tags for minecraft:block
-0462670a8c0f764d5bdce3b179d9b97dc80cd864 data\minecraft\tags\blocks\mineable\pickaxe.json
-8ebf25db6998051d57c6299a3a5539460c7fba25 data\minecraft\tags\blocks\needs_iron_tool.json
-8eaf58f49444e65028e45d9e14ee2c84a18e6db8 data\minecraft\tags\blocks\needs_stone_tool.json
+// 1.20.2	2023-11-04T08:38:54.1992921	All That Matters/Tags for minecraft:block
+f30ce84e3a46e01e1eb9a17caad0bc958777d327 data\minecraft\tags\blocks\mineable\pickaxe.json
+0987463878a6b2237c8839e34c0832178f37f385 data\minecraft\tags\blocks\needs_iron_tool.json
+521d45a2fbcfdaeada8602d2e138e0e615dc9e98 data\minecraft\tags\blocks\needs_stone_tool.json
 09a2ae92540badc81ac57242964ad153ba18d077 data\minecraft\tags\blocks\needs_diamond_tool.json

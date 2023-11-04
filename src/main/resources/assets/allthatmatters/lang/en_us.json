@@ -1,10 +1,10 @@
 {
   "item.allthatmatters.gem_citrine": "Citrine Gem",
-  "item.allthatmatters.raw_citrine": "RAW Citrine",
+  "item.allthatmatters.raw_citrine": "Raw Citrine",
   "item.allthatmatters.gem_ruby": "Ruby Gem",
-  "item.allthatmatters.raw_ruby": "RAW Ruby",
+  "item.allthatmatters.raw_ruby": "Raw Ruby",
   "item.allthatmatters.gem_sapphire": "Sapphire Gem",
-  "item.allthatmatters.raw_sapphire": "RAW Sapphire",
+  "item.allthatmatters.raw_sapphire": "Raw Sapphire",
 
   "item.allthatmatters.ingot_enderite": "Enderite",
   "item.allthatmatters.raw_enderite": "Raw Enderite",
@@ -33,12 +33,30 @@
   "block.allthatmatters.ore_enderite": "Enderite Debris",
 
   "block.allthatmatters.chunk_loader": "Chunk Loader",
+  "block.allthatmatters.infusing_station": "Infusing Station",
+
   "block.allthatmatters.enderite_shulker_normal": "Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_black": "Black Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_blue": "Blue Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_brown": "Brown Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_cyan": "Cyan Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_gray": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_green": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_light_blue": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_light_gray": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_lime": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_magenta": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_orange": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_pink": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_purple": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_red": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_white": "Gray Enderite Shulker Box",
+  "block.allthatmatters.enderite_shulker_yellow": "Gray Enderite Shulker Box",
+
+  "block.enderiteshulkers.shulker": "Enderite Shulker Box",
+  "allthatmatters.infusing_station": "Infusing Station",
+
+  "infusing_station.advance_infusing": "Advance Infusing",
 
   "itemgroup.allthatmattersgroup": "All That Matters"
 }

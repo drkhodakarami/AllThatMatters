@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "allthatmatters:ingot_enderite"
+    },
+    "S": {
+      "item": "minecraft:green_shulker_box"
+    }
+  },
+  "pattern": [
+    " E ",
+    "ESE",
+    " E "
+  ],
+  "result": {
+    "item": "allthatmatters:enderite_shulker_green"
+  },
+  "show_notification": true
+}

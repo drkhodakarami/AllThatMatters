@@ -1,0 +1,12 @@
+{
+  "type": "allthatmatters:advance_infusing",
+  "ingredients": [
+    {
+      "item": "allthatmatters:raw_sapphire"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gem_sapphire",
+    "count": 3
+  }
+}

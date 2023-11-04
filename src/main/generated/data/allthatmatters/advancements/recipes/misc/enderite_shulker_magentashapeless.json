@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_enderite_shulker_normal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:enderite_shulker_normal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_magenta_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:magenta_dye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:enderite_shulker_magentashapeless"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_magenta_dye",
+      "has_enderite_shulker_normal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:enderite_shulker_magentashapeless"
+    ]
+  },
+  "sends_telemetry_event": false
+}

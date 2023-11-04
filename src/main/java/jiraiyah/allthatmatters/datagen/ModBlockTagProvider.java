@@ -63,7 +63,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.SHULKER_RED)
                 .add(ModBlocks.SHULKER_WHITE)
                 .add(ModBlocks.SHULKER_YELLOW)
-                .add(ModBlocks.CHUNK_LOADER);
+                .add(ModBlocks.CHUNK_LOADER)
+                .add(ModBlocks.INFUSING_STATION);
 
         /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
 
@@ -72,9 +73,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
         /*getOrCreateTagBuilder(BlockTags.HOE_MINEABLE);*/
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.CITRINE)
-                .add(ModBlocks.RUBY)
-                .add(ModBlocks.SAPPHIRE)
                 .add(ModBlocks.ORE_DEEP_CITRINE)
                 .add(ModBlocks.ORE_DEEP_RUBY)
                 .add(ModBlocks.ORE_DEEP_SAPPHIRE)
@@ -87,9 +85,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.ORE_WORLD_CITRINE)
                 .add(ModBlocks.ORE_WORLD_RUBY)
                 .add(ModBlocks.ORE_WORLD_SAPPHIRE)
-                .add(ModBlocks.CHUNK_LOADER);
+                .add(ModBlocks.CHUNK_LOADER)
+                .add(ModBlocks.INFUSING_STATION);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.CITRINE)
+                .add(ModBlocks.RUBY)
+                .add(ModBlocks.SAPPHIRE)
                 .add(ModBlocks.ENDERITE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)

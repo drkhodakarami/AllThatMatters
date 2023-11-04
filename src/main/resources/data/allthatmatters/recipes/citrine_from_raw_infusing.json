@@ -1,0 +1,12 @@
+{
+  "type": "allthatmatters:advance_infusing",
+  "ingredients": [
+    {
+      "item": "allthatmatters:raw_citrine"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gem_citrine",
+    "count": 3
+  }
+}

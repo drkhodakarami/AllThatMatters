@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
-import jiraiyah.allthatmatters.block.entity.ModBlockEntities;
+import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
