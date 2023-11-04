@@ -4,6 +4,7 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.block.entity.renderer.InfusingStationBlockEntityRenderer;
 import jiraiyah.allthatmatters.client.EnderiteShulkerBoxRenderer;
 import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreen;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
@@ -29,6 +30,8 @@ public class ATMClient implements ClientModInitializer
         BlockEntityRendererFactories.register(ModBlockEntities.ENDERITE_SHULKER_ENTITY, EnderiteShulkerBoxRenderer::new);
         for (DyeColor color : DyeColor.values())
             registerShulkerWith(color);
+
+        BlockEntityRendererFactories.register(ModBlockEntities.INFUSING_STATION_BLOCK_ENTITY, InfusingStationBlockEntityRenderer::new);
     }
 
     private void registerShulkerWith(DyeColor color)

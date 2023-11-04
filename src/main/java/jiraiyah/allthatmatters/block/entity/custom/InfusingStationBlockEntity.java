@@ -15,6 +15,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -125,6 +128,26 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         liquidProgress = nbt.getInt("atm.infusing_station.liquid_progress");
     }
 
+    @Override
+    public void markDirty()
+    {
+        world.updateListeners(pos, getCachedState(), getCachedState(), 3);
+        super.markDirty();
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientPlayPacketListener> toUpdatePacket()
+    {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt()
+    {
+        return createNbt();
+    }
+
     public void tick(World world, BlockPos pos, BlockState state)
     {
         if(world.isClient())
@@ -218,4 +241,11 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
     }
     //endregion
+
+    public ItemStack getRenderStack()
+    {
+        if(this.getStack(OUTPUT_SLOT).isEmpty())
+            return this.getStack(RAW_INPUT_SLOT);
+        return this.getStack(OUTPUT_SLOT);
+    }
 }

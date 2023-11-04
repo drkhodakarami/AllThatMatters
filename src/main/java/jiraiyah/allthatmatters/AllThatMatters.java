@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.datagen.ModWorldgen;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
@@ -25,6 +26,7 @@ public class AllThatMatters implements ModInitializer
 		ModItemGroups.register();
 		ModItems.register();
 		ModBlocks.register();
+		ModWorldgen.register();
 		ModBlockEntities.register();
 		ModScreenHandlers.register();
 		ModRecipes.register();
