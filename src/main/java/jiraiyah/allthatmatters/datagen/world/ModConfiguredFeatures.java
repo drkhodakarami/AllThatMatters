@@ -62,6 +62,7 @@ public class ModConfiguredFeatures
                 List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_SAPPHIRE.getDefaultState()));
         //endregion
 
+        //region END
         List<OreFeatureConfig.Target> endCitrineOres =
                 List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ORE_END_CITRINE.getDefaultState()));
 
@@ -73,6 +74,7 @@ public class ModConfiguredFeatures
 
         List<OreFeatureConfig.Target> endEnderiteOres =
                 List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ORE_END_ENDERITE.getDefaultState()));
+        //endregion
 
 
         // 3 : The number is vein size

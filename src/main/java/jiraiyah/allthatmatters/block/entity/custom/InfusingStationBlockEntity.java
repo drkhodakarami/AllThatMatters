@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.block.entity.custom;
 
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
+import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
 import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
 import jiraiyah.allthatmatters.utils.ImplementedInventory;
@@ -14,6 +15,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.listener.ClientPlayPacketListener;
@@ -120,7 +122,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         // TOP --> RAW SLOT
 
         if(side == Direction.UP)
-            return slot == RAW_INPUT_SLOT;
+            return slot == RAW_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ;
         if(side == Direction.DOWN)
             return false;
 
@@ -130,29 +132,29 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         return switch (localDir)
         {
             default ->
-                    side.getOpposite() == Direction.NORTH && slot == RAW_INPUT_SLOT || // TOP
-                    side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT || //RIGHT
-                    side.getOpposite() == Direction.EAST && slot == SECOND_TOOL_SLOT || //RIGHT
-                    side.getOpposite() == Direction.EAST && slot == THIRD_TOOL_SLOT || //RIGHT
-                    side.getOpposite() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+                    side.getOpposite() == Direction.NORTH && slot == RAW_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
+                    side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                    side.getOpposite() == Direction.WEST && slot == LIQUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
             case EAST ->
-                        side.rotateYClockwise() == Direction.NORTH && slot == RAW_INPUT_SLOT || // TOP
-                        side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT || //RIGHT
-                        side.rotateYClockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT || //RIGHT
-                        side.rotateYClockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT || //RIGHT
-                        side.rotateYClockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+                        side.rotateYClockwise() == Direction.NORTH && slot == RAW_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
+                        side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYClockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYClockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYClockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
             case SOUTH ->
-                        side == Direction.NORTH &&  slot == RAW_INPUT_SLOT || // TOP
-                        side == Direction.EAST &&  slot == MAIN_TOOL_SLOT || //RIGHT
-                        side == Direction.EAST &&  slot == SECOND_TOOL_SLOT || //RIGHT
-                        side == Direction.EAST &&  slot == THIRD_TOOL_SLOT || //RIGHT
-                        side == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+                        side == Direction.NORTH &&  slot == RAW_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
+                        side == Direction.EAST &&  slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side == Direction.EAST &&  slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side == Direction.EAST &&  slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side == Direction.WEST && slot == LIQUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
             case WEST ->
-                        side.rotateYCounterclockwise() == Direction.NORTH &&  slot == RAW_INPUT_SLOT || // TOP
-                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == MAIN_TOOL_SLOT || //RIGHT
-                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == SECOND_TOOL_SLOT || //RIGHT
-                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == THIRD_TOOL_SLOT || //RIGHT
-                        side.rotateYCounterclockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+                        side.rotateYCounterclockwise() == Direction.NORTH &&  slot == RAW_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
         };
 
     }
@@ -310,5 +312,37 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         if(this.getStack(OUTPUT_SLOT).isEmpty())
             return this.getStack(RAW_INPUT_SLOT);
         return this.getStack(OUTPUT_SLOT);
+    }
+
+    private boolean StackAcceptableInSlot(ItemStack stack, int slot)
+    {
+        if(slot == RAW_INPUT_SLOT)
+            return StackIsRawGem(stack);
+        if(slot == MAIN_TOOL_SLOT || slot == SECOND_TOOL_SLOT || slot == THIRD_TOOL_SLOT)
+            return StackIsTool(stack);
+        if(slot == LIQUID_INPUT_SLOT)
+            return StackIsLiquidable(stack);
+        return false;
+    }
+
+    private boolean StackIsLiquidable(ItemStack stack)
+    {
+        return stack.isOf(ModItems.ENDERITE) ||
+                stack.isOf(Items.LAVA_BUCKET) ||
+                stack.isOf(Items.WATER_BUCKET);
+    }
+
+    private boolean StackIsTool(ItemStack stack)
+    {
+        // TODO : Add your item
+        return stack.isOf(Items.GOLDEN_PICKAXE);
+    }
+
+    private boolean StackIsRawGem(ItemStack stack)
+    {
+        return stack.isOf(ModItems.RAW_SAPPHIRE) ||
+                stack.isOf(ModItems.RAW_RUBY) ||
+                stack.isOf(ModItems.RAW_CITRINE) ||
+                stack.isOf(ModItems.RAW_ENDERITE);
     }
 }

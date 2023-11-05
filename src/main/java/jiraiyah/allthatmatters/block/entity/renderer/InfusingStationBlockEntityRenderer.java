@@ -1,5 +1,6 @@
 package jiraiyah.allthatmatters.block.entity.renderer;
 
+import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
@@ -15,6 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import org.joml.Vector3f;
 
 public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<InfusingStationBlockEntity>
 {
@@ -31,6 +33,15 @@ public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<I
             matrices.translate(0.5f, 0.75f, 0.5f);
             matrices.scale(0.35f, 0.35f, 0.35f);
             matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(270));
+
+            switch (entity.getCachedState().get(InfusingStationBlock.FACING))
+            {
+                case NORTH -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
+                case EAST -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(90));
+                case SOUTH -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(0));
+                case WEST -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(270));
+            }
+
             itemRenderer.renderItem(stack, ModelTransformationMode.GUI,
                     getLightLevel(entity.getWorld(), entity.getPos()), OverlayTexture.DEFAULT_UV,
                     matrices, vertexConsumers, entity.getWorld(), 1);

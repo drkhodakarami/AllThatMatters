@@ -12,6 +12,13 @@ base {
 
 repositories {
 	maven { url "https://maven.shedaniel.me" }
+
+	maven {
+		url "https://cursemaven.com"
+		content{
+			includeGroup "curse.maven"
+		}
+	}
 }
 
 loom {
@@ -46,6 +53,14 @@ dependencies {
 		
 	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
 	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+
+	include modApi("teamreborn:energy:${project.energy_api_version}")
+	{
+		transitive = false
+	}
+
+	modImplementation "curse.maven:reborncore-237903:4786770"
+	modImplementation "curse.maven:techreborn-233564:4786771"
 }
 
 processResources {
