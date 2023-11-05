@@ -364,6 +364,21 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.IRON_BARS), conditionsFromItem(Items.IRON_BARS))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFUSING_STATION)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CHUNK_LOADER, 1)
+                .pattern("PEP")
+                .pattern("PRP")
+                .pattern("QIQ")
+                .input('P', Items.ENDER_PEARL)
+                .input('E', Items.ENDER_EYE)
+                .input('R', Items.END_ROD)
+                .input('Q', Items.QUARTZ_BLOCK)
+                .input('I', ModItems.ENDERITE)
+                .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .criterion(hasItem(Items.END_ROD), conditionsFromItem(Items.END_ROD))
+                .criterion(hasItem(Items.QUARTZ_BLOCK), conditionsFromItem(Items.QUARTZ_BLOCK))
+                .criterion(hasItem(ModItems.ENDERITE), conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHUNK_LOADER)));
+
         /*ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RAW_RUBY, 1)
                 .pattern("sss")
                 .pattern("srs")

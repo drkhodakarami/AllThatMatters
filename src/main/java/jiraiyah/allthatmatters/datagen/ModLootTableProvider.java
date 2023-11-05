@@ -30,7 +30,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.ENDERITE);
         addDrop(ModBlocks.RUBY);
         addDrop(ModBlocks.SAPPHIRE);
-        addDrop(ModBlocks.CHUNK_LOADER);
         addDrop(ModBlocks.INFUSING_STATION);
 
         addDrop(ModBlocks.ORE_DEEP_CITRINE, customOreDrops(ModBlocks.ORE_DEEP_CITRINE, ModItems.RAW_CITRINE));

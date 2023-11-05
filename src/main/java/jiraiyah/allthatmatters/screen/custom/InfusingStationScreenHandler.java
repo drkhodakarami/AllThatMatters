@@ -1,7 +1,9 @@
 package jiraiyah.allthatmatters.screen.custom;
 
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
+import jiraiyah.allthatmatters.block.entity.slot.InfusingLiquidationSlot;
 import jiraiyah.allthatmatters.block.entity.slot.InfusingRawInputSlot;
+import jiraiyah.allthatmatters.block.entity.slot.InfusingToolSlot;
 import jiraiyah.allthatmatters.block.entity.slot.OutputSlot;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
@@ -40,11 +42,11 @@ public class InfusingStationScreenHandler extends ScreenHandler
 
         this.addSlot(new InfusingRawInputSlot(inventory, InfusingStationBlockEntity.RAW_INPUT_SLOT, 86, 15));
         this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.OUTPUT_SLOT, 86, 60));
-        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.LIQUID_INPUT_SLOT, 12, 15));
+        this.addSlot(new InfusingLiquidationSlot(inventory, InfusingStationBlockEntity.LIQUID_INPUT_SLOT, 12, 15));
         this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.UPGRADE_INPUT_SLOT, 12, 60));
-        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.MAIN_TOOL_SLOT, 125, 15));
-        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.SECOND_TOOL_SLOT, 125, 37));
-        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.THIRD_TOOL_SLOT, 125, 60));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.MAIN_TOOL_SLOT, 125, 15));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.SECOND_TOOL_SLOT, 125, 37));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.THIRD_TOOL_SLOT, 125, 60));
 
 
         addPlayerInventory(playerInventory);

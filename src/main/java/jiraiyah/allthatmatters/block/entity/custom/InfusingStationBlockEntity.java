@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.block.entity.custom;
 
 import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
 import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
 import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
 import jiraiyah.allthatmatters.utils.ImplementedInventory;
@@ -25,6 +26,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -108,6 +110,67 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
     {
         return new InfusingStationScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+    }
+
+    @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side)
+    {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(InfusingStationBlock.FACING);
+
+        // TOP --> RAW SLOT
+
+        if(side == Direction.UP)
+            return slot == RAW_INPUT_SLOT;
+        if(side == Direction.DOWN)
+            return false;
+
+        // RIGHT --> TOOL SLOTS
+        // LEFT --> LIQUIDATION SLOT
+
+        return switch (localDir)
+        {
+            default ->
+                    side.getOpposite() == Direction.NORTH && slot == RAW_INPUT_SLOT || // TOP
+                    side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == SECOND_TOOL_SLOT || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == THIRD_TOOL_SLOT || //RIGHT
+                    side.getOpposite() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+            case EAST ->
+                        side.rotateYClockwise() == Direction.NORTH && slot == RAW_INPUT_SLOT || // TOP
+                        side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT || //RIGHT
+                        side.rotateYClockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT || //RIGHT
+                        side.rotateYClockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT || //RIGHT
+                        side.rotateYClockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+            case SOUTH ->
+                        side == Direction.NORTH &&  slot == RAW_INPUT_SLOT || // TOP
+                        side == Direction.EAST &&  slot == MAIN_TOOL_SLOT || //RIGHT
+                        side == Direction.EAST &&  slot == SECOND_TOOL_SLOT || //RIGHT
+                        side == Direction.EAST &&  slot == THIRD_TOOL_SLOT || //RIGHT
+                        side == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+            case WEST ->
+                        side.rotateYCounterclockwise() == Direction.NORTH &&  slot == RAW_INPUT_SLOT || // TOP
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == MAIN_TOOL_SLOT || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == SECOND_TOOL_SLOT || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.EAST &&  slot == THIRD_TOOL_SLOT || //RIGHT
+                        side.rotateYCounterclockwise() == Direction.WEST && slot == LIQUID_INPUT_SLOT; // LEFT
+        };
+
+    }
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side)
+    {
+        Direction localDir = this.getWorld().getBlockState(this.pos).get(InfusingStationBlock.FACING);
+        if(side == Direction.DOWN)
+            return slot == OUTPUT_SLOT;
+
+        return switch (localDir)
+        {
+            default -> side.getOpposite() == Direction.SOUTH && slot == OUTPUT_SLOT;
+            case EAST -> side.rotateYClockwise() == Direction.SOUTH && slot == OUTPUT_SLOT;
+            case SOUTH -> side == Direction.SOUTH && slot == OUTPUT_SLOT;
+            case WEST -> side.rotateYCounterclockwise() == Direction.SOUTH && slot == OUTPUT_SLOT;
+        };
     }
 
     @Override

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "allthatmatters:block/infusing_station"
+    },
+    "facing=south": {
+      "model": "allthatmatters:block/infusing_station",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "allthatmatters:block/infusing_station",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "allthatmatters:block/infusing_station",
+      "y": 90
+    }
+  }
+}

@@ -1,10 +1,12 @@
 package jiraiyah.allthatmatters.datagen;
 
+import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider
 {
@@ -42,8 +44,7 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_WORLD_SAPPHIRE);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.ORE_ENDERITE, TexturedModel.CUBE_BOTTOM_TOP);
-        blockStateModelGenerator.registerSingleton(ModBlocks.CHUNK_LOADER, TexturedModel.CUBE_BOTTOM_TOP);
-        blockStateModelGenerator.registerSimpleState(ModBlocks.INFUSING_STATION);
+        //blockStateModelGenerator.registerSimpleState(ModBlocks.INFUSING_STATION);
 
         //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_NORMAL);
         //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BLACK);
