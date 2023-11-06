@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.item;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.fluid.ModFluids;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -34,6 +35,8 @@ public class ModItemGroups
                         entries.add(ModItems.ENDERITE);
                         entries.add(ModItems.RAW_ENDERITE);
                         entries.add(ModBlocks.ENDERITE);
+
+                        entries.add(ModFluids.MOLTEN_ENDERITE_BUCKET);
 
                         entries.add(ModBlocks.ORE_DEEP_CITRINE);
                         entries.add(ModBlocks.ORE_DEEP_RUBY);

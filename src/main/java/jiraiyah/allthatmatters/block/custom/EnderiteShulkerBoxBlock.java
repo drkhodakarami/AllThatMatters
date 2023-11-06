@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.block.custom;
 
 
-import jiraiyah.allthatmatters.utils.UpgradedShulker;
+import jiraiyah.allthatmatters.utils.interfaces.UpgradedShulker;
 import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreenHandler;

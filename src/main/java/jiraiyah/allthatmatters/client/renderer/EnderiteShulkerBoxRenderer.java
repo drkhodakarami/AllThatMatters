@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.client;
+package jiraiyah.allthatmatters.client.renderer;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;

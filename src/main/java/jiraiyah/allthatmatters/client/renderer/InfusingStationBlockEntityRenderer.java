@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.block.entity.renderer;
+package jiraiyah.allthatmatters.client.renderer;
 
 import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
@@ -16,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
-import org.joml.Vector3f;
 
 public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<InfusingStationBlockEntity>
 {

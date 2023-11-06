@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.utils;
+package jiraiyah.allthatmatters.utils.interfaces;
 
 public interface UpgradedShulker
 {

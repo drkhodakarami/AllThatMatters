@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.datagen;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -44,25 +45,6 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_WORLD_SAPPHIRE);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.ORE_ENDERITE, TexturedModel.CUBE_BOTTOM_TOP);
-        //blockStateModelGenerator.registerSimpleState(ModBlocks.INFUSING_STATION);
-
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_NORMAL);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BLACK);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BLUE);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_BROWN);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_CYAN);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_GRAY);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_GREEN);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIGHT_BLUE);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIGHT_GRAY);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_LIME);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_MAGENTA);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_ORANGE);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_PINK);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_PURPLE);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_RED);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_WHITE);
-        //blockStateModelGenerator.registerShulkerBox(ModBlocks.SHULKER_YELLOW);
     }
 
     /**
@@ -85,5 +67,7 @@ public class ModModelProvider extends FabricModelProvider
 
         itemModelGenerator.register(ModItems.ENDERITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_ENDERITE, Models.GENERATED);
+
+        itemModelGenerator.register(ModFluids.MOLTEN_ENDERITE_BUCKET, Models.GENERATED);
     }
 }

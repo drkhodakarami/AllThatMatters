@@ -1,9 +1,8 @@
-package jiraiyah.allthatmatters.block.entity.slot;
+package jiraiyah.allthatmatters.utils.slot;
 
 import jiraiyah.allthatmatters.item.ModItems;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
 
 public class InfusingRawInputSlot extends Slot

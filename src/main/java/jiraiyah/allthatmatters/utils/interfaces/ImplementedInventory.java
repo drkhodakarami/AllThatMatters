@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.utils;
+package jiraiyah.allthatmatters.utils.interfaces;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

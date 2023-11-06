@@ -1,13 +1,12 @@
-package jiraiyah.allthatmatters.block.entity.slot;
+package jiraiyah.allthatmatters.utils.slot;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.screen.slot.Slot;
 
-public class OutputSlot extends Slot
+public class InputSlot extends Slot
 {
-    public OutputSlot(Inventory inventory, int index, int x, int y)
+    public InputSlot(Inventory inventory, int index, int x, int y)
     {
         super(inventory, index, x, y);
     }
@@ -15,6 +14,8 @@ public class OutputSlot extends Slot
     @Override
     public boolean canInsert(ItemStack stack)
     {
-        return false;
+        //return stack.isOf(Items.BAMBOO_BLOCK);
+		
+		return true;
     }
 }

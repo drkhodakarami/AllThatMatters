@@ -32,7 +32,7 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
         if(world.isClient())
             return false;
 
-        return recipeItems.get(0).test(inventory.getStack(InfusingStationBlockEntity.RAW_INPUT_SLOT));
+        return recipeItems.get(0).test(inventory.getStack(InfusingStationBlockEntity.BASE_INPUT_SLOT));
     }
 
     @Override

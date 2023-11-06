@@ -1,5 +1,6 @@
-package jiraiyah.allthatmatters.block.entity.slot;
+package jiraiyah.allthatmatters.utils.slot;
 
+import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItems;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -18,6 +19,8 @@ public class InfusingLiquidationSlot extends Slot
     {
         return stack.isOf(ModItems.ENDERITE) ||
                 stack.isOf(Items.LAVA_BUCKET) ||
-                stack.isOf(Items.WATER_BUCKET);
+                stack.isOf(Items.WATER_BUCKET) ||
+                stack.isOf(Items.BUCKET) ||
+                stack.isOf(ModFluids.MOLTEN_ENDERITE_BUCKET);
     }
 }

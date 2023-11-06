@@ -5,11 +5,13 @@ import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
+import team.reborn.energy.api.EnergyStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,5 +41,8 @@ public class ModBlockEntities
                         FabricBlockEntityTypeBuilder.create(EnderiteShulkerBlockEntity::new,
                                 boxes.toArray(new EnderiteShulkerBoxBlock[0])).build(null));
         //endregion
+
+        EnergyStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.energyStorage, INFUSING_STATION_BLOCK_ENTITY);
+        FluidStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.fluidStorage, INFUSING_STATION_BLOCK_ENTITY);
     }
 }

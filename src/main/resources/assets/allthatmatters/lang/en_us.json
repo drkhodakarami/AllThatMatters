@@ -8,6 +8,7 @@
 
   "item.allthatmatters.ingot_enderite": "Enderite",
   "item.allthatmatters.raw_enderite": "Raw Enderite",
+  "item.allthatmatters.molten_enderite_bucket": "Bucket of Molten Enderite",
 
   "block.allthatmatters.block_citrine": "Citrine Block",
   "block.allthatmatters.block_ruby": "Ruby Block",
@@ -24,6 +25,7 @@
   "block.allthatmatters.ore_nether_citrine": "Citrine Nether Rack",
   "block.allthatmatters.ore_nether_ruby": "Ruby Nether Rack",
   "block.allthatmatters.ore_nether_sapphire": "Sapphire Nether Rack",
+  "block.allthatmatters.molten_enderite": "Molten Enderite",
 
   "block.allthatmatters.ore_world_citrine": "Citrine Ore",
   "block.allthatmatters.ore_world_ruby": "Ruby Ore",
@@ -58,5 +60,9 @@
 
   "infusing_station.advance_infusing": "Advance Infusing",
 
-  "itemgroup.allthatmattersgroup": "All That Matters"
+  "itemgroup.allthatmattersgroup": "All That Matters",
+
+  "allthatmatters.tooltip.liquid.amount.with.capacity": "%s / %s mB",
+  "allthatmatters.tooltip.liquid.amount": "%s mB",
+  "block.minecraft.empty": "Empty"
 }

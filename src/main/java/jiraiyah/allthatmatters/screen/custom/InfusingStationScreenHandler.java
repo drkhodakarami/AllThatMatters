@@ -1,11 +1,12 @@
 package jiraiyah.allthatmatters.screen.custom;
 
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
-import jiraiyah.allthatmatters.block.entity.slot.InfusingLiquidationSlot;
-import jiraiyah.allthatmatters.block.entity.slot.InfusingRawInputSlot;
-import jiraiyah.allthatmatters.block.entity.slot.InfusingToolSlot;
-import jiraiyah.allthatmatters.block.entity.slot.OutputSlot;
+import jiraiyah.allthatmatters.utils.slot.InfusingLiquidationSlot;
+import jiraiyah.allthatmatters.utils.slot.InfusingRawInputSlot;
+import jiraiyah.allthatmatters.utils.slot.InfusingToolSlot;
+import jiraiyah.allthatmatters.utils.slot.OutputSlot;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
+import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,38 +16,41 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
-import org.jetbrains.annotations.Nullable;
 
 public class InfusingStationScreenHandler extends ScreenHandler
 {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
+
     public final InfusingStationBlockEntity blockEntity;
+    public FluidStack fluidStack;
 
     public InfusingStationScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf)
     {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(InfusingStationBlockEntity.DELEGATRE_SIZE));
+                new ArrayPropertyDelegate(InfusingStationBlockEntity.DELEGATE_SIZE));
     }
 
     public InfusingStationScreenHandler(int syncId, PlayerInventory playerInventory,
-                                     BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
+                                     BlockEntity be, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.INFUSING_POLISHING_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), InfusingStationBlockEntity.TOTAL_SLOTS);
-        this.inventory = ((Inventory) blockEntity);
+        checkSize(((Inventory) be), InfusingStationBlockEntity.TOTAL_SLOTS);
+        this.inventory = ((Inventory) be);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
-        this.blockEntity = ((InfusingStationBlockEntity) blockEntity);
+        this.blockEntity = ((InfusingStationBlockEntity) be);
+        this.fluidStack = new FluidStack(blockEntity.fluidStorage.variant, blockEntity.fluidStorage.amount);
 
-        this.addSlot(new InfusingRawInputSlot(inventory, InfusingStationBlockEntity.RAW_INPUT_SLOT, 86, 15));
+        this.addSlot(new InfusingRawInputSlot(inventory, InfusingStationBlockEntity.BASE_INPUT_SLOT, 86, 15));
         this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.OUTPUT_SLOT, 86, 60));
-        this.addSlot(new InfusingLiquidationSlot(inventory, InfusingStationBlockEntity.LIQUID_INPUT_SLOT, 12, 15));
-        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.UPGRADE_INPUT_SLOT, 12, 60));
-        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.MAIN_TOOL_SLOT, 125, 15));
-        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.SECOND_TOOL_SLOT, 125, 37));
-        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.THIRD_TOOL_SLOT, 125, 60));
+        this.addSlot(new InfusingLiquidationSlot(inventory, InfusingStationBlockEntity.FLUID_INPUT_SLOT, 12, 15));
+        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.FLUID_OUTPUT_SLOT, 12, 60));
+        this.addSlot(new OutputSlot(inventory, InfusingStationBlockEntity.FLUID_UPGRADE_SLOT, 34, 60));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.MAIN_TOOL_SLOT, 114, 15));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.SECOND_TOOL_SLOT, 114, 37));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.THIRD_TOOL_SLOT, 114, 60));
+        this.addSlot(new InfusingToolSlot(inventory, InfusingStationBlockEntity.ENERGY_UPGRADE_SLOT, 135, 60));
 
 
         addPlayerInventory(playerInventory);
@@ -129,5 +133,10 @@ public class InfusingStationScreenHandler extends ScreenHandler
         int progressArrowSize = 20; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public void setFluid(FluidStack stack)
+    {
+        fluidStack = stack;
     }
 }

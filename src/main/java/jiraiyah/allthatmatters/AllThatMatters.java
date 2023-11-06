@@ -4,8 +4,10 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.datagen.ModWorldGenerator;
 import jiraiyah.allthatmatters.datagen.world.ModWorldGeneration;
+import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
+import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
@@ -31,5 +33,8 @@ public class AllThatMatters implements ModInitializer
 		ModScreenHandlers.register();
 		ModRecipes.register();
 		ModWorldGeneration.generateModWorldGen();
+		ModMessages.registerC2SPackets();
+
+		ModFluids.register();
 	}
 }

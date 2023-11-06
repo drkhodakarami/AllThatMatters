@@ -98,9 +98,7 @@ public class InfusingStationBlock extends BlockWithEntity implements BlockEntity
             NamedScreenHandlerFactory screenHandlerFactory = ((InfusingStationBlockEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null)
-            {
                 player.openHandledScreen(screenHandlerFactory);
-            }
         }
 
         return ActionResult.SUCCESS;

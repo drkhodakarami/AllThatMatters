@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.block.entity.slot;
+package jiraiyah.allthatmatters.utils.slot;
 
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import net.minecraft.block.Block;
