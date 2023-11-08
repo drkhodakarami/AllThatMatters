@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.compat;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
 import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
 import me.shedaniel.math.Rectangle;
@@ -22,7 +23,7 @@ public class ATMREIClientPlugin implements REIClientPlugin
     @Override
     public void registerDisplays(DisplayRegistry registry)
     {
-        registry.registerRecipeFiller(InfusingStationCraftingRecipe.class, InfusingStationCraftingRecipe.Type.INSTANCE, InfusingStationDisplay::new);
+        registry.registerRecipeFiller(InfusingStationCraftingRecipe.class, ModRecipes.INFUSING_STATION_TYPE, InfusingStationDisplay::new);
     }
 
     @Override

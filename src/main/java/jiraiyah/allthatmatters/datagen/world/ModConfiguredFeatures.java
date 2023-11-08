@@ -17,18 +17,18 @@ import java.util.List;
 
 public class ModConfiguredFeatures
 {
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_citrine"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_ruby"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_sapphire"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_citrine"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_ruby"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_sapphire"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_citrine"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_ruby"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_sapphire"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_citrine"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_ruby"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_sapphire"));
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_citrine"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_ruby"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_sapphire"));
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_ENDERITE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_enderite"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_citrine"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_ruby"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_sapphire"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_ENDERITE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_enderite"));
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
     {

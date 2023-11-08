@@ -4,7 +4,7 @@ package jiraiyah.allthatmatters.block.custom;
 import jiraiyah.allthatmatters.utils.interfaces.UpgradedShulker;
 import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
-import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreenHandler;
+import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.*;
@@ -41,8 +41,6 @@ import java.util.List;
 
 public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements UpgradedShulker
 {
-    public static final String KEY = "upgradedenderiteshulker";
-
     public EnderiteShulkerBoxBlock(DyeColor color)
     {
         super(color, Settings.copy(Blocks.SHULKER_BOX).nonOpaque().strength(2.0f,1200f).dynamicBounds().nonOpaque());
@@ -54,14 +52,12 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
         return new EnderiteShulkerBlockEntity(this.getColor(), pos, state);
     }
 
+    @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
     {
-        //ShulkersRegistry.UPGRADEDSHULKERENTITYTYPE is the block entity !
-        return world.isClient & type == ModBlockEntities.ENDERITE_SHULKER_ENTITY
-                ? (world1, pos, state1, blockEntity) ->
-                    ShulkerBoxBlockEntity.tick(world, pos, state, (ShulkerBoxBlockEntity) blockEntity)
-                : null;
+        return validateTicker(type, ModBlockEntities.ENDERITE_SHULKER_ENTITY,
+                (world1, pos, state1, blockEntity) -> blockEntity.customTick(world1, pos, state1));
     }
 
     @Override
@@ -70,10 +66,6 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
         super.onPlaced(world, pos, state, placer, itemStack);
         if (itemStack.hasNbt()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof EnderiteShulkerBlockEntity)
-            {
-                ((EnderiteShulkerBlockEntity) blockEntity).appendUpgrades(itemStack.getSubNbt(KEY));
-            }
         }
     }
 
@@ -81,12 +73,6 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state)
     {
         ItemStack itemStack = super.getPickStack(world, pos, state);
-        BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof EnderiteShulkerBlockEntity)
-        {
-            if (((EnderiteShulkerBlockEntity) blockEntity).hasUpgrades())
-                itemStack.setSubNbt(KEY, ((EnderiteShulkerBlockEntity) blockEntity).getUpgrades());
-        }
         return itemStack;
     }
 
@@ -119,7 +105,8 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
 
                 if (bl2)
                 {
-                    player.openHandledScreen(EnderiteShulkerScreenHandler.createScreenHandlerFactory(shulkerBoxBlockEntity, shulkerBoxBlockEntity.getDisplayName()));
+                    player.openHandledScreen(EnderiteShulkerScreenHandler.createScreenHandlerFactory(shulkerBoxBlockEntity,
+                            shulkerBoxBlockEntity.getDisplayName(), blockEntity));
                     player.incrementStat(Stats.OPEN_SHULKER_BOX);
                     PiglinBrain.onGuardedBlockInteracted(player, true);
                 }
@@ -150,8 +137,8 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
                 {
                     itemStack.setCustomName(shulkerBoxBlockEntity.getCustomName());
                 }
-                if (shulkerBoxBlockEntity.hasUpgrades())
-                    itemStack.setSubNbt(KEY, shulkerBoxBlockEntity.getUpgrades());
+                /*if (shulkerBoxBlockEntity.hasUpgrades())
+                    itemStack.setSubNbt(KEY, shulkerBoxBlockEntity.getUpgrades());*/
                 ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, itemStack);
                 itemEntity.setToDefaultPickupDelay();
                 world.spawnEntity(itemEntity);
@@ -171,7 +158,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof EnderiteShulkerBlockEntity shulkerBoxBlockEntity)
         {
-            return EnderiteShulkerScreenHandler.createScreenHandlerFactory(shulkerBoxBlockEntity, shulkerBoxBlockEntity.getDisplayName());
+            return EnderiteShulkerScreenHandler.createScreenHandlerFactory(shulkerBoxBlockEntity, shulkerBoxBlockEntity.getDisplayName(), blockEntity);
         }
         return null;
     }
@@ -180,13 +167,6 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options)
     {
         super.appendTooltip(stack, world, tooltip, options);
-        NbtCompound upgradeTag = stack.getSubNbt(KEY);
-        if (upgradeTag != null)
-        {
-            tooltip.add(Text.translatable("upgradedenderiteshulkers.hasupgrades"));
-            for (String str : upgradeTag.getKeys())
-                tooltip.add(Text.translatable("upgradedenderiteshulkers.upgrade." + str));
-        }
         NbtCompound compoundTag = stack.getSubNbt("BlockEntityTag");
         if (compoundTag != null)
         {

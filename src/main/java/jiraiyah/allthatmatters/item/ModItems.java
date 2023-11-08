@@ -24,9 +24,14 @@ public class ModItems
     public static final Item ENDERITE = registerItem("ingot_enderite", new Item(new FabricItemSettings()));
     public static final Item RAW_ENDERITE = registerItem("raw_enderite", new Item(new FabricItemSettings()));
 
+    private ModItems()
+    {
+        throw new AssertionError();
+    }
+
     private static Item registerItem(String name, Item item)
     {
-        return Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name), item);
+        return Registry.register(Registries.ITEM, AllThatMatters.identifier(name), item);
     }
 
     public static void register()

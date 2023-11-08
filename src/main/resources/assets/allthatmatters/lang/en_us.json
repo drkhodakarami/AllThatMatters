@@ -64,5 +64,10 @@
 
   "allthatmatters.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "allthatmatters.tooltip.liquid.amount": "%s mB",
-  "block.minecraft.empty": "Empty"
+  "block.minecraft.empty": "Empty",
+
+  "allthatmatters.all": "All",
+  "allthatmatters.none": "None",
+
+  "block.lchunkloader.chunk_loader": "Chunk Loader"
 }

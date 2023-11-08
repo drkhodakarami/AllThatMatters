@@ -1,13 +1,13 @@
 package jiraiyah.allthatmatters.block.entity.custom;
 
-import com.mojang.datafixers.types.templates.Check;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
 import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.networking.ModMessages;
+import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
-import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
+import jiraiyah.allthatmatters.screen.handler.InfusingStationScreenHandler;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import jiraiyah.allthatmatters.utils.interfaces.ImplementedInventory;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
@@ -307,8 +307,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
                 markDirty(world, pos, state);
             }
         }
-        if((this.isTankEmpty() || this.isTankReceivable()) &&
-                isLiquidOutputReceivable())
+        if((this.isTankEmpty() || this.isTankReceivable()) && isLiquidOutputReceivable())
         {
             if(this.hasFluidSourceInSlot())
             {
@@ -465,7 +464,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private boolean hasRecipe()
     {
-        Optional<RecipeEntry<InfusingStationCraftingRecipe>> recipe = getCurrentRecipe();
+        var recipe = getCurrentRecipe();
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
                 && canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
@@ -473,7 +472,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void craftItem()
     {
-        Optional<RecipeEntry<InfusingStationCraftingRecipe>> recipe = getCurrentRecipe();
+        var recipe = getCurrentRecipe();
 
         this.removeStack(BASE_INPUT_SLOT, 1);
 
@@ -481,6 +480,9 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
                 getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
+    // private Optional<? extends RecipeEntry<? extends Recipe<?>>> getCurrentRecipe()
+    // private Optional<?> getCurrentRecipe()
+    // Both forces you to cast later at usage
     private Optional<RecipeEntry<InfusingStationCraftingRecipe>> getCurrentRecipe()
     {
         SimpleInventory inv = new SimpleInventory(this.size());
@@ -489,7 +491,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
             inv.setStack(i, this.getStack(i));
         }
 
-        return getWorld().getRecipeManager().getFirstMatch(InfusingStationCraftingRecipe.Type.INSTANCE, inv, getWorld());
+        return getWorld().getRecipeManager().getFirstMatch(ModRecipes.INFUSING_STATION_TYPE, inv, getWorld());
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item)
@@ -563,9 +565,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private boolean fluidIsAcceptable()
     {
-        Optional<RecipeEntry<InfusingStationCraftingRecipe>> recipe = getCurrentRecipe();
-
-        if(recipe.get().value().getType() == InfusingStationCraftingRecipe.Type.INSTANCE)
+        if(getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
             return fluidStorage.variant.isOf(Fluids.WATER);
 
         return false;
@@ -644,7 +644,6 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         if(getStack(FLUID_INPUT_SLOT).isOf(ModItems.ENDERITE))
         {
             insertFluid(ModFluids.STILL_MOLTEN_ENDERITE, false);
-            return;
         }
     }
 
@@ -663,7 +662,6 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         if(fluidStorage.variant.isOf(Fluids.LAVA))
         {
             extractFluid(Fluids.LAVA, Items.LAVA_BUCKET);
-            return;
         }
     }
 
@@ -698,9 +696,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void useFluid()
     {
-        Optional<RecipeEntry<InfusingStationCraftingRecipe>> recipe = getCurrentRecipe();
-
-        if(recipe.get().value().getType() == InfusingStationCraftingRecipe.Type.INSTANCE)
+        if(getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
         {
             try (Transaction transaction = Transaction.openOuter())
             {

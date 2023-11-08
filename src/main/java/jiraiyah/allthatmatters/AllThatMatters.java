@@ -12,6 +12,8 @@ import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,9 +28,11 @@ public class AllThatMatters implements ModInitializer
 	{
 		LOGGER.info(">>> Initializing : " + ModID);
 
-		ModItemGroups.register();
+		LCLTicker.initialize();
 		ModItems.register();
 		ModBlocks.register();
+		ModItemGroups.register();
+		ModCommands.register();
 		ModBlockEntities.register();
 		ModScreenHandlers.register();
 		ModRecipes.register();
@@ -36,5 +40,11 @@ public class AllThatMatters implements ModInitializer
 		ModMessages.registerC2SPackets();
 
 		ModFluids.register();
+	}
+
+	@NotNull
+	public static Identifier identifier(@NotNull String path)
+	{
+		return new Identifier(ModID, path);
 	}
 }

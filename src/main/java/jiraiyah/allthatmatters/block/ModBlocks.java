@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.block;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
 import jiraiyah.allthatmatters.block.custom.EnderiteOre;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
@@ -15,10 +15,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class ModBlocks
 {
@@ -64,8 +60,8 @@ public class ModBlocks
     public static final Block ORE_ENDERITE = registerBlock("ore_enderite",
             new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)));
 
-    public static final Block CHUNK_LOADER = registerBlock("chunk_loader",
-            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final ChunkLoaderBlock CHUNK_LOADER = (ChunkLoaderBlock) registerBlock("chunk_loader",
+            new ChunkLoaderBlock());
 
     //region SHULKER BOXES
     public static final Block SHULKER_NORMAL = registerShulkerBlock("enderite_shulker_", null,
@@ -107,31 +103,36 @@ public class ModBlocks
     public static final Block INFUSING_STATION = registerBlock("infusing_station",
             new InfusingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
+    private ModBlocks()
+    {
+        throw new AssertionError();
+    }
+
     //region Helper Methods
     private static Block registerBlock(String name, Block block)
     {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name), block);
+        return Registry.register(Registries.BLOCK, AllThatMatters.identifier(name), block);
     }
 
     private static Block registerShulkerBlock(String name, DyeColor color, Block block)
     {
         if(color == null)
-            Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + "normal"),
+            Registry.register(Registries.ITEM, AllThatMatters.identifier(name + "normal"),
                 new BlockItem(block, new FabricItemSettings().fireproof()));
         else
-            Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name + color),
+            Registry.register(Registries.ITEM, AllThatMatters.identifier(name + color),
                     new BlockItem(block, new FabricItemSettings().fireproof()));
 
         if(color == null)
-            return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + "normal"), block);
+            return Registry.register(Registries.BLOCK, AllThatMatters.identifier(name + "normal"), block);
         else
-            return Registry.register(Registries.BLOCK, new Identifier(AllThatMatters.ModID, name + color.getName()), block);
+            return Registry.register(Registries.BLOCK, AllThatMatters.identifier(name + color.getName()), block);
     }
 
     private static Item registerBlockItem(String name, Block block)
     {
-        return Registry.register(Registries.ITEM, new Identifier(AllThatMatters.ModID, name),
+        return Registry.register(Registries.ITEM, AllThatMatters.identifier(name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 
@@ -164,7 +165,7 @@ public class ModBlocks
     public static Identifier getTextureForShulker(DyeColor color)
     {
         String colorName = color != null ? color.getName() : "normal";
-        return new Identifier(AllThatMatters.ModID, "shulker/enderite_shulker_" + colorName);
+        return AllThatMatters.identifier("shulker/enderite_shulker_" + colorName);
     }
 
     public static void register()

@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
+import jiraiyah.allthatmatters.recipe.ModRecipes;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -64,26 +65,17 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
     @Override
     public RecipeSerializer<?> getSerializer()
     {
-        return Serializer.INSTANCE;
+        return ModRecipes.INFUSING_STATION_SERIALIZER;
     }
 
     @Override
     public RecipeType<?> getType()
     {
-        return Type.INSTANCE;
-    }
-
-    public static class Type implements RecipeType<InfusingStationCraftingRecipe>
-    {
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "advance_infusing";
+        return ModRecipes.INFUSING_STATION_TYPE;
     }
 
     public static class Serializer implements RecipeSerializer<InfusingStationCraftingRecipe>
     {
-        public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "advance_infusing";
-
         public static final Codec<InfusingStationCraftingRecipe> CODEC = RecordCodecBuilder.create(in ->
                 in.group(validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
                                 .fieldOf("ingredients").forGetter(InfusingStationCraftingRecipe::getIngredients),

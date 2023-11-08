@@ -19,6 +19,11 @@ repositories {
 			includeGroup "curse.maven"
 		}
 	}
+
+	maven {
+		name = "CottonMC"
+		url = "https://server.bbkr.space/artifactory/libs-release"
+	}
 }
 
 loom {
@@ -59,8 +64,10 @@ dependencies {
 		transitive = false
 	}
 
-	modImplementation "curse.maven:reborncore-237903:4786770"
-	modImplementation "curse.maven:techreborn-233564:4786771"
+	modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
+
+	modRuntimeOnly "curse.maven:reborncore-237903:4786770"
+	modRuntimeOnly "curse.maven:techreborn-233564:4786771"
 }
 
 processResources {

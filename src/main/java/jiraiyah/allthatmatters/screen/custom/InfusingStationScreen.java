@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
 import jiraiyah.allthatmatters.screen.custom.renderer.EnergyInfoArea;
+import jiraiyah.allthatmatters.screen.handler.InfusingStationScreenHandler;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
 import jiraiyah.allthatmatters.utils.screen.MouseUtil;
@@ -20,7 +21,7 @@ import java.util.Optional;
 
 public class InfusingStationScreen extends HandledScreen<InfusingStationScreenHandler>
 {
-    private static final Identifier TEXTURE = new Identifier(AllThatMatters.ModID, "textures/gui/container/infusing_station.png");
+    private static final Identifier TEXTURE = AllThatMatters.identifier("textures/gui/container/infusing_station.png");
 
     private EnergyInfoArea energyInfoArea;
     private FluidStackRenderer fluidStackRenderer;

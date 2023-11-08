@@ -14,11 +14,10 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups
 {
     public static final ItemGroup ATM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(AllThatMatters.ModID, "allthatmattersgroup"),
+            AllThatMatters.identifier("allthatmattersgroup"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.allthatmattersgroup"))
-                    .icon(() -> new ItemStack(ModItems.RUBY)).entries((displayContext, entries) ->
+                    .icon(() -> new ItemStack(ModBlocks.CHUNK_LOADER)).entries((displayContext, entries) ->
                     {
-
                         entries.add(ModBlocks.CHUNK_LOADER);
                         entries.add(ModBlocks.INFUSING_STATION);
 

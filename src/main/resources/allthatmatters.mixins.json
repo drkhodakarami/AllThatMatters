@@ -5,7 +5,11 @@
 	"mixins": [
 		"ModMixin",
 		"ItemEntityMixin",
-		"ShulkerBoxBlockMixin"
+		"ShulkerBoxBlockMixin",
+		"ChunkTicketManagerInvoker",
+		"ChunkTicketTypeAccessor",
+		"MinecraftServerMixin",
+		"ThreadedAnvilChunkStorageInvoker"
 	],
 	"injectors": {
 		"defaultRequire": 1

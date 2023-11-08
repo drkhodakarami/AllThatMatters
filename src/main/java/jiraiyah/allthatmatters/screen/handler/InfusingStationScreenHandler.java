@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.screen.custom;
+package jiraiyah.allthatmatters.screen.handler;
 
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
 import jiraiyah.allthatmatters.utils.slot.InfusingLiquidationSlot;

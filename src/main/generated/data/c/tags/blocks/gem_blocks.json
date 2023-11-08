@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:block_ruby",
+    "allthatmatters:block_sapphire",
+    "allthatmatters:block_citrine",
+    "#minecraft:emerald_ores",
+    "#minecraft:lapis_ores",
+    "#minecraft:diamond_ores"
+  ]
+}

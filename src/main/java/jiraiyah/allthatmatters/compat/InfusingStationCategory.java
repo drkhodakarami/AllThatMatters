@@ -22,7 +22,7 @@ import java.util.List;
 public class InfusingStationCategory implements DisplayCategory<BasicDisplay>
 {
     public static final Identifier TEXTURE =
-            new Identifier(AllThatMatters.ModID, "textures/gui/container/infusing_station.png");
+            AllThatMatters.identifier("textures/gui/container/infusing_station.png");
 
     public static final CategoryIdentifier<InfusingStationDisplay> ADVANCE_INFUSING =
             CategoryIdentifier.of(AllThatMatters.ModID, "advance_infusing");

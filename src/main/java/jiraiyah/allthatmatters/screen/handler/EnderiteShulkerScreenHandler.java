@@ -1,9 +1,10 @@
-package jiraiyah.allthatmatters.screen.custom;
+package jiraiyah.allthatmatters.screen.handler;
 
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -31,12 +32,12 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
     public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf)
     {
         this(syncId, playerInventory, new SimpleInventory(buf.readInt()));
-
     }
 
     protected EnderiteShulkerScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory)
     {
         super(type, syncId);
+
         if (inventory.size() <= 81)
             columns = 9;
         else
@@ -77,7 +78,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
         }
     }
 
-    public static ExtendedScreenHandlerFactory createScreenHandlerFactory(Inventory inventory, Text text)
+    public static ExtendedScreenHandlerFactory createScreenHandlerFactory(Inventory inventory, Text text, BlockEntity blockEntity)
     {
         return new ExtendedScreenHandlerFactory() {
             @Override

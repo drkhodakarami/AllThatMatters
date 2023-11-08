@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.networking.packet;
 
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
-import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
+import jiraiyah.allthatmatters.screen.handler.InfusingStationScreenHandler;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;

@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.networking.packet;
 
 import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
-import jiraiyah.allthatmatters.screen.custom.InfusingStationScreenHandler;
+import jiraiyah.allthatmatters.screen.handler.InfusingStationScreenHandler;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;

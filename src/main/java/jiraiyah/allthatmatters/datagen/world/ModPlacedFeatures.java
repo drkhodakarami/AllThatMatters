@@ -19,18 +19,18 @@ import java.util.List;
 
 public class ModPlacedFeatures
 {
-    public static final RegistryKey<PlacedFeature> ORE_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_citrine_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_ruby_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_sapphire_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_citrine_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_ruby_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_sapphire_placed"));
 
-    public static final RegistryKey<PlacedFeature> ORE_NETHER_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_citrine_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_NETHER_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_ruby_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_NETHER_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_nether_sapphire_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_NETHER_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_nether_citrine_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_NETHER_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_nether_ruby_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_NETHER_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_nether_sapphire_placed"));
 
-    public static final RegistryKey<PlacedFeature> ORE_END_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_citrine_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_END_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_ruby_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_END_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_sapphire_placed"));
-    public static final RegistryKey<PlacedFeature> ORE_END_ENDERITE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID,"ore_end_enderite_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_END_CITRINE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_citrine_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_END_RUBY_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_ruby_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_END_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_sapphire_placed"));
+    public static final RegistryKey<PlacedFeature> ORE_END_ENDERITE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_enderite_placed"));
 
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
@@ -85,7 +85,7 @@ public class ModPlacedFeatures
 
     public static RegistryKey<PlacedFeature> registerKey(String name)
     {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(AllThatMatters.ModID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier(name));
     }
 
     private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,

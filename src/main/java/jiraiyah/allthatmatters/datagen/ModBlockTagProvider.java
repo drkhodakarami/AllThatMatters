@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.datagen;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.utils.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -18,14 +19,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
-        /*getOrCreateTagBuilder(ModTags.Blocks.GEM_BLOCKS)
-                .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.SAPPHIRE_BLOCK)
-                .add(ModBlocks.CITRINE_BLOCK)
+        getOrCreateTagBuilder(ModTags.Blocks.GEM_BLOCKS)
+                .add(ModBlocks.RUBY)
+                .add(ModBlocks.SAPPHIRE)
+                .add(ModBlocks.CITRINE)
                 .forceAddTag(BlockTags.EMERALD_ORES)
-                .forceAddTag(BlockTags.REDSTONE_ORES)
                 .forceAddTag(BlockTags.LAPIS_ORES)
-                .forceAddTag(BlockTags.DIAMOND_ORES);*/
+                .forceAddTag(BlockTags.DIAMOND_ORES);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.CITRINE)
@@ -63,7 +63,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.SHULKER_RED)
                 .add(ModBlocks.SHULKER_WHITE)
                 .add(ModBlocks.SHULKER_YELLOW)
-                .add(ModBlocks.CHUNK_LOADER)
                 .add(ModBlocks.INFUSING_STATION);
 
         /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
@@ -85,7 +84,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.ORE_WORLD_CITRINE)
                 .add(ModBlocks.ORE_WORLD_RUBY)
                 .add(ModBlocks.ORE_WORLD_SAPPHIRE)
-                .add(ModBlocks.CHUNK_LOADER)
                 .add(ModBlocks.INFUSING_STATION);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
