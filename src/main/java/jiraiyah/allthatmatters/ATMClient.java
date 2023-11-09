@@ -11,13 +11,12 @@ import jiraiyah.allthatmatters.screen.custom.ChunkLoaderScreen;
 import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreen;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
-import jiraiyah.allthatmatters.screen.handler.ChunkLoaderGUIHandler;
+import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
@@ -58,7 +57,7 @@ public class ATMClient implements ClientModInitializer
                 ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.FLOWING_MOLTEN_ENDERITE);
         //endregion
 
-        HandledScreens.<ChunkLoaderGUIHandler, ChunkLoaderScreen>register(ModScreenHandlers.CHUNK_LOADER_SCREEN_HANDLER, (gui, inventory, title) -> new ChunkLoaderScreen(gui, inventory.player, title));
+        HandledScreens.<ChunkLoaderScreenHandler, ChunkLoaderScreen>register(ModScreenHandlers.CHUNK_LOADER_SCREEN_HANDLER, (gui, inventory, title) -> new ChunkLoaderScreen(gui, inventory.player, title));
     }
 
     private void registerShulkerWith(DyeColor color)

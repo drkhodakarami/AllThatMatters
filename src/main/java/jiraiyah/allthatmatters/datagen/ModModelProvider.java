@@ -17,7 +17,6 @@ public class ModModelProvider extends FabricModelProvider
     }
 
     /**
-     *
      * The method to create BLOCK MODELS
      *
      * @param blockStateModelGenerator
@@ -48,7 +47,6 @@ public class ModModelProvider extends FabricModelProvider
     }
 
     /**
-     *
      * The method to create ITEM MODELS
      *
      * @param itemModelGenerator

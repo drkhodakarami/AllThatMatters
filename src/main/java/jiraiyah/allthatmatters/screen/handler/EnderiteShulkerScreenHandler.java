@@ -57,7 +57,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
         }
 
         int largeInvXOffset = 0;
-        if(columns == 12)
+        if (columns == 12)
             largeInvXOffset = 1;
 
         int offsetY = 18 + (rows * 18) + 14;
@@ -80,7 +80,8 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
 
     public static ExtendedScreenHandlerFactory createScreenHandlerFactory(Inventory inventory, Text text, BlockEntity blockEntity)
     {
-        return new ExtendedScreenHandlerFactory() {
+        return new ExtendedScreenHandlerFactory()
+        {
             @Override
             public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
             {
@@ -160,12 +161,14 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
     }
 
     @Environment(EnvType.CLIENT)
-    public int getRows() {
+    public int getRows()
+    {
         return this.rows;
     }
 
     @Environment(EnvType.CLIENT)
-    public int getColumns() {
+    public int getColumns()
+    {
         return this.columns;
     }
 }

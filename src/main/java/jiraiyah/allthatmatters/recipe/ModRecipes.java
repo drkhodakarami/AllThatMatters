@@ -10,7 +10,9 @@ import net.minecraft.util.Identifier;
 
 public class ModRecipes
 {
-    public static final RecipeType<InfusingStationCraftingRecipe> INFUSING_STATION_TYPE = new RecipeType<>() {};
+    public static final RecipeType<InfusingStationCraftingRecipe> INFUSING_STATION_TYPE = new RecipeType<>()
+    {
+    };
     public static final RecipeSerializer<InfusingStationCraftingRecipe> INFUSING_STATION_SERIALIZER = new InfusingStationCraftingRecipe.Serializer();
 
     private ModRecipes()
@@ -26,7 +28,8 @@ public class ModRecipes
         register("advance_infusing", INFUSING_STATION_SERIALIZER);
     }
 
-    private static void register(String name, RecipeSerializer<?> serializer) {
+    private static void register(String name, RecipeSerializer<?> serializer)
+    {
         Registry.register(Registries.RECIPE_SERIALIZER, AllThatMatters.identifier(name), serializer);
     }
 

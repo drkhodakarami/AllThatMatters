@@ -9,7 +9,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(ThreadedAnvilChunkStorage.class)
-public interface ThreadedAnvilChunkStorageInvoker {
+public interface ThreadedAnvilChunkStorageInvoker
+{
     @Invoker("shouldTick")
     boolean invokeIsTooFarFromPlayersToSpawnMobs(ChunkPos arg);
 

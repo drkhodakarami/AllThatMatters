@@ -58,8 +58,8 @@ public class InfusingStationBlock extends BlockWithEntity implements BlockEntity
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof InfusingStationBlockEntity)
             {
-                ItemScatterer.spawn(world, pos, (InfusingStationBlockEntity)blockEntity);
-                world.updateComparators(pos,this);
+                ItemScatterer.spawn(world, pos, (InfusingStationBlockEntity) blockEntity);
+                world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
         }

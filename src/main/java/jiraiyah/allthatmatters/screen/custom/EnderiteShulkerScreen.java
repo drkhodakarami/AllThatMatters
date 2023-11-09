@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 public class EnderiteShulkerScreen extends HandledScreen<EnderiteShulkerScreenHandler>
 {
     private final Identifier selectedTexture = AllThatMatters.identifier("textures/gui/container/enderite_shulker_box.png");
+
     public EnderiteShulkerScreen(EnderiteShulkerScreenHandler handler, PlayerInventory inventory, Text title)
     {
         super(handler, inventory, title);
@@ -46,7 +47,7 @@ public class EnderiteShulkerScreen extends HandledScreen<EnderiteShulkerScreenHa
         RenderSystem.setShaderTexture(0, this.selectedTexture);
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
-        context.drawTexture(this.selectedTexture,x,y,0,0, backgroundWidth - 2, backgroundHeight, 256, Math.max(256, backgroundHeight));
+        context.drawTexture(this.selectedTexture, x, y, 0, 0, backgroundWidth - 2, backgroundHeight, 256, Math.max(256, backgroundHeight));
     }
 
     @Override

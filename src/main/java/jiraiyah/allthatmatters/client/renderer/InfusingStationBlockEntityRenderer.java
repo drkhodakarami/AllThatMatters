@@ -20,7 +20,8 @@ import net.minecraft.world.World;
 public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<InfusingStationBlockEntity>
 {
     public InfusingStationBlockEntityRenderer(BlockEntityRendererFactory.Context context)
-    {}
+    {
+    }
 
     @Override
     public void render(InfusingStationBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay)

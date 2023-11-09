@@ -55,12 +55,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         return BlockLootTableGenerator.dropsWithSilkTouch(drop,
                 (LootPoolEntry.Builder)
                         this.applyExplosionDecay(drop,
-                ((LeafEntry.Builder)
-                        ItemEntry.builder(item)
-                                .apply(SetCountLootFunction
-                                        .builder(UniformLootNumberProvider
-                                                .create(min, max))))
-                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
+                                ((LeafEntry.Builder)
+                                        ItemEntry.builder(item)
+                                                .apply(SetCountLootFunction
+                                                        .builder(UniformLootNumberProvider
+                                                                .create(min, max))))
+                                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
     }
 
     public LootTable.Builder customOreDrops(Block drop, Item item)

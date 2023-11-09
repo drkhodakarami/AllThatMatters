@@ -2,7 +2,7 @@ package jiraiyah.allthatmatters.screen;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
-import jiraiyah.allthatmatters.screen.handler.ChunkLoaderGUIHandler;
+import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.InfusingStationScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
@@ -29,6 +29,6 @@ public class ModScreenHandlers
         AllThatMatters.LOGGER.info(">>> Registering Screen Handlers for : " + AllThatMatters.ModID);
 
         CHUNK_LOADER_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(ChunkLoaderBlock.ID,
-                (syncId, inventory, buf) -> new ChunkLoaderGUIHandler(syncId, inventory, ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
+                (syncId, inventory, buf) -> new ChunkLoaderScreenHandler(syncId, inventory, ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
     }
 }

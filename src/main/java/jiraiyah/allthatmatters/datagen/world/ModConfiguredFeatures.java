@@ -35,7 +35,7 @@ public class ModConfiguredFeatures
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherReplaceables = new TagMatchRuleTest(BlockTags.BASE_STONE_NETHER);
-        RuleTest endReplaceables  = new BlockMatchRuleTest(Blocks.END_STONE);
+        RuleTest endReplaceables = new BlockMatchRuleTest(Blocks.END_STONE);
 
         //region OVERWORLD
         List<OreFeatureConfig.Target> overworldCitrineOres =

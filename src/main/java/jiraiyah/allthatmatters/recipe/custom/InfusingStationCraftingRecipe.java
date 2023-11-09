@@ -30,7 +30,7 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
     @Override
     public boolean matches(SimpleInventory inventory, World world)
     {
-        if(world.isClient())
+        if (world.isClient())
             return false;
 
         return recipeItems.get(0).test(inventory.getStack(InfusingStationBlockEntity.BASE_INPUT_SLOT));
@@ -79,8 +79,8 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
         public static final Codec<InfusingStationCraftingRecipe> CODEC = RecordCodecBuilder.create(in ->
                 in.group(validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
                                 .fieldOf("ingredients").forGetter(InfusingStationCraftingRecipe::getIngredients),
-                RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
-        ).apply(in, InfusingStationCraftingRecipe::new));
+                        RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
+                ).apply(in, InfusingStationCraftingRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max)
         {
@@ -100,7 +100,7 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
         {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
-            for(int i = 0; i < inputs.size(); i++)
+            for (int i = 0; i < inputs.size(); i++)
                 inputs.set(i, Ingredient.fromPacket(buf));
 
             ItemStack output = buf.readItemStack();

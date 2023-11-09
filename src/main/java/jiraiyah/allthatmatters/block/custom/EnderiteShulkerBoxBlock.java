@@ -43,7 +43,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
 {
     public EnderiteShulkerBoxBlock(DyeColor color)
     {
-        super(color, Settings.copy(Blocks.SHULKER_BOX).nonOpaque().strength(2.0f,1200f).dynamicBounds().nonOpaque());
+        super(color, Settings.copy(Blocks.SHULKER_BOX).nonOpaque().strength(2.0f, 1200f).dynamicBounds().nonOpaque());
     }
 
     @Override
@@ -64,7 +64,8 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack)
     {
         super.onPlaced(world, pos, state, placer, itemStack);
-        if (itemStack.hasNbt()) {
+        if (itemStack.hasNbt())
+        {
             BlockEntity blockEntity = world.getBlockEntity(pos);
         }
     }
@@ -207,7 +208,8 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     }
 
     @Override
-    public boolean isUpgradedShulker() {
+    public boolean isUpgradedShulker()
+    {
         return true;
     }
 

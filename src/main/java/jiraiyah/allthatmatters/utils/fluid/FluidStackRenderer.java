@@ -87,7 +87,8 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack>
         RenderSystem.setShaderColor((color >> 16 & 255) / 255.0F, (float) (color >> 8 & 255) / 255.0F, (float) (color & 255) / 255.0F, 1F);
 
         int iteration = 0;
-        while (offsetHeight != 0) {
+        while (offsetHeight != 0)
+        {
             final int curHeight = offsetHeight < iconHeight ? offsetHeight : iconHeight;
 
             context.drawSprite(x, y - offsetHeight, 0, width, curHeight, sprite);

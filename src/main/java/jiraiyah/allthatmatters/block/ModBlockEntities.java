@@ -23,7 +23,7 @@ public class ModBlockEntities
             Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.identifier("infusing_station_be"),
                     FabricBlockEntityTypeBuilder.create(InfusingStationBlockEntity::new, ModBlocks.INFUSING_STATION).build());
 
-    public static BlockEntityType<ChunkLoaderBlockEntity> CHUNK_LOADER_BLOCK_ENTITY= Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":" + ChunkLoaderBlock.ID.getPath(),
+    public static BlockEntityType<ChunkLoaderBlockEntity> CHUNK_LOADER_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":" + ChunkLoaderBlock.ID.getPath(),
             FabricBlockEntityTypeBuilder.create(ChunkLoaderBlockEntity::new, ModBlocks.CHUNK_LOADER).build(null));
 
     public static BlockEntityType<EnderiteShulkerBlockEntity> ENDERITE_SHULKER_ENTITY;

@@ -5,7 +5,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(ChunkTicketType.class)
-public interface ChunkTicketTypeAccessor {
+public interface ChunkTicketTypeAccessor
+{
     @Accessor("name")
     String getName();
 }

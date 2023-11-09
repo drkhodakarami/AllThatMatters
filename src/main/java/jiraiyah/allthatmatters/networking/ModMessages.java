@@ -39,7 +39,7 @@ public class ModMessages
 
     public static void sendToServerPlayerEntities(World world, BlockPos pos, Identifier message, PacketByteBuf data)
     {
-        for(ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, pos))
+        for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, pos))
             ServerPlayNetworking.send(player, message, data);
     }
 }

@@ -14,17 +14,17 @@ public class EnergyInfoArea extends InfoArea
 {
     private final EnergyStorage energy;
 
-    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers,int xMin, int yMin)
+    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers, int xMin, int yMin)
     {
         this(client, vertexConsumers, xMin, yMin, null, 8, 64);
     }
 
-    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers,int xMin, int yMin, EnergyStorage energy)
+    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers, int xMin, int yMin, EnergyStorage energy)
     {
         this(client, vertexConsumers, xMin, yMin, energy, 8, 64);
     }
 
-    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers,int xMin, int yMin, EnergyStorage energy, int width, int height)
+    public EnergyInfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers, int xMin, int yMin, EnergyStorage energy, int width, int height)
     {
         super(client, vertexConsumers, new Rect2i(xMin, yMin, width, height));
         this.energy = energy;
@@ -39,7 +39,7 @@ public class EnergyInfoArea extends InfoArea
     public void draw(DrawContext context)
     {
         final int height = area.getHeight();
-        int stored = (int)(height * (energy.getAmount() / (float) energy.getCapacity()));
+        int stored = (int) (height * (energy.getAmount() / (float) energy.getCapacity()));
         context.fillGradient(
                 area.getX(), area.getY() + (height - stored),
                 area.getX() + area.getWidth(), area.getY() + area.getHeight(),

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -361,6 +362,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .input('I', Items.IRON_BARS)
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(Items.FURNACE), conditionsFromItem(Items.FURNACE))
+                .criterion(ItemTags.PLANKS.toString(), conditionsFromTag(ItemTags.PLANKS))
                 .criterion(hasItem(Items.IRON_BARS), conditionsFromItem(Items.IRON_BARS))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFUSING_STATION)));
 

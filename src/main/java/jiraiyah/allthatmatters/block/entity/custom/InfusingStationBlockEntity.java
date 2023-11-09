@@ -78,7 +78,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         protected void onFinalCommit()
         {
             markDirty();
-            if(!world.isClient())
+            if (!world.isClient())
             {
                 sendEnergyPacket();
             }
@@ -105,7 +105,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         {
             markDirty();
 
-            if(!world.isClient())
+            if (!world.isClient())
             {
                 sendFluidPacket();
             }
@@ -122,10 +122,13 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     public InfusingStationBlockEntity(BlockPos pos, BlockState state)
     {
         super(ModBlockEntities.INFUSING_STATION_BLOCK_ENTITY, pos, state);
-        this.propertyDelegate = new PropertyDelegate() {
+        this.propertyDelegate = new PropertyDelegate()
+        {
             @Override
-            public int get(int index) {
-                return switch (index) {
+            public int get(int index)
+            {
+                return switch (index)
+                {
                     case 0 -> InfusingStationBlockEntity.this.progress;
                     case 1 -> InfusingStationBlockEntity.this.maxProgress;
                     case 2 -> InfusingStationBlockEntity.this.liquidProgress;
@@ -135,8 +138,10 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
             }
 
             @Override
-            public void set(int index, int value) {
-                switch (index) {
+            public void set(int index, int value)
+            {
+                switch (index)
+                {
                     case 0 -> InfusingStationBlockEntity.this.progress = value;
                     case 1 -> InfusingStationBlockEntity.this.maxProgress = value;
                     case 2 -> InfusingStationBlockEntity.this.liquidProgress = value;
@@ -145,7 +150,8 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
             }
 
             @Override
-            public int size() {
+            public int size()
+            {
                 return 4;
             }
         };
@@ -186,9 +192,9 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
         // TOP --> RAW SLOT
 
-        if(side == Direction.UP)
-            return slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ;
-        if(side == Direction.DOWN)
+        if (side == Direction.UP)
+            return slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot);
+        if (side == Direction.DOWN)
             return false;
 
         // RIGHT --> TOOL SLOTS
@@ -196,30 +202,26 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
         return switch (localDir)
         {
-            default ->
-                    side.getOpposite() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
-                            side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.getOpposite() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.getOpposite() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.getOpposite() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
-            case EAST ->
-                    side.rotateYClockwise() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
-                            side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYClockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYClockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYClockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
-            case SOUTH ->
-                    side == Direction.NORTH &&  slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
-                            side == Direction.EAST &&  slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side == Direction.EAST &&  slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side == Direction.EAST &&  slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
-            case WEST ->
-                    side.rotateYCounterclockwise() == Direction.NORTH &&  slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot)  || // TOP
-                            side.rotateYCounterclockwise() == Direction.EAST &&  slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYCounterclockwise() == Direction.EAST &&  slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYCounterclockwise() == Direction.EAST &&  slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot)  || //RIGHT
-                            side.rotateYCounterclockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot) ; // LEFT
+            default -> side.getOpposite() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
+                    side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.getOpposite() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.getOpposite() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
+            case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
+                    side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYClockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYClockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYClockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
+            case SOUTH -> side == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
+                    side == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
+            case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
+                    side.rotateYCounterclockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYCounterclockwise() == Direction.EAST && slot == SECOND_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYCounterclockwise() == Direction.EAST && slot == THIRD_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT
+                    side.rotateYCounterclockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
         };
 
     }
@@ -228,7 +230,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     public boolean canExtract(int slot, ItemStack stack, Direction side)
     {
         Direction localDir = this.getWorld().getBlockState(this.pos).get(InfusingStationBlock.FACING);
-        if(side == Direction.DOWN)
+        if (side == Direction.DOWN)
             return slot == OUTPUT_SLOT || slot == FLUID_OUTPUT_SLOT;
 
         return switch (localDir)
@@ -287,7 +289,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     public void tick(World world, BlockPos pos, BlockState state)
     {
-        if(world.isClient())
+        if (world.isClient())
             return;
 
         handleFluidTick(world, pos, state);
@@ -298,22 +300,22 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     //region TICK HANDLIGN METHODS
     private void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        if(!this.isTankEmpty() && isLiquidOutputReceivable())
+        if (!this.isTankEmpty() && isLiquidOutputReceivable())
         {
-            if(this.isItemStackEmptyBucket())
+            if (this.isItemStackEmptyBucket())
             {
                 this.transferFluidFromFluidTank();
                 this.resetLiquidProgress();
                 markDirty(world, pos, state);
             }
         }
-        if((this.isTankEmpty() || this.isTankReceivable()) && isLiquidOutputReceivable())
+        if ((this.isTankEmpty() || this.isTankReceivable()) && isLiquidOutputReceivable())
         {
-            if(this.hasFluidSourceInSlot())
+            if (this.hasFluidSourceInSlot())
             {
-                if(this.isItemStackCompatibleWithTank())
+                if (this.isItemStackCompatibleWithTank())
                 {
-                    if(this.isItemStackLiquidBucket())
+                    if (this.isItemStackLiquidBucket())
                     {
                         this.transferFluidToFluidTank();
                         this.resetLiquidProgress();
@@ -334,7 +336,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         }
         else
         {
-            if(this.liquidProgress != 0)
+            if (this.liquidProgress != 0)
             {
                 this.resetLiquidProgress();
                 markDirty(world, pos, state);
@@ -374,11 +376,11 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void handleItemCraftingTick(World world, BlockPos pos, BlockState state)
     {
-        if(this.isOutputSlotEmptyOrReceivable())
+        if (this.isOutputSlotEmptyOrReceivable())
         {
-            if(this.hasRecipe())
+            if (this.hasRecipe())
             {
-                if(this.shouldUseEnergy() && this.hasEnoughEnergy() &&
+                if (this.shouldUseEnergy() && this.hasEnoughEnergy() &&
                         this.shouldUseFluid() && this.hasEnoughFluid() && this.fluidIsAcceptable())
                 {
                     this.increaseCraftProgress();
@@ -391,7 +393,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
                     }
                     markDirty(world, pos, state);
                 }
-                else if(!this.shouldUseEnergy() && this.shouldUseFluid() && this.hasEnoughFluid() && this.fluidIsAcceptable())
+                else if (!this.shouldUseEnergy() && this.shouldUseFluid() && this.hasEnoughFluid() && this.fluidIsAcceptable())
                 {
                     this.increaseCraftProgress();
                     if (hasCraftingFinished())
@@ -431,7 +433,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
         }
         else
         {
-            if(this.progress != 0)
+            if (this.progress != 0)
             {
                 this.resetProgress();
                 markDirty(world, pos, state);
@@ -486,7 +488,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     private Optional<RecipeEntry<InfusingStationCraftingRecipe>> getCurrentRecipe()
     {
         SimpleInventory inv = new SimpleInventory(this.size());
-        for(int i = 0; i < this.size(); i++)
+        for (int i = 0; i < this.size(); i++)
         {
             inv.setStack(i, this.getStack(i));
         }
@@ -524,7 +526,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void extractEnergy()
     {
-        try(Transaction transaction = Transaction.openOuter())
+        try (Transaction transaction = Transaction.openOuter())
         {
             energyStorage.extract(ENERGY_PER_TICK, transaction);
             transaction.commit();
@@ -565,7 +567,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private boolean fluidIsAcceptable()
     {
-        if(getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
+        if (getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
             return fluidStorage.variant.isOf(Fluids.WATER);
 
         return false;
@@ -612,13 +614,13 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     {
         return (getStack(FLUID_INPUT_SLOT).isOf(ModItems.ENDERITE) &&
                 (this.fluidStorage.variant.isOf(ModFluids.STILL_MOLTEN_ENDERITE) ||
-                        this.fluidStorage.amount == 0))||
+                        this.fluidStorage.amount == 0)) ||
                 (getStack(FLUID_INPUT_SLOT).isOf(ModFluids.MOLTEN_ENDERITE_BUCKET) &&
                         (this.fluidStorage.variant.isOf(ModFluids.STILL_MOLTEN_ENDERITE) ||
-                                this.fluidStorage.amount == 0))||
+                                this.fluidStorage.amount == 0)) ||
                 (getStack(FLUID_INPUT_SLOT).isOf(Items.WATER_BUCKET) &&
                         (this.fluidStorage.variant.isOf(Fluids.WATER) ||
-                                this.fluidStorage.amount == 0))||
+                                this.fluidStorage.amount == 0)) ||
                 (getStack(FLUID_INPUT_SLOT).isOf(Items.LAVA_BUCKET) &&
                         (this.fluidStorage.variant.isOf(Fluids.LAVA) ||
                                 this.fluidStorage.amount == 0));
@@ -626,22 +628,22 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void transferFluidToFluidTank()
     {
-        if(getStack(FLUID_INPUT_SLOT).isOf(ModFluids.MOLTEN_ENDERITE_BUCKET))
+        if (getStack(FLUID_INPUT_SLOT).isOf(ModFluids.MOLTEN_ENDERITE_BUCKET))
         {
             insertFluid(ModFluids.STILL_MOLTEN_ENDERITE, true);
             return;
         }
-        if(getStack(FLUID_INPUT_SLOT).isOf(Items.WATER_BUCKET))
+        if (getStack(FLUID_INPUT_SLOT).isOf(Items.WATER_BUCKET))
         {
             insertFluid(Fluids.WATER, true);
             return;
         }
-        if(getStack(FLUID_INPUT_SLOT).isOf(Items.LAVA_BUCKET))
+        if (getStack(FLUID_INPUT_SLOT).isOf(Items.LAVA_BUCKET))
         {
             insertFluid(Fluids.LAVA, true);
             return;
         }
-        if(getStack(FLUID_INPUT_SLOT).isOf(ModItems.ENDERITE))
+        if (getStack(FLUID_INPUT_SLOT).isOf(ModItems.ENDERITE))
         {
             insertFluid(ModFluids.STILL_MOLTEN_ENDERITE, false);
         }
@@ -649,17 +651,17 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void transferFluidFromFluidTank()
     {
-        if(fluidStorage.variant.isOf(ModFluids.STILL_MOLTEN_ENDERITE))
+        if (fluidStorage.variant.isOf(ModFluids.STILL_MOLTEN_ENDERITE))
         {
             extractFluid(ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.MOLTEN_ENDERITE_BUCKET);
             return;
         }
-        if(fluidStorage.variant.isOf(Fluids.WATER))
+        if (fluidStorage.variant.isOf(Fluids.WATER))
         {
             extractFluid(Fluids.WATER, Items.WATER_BUCKET);
             return;
         }
-        if(fluidStorage.variant.isOf(Fluids.LAVA))
+        if (fluidStorage.variant.isOf(Fluids.LAVA))
         {
             extractFluid(Fluids.LAVA, Items.LAVA_BUCKET);
         }
@@ -675,7 +677,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
             transaction.commit();
 
             this.removeStack(FLUID_INPUT_SLOT, 1);
-            if(giveBucket)
+            if (giveBucket)
                 this.setStack(FLUID_OUTPUT_SLOT, new ItemStack(Items.BUCKET, getStack(FLUID_OUTPUT_SLOT).getCount() + 1));
         }
     }
@@ -696,7 +698,7 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
 
     private void useFluid()
     {
-        if(getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
+        if (getCurrentRecipe().get().value().getType() == ModRecipes.INFUSING_STATION_TYPE)
         {
             try (Transaction transaction = Transaction.openOuter())
             {
@@ -735,18 +737,18 @@ public class InfusingStationBlockEntity extends BlockEntity implements ExtendedS
     //region HELPER METHODS
     public ItemStack getRenderStack()
     {
-        if(this.getStack(OUTPUT_SLOT).isEmpty())
+        if (this.getStack(OUTPUT_SLOT).isEmpty())
             return this.getStack(BASE_INPUT_SLOT);
         return this.getStack(OUTPUT_SLOT);
     }
 
     private boolean StackAcceptableInSlot(ItemStack stack, int slot)
     {
-        if(slot == BASE_INPUT_SLOT)
+        if (slot == BASE_INPUT_SLOT)
             return StackIsRawGem(stack);
-        if(slot == MAIN_TOOL_SLOT || slot == SECOND_TOOL_SLOT || slot == THIRD_TOOL_SLOT)
+        if (slot == MAIN_TOOL_SLOT || slot == SECOND_TOOL_SLOT || slot == THIRD_TOOL_SLOT)
             return StackIsTool(stack);
-        if(slot == FLUID_INPUT_SLOT)
+        if (slot == FLUID_INPUT_SLOT)
             return StackIsLiquidable(stack);
         return false;
     }

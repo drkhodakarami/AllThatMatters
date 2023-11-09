@@ -14,13 +14,16 @@ public class EnderiteShulkerSlot extends ShulkerBoxSlot
     }
 
     @Override
-    public boolean canInsert(ItemStack stack) {
+    public boolean canInsert(ItemStack stack)
+    {
         return !(Block.getBlockFromItem(stack.getItem()) instanceof EnderiteShulkerBoxBlock) && super.canInsert(stack);
     }
 
     @Override
-    public void setStack(ItemStack stack) {
-        if (Block.getBlockFromItem(stack.getItem()) instanceof EnderiteShulkerBoxBlock) {
+    public void setStack(ItemStack stack)
+    {
+        if (Block.getBlockFromItem(stack.getItem()) instanceof EnderiteShulkerBoxBlock)
+        {
             this.inventory.markDirty();
         }
         super.setStack(stack);

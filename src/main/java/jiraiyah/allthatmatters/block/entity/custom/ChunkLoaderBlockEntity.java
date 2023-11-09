@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.block.entity.custom;
 
 import jiraiyah.allthatmatters.block.ModBlockEntities;
-import jiraiyah.allthatmatters.screen.handler.ChunkLoaderGUIHandler;
+import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -19,22 +19,26 @@ import org.jetbrains.annotations.Nullable;
 public class ChunkLoaderBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ExtendedScreenHandlerFactory
 {
 
-    public ChunkLoaderBlockEntity(BlockPos pos, BlockState state) {
+    public ChunkLoaderBlockEntity(BlockPos pos, BlockState state)
+    {
         super(ModBlockEntities.CHUNK_LOADER_BLOCK_ENTITY, pos, state);
     }
 
     @Override
-    public Text getDisplayName() {
+    public Text getDisplayName()
+    {
         return Text.translatable(getCachedState().getBlock().getTranslationKey());
     }
 
     @Override
-    public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new ChunkLoaderGUIHandler(syncId, inv, ScreenHandlerContext.create(world, pos));
+    public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player)
+    {
+        return new ChunkLoaderScreenHandler(syncId, inv, ScreenHandlerContext.create(world, pos));
     }
 
     @Override
-    public void writeScreenOpeningData(ServerPlayerEntity serverPlayerEntity, PacketByteBuf packetByteBuf) {
+    public void writeScreenOpeningData(ServerPlayerEntity serverPlayerEntity, PacketByteBuf packetByteBuf)
+    {
         packetByteBuf.writeBlockPos(pos);
     }
 }

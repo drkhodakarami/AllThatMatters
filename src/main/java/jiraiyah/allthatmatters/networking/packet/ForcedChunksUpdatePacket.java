@@ -2,8 +2,8 @@ package jiraiyah.allthatmatters.networking.packet;
 
 import io.netty.buffer.Unpooled;
 import jiraiyah.allthatmatters.AllThatMatters;
-import jiraiyah.allthatmatters.screen.handler.ChunkLoaderGUIHandler;
-import jiraiyah.allthatmatters.utils.data.LCLPersistentChunks;
+import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
+import jiraiyah.allthatmatters.utils.data.PersistentChunks;
 import jiraiyah.allthatmatters.utils.data.SerializableChunkPos;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
@@ -32,100 +32,121 @@ public class ForcedChunksUpdatePacket
     private final boolean state;
     private ArrayList<SerializableChunkPos> chunksPos;
 
-    private ForcedChunksUpdatePacket(int x, int z, boolean state) {
+    private ForcedChunksUpdatePacket(int x, int z, boolean state)
+    {
         this.x = x;
         this.z = z;
         this.state = state;
     }
 
-    public ForcedChunksUpdatePacket(int x, int z, boolean state, ArrayList<SerializableChunkPos> chunksPos) {
+    public ForcedChunksUpdatePacket(int x, int z, boolean state, ArrayList<SerializableChunkPos> chunksPos)
+    {
         this(x, z, state);
         this.chunksPos = chunksPos;
     }
 
-    public ForcedChunksUpdatePacket(BlockPos pos, boolean state, ArrayList<SerializableChunkPos> chunksPos) {
+    public ForcedChunksUpdatePacket(BlockPos pos, boolean state, ArrayList<SerializableChunkPos> chunksPos)
+    {
         this(pos.getX() >> 4, pos.getZ() >> 4, state);
         this.chunksPos = chunksPos;
     }
 
-    public ForcedChunksUpdatePacket(BlockPos pos, boolean state, SerializableChunkPos... chunksPos) {
+    public ForcedChunksUpdatePacket(BlockPos pos, boolean state, SerializableChunkPos... chunksPos)
+    {
         this(pos.getX() >> 4, pos.getZ() >> 4, state);
         this.chunksPos = new ArrayList<>();
         Collections.addAll(this.chunksPos, chunksPos);
     }
 
-    public static ForcedChunksUpdatePacket read(PacketByteBuf buf) {
+    public static ForcedChunksUpdatePacket read(PacketByteBuf buf)
+    {
         ArrayList<SerializableChunkPos> chunks = new ArrayList<>();
         int x = buf.readInt();
         int z = buf.readInt();
         boolean state = buf.readBoolean();
         int size = buf.readInt();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
+        {
             chunks.add(SerializableChunkPos.read(buf));
         }
         return new ForcedChunksUpdatePacket(x, z, state, chunks);
     }
 
-    public void sendToServer() {
+    public void sendToServer()
+    {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         write(buf);
         ClientPlayNetworking.send(PACKET_ID, buf);
     }
 
-    public void write(PacketByteBuf buf) {
+    public void write(PacketByteBuf buf)
+    {
         buf.writeInt(getX());
         buf.writeInt(getZ());
         buf.writeBoolean(isState());
         int size = getChunksPos().size();
         buf.writeInt(size);
-        for (SerializableChunkPos chunksPo : getChunksPos()) {
+        for (SerializableChunkPos chunksPo : getChunksPos())
+        {
             chunksPo.write(buf);
         }
     }
 
-    public void onClientReceive(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender) {
-        client.execute(() -> {
+    public void onClientReceive(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender)
+    {
+        client.execute(() ->
+        {
             ClientPlayerEntity player = MinecraftClient.getInstance().player;
             assert player != null;
             ScreenHandler screenHandler = player.currentScreenHandler;
-            if (screenHandler != null) {
-                if (screenHandler instanceof ChunkLoaderGUIHandler) {
-                    ChunkLoaderGUIHandler clHandler = (ChunkLoaderGUIHandler) screenHandler;
+            if (screenHandler != null)
+            {
+                if (screenHandler instanceof ChunkLoaderScreenHandler)
+                {
+                    ChunkLoaderScreenHandler clHandler = (ChunkLoaderScreenHandler) screenHandler;
                     clHandler.refreshGUI(this);
                 }
             }
         });
     }
 
-    public void sendTo(PlayerEntity player) {
+    public void sendTo(PlayerEntity player)
+    {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
         write(buf);
         ServerPlayNetworking.send((ServerPlayerEntity) player, PACKET_ID, buf);
     }
 
-    public void onServerReceive(MinecraftServer server, ServerPlayerEntity playerEntity, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender) {
-        for (SerializableChunkPos chunksPo : getChunksPos()) {
-            LCLPersistentChunks.forceLoadChunk(server, chunksPo, isState());
+    public void onServerReceive(MinecraftServer server, ServerPlayerEntity playerEntity, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender)
+    {
+        for (SerializableChunkPos chunksPo : getChunksPos())
+        {
+            PersistentChunks.forceLoadChunk(server, chunksPo, isState());
         }
         List<ServerPlayerEntity> targets = server.getPlayerManager().getPlayerList();
-        for (ServerPlayerEntity target : targets) {
+        for (ServerPlayerEntity target : targets)
+        {
             sendTo(target);
         }
     }
 
-    public ArrayList<SerializableChunkPos> getChunksPos() {
+    public ArrayList<SerializableChunkPos> getChunksPos()
+    {
         return chunksPos;
     }
 
-    public int getX() {
+    public int getX()
+    {
         return x;
     }
 
-    public int getZ() {
+    public int getZ()
+    {
         return z;
     }
 
-    public boolean isState() {
+    public boolean isState()
+    {
         return state;
     }
 }

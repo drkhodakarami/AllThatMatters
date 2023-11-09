@@ -31,6 +31,6 @@ public class ATMREIClientPlugin implements REIClientPlugin
     {
         registry.registerClickArea(screen ->
                         new Rectangle(75, 30, 20, 30),
-                        InfusingStationScreen.class, InfusingStationCategory.ADVANCE_INFUSING);
+                InfusingStationScreen.class, InfusingStationCategory.ADVANCE_INFUSING);
     }
 }

@@ -15,7 +15,7 @@ public class InputSlot extends Slot
     public boolean canInsert(ItemStack stack)
     {
         //return stack.isOf(Items.BAMBOO_BLOCK);
-		
-		return true;
+
+        return true;
     }
 }

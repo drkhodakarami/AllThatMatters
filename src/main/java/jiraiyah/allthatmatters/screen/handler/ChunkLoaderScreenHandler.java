@@ -12,7 +12,7 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.custom.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.networking.packet.ForcedChunksUpdatePacket;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
-import jiraiyah.allthatmatters.utils.data.LclData;
+import jiraiyah.allthatmatters.utils.data.ChunkData;
 import jiraiyah.allthatmatters.utils.data.SerializableChunkPos;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -22,14 +22,15 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 
-public class ChunkLoaderGUIHandler extends SyncedGuiDescription
+public class ChunkLoaderScreenHandler extends SyncedGuiDescription
 {
     ChunkLoaderBlockEntity loaderEntity;
     WToggleButton[][] buttonsMatrix;
     SerializableChunkPos centre;
     ScreenHandlerContext context;
 
-    public ChunkLoaderGUIHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
+    public ChunkLoaderScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context)
+    {
         super(ModScreenHandlers.CHUNK_LOADER_SCREEN_HANDLER, syncId, playerInventory, getBlockInventory(context), null);
         this.context = context;
         context.run((world, pos) -> loaderEntity = (ChunkLoaderBlockEntity) world.getBlockEntity(pos));
@@ -41,10 +42,13 @@ public class ChunkLoaderGUIHandler extends SyncedGuiDescription
         setupButtonsGrid(root);
 
         WButton selectAll = new WButton(Text.of("All"));
-        selectAll.setOnClick(() -> {
+        selectAll.setOnClick(() ->
+        {
             ArrayList<SerializableChunkPos> data = new ArrayList<>();
-            for (int i = 0; i < LclData.SIZE; i++) {
-                for (int j = 0; j < LclData.SIZE; j++) {
+            for (int i = 0; i < ChunkData.SIZE; i++)
+            {
+                for (int j = 0; j < ChunkData.SIZE; j++)
+                {
                     data.add(centre.getChunkAtRelativeOffset(i, j));
                 }
             }
@@ -53,10 +57,13 @@ public class ChunkLoaderGUIHandler extends SyncedGuiDescription
         });
 
         WButton selectNone = new WButton(Text.of("None"));
-        selectNone.setOnClick(() -> {
+        selectNone.setOnClick(() ->
+        {
             ArrayList<SerializableChunkPos> data = new ArrayList<>();
-            for (int i = 0; i < LclData.SIZE; i++) {
-                for (int j = 0; j < LclData.SIZE; j++) {
+            for (int i = 0; i < ChunkData.SIZE; i++)
+            {
+                for (int j = 0; j < ChunkData.SIZE; j++)
+                {
                     data.add(centre.getChunkAtRelativeOffset(i, j));
                 }
             }
@@ -70,25 +77,33 @@ public class ChunkLoaderGUIHandler extends SyncedGuiDescription
     }
 
     @Override
-    public boolean canUse(PlayerEntity entity) {
+    public boolean canUse(PlayerEntity entity)
+    {
         return canUse(context, entity, ModBlocks.CHUNK_LOADER);
     }
 
-    public void refreshGUI(ForcedChunksUpdatePacket payload) {
+    public void refreshGUI(ForcedChunksUpdatePacket payload)
+    {
         ArrayList<SerializableChunkPos> chunks = payload.getChunksPos();
-        if (chunks.size() > 0) {
-            if (!chunks.get(0).getDimension().equals(centre.getDimension())) {
+        if (chunks.size() > 0)
+        {
+            if (!chunks.get(0).getDimension().equals(centre.getDimension()))
+            {
                 System.out.println("Not calculating, other dim");
                 return;
             }
             SerializableChunkPos updateCentre = new SerializableChunkPos(payload.getX(), payload.getZ(), centre.getDimension());
-            if (centre.distanceFrom(updateCentre) > LclData.SIZE * 1.5D) {
+            if (centre.distanceFrom(updateCentre) > ChunkData.SIZE * 1.5D)
+            {
                 System.out.println("Not calculating too far");
                 return;
             }
-            for (int i = 0; i < LclData.SIZE; i++) {
-                for (int j = 0; j < LclData.SIZE; j++) {
-                    if (chunks.contains(centre.getChunkAtRelativeOffset(i, j))) {
+            for (int i = 0; i < ChunkData.SIZE; i++)
+            {
+                for (int j = 0; j < ChunkData.SIZE; j++)
+                {
+                    if (chunks.contains(centre.getChunkAtRelativeOffset(i, j)))
+                    {
                         buttonsMatrix[i][j].setToggle(payload.isState());
                     }
                 }
@@ -96,7 +111,8 @@ public class ChunkLoaderGUIHandler extends SyncedGuiDescription
         }
     }
 
-    private void setupButtonsGrid(WPlainPanel root) {
+    private void setupButtonsGrid(WPlainPanel root)
+    {
         WLabel north = new WLabel(Text.of("N"));
         north.setHorizontalAlignment(HorizontalAlignment.CENTER);
         north.setVerticalAlignment(VerticalAlignment.CENTER);
@@ -110,15 +126,18 @@ public class ChunkLoaderGUIHandler extends SyncedGuiDescription
         west.setHorizontalAlignment(HorizontalAlignment.CENTER);
         west.setVerticalAlignment(VerticalAlignment.CENTER);
 
-        buttonsMatrix = new WToggleButton[LclData.SIZE][LclData.SIZE];
-        for (int i = 0; i < LclData.SIZE; i++) {
+        buttonsMatrix = new WToggleButton[ChunkData.SIZE][ChunkData.SIZE];
+        for (int i = 0; i < ChunkData.SIZE; i++)
+        {
             int posX = (19 * i + 16);
-            for (int j = 0; j < LclData.SIZE; j++) {
+            for (int j = 0; j < ChunkData.SIZE; j++)
+            {
                 WToggleButton curr = new WToggleButton(new Identifier("lchunkloader:textures/gui/loaded.png"), new Identifier("lchunkloader:textures/gui/not_loaded.png"));
                 int finalI = i;
                 int finalJ = j;
                 //System.out.println(i+", "+j);
-                curr.setOnToggle((on) -> {
+                curr.setOnToggle((on) ->
+                {
                     ForcedChunksUpdatePacket pack = new ForcedChunksUpdatePacket(loaderEntity.getPos(), on, centre.getChunkAtRelativeOffset(finalI, finalJ));
                     pack.sendToServer();
                 });

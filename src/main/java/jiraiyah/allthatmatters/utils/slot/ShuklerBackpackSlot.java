@@ -15,7 +15,8 @@ public class ShuklerBackpackSlot extends Slot
     }
 
     @Override
-    public boolean canInsert(ItemStack stack) {
+    public boolean canInsert(ItemStack stack)
+    {
         return (Block.getBlockFromItem(stack.getItem()) instanceof EnderiteShulkerBoxBlock) || stack.isOf(Items.SHULKER_BOX);
     }
 }

@@ -7,9 +7,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(ChunkTicketManager.class)
-public interface ChunkTicketManagerInvoker {
+public interface ChunkTicketManagerInvoker
+{
     @Invoker("getLevel")
-    static int invokeGetLevel(SortedArraySet<ChunkTicket<?>> arg) {
+    static int invokeGetLevel(SortedArraySet<ChunkTicket<?>> arg)
+    {
         throw new AssertionError();
     }
 

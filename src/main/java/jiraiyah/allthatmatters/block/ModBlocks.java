@@ -117,14 +117,14 @@ public class ModBlocks
 
     private static Block registerShulkerBlock(String name, DyeColor color, Block block)
     {
-        if(color == null)
+        if (color == null)
             Registry.register(Registries.ITEM, AllThatMatters.identifier(name + "normal"),
-                new BlockItem(block, new FabricItemSettings().fireproof()));
+                    new BlockItem(block, new FabricItemSettings().fireproof()));
         else
             Registry.register(Registries.ITEM, AllThatMatters.identifier(name + color),
                     new BlockItem(block, new FabricItemSettings().fireproof()));
 
-        if(color == null)
+        if (color == null)
             return Registry.register(Registries.BLOCK, AllThatMatters.identifier(name + "normal"), block);
         else
             return Registry.register(Registries.BLOCK, AllThatMatters.identifier(name + color.getName()), block);
@@ -138,27 +138,78 @@ public class ModBlocks
 
     public static EnderiteShulkerBoxBlock getShulkerBlock(DyeColor color)
     {
-        if(color == null)
-            return (EnderiteShulkerBoxBlock)SHULKER_NORMAL;
+        if (color == null)
+            return (EnderiteShulkerBoxBlock) SHULKER_NORMAL;
         switch (color)
         {
-            case BLACK -> { return (EnderiteShulkerBoxBlock)SHULKER_BLACK; }
-            case BLUE -> { return (EnderiteShulkerBoxBlock)SHULKER_BLUE; }
-            case BROWN -> { return (EnderiteShulkerBoxBlock)SHULKER_BROWN; }
-            case CYAN -> { return (EnderiteShulkerBoxBlock)SHULKER_CYAN; }
-            case GRAY -> { return (EnderiteShulkerBoxBlock)SHULKER_GRAY; }
-            case GREEN -> { return (EnderiteShulkerBoxBlock)SHULKER_GREEN; }
-            case LIGHT_BLUE -> { return (EnderiteShulkerBoxBlock)SHULKER_LIGHT_BLUE; }
-            case LIGHT_GRAY -> { return (EnderiteShulkerBoxBlock)SHULKER_LIGHT_GRAY; }
-            case LIME -> { return (EnderiteShulkerBoxBlock)SHULKER_LIME; }
-            case MAGENTA -> { return (EnderiteShulkerBoxBlock)SHULKER_MAGENTA; }
-            case ORANGE -> { return (EnderiteShulkerBoxBlock)SHULKER_ORANGE; }
-            case PINK -> { return (EnderiteShulkerBoxBlock)SHULKER_PINK; }
-            case PURPLE -> { return (EnderiteShulkerBoxBlock)SHULKER_PURPLE; }
-            case RED -> { return (EnderiteShulkerBoxBlock)SHULKER_RED; }
-            case WHITE -> { return (EnderiteShulkerBoxBlock)SHULKER_WHITE; }
-            case YELLOW -> { return (EnderiteShulkerBoxBlock)SHULKER_YELLOW; }
-            default -> { return (EnderiteShulkerBoxBlock)SHULKER_NORMAL; }
+            case BLACK ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_BLACK;
+            }
+            case BLUE ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_BLUE;
+            }
+            case BROWN ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_BROWN;
+            }
+            case CYAN ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_CYAN;
+            }
+            case GRAY ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_GRAY;
+            }
+            case GREEN ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_GREEN;
+            }
+            case LIGHT_BLUE ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_LIGHT_BLUE;
+            }
+            case LIGHT_GRAY ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_LIGHT_GRAY;
+            }
+            case LIME ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_LIME;
+            }
+            case MAGENTA ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_MAGENTA;
+            }
+            case ORANGE ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_ORANGE;
+            }
+            case PINK ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_PINK;
+            }
+            case PURPLE ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_PURPLE;
+            }
+            case RED ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_RED;
+            }
+            case WHITE ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_WHITE;
+            }
+            case YELLOW ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_YELLOW;
+            }
+            default ->
+            {
+                return (EnderiteShulkerBoxBlock) SHULKER_NORMAL;
+            }
         }
     }
 

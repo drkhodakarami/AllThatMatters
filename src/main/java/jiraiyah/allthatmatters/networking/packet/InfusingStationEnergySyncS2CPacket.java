@@ -16,12 +16,12 @@ public class InfusingStationEnergySyncS2CPacket
         long energy = buf.readLong();
         BlockPos position = buf.readBlockPos();
 
-        if(client.world.getBlockEntity(position) instanceof InfusingStationBlockEntity blockEntity)
+        if (client.world.getBlockEntity(position) instanceof InfusingStationBlockEntity blockEntity)
         {
             blockEntity.setEnergyLevel(energy);
 
-            if(client.player.currentScreenHandler instanceof InfusingStationScreenHandler screenHandler &&
-            screenHandler.blockEntity.getPos().equals(position))
+            if (client.player.currentScreenHandler instanceof InfusingStationScreenHandler screenHandler &&
+                    screenHandler.blockEntity.getPos().equals(position))
                 blockEntity.setEnergyLevel(energy);
         }
     }

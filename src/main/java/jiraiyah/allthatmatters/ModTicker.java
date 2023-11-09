@@ -16,10 +16,11 @@ import net.minecraft.world.chunk.WorldChunk;
 
 import java.util.Optional;
 
-public final class LCLTicker
+public final class ModTicker
 {
-    public static void initialize() {
-        ServerTickEvents.START_WORLD_TICK.register(LCLTicker::tick);
+    public static void initialize()
+    {
+        ServerTickEvents.START_WORLD_TICK.register(ModTicker::tick);
     }
 
     //The MIT License (MIT)
@@ -43,42 +44,53 @@ public final class LCLTicker
     //LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     //THE SOFTWARE.
-    private static void tick(ServerWorld world) {
+    private static void tick(ServerWorld world)
+    {
         ThreadedAnvilChunkStorageInvoker storage = (ThreadedAnvilChunkStorageInvoker) world.getChunkManager().threadedAnvilChunkStorage;
         ChunkTicketManagerInvoker ticketManager = (ChunkTicketManagerInvoker) storage.invokeGetTicketManager();
         int randomTickSpeed = world.getGameRules().getInt(GameRules.RANDOM_TICK_SPEED);
-        if (randomTickSpeed == 0) {
+        if (randomTickSpeed == 0)
+        {
             return;
         }
-        storage.invokeEntryIterator().forEach(chunkHolder -> {
+        storage.invokeEntryIterator().forEach(chunkHolder ->
+        {
             // Ensure the chunk is force loaded rather than a "regular" chunk outside the 128-block radius
             boolean forced = ticketManager.invokeGetTicketSet(chunkHolder.getPos().toLong()).stream().anyMatch(chunkTicket -> ((ChunkTicketTypeAccessor) chunkTicket.getType()).getName().equals("forced"));
-            if (!forced) {
+            if (!forced)
+            {
                 return;
             }
 
             Optional<WorldChunk> optionalWorldChunk = chunkHolder.getTickingFuture().getNow(ChunkHolder.UNLOADED_WORLD_CHUNK).left();
-            if (optionalWorldChunk.isEmpty()) {
+            if (optionalWorldChunk.isEmpty())
+            {
                 return;
             }
             // Make sure it's too far to get regular random ticks
-            if (storage.invokeIsTooFarFromPlayersToSpawnMobs(chunkHolder.getPos())) {
+            if (storage.invokeIsTooFarFromPlayersToSpawnMobs(chunkHolder.getPos()))
+            {
                 WorldChunk chunk = optionalWorldChunk.get();
                 Profiler profiler = world.getProfiler();
                 int startX = chunk.getPos().getStartX();
                 int startZ = chunk.getPos().getStartZ();
                 int startY = chunk.getPos().getStartPos().getY();
-                for (ChunkSection chunkSection : chunk.getSectionArray()) {
-                    if (!chunkSection.isEmpty() && chunkSection.hasRandomTicks()) {
-                        for (int m = 0; m < randomTickSpeed; m++) {
+                for (ChunkSection chunkSection : chunk.getSectionArray())
+                {
+                    if (!chunkSection.isEmpty() && chunkSection.hasRandomTicks())
+                    {
+                        for (int m = 0; m < randomTickSpeed; m++)
+                        {
                             BlockPos randomPosInChunk = world.getRandomPosInChunk(startX, startY, startZ, 15);
                             profiler.push("randomTick");
                             BlockState blockState = chunkSection.getBlockState(randomPosInChunk.getX() - startX, randomPosInChunk.getY() - startY, randomPosInChunk.getZ() - startZ);
-                            if (blockState.hasRandomTicks()) {
+                            if (blockState.hasRandomTicks())
+                            {
                                 blockState.randomTick(world, randomPosInChunk, world.random);
                             }
                             FluidState fluidState = blockState.getFluidState();
-                            if (fluidState.hasRandomTicks()) {
+                            if (fluidState.hasRandomTicks())
+                            {
                                 fluidState.onRandomTick(world, randomPosInChunk, world.random);
                             }
                             profiler.pop();

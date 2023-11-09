@@ -77,13 +77,13 @@ public class InfusingStationScreen extends HandledScreen<InfusingStationScreenHa
 
     private void renderProgressArrow(DrawContext context, int x, int y)
     {
-        if(handler.isCrafting())
+        if (handler.isCrafting())
             context.drawTexture(TEXTURE, x + 105, y + 33, 176, 0, 8, handler.getScaledProgress());
     }
 
     private void renderLiquidProgress(DrawContext context, int x, int y)
     {
-        if(handler.isMeltingLiquid())
+        if (handler.isMeltingLiquid())
             context.drawTexture(TEXTURE, x + 29, y + 26, 184, 0, 25, handler.getLiquidScaledProgress());
     }
 
@@ -98,7 +98,7 @@ public class InfusingStationScreen extends HandledScreen<InfusingStationScreenHa
 
     private void renderEnergyAreaTooltips(DrawContext context, int mouseX, int mouseY, int x, int y)
     {
-        if(isMouseAboveArea(mouseX, mouseY, x, y, 156, 13, 8, 64))
+        if (isMouseAboveArea(mouseX, mouseY, x, y, 156, 13, 8, 64))
             context.drawTooltip(textRenderer, energyInfoArea.getTooltips(), Optional.empty(), mouseX - x, mouseY - y);
     }
 
@@ -117,7 +117,7 @@ public class InfusingStationScreen extends HandledScreen<InfusingStationScreenHa
 
     private void renderFluidAreaTooltips(DrawContext context, int mouseX, int mouseY, int x, int y, FluidStack fluidStack, int offsetX, int offsetY, FluidStackRenderer renderer)
     {
-        if(isMouseAboveArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer))
+        if (isMouseAboveArea(mouseX, mouseY, x, y, offsetX, offsetY, renderer))
             context.drawTooltip(textRenderer, renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC), Optional.empty(), mouseX - x, mouseY - y);
     }
 

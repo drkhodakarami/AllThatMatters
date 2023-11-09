@@ -13,7 +13,7 @@ public class InfoArea extends DrawContext
     public InfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers)
     {
         super(client, vertexConsumers);
-        this.area = new Rect2i(0,0,0,0);
+        this.area = new Rect2i(0, 0, 0, 0);
     }
 
     public InfoArea(MinecraftClient client, VertexConsumerProvider.Immediate vertexConsumers, Rect2i area)
@@ -23,5 +23,6 @@ public class InfoArea extends DrawContext
     }
 
     public void draw(DrawContext stack)
-    {}
+    {
+    }
 }

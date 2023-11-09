@@ -16,12 +16,12 @@ public interface IIngredientRenderer<T>
     /**
      * Renders an ingredient at a specific location.
      *
-     * @param stack  The current {@link MatrixStack} for rendering the ingredient.
+     * @param stack      The current {@link MatrixStack} for rendering the ingredient.
      * @param ingredient the ingredient to render.
-     *
      * @since 9.3.0
      */
-    default void render(MatrixStack stack, T ingredient) {
+    default void render(MatrixStack stack, T ingredient)
+    {
         // if not implemented, this calls the old render function for backward compatibility
         render(stack, 0, 0, ingredient);
     }
@@ -42,7 +42,8 @@ public interface IIngredientRenderer<T>
      * @param ingredient The ingredient to get the tooltip for.
      * @return The font renderer for the ingredient.
      */
-    default TextRenderer getFontRenderer(MinecraftClient minecraft, T ingredient) {
+    default TextRenderer getFontRenderer(MinecraftClient minecraft, T ingredient)
+    {
         return minecraft.textRenderer;
     }
 
@@ -51,7 +52,8 @@ public interface IIngredientRenderer<T>
      *
      * @since 9.3.0
      */
-    default int getWidth() {
+    default int getWidth()
+    {
         return 16;
     }
 
@@ -60,7 +62,8 @@ public interface IIngredientRenderer<T>
      *
      * @since 9.3.0
      */
-    default int getHeight() {
+    default int getHeight()
+    {
         return 16;
     }
 
@@ -71,11 +74,11 @@ public interface IIngredientRenderer<T>
      * @param yPosition  The y position to render the ingredient.
      * @param ingredient the ingredient to render.
      *                   May be null, some renderers (like fluid tanks) will render an empty background.
-     *
      * @deprecated Use {@link #render(MatrixStack, Object)} instead.
      */
     @Deprecated(forRemoval = true, since = "9.3.0")
-    default void render(MatrixStack stack, int xPosition, int yPosition, @Nullable T ingredient) {
+    default void render(MatrixStack stack, int xPosition, int yPosition, @Nullable T ingredient)
+    {
 
     }
 }

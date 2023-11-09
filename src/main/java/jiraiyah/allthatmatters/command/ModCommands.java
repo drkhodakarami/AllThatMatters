@@ -1,12 +1,13 @@
-package jiraiyah.allthatmatters;
+package jiraiyah.allthatmatters.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.mojang.brigadier.suggestion.Suggestions;
 import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.utils.ChunksSerializeManager;
-import jiraiyah.allthatmatters.utils.data.LclData;
+import jiraiyah.allthatmatters.utils.data.ChunkData;
 import jiraiyah.allthatmatters.utils.data.SerializableChunkPos;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.server.command.CommandManager;
@@ -31,31 +32,40 @@ public class ModCommands
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, environment) -> LCLLocate.define(dispatcher));
     }
 
-    private final static class LCLLocate {
-        public static void define(CommandDispatcher<ServerCommandSource> dispatcher) {
-            dispatcher.register(CommandManager.literal("lclocate").then(CommandManager.argument("dimension", word()).suggests(suggestedStrings()).executes(ctx -> {
+    private final static class LCLLocate
+    {
+        public static void define(CommandDispatcher<ServerCommandSource> dispatcher)
+        {
+            dispatcher.register(CommandManager.literal("lclocate").then(CommandManager.argument("dimension", word()).suggests(suggestedStrings()).executes(ctx ->
+            {
                 String dimension = getString(ctx, "dimension");
                 ArrayList<SerializableChunkPos> loaders = getLoadersInDimension(ctx, dimension);
-                if (loaders.size() == 0) {
+                if (loaders.size() == 0)
+                {
                     ctx.getSource().sendFeedback((() -> Text.of("No loaders found in dimension: " + dimension + "\n")), false);
                     return 1;
                 }
                 int size = loaders.size();
                 StringBuilder response = new StringBuilder("Found " + size + " placed loaders ");
-                if (!dimension.equals("all")) {
+                if (!dimension.equals("all"))
+                {
                     response.append("in dimension: ").append(dimension).append("\n");
 
                 }
-                else {
+                else
+                {
                     response.append(": \n");
                 }
-                for (int i = 0; i < size; i++) {
+                for (int i = 0; i < size; i++)
+                {
                     SerializableChunkPos current = loaders.get(i);
                     response.append("[").append(current.getX()).append(", ").append(current.getZ()).append("]");
-                    if (dimension.equals("all")) {
+                    if (dimension.equals("all"))
+                    {
                         response.append(" in ").append(current.getDimension());
                     }
-                    if (i < size - 1) {
+                    if (i < size - 1)
+                    {
                         response.append(", ");
                     }
                 }
@@ -64,7 +74,8 @@ public class ModCommands
             })));
         }
 
-        public static SuggestionProvider<ServerCommandSource> suggestedStrings() {
+        public static SuggestionProvider<ServerCommandSource> suggestedStrings()
+        {
             ArrayList<String> suggestions = new ArrayList<>();
             suggestions.add(World.OVERWORLD.getValue().getPath());
             suggestions.add(World.NETHER.getValue().getPath());
@@ -73,34 +84,43 @@ public class ModCommands
             return (ctx, builder) -> getSuggestionsBuilder(builder, suggestions);
         }
 
-        private static CompletableFuture<Suggestions> getSuggestionsBuilder(SuggestionsBuilder builder, List<String> list) {
+        private static CompletableFuture<Suggestions> getSuggestionsBuilder(SuggestionsBuilder builder, List<String> list)
+        {
             String remaining = builder.getRemaining().toLowerCase(Locale.ROOT);
 
-            if (list.isEmpty()) { // If the list is empty then return no suggestions
+            if (list.isEmpty())
+            { // If the list is empty then return no suggestions
                 return Suggestions.empty(); // No suggestions
             }
 
-            for (String str : list) { // Iterate through the supplied list
-                if (str.toLowerCase(Locale.ROOT).startsWith(remaining)) {
+            for (String str : list)
+            { // Iterate through the supplied list
+                if (str.toLowerCase(Locale.ROOT).startsWith(remaining))
+                {
                     builder.suggest(str); // Add every single entry to suggestions list.
                 }
             }
             return builder.buildFuture(); // Create the CompletableFuture containing all the suggestions
         }
 
-        private static ArrayList<SerializableChunkPos> getLoadersInDimension(CommandContext<ServerCommandSource> ctx, String dimension) {
+        private static ArrayList<SerializableChunkPos> getLoadersInDimension(CommandContext<ServerCommandSource> ctx, String dimension)
+        {
             ArrayList<SerializableChunkPos> res = new ArrayList<>();
-            LclData areasData = ChunksSerializeManager.deserialize(ctx.getSource().getWorld().getServer().getSaveProperties().getLevelName());
-            if (areasData == null) {
+            ChunkData areasData = ChunksSerializeManager.deserialize(ctx.getSource().getWorld().getServer().getSaveProperties().getLevelName());
+            if (areasData == null)
+            {
                 return res;
             }
             ArrayList<SerializableChunkPos> all = areasData.getLoadersChunks();
-            if (dimension.equals("all")) {
+            if (dimension.equals("all"))
+            {
                 return all;
             }
 
-            for (SerializableChunkPos chunk : all) {
-                if (chunk.getDimension().equals(dimension)) {
+            for (SerializableChunkPos chunk : all)
+            {
+                if (chunk.getDimension().equals(dimension))
+                {
                     res.add(chunk);
                 }
             }

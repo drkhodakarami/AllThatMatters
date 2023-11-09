@@ -40,8 +40,9 @@ public abstract class ItemEntityMixin extends Entity
     }
 
     @ModifyArg(method = "onPlayerCollision",
-                at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;insertStack(Lnet/minecraft/item/ItemStack;)Z"))
-    public ItemStack EnderiteSHULKER$onPlayerCollision$modifyInsertStack(ItemStack oldStack) {
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerInventory;insertStack(Lnet/minecraft/item/ItemStack;)Z"))
+    public ItemStack EnderiteSHULKER$onPlayerCollision$modifyInsertStack(ItemStack oldStack)
+    {
         PlayerEntity player = addingToPlayer;
         addingToPlayer = null;
         int oldCount = oldStack.getCount();
@@ -50,12 +51,12 @@ public abstract class ItemEntityMixin extends Entity
 
         // Manually play the pickup animation before calling setStack - else you might get a pickup animation for an empty stack, which just
         // makes it look like the item vanishes. This looks bad.
-        if(oldCount > 0 && newStack.isEmpty())
+        if (oldCount > 0 && newStack.isEmpty())
             player.sendPickup((ItemEntity) (Object) this, oldCount);
 
         // It's possible for putIntoShulker to return a new instance of ItemStack (e.g. ItemStack.EMPTY), instead of mutating oldStack.
         // If this happens, we should update the ItemEntity to reflect the new stack instance.
-        if(oldStack != newStack)
+        if (oldStack != newStack)
             setStack(newStack);
 
         return newStack;
@@ -64,8 +65,10 @@ public abstract class ItemEntityMixin extends Entity
     @Unique
     private ItemStack putIntoShulker(PlayerEntity player, ItemStack pickupStack, PlayerInventory playerInventory)
     {
-        if (pickupStack.getCount() > 0) {
-            for (int i = 0; i < playerInventory.size(); i++) {
+        if (pickupStack.getCount() > 0)
+        {
+            for (int i = 0; i < playerInventory.size(); i++)
+            {
                 ItemStack shulker = playerInventory.getStack(i);
                 if (shulker.getItem() instanceof BlockItem && ((BlockItem) shulker.getItem()).getBlock() instanceof ShulkerBoxBlock)
                 {

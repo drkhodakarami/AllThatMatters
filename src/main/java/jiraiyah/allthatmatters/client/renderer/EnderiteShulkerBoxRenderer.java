@@ -34,7 +34,8 @@ public class EnderiteShulkerBoxRenderer<T extends EnderiteShulkerBlockEntity> im
         if (entity.hasWorld())
         {
             BlockState blockState = entity.getWorld().getBlockState(entity.getPos());
-            if (blockState.getBlock() instanceof ShulkerBoxBlock) {
+            if (blockState.getBlock() instanceof ShulkerBoxBlock)
+            {
                 direction = blockState.get(ShulkerBoxBlock.FACING);
             }
         }

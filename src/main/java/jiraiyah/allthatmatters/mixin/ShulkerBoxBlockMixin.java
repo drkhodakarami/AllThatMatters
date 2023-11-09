@@ -23,7 +23,8 @@ import java.util.List;
 @Mixin(ShulkerBoxBlock.class)
 public abstract class ShulkerBoxBlockMixin extends Block implements UpgradedShulker
 {
-    public ShulkerBoxBlockMixin(Settings settings) {
+    public ShulkerBoxBlockMixin(Settings settings)
+    {
         super(settings);
     }
 
@@ -41,14 +42,16 @@ public abstract class ShulkerBoxBlockMixin extends Block implements UpgradedShul
     @Inject(method = "appendTooltip", at = @At(value = "HEAD"), cancellable = true)
     public void ENDERITESHULKER$appendTooltip(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext options, CallbackInfo ci)
     {
-        if (isUpgradedShulker()) {
+        if (isUpgradedShulker())
+        {
             super.appendTooltip(stack, world, tooltip, options);
             ci.cancel();
         }
     }
 
     @Override
-    public boolean isUpgradedShulker() {
+    public boolean isUpgradedShulker()
+    {
         return false;
     }
 }

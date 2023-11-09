@@ -19,12 +19,12 @@ public class InfusingStationFluidSyncS2CPacket
         long fluidLevel = buf.readLong();
         BlockPos position = buf.readBlockPos();
 
-        if(client.world.getBlockEntity(position) instanceof InfusingStationBlockEntity blockEntity)
+        if (client.world.getBlockEntity(position) instanceof InfusingStationBlockEntity blockEntity)
         {
             blockEntity.setFluidLevel(variant, fluidLevel);
 
-            if(client.player.currentScreenHandler instanceof InfusingStationScreenHandler screenHandler &&
-                screenHandler.blockEntity.getPos().equals(position))
+            if (client.player.currentScreenHandler instanceof InfusingStationScreenHandler screenHandler &&
+                    screenHandler.blockEntity.getPos().equals(position))
             {
                 blockEntity.setFluidLevel(variant, fluidLevel);
                 screenHandler.setFluid(new FluidStack(variant, fluidLevel));
