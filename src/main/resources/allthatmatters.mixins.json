@@ -9,7 +9,8 @@
 		"ChunkTicketManagerInvoker",
 		"ChunkTicketTypeAccessor",
 		"MinecraftServerMixin",
-		"ThreadedAnvilChunkStorageInvoker"
+		"ThreadedAnvilChunkStorageInvoker",
+		"AbstractClientPlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
