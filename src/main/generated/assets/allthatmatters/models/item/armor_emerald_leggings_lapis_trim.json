@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "allthatmatters:item/armor_emerald_leggings",
+    "layer1": "minecraft:trims/items/leggings_trim_lapis"
+  }
+}

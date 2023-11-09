@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:tool_citrine_sword",
+    "allthatmatters:tool_copper_sword",
+    "allthatmatters:tool_enderite_sword",
+    "allthatmatters:tool_ruby_sword",
+    "allthatmatters:tool_sapphire_sword"
+  ]
+}

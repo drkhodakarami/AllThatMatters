@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "allthatmatters:item/tool_enderite_sword"
+  }
+}

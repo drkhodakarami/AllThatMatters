@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:ender_pearl"
+    },
+    "/": {
+      "item": "minecraft:ender_eye"
+    },
+    "E": {
+      "item": "minecraft:end_rod"
+    },
+    "Q": {
+      "item": "allthatmatters:ingot_enderite"
+    }
+  },
+  "pattern": [
+    "#/#",
+    "#E#",
+    "QQQ"
+  ],
+  "result": {
+    "item": "allthatmatters:chunk_loader"
+  },
+  "show_notification": true
+}

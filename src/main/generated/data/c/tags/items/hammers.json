@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:tool_citrine_hammer",
+    "allthatmatters:tool_copper_hammer",
+    "allthatmatters:tool_diamond_hammer",
+    "allthatmatters:tool_enderite_hammer",
+    "allthatmatters:tool_gold_hammer",
+    "allthatmatters:tool_iron_hammer",
+    "allthatmatters:tool_netherite_hammer",
+    "allthatmatters:tool_ruby_hammer",
+    "allthatmatters:tool_sapphire_hammer",
+    "allthatmatters:tool_stone_hammer",
+    "allthatmatters:tool_wood_hammer"
+  ]
+}

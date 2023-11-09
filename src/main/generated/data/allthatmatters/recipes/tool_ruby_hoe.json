@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "allthatmatters:gem_ruby"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "CC",
+    " S",
+    " S"
+  ],
+  "result": {
+    "item": "allthatmatters:tool_ruby_hoe"
+  },
+  "show_notification": true
+}

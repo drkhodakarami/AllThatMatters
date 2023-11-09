@@ -8,6 +8,7 @@ import io.github.cottonmc.cotton.gui.widget.WToggleButton;
 import io.github.cottonmc.cotton.gui.widget.data.HorizontalAlignment;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import io.github.cottonmc.cotton.gui.widget.data.VerticalAlignment;
+import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.custom.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.networking.packet.ForcedChunksUpdatePacket;
@@ -132,7 +133,7 @@ public class ChunkLoaderScreenHandler extends SyncedGuiDescription
             int posX = (19 * i + 16);
             for (int j = 0; j < ChunkData.SIZE; j++)
             {
-                WToggleButton curr = new WToggleButton(new Identifier("lchunkloader:textures/gui/loaded.png"), new Identifier("lchunkloader:textures/gui/not_loaded.png"));
+                WToggleButton curr = new WToggleButton(AllThatMatters.identifier("textures/gui/loaded.png"), AllThatMatters.identifier("textures/gui/not_loaded.png"));
                 int finalI = i;
                 int finalJ = j;
                 //System.out.println(i+", "+j);

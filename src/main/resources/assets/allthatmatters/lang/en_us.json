@@ -10,6 +10,83 @@
   "item.allthatmatters.raw_enderite": "Raw Enderite",
   "item.allthatmatters.molten_enderite_bucket": "Bucket of Molten Enderite",
 
+  "item.allthatmatters.tool_citrine_axe": "Citrine Axe",
+  "item.allthatmatters.tool_citrine_hammer": "Citrine Hammer",
+  "item.allthatmatters.tool_citrine_hoe": "Citrine Hoe",
+  "item.allthatmatters.tool_citrine_pickaxe": "Citrine Pickaxe",
+  "item.allthatmatters.tool_citrine_shovel": "Citrine Shovel",
+  "item.allthatmatters.tool_citrine_sword": "Citrine Sword",
+
+  "item.allthatmatters.tool_copper_axe": "Copper Axe",
+  "item.allthatmatters.tool_copper_hammer": "Copper Hammer",
+  "item.allthatmatters.tool_copper_hoe": "Copper Hoe",
+  "item.allthatmatters.tool_copper_pickaxe": "Copper Pickaxe",
+  "item.allthatmatters.tool_copper_shovel": "Copper Shovel",
+  "item.allthatmatters.tool_copper_sword": "Copper Sword",
+
+  "item.allthatmatters.tool_diamond_hammer": "Diamond Hammer",
+  "item.allthatmatters.tool_gold_hammer": "Gold Hammer",
+  "item.allthatmatters.tool_iron_hammer": "Iron Hammer",
+  "item.allthatmatters.tool_netherite_hammer": "Netherite Hammer",
+  "item.allthatmatters.tool_stone_hammer": "Wood Hammer",
+  "item.allthatmatters.tool_wood_hammer": "Stone Hammer",
+
+  "item.allthatmatters.tool_enderite_axe": "Enderite Axe",
+  "item.allthatmatters.tool_enderite_hammer": "Enderite Hammer",
+  "item.allthatmatters.tool_enderite_hoe": "Enderite Hoe",
+  "item.allthatmatters.tool_enderite_pickaxe": "Enderite Pickaxe",
+  "item.allthatmatters.tool_enderite_shovel": "Enderite Shovel",
+  "item.allthatmatters.tool_enderite_sword": "Enderite Sword",
+
+  "item.allthatmatters.tool_ruby_axe": "Ruby Axe",
+  "item.allthatmatters.tool_ruby_hammer": "Ruby Hammer",
+  "item.allthatmatters.tool_ruby_hoe": "Ruby Hoe",
+  "item.allthatmatters.tool_ruby_pickaxe": "Ruby Pickaxe",
+  "item.allthatmatters.tool_ruby_shovel": "Ruby Shovel",
+  "item.allthatmatters.tool_ruby_sword": "Ruby Sword",
+
+  "item.allthatmatters.tool_sapphire_axe": "Sapphire Axe",
+  "item.allthatmatters.tool_sapphire_hammer": "Sapphire Hammer",
+  "item.allthatmatters.tool_sapphire_hoe": "Sapphire Hoe",
+  "item.allthatmatters.tool_sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.allthatmatters.tool_sapphire_shovel": "Sapphire Shovel",
+  "item.allthatmatters.tool_sapphire_sword": "Sapphire Sword",
+
+  "item.allthatmatters.armor_amethyst_helmet": "Amethyst Helmet",
+  "item.allthatmatters.armor_amethyst_chestplate": "Amethyst Chestplate",
+  "item.allthatmatters.armor_amethyst_leggings": "Amethyst Leggings",
+  "item.allthatmatters.armor_amethyst_boots": "Amethyst Boots",
+
+  "item.allthatmatters.armor_citrine_helmet": "Citrine Helmet",
+  "item.allthatmatters.armor_citrine_chestplate": "Citrine Chestplate",
+  "item.allthatmatters.armor_citrine_leggings": "Citrine Leggings",
+  "item.allthatmatters.armor_citrine_boots": "Citrine Boots",
+
+  "item.allthatmatters.armor_copper_helmet": "Copper Helmet",
+  "item.allthatmatters.armor_copper_chestplate": "Copper Chestplate",
+  "item.allthatmatters.armor_copper_leggings": "Copper Leggings",
+  "item.allthatmatters.armor_copper_boots": "Copper Boots",
+
+  "item.allthatmatters.armor_emerald_helmet": "Emerald Helmet",
+  "item.allthatmatters.armor_emerald_chestplate": "Emerald Chestplate",
+  "item.allthatmatters.armor_emerald_leggings": "Emerald Leggings",
+  "item.allthatmatters.armor_emerald_boots": "Emerald Boots",
+
+  "item.allthatmatters.armor_enderite_helmet": "Enderite Helmet",
+  "item.allthatmatters.armor_enderite_chestplate": "Enderite Chestplate",
+  "item.allthatmatters.armor_enderite_leggings": "Enderite Leggings",
+  "item.allthatmatters.armor_enderite_boots": "Enderite Boots",
+
+  "item.allthatmatters.armor_ruby_helmet": "Ruby Helmet",
+  "item.allthatmatters.armor_ruby_chestplate": "Ruby Chestplate",
+  "item.allthatmatters.armor_ruby_leggings": "Ruby Leggings",
+  "item.allthatmatters.armor_ruby_boots": "Ruby Boots",
+
+  "item.allthatmatters.armor_sapphire_helmet": "Sapphire Helmet",
+  "item.allthatmatters.armor_sapphire_chestplate": "Sapphire Chestplate",
+  "item.allthatmatters.armor_sapphire_leggings": "Sapphire Leggings",
+  "item.allthatmatters.armor_sapphire_boots": "Sapphire Boots",
+
   "block.allthatmatters.block_citrine": "Citrine Block",
   "block.allthatmatters.block_ruby": "Ruby Block",
   "block.allthatmatters.block_sapphire": "Sapphire Block",
@@ -67,7 +144,5 @@
   "block.minecraft.empty": "Empty",
 
   "allthatmatters.all": "All",
-  "allthatmatters.none": "None",
-
-  "block.lchunkloader.chunk_loader": "Chunk Loader"
+  "allthatmatters.none": "None"
 }

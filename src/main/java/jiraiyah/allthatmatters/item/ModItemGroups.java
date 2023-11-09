@@ -37,6 +37,80 @@ public class ModItemGroups
 
                         entries.add(ModFluids.MOLTEN_ENDERITE_BUCKET);
 
+                        entries.add(ModItems.TOOL_CITRINE_AXE);
+                        entries.add(ModItems.TOOL_COPPER_AXE);
+                        entries.add(ModItems.TOOL_ENDERITE_AXE);
+                        entries.add(ModItems.TOOL_RUBY_AXE);
+                        entries.add(ModItems.TOOL_SAPPHIRE_AXE);
+
+                        entries.add(ModItems.TOOL_CITRINE_HAMMER);
+                        entries.add(ModItems.TOOL_COPPER_HAMMER);
+                        entries.add(ModItems.TOOL_DIAMOND_HAMMER);
+                        entries.add(ModItems.TOOL_ENDERITE_HAMMER);
+                        entries.add(ModItems.TOOL_GOLD_HAMMER);
+                        entries.add(ModItems.TOOL_IRON_HAMMER);
+                        entries.add(ModItems.TOOL_NETHERITE_HAMMER);
+                        entries.add(ModItems.TOOL_RUBY_HAMMER);
+                        entries.add(ModItems.TOOL_SAPPHIRE_HAMMER);
+                        entries.add(ModItems.TOOL_STONE_HAMMER);
+                        entries.add(ModItems.TOOL_WOOD_HAMMER);
+
+                        entries.add(ModItems.TOOL_CITRINE_HOE);
+                        entries.add(ModItems.TOOL_COPPER_HOE);
+                        entries.add(ModItems.TOOL_ENDERITE_HOE);
+                        entries.add(ModItems.TOOL_RUBY_HOE);
+                        entries.add(ModItems.TOOL_SAPPHIRE_HOE);
+
+                        entries.add(ModItems.TOOL_CITRINE_PICKAXE);
+                        entries.add(ModItems.TOOL_COPPER_PICKAXE);
+                        entries.add(ModItems.TOOL_ENDERITE_PICKAXE);
+                        entries.add(ModItems.TOOL_RUBY_PICKAXE);
+                        entries.add(ModItems.TOOL_SAPPHIRE_PICKAXE);
+
+                        entries.add(ModItems.TOOL_CITRINE_SHOVEL);
+                        entries.add(ModItems.TOOL_COPPER_SHOVEL);
+                        entries.add(ModItems.TOOL_ENDERITE_SHOVEL);
+                        entries.add(ModItems.TOOL_RUBY_SHOVEL);
+                        entries.add(ModItems.TOOL_SAPPHIRE_SHOVEL);
+
+                        entries.add(ModItems.TOOL_CITRINE_SWORD);
+                        entries.add(ModItems.TOOL_COPPER_SWORD);
+                        entries.add(ModItems.TOOL_ENDERITE_SWORD);
+                        entries.add(ModItems.TOOL_RUBY_SWORD);
+                        entries.add(ModItems.TOOL_SAPPHIRE_SWORD);
+
+                        entries.add(ModItems.ARMOR_AMETHYST_HELMET);
+                        entries.add(ModItems.ARMOR_CITRINE_HELMET);
+                        entries.add(ModItems.ARMOR_COPPER_HELMET);
+                        entries.add(ModItems.ARMOR_EMERALD_HELMET);
+                        entries.add(ModItems.ARMOR_ENDERITE_HELMET);
+                        entries.add(ModItems.ARMOR_RUBY_HELMET);
+                        entries.add(ModItems.ARMOR_SAPPHIRE_HELMET);
+
+                        entries.add(ModItems.ARMOR_AMETHYST_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_CITRINE_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_COPPER_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_EMERALD_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_ENDERITE_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_RUBY_CHESTPLATE);
+                        entries.add(ModItems.ARMOR_SAPPHIRE_CHESTPLATE);
+
+                        entries.add(ModItems.ARMOR_AMETHYST_LEGGINGS);
+                        entries.add(ModItems.ARMOR_CITRINE_LEGGINGS);
+                        entries.add(ModItems.ARMOR_COPPER_LEGGINGS);
+                        entries.add(ModItems.ARMOR_EMERALD_LEGGINGS);
+                        entries.add(ModItems.ARMOR_ENDERITE_LEGGINGS);
+                        entries.add(ModItems.ARMOR_RUBY_LEGGINGS);
+                        entries.add(ModItems.ARMOR_SAPPHIRE_LEGGINGS);
+
+                        entries.add(ModItems.ARMOR_AMETHYST_BOOTS);
+                        entries.add(ModItems.ARMOR_CITRINE_BOOTS);
+                        entries.add(ModItems.ARMOR_COPPER_BOOTS);
+                        entries.add(ModItems.ARMOR_EMERALD_BOOTS);
+                        entries.add(ModItems.ARMOR_ENDERITE_BOOTS);
+                        entries.add(ModItems.ARMOR_RUBY_BOOTS);
+                        entries.add(ModItems.ARMOR_SAPPHIRE_BOOTS);
+
                         entries.add(ModBlocks.ORE_DEEP_CITRINE);
                         entries.add(ModBlocks.ORE_DEEP_RUBY);
                         entries.add(ModBlocks.ORE_DEEP_SAPPHIRE);

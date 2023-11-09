@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:tool_citrine_pickaxe",
+    "allthatmatters:tool_copper_pickaxe",
+    "allthatmatters:tool_enderite_pickaxe",
+    "allthatmatters:tool_ruby_pickaxe",
+    "allthatmatters:tool_sapphire_pickaxe"
+  ]
+}

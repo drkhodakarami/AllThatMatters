@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "CSC",
+    "CSC",
+    " S "
+  ],
+  "result": {
+    "item": "allthatmatters:tool_netherite_hammer"
+  },
+  "show_notification": true
+}

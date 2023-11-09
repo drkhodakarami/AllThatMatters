@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:tool_citrine_shovel",
+    "allthatmatters:tool_copper_shovel",
+    "allthatmatters:tool_enderite_shovel",
+    "allthatmatters:tool_ruby_shovel",
+    "allthatmatters:tool_sapphire_shovel"
+  ]
+}

@@ -10,9 +10,7 @@ import net.minecraft.util.Identifier;
 
 public class ModRecipes
 {
-    public static final RecipeType<InfusingStationCraftingRecipe> INFUSING_STATION_TYPE = new RecipeType<>()
-    {
-    };
+    public static final RecipeType<InfusingStationCraftingRecipe> INFUSING_STATION_TYPE = new RecipeType<>(){};
     public static final RecipeSerializer<InfusingStationCraftingRecipe> INFUSING_STATION_SERIALIZER = new InfusingStationCraftingRecipe.Serializer();
 
     private ModRecipes()

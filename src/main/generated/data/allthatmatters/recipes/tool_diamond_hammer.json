@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "CSC",
+    "CSC",
+    " S "
+  ],
+  "result": {
+    "item": "allthatmatters:tool_diamond_hammer"
+  },
+  "show_notification": true
+}

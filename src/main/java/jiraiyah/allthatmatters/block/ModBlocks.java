@@ -100,6 +100,7 @@ public class ModBlocks
             new EnderiteShulkerBoxBlock(DyeColor.YELLOW));
     //endregion
 
+    // PlacementModifierType<NoiseThresholdCountPlacementModifier> NOISE_THRESHOLD_COUNT = register("noise_threshold_count", NoiseThresholdCountPlacementModifier.MODIFIER_CODEC);
     public static final Block INFUSING_STATION = registerBlock("infusing_station",
             new InfusingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 

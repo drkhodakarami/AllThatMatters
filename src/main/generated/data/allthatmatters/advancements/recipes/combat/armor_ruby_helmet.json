@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gem_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gem_ruby"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:armor_ruby_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gem_ruby"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:armor_ruby_helmet"
+    ]
+  },
+  "sends_telemetry_event": false
+}
