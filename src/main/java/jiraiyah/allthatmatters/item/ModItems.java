@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.item;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.item.custom.ModArmorItem;
+import jiraiyah.allthatmatters.item.custom.GemBow;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -198,6 +199,9 @@ public class ModItems
     public static final Item ARMOR_SAPPHIRE_BOOTS = registerItem("armor_sapphire_boots",
             new ArmorItem(ModArmorMaterial.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     //endregion
+
+    public static final Item TOOL_RUBY_BOW = registerItem("tool_ruby_bow",
+            new GemBow(new FabricItemSettings().maxDamage(2000)));
 
     private ModItems()
     {

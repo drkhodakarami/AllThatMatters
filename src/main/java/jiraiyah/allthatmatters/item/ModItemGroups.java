@@ -79,6 +79,8 @@ public class ModItemGroups
                         entries.add(ModItems.TOOL_RUBY_SWORD);
                         entries.add(ModItems.TOOL_SAPPHIRE_SWORD);
 
+                        //entries.add(ModItems.TOOL_RUBY_BOW);
+
                         entries.add(ModItems.ARMOR_AMETHYST_HELMET);
                         entries.add(ModItems.ARMOR_CITRINE_HELMET);
                         entries.add(ModItems.ARMOR_COPPER_HELMET);

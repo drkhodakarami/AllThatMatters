@@ -12,6 +12,7 @@ import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreen;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
 import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
+import jiraiyah.allthatmatters.utils.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
@@ -58,6 +59,8 @@ public class ATMClient implements ClientModInitializer
         //endregion
 
         HandledScreens.<ChunkLoaderScreenHandler, ChunkLoaderScreen>register(ModScreenHandlers.CHUNK_LOADER_SCREEN_HANDLER, (gui, inventory, title) -> new ChunkLoaderScreen(gui, inventory.player, title));
+
+        ModModelPredicateProvider.registerModels();
     }
 
     private void registerShulkerWith(DyeColor color)

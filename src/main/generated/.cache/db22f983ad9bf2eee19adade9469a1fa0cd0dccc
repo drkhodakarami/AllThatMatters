@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-09T15:59:09.3497812	All That Matters/allthatmatters
+// 1.20.2	2023-11-09T20:08:58.5144053	All That Matters/allthatmatters
 6dd36918289830365038509740bdf9a21b05d1a3 data\allthatmatters\worldgen\placed_feature\ore_end_sapphire_placed.json
 30f27ba590246e575f59f5cb66c03477dc8cc8de data\allthatmatters\worldgen\configured_feature\ore_ruby.json
 64dcb22ba925bdb79593c93e54f377dfbc590e0e data\allthatmatters\worldgen\placed_feature\ore_sapphire_placed.json
@@ -8,8 +8,8 @@
 dafcec7ba8f308df74534e1c115a6e5b1d65ce76 data\allthatmatters\worldgen\placed_feature\ore_nether_sapphire_placed.json
 b74a342ad43adb06b8e2cdf2fc59fa4911133aa3 data\allthatmatters\worldgen\configured_feature\ore_nether_citrine.json
 7df4b5444a2dfa2775368bf75e4e37a5f061f993 data\allthatmatters\worldgen\placed_feature\ore_end_citrine_placed.json
-2266bdcf2e39f4a6c5e2f44e9ff9e9ca92c55a39 data\allthatmatters\worldgen\configured_feature\ore_citrine.json
 4e87c2f33de15818108776683a433290cc1541b3 data\allthatmatters\worldgen\configured_feature\ore_nether_sapphire.json
+2266bdcf2e39f4a6c5e2f44e9ff9e9ca92c55a39 data\allthatmatters\worldgen\configured_feature\ore_citrine.json
 a62666a6b3f37932b0a559bd064195cb2825fac4 data\allthatmatters\worldgen\configured_feature\ore_end_ruby.json
 646ec1da292a7cf8f38e6b300c0512d3e600b1b3 data\allthatmatters\worldgen\placed_feature\ore_nether_ruby_placed.json
 0ae63a45f0bd6b7a4dc256077570afa0e63c5aac data\allthatmatters\worldgen\configured_feature\ore_end_citrine.json

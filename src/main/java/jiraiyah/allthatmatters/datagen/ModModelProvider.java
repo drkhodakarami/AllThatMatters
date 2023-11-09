@@ -111,6 +111,8 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.TOOL_SAPPHIRE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.TOOL_SAPPHIRE_SWORD, Models.HANDHELD);
 
+        //itemModelGenerator.register(ModItems.TOOL_RUBY_BOW, Models.HANDHELD);
+
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ARMOR_AMETHYST_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ARMOR_AMETHYST_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ARMOR_AMETHYST_LEGGINGS));
