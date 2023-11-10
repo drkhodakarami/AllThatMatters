@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:cast_axe",
+    "allthatmatters:cast_binding",
+    "allthatmatters:cast_gear",
+    "allthatmatters:cast_gem",
+    "allthatmatters:cast_hammer",
+    "allthatmatters:cast_handle",
+    "allthatmatters:cast_hoe",
+    "allthatmatters:cast_ingot",
+    "allthatmatters:cast_nugget",
+    "allthatmatters:cast_pickaxe",
+    "allthatmatters:cast_plate",
+    "allthatmatters:cast_rod",
+    "allthatmatters:cast_shovel",
+    "allthatmatters:cast_sword",
+    "allthatmatters:cast_wire"
+  ]
+}

@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 
 public class ModItems
 {
+    //region GEM
     public static final Item RUBY = registerItem("gem_ruby", new Item(new FabricItemSettings()));
     public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
 
@@ -21,6 +22,7 @@ public class ModItems
 
     public static final Item ENDERITE = registerItem("ingot_enderite", new Item(new FabricItemSettings()));
     public static final Item RAW_ENDERITE = registerItem("raw_enderite", new Item(new FabricItemSettings()));
+    //endregion
 
     //region CITRINE TOOLS
     public static final Item TOOL_CITRINE_AXE = registerItem("tool_citrine_axe",
@@ -200,8 +202,121 @@ public class ModItems
             new ArmorItem(ModArmorMaterial.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     //endregion
 
+    //region GEM BOWS
     public static final Item TOOL_RUBY_BOW = registerItem("tool_ruby_bow",
-            new GemBow(new FabricItemSettings().maxDamage(2000)));
+            new GemBow(new FabricItemSettings().maxDamage(2000), false));
+    public static final Item TOOL_SAPPHIRE_BOW = registerItem("tool_sapphire_bow",
+            new GemBow(new FabricItemSettings().maxDamage(2000), false));
+    public static final Item TOOL_ENDERITE_BOW = registerItem("tool_enderite_bow",
+            new GemBow(new FabricItemSettings().maxDamage(2000), true));
+    //endregion
+
+    //region CASTS
+    public static final Item CAST_AXE = registerItem("cast_axe", new Item(new FabricItemSettings()));
+    public static final Item CAST_BINDING = registerItem("cast_binding", new Item(new FabricItemSettings()));
+    public static final Item CAST_GEAR = registerItem("cast_gear", new Item(new FabricItemSettings()));
+    public static final Item CAST_GEM = registerItem("cast_gem", new Item(new FabricItemSettings()));
+    public static final Item CAST_HAMMER = registerItem("cast_hammer", new Item(new FabricItemSettings()));
+    public static final Item CAST_HANDLE = registerItem("cast_handle", new Item(new FabricItemSettings()));
+    public static final Item CAST_HOE = registerItem("cast_hoe", new Item(new FabricItemSettings()));
+    public static final Item CAST_INGOT = registerItem("cast_ingot", new Item(new FabricItemSettings()));
+    public static final Item CAST_NUGGET = registerItem("cast_nugget", new Item(new FabricItemSettings()));
+    public static final Item CAST_PICKAXE = registerItem("cast_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item CAST_PLATE = registerItem("cast_plate", new Item(new FabricItemSettings()));
+    public static final Item CAST_ROD = registerItem("cast_rod", new Item(new FabricItemSettings()));
+    public static final Item CAST_SHOVEL = registerItem("cast_shovel", new Item(new FabricItemSettings()));
+    public static final Item CAST_SWORD = registerItem("cast_sword", new Item(new FabricItemSettings()));
+    public static final Item CAST_WIRE = registerItem("cast_wire", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region CITRINE HEADS
+    public static final Item HEAD_CITRINE_AXE = registerItem("head_citrine_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_CITRINE_HAMMER = registerItem("head_citrine_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_CITRINE_HOE = registerItem("head_citrine_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_CITRINE_PICKAXE = registerItem("head_citrine_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_CITRINE_SHOVEL = registerItem("head_citrine_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_CITRINE_SWORD = registerItem("head_citrine_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region COPPER HEADS
+    public static final Item HEAD_COPPER_AXE = registerItem("head_copper_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_COPPER_HAMMER = registerItem("head_copper_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_COPPER_HOE = registerItem("head_copper_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_COPPER_PICKAXE = registerItem("head_copper_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_COPPER_SHOVEL = registerItem("head_copper_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_COPPER_SWORD = registerItem("head_copper_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region DIAMOND HEADS
+    public static final Item HEAD_DIAMOND_AXE = registerItem("head_diamond_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_DIAMOND_HAMMER = registerItem("head_diamond_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_DIAMOND_HOE = registerItem("head_diamond_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_DIAMOND_PICKAXE = registerItem("head_diamond_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_DIAMOND_SHOVEL = registerItem("head_diamond_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_DIAMOND_SWORD = registerItem("head_diamond_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region DIAMOND HEADS
+    public static final Item HEAD_ENDERITE_AXE = registerItem("head_enderite_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_ENDERITE_HAMMER = registerItem("head_enderite_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_ENDERITE_HOE = registerItem("head_enderite_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_ENDERITE_PICKAXE = registerItem("head_enderite_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_ENDERITE_SHOVEL = registerItem("head_enderite_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_ENDERITE_SWORD = registerItem("head_enderite_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region DIAMOND HEADS
+    public static final Item HEAD_GOLD_AXE = registerItem("head_gold_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_GOLD_HAMMER = registerItem("head_gold_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_GOLD_HOE = registerItem("head_gold_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_GOLD_PICKAXE = registerItem("head_gold_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_GOLD_SHOVEL = registerItem("head_gold_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_GOLD_SWORD = registerItem("head_gold_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region IRON HEADS
+    public static final Item HEAD_IRON_AXE = registerItem("head_iron_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_IRON_HAMMER = registerItem("head_iron_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_IRON_HOE = registerItem("head_iron_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_IRON_PICKAXE = registerItem("head_iron_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_IRON_SHOVEL = registerItem("head_iron_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_IRON_SWORD = registerItem("head_iron_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region NETHERITE HEADS
+    public static final Item HEAD_NETHERITE_AXE = registerItem("head_netherite_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_NETHERITE_HAMMER = registerItem("head_netherite_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_NETHERITE_HOE = registerItem("head_netherite_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_NETHERITE_PICKAXE = registerItem("head_netherite_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_NETHERITE_SHOVEL = registerItem("head_netherite_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_NETHERITE_SWORD = registerItem("head_netherite_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region RUBY HEADS
+    public static final Item HEAD_RUBY_AXE = registerItem("head_ruby_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_RUBY_HAMMER = registerItem("head_ruby_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_RUBY_HOE = registerItem("head_ruby_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_RUBY_PICKAXE = registerItem("head_ruby_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_RUBY_SHOVEL = registerItem("head_ruby_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_RUBY_SWORD = registerItem("head_ruby_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region SAPPHIRE HEADS
+    public static final Item HEAD_SAPPHIRE_AXE = registerItem("head_sapphire_axe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_SAPPHIRE_HAMMER = registerItem("head_sapphire_hammer", new Item(new FabricItemSettings()));
+    public static final Item HEAD_SAPPHIRE_HOE = registerItem("head_sapphire_hoe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_SAPPHIRE_PICKAXE = registerItem("head_sapphire_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item HEAD_SAPPHIRE_SHOVEL = registerItem("head_sapphire_shovel", new Item(new FabricItemSettings()));
+    public static final Item HEAD_SAPPHIRE_SWORD = registerItem("head_sapphire_sword", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region STONE HEADS
+    public static final Item HEAD_STONE_HAMMER = registerItem("head_stone_hammer", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region WOOD HEADS
+    public static final Item HEAD_WOOD_HAMMER = registerItem("head_wood_hammer", new Item(new FabricItemSettings()));
+    //endregion
 
     private ModItems()
     {

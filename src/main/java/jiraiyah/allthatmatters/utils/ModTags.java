@@ -28,6 +28,7 @@ public class ModTags
     {
         public static final TagKey<Item> FLUID_BUCKETS = createCommonTag("fluid_buckets");
         public static final TagKey<Item> TOOL_HAMMER = createCommonTag("hammers");
+        public static final TagKey<Item> CASTS = createCommonTag("casts");
 
         private static TagKey<Item> createTag(String name)
         {

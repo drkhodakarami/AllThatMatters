@@ -1,0 +1,6 @@
+{
+  "parent": "allthatmatters:item/tool_enderite_bow",
+  "textures": {
+    "layer0": "allthatmatters:item/tool_enderite_bow_pulling_0"
+  }
+}

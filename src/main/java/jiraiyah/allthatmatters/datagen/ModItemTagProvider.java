@@ -30,6 +30,23 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(Items.WATER_BUCKET)
                 .add(Items.MILK_BUCKET);
 
+        getOrCreateTagBuilder(ModTags.Items.CASTS)
+                .add(ModItems.CAST_AXE)
+                .add(ModItems.CAST_BINDING)
+                .add(ModItems.CAST_GEAR)
+                .add(ModItems.CAST_GEM)
+                .add(ModItems.CAST_HAMMER)
+                .add(ModItems.CAST_HANDLE)
+                .add(ModItems.CAST_HOE)
+                .add(ModItems.CAST_INGOT)
+                .add(ModItems.CAST_NUGGET)
+                .add(ModItems.CAST_PICKAXE)
+                .add(ModItems.CAST_PLATE)
+                .add(ModItems.CAST_ROD)
+                .add(ModItems.CAST_SHOVEL)
+                .add(ModItems.CAST_SWORD)
+                .add(ModItems.CAST_WIRE);
+
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(ModItems.TOOL_CITRINE_AXE)
                 .add(ModItems.TOOL_COPPER_AXE)

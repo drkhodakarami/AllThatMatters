@@ -1,0 +1,6 @@
+{
+  "parent": "allthatmatters:item/tool_sapphire_bow",
+  "textures": {
+    "layer0": "allthatmatters:item/tool_sapphire_bow_pulling_1"
+  }
+}

@@ -32,9 +32,6 @@ public class ModPlacedFeatures
     public static final RegistryKey<PlacedFeature> ORE_END_SAPPHIRE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_sapphire_placed"));
     public static final RegistryKey<PlacedFeature> ORE_END_ENDERITE_PLACED_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, AllThatMatters.identifier("ore_end_enderite_placed"));
 
-    // TODO : Find a way to prevent grass in spawn chunks only
-    // PlacementModifierType<NoiseThresholdCountPlacementModifier> NOISE_THRESHOLD_COUNT = register("noise_threshold_count", NoiseThresholdCountPlacementModifier.MODIFIER_CODEC);
-
     public static void bootstrap(Registerable<PlacedFeature> context)
     {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);

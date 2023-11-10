@@ -981,5 +981,43 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(ModItems.SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_SAPPHIRE_BOOTS)));
         //endregion
+
+        //region GEM BOWS
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_ENDERITE_BOW, 1)
+                .pattern(" IS")
+                .pattern("G S")
+                .pattern(" IS")
+                .input('S', Items.STRING)
+                .input('I', Items.STICK)
+                .input('G', ModItems.ENDERITE)
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.ENDERITE), conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_ENDERITE_BOW)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_RUBY_BOW, 1)
+                .pattern(" IS")
+                .pattern("G S")
+                .pattern(" IS")
+                .input('S', Items.STRING)
+                .input('I', Items.STICK)
+                .input('G', ModItems.RUBY)
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_RUBY_BOW)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_SAPPHIRE_BOW, 1)
+                .pattern(" IS")
+                .pattern("G S")
+                .pattern(" IS")
+                .input('S', Items.STRING)
+                .input('I', Items.STICK)
+                .input('G', ModItems.SAPPHIRE)
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(ModItems.SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_SAPPHIRE_BOW)));
+        //endregion
     }
 }

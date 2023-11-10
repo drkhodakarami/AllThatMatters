@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "allthatmatters:gem_ruby"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " IS",
+    "G S",
+    " IS"
+  ],
+  "result": {
+    "item": "allthatmatters:tool_ruby_bow"
+  },
+  "show_notification": true
+}
