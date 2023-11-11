@@ -34,9 +34,6 @@ import java.util.List;
 public class GemCleanserScreenHandler extends SyncedGuiDescription
 {
     private final ScreenHandlerContext context;
-    private FluidStackRenderer fluidStackRenderer;
-
-    private static final NumberFormat nf = NumberFormat.getIntegerInstance();
 
     public GemCleanserBE loaderEntity;
     public FluidStack fluidStack;
@@ -48,9 +45,7 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         this.context = context;
 
         this.context.run((world, pos) -> loaderEntity = (GemCleanserBE) world.getBlockEntity(pos));
-
         this.fluidStack = new FluidStack(loaderEntity.fluidStorage.variant, loaderEntity.fluidStorage.amount);
-        this.fluidStackRenderer = new FluidStackRenderer(GemCleanserBE.FLUID_CAPACITY, true, 15, 61);
 
         this.setTitleVisible(false);
 
@@ -69,15 +64,11 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
                 AllThatMatters.identifier("textures/gui/full_vertical_progress.png"),
                 0, 1, WBar.Direction.DOWN);
 
-        WDynamicLabel fluidAmount = new WDynamicLabel(() -> this.fluidStackRenderer.getTooltip(this.fluidStack, TooltipContext.BASIC).get(0).getString());
-
         WSprite fluidBackground = new WSprite(AllThatMatters.identifier("textures/gui/fluid_tank_background.png"));
 
         WSprite fluidTube = new WSprite(AllThatMatters.identifier("textures/gui/short_tube.png"));
         WSprite connectionTube = new WSprite(AllThatMatters.identifier("textures/gui/gem_cleanser_connection_tube.png"));
         WSprite littleArrowDown = new WSprite(AllThatMatters.identifier("textures/gui/little_arrow_down.png"));
-
-        fluidTube.addTooltip(new TooltipBuilder().add(this.fluidStackRenderer.getTooltip(this.fluidStack, TooltipContext.BASIC).get(0)));
 
         root.add(base_input_slot, 116, 14);
         root.add(base_output_slot, 116, 59);
@@ -87,15 +78,10 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         progressBar.setProperties(this.propertyDelegate);
 
         root.add(progressBar, 135, 33, 8, 26);
-
         root.add(littleArrowDown, 46, 42, 9, 8);
-
         root.add(fluidBackground, 85, 14, 18, 63);
-        //root.add(fluidAmount, 86, 15, 16, 61);
-
         root.add(fluidTube, 59, 26, 27, 20);
         root.add(connectionTube, 102, 31, 25, 29);
-
         root.add(this.createPlayerInventoryPanel(), 7, 85);
 
         root.validate(this);
@@ -111,23 +97,4 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
     {
         fluidStack = stack;
     }
-
-
-
-    /*public Text getTooltip()
-    {
-        List<Text> tooltip = new ArrayList<>();
-        FluidVariant fluidType = this.fluidStack.getFluidVariant();
-        if (fluidType == null)
-            return tooltip.get(0);
-
-        MutableText displayName = Text.translatable("block." + Registries.FLUID.getId(this.fluidStack.fluidVariant.getFluid()).toTranslationKey());
-        tooltip.add(displayName);
-
-        long amount = this.fluidStack.getAmount();
-        MutableText amountString = Text.translatable(AllThatMatters.ModID + ".tooltip.liquid.amount.with.capacity", nf.format(amount), nf.format(GemCleanserBE.FLUID_CAPACITY));
-        tooltip.add(amountString.fillStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
-
-        return tooltip.get(0);
-    }*/
 }
