@@ -1,5 +1,6 @@
 package jiraiyah.allthatmatters.block.custom;
 
+import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import net.minecraft.block.*;
@@ -22,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class GemCleanserBlock extends BlockWithEntity
 {
+    public static final Identifier ID = new Identifier(AllThatMatters.ModID, "gem_cleanser");
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 12, 16);

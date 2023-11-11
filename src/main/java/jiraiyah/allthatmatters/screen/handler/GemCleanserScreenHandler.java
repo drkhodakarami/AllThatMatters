@@ -38,7 +38,7 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
 
     public GemCleanserScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context)
     {
-        super(ModScreenHandlers.GEM_CLEANSER_SCREEN_HANDLER, syncId, playerInventory, getBlockInventory(context, GemCleanserBE.TOTAL_SLOTS), getBlockPropertyDelegate(context));
+        super(ModScreenHandlers.GEM_CLEANSER_SCREEN_HANDLER, syncId, playerInventory, getBlockInventory(context, GemCleanserBE.TOTAL_SLOTS), getBlockPropertyDelegate(context, GemCleanserBE.DELEGATE_SIZE));
 
         this.context = context;
 
@@ -49,10 +49,10 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
 
         this.setTitleVisible(false);
 
-        WGridPanel  root = new WGridPanel ();
+        WPlainPanel  root = new WPlainPanel ();
         setRootPanel(root);
 
-        root.setSize(300, 168);
+        root.setSize(200, 168);
         root.setInsets(Insets.ROOT_PANEL);
 
         WItemSlot base_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.BASE_INPUT_SLOT);
@@ -60,7 +60,7 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         WItemSlot fluid_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_INPUT_SLOT);
         WItemSlot fluid_output_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_OUTPUT_SLOT);
 
-        WBar progressBar = WBar.withConstantMaximum(AllThatMatters.identifier("textures/gui/empty_vertical_progress.png"),
+        WBar progressBar = new WBar(AllThatMatters.identifier("textures/gui/empty_vertical_progress.png"),
                 AllThatMatters.identifier("textures/gui/full_vertical_progress.png"),
                 loaderEntity.getProgress(), loaderEntity.getMaxProgress(), WBar.Direction.DOWN);
 
@@ -72,13 +72,12 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
 
         WSprite connectionTube = new WSprite(AllThatMatters.identifier("textures/gui/gem_cleanser_connection_tube.png"));
 
-        root.add(base_input_slot, 4, 1);
-        /*root.add(base_input_slot, 116, 14);
+        root.add(base_input_slot, 116, 14);
         root.add(base_output_slot, 116, 59);
         root.add(fluid_input_slot, 42, 14);
-        root.add(fluid_output_slot, 42, 59);*/
+        root.add(fluid_output_slot, 42, 59);
 
-        //root.add(progressBar, 135, 33, 8, 26);
+        root.add(progressBar, 135, 33, 8, 26);
 
         //root.add(fluidBackground, 85, 14);
         //root.add(fluidAmount, 86, 15, 16, 61);
@@ -86,8 +85,8 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         //root.add(fluidTube, 59, 26);
         //root.add(connectionTube, 102, 31);
 
-        //root.add(this.createPlayerInventoryPanel(), 7, 85);
-        root.add(this.createPlayerInventoryPanel(), 0, 3);
+        root.add(this.createPlayerInventoryPanel(), 7, 85);
+
         root.validate(this);
     }
 

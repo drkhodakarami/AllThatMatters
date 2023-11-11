@@ -3,6 +3,7 @@ package jiraiyah.allthatmatters.block;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
+import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
 import jiraiyah.allthatmatters.block.entity.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
@@ -19,7 +20,7 @@ import java.util.List;
 public class ModBlockEntities
 {
     public static BlockEntityType<GemCleanserBE> GEM_CLEANSER =
-            Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.identifier("infusing_station_be"),
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":" + GemCleanserBlock.ID.getPath(),
                     FabricBlockEntityTypeBuilder.create(GemCleanserBE::new, ModBlocks.GEM_CLEANSER).build());
 
     public static BlockEntityType<ChunkLoaderBlockEntity> CHUNK_LOADER =

@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.screen;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
+import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
 import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
@@ -34,8 +35,8 @@ public class ModScreenHandlers
                 (syncId, inventory, buf) -> new GemCleanserScreenHandler(syncId, inventory,
                         ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));*/
 
-        GEM_CLEANSER_SCREEN_HANDLER = Registry.register(Registries.SCREEN_HANDLER, AllThatMatters.identifier("gem_cleanser"),
-                new ScreenHandlerType<>((syncId, inventory) -> new GemCleanserScreenHandler(syncId, inventory, ScreenHandlerContext.EMPTY),
-                        FeatureFlags.VANILLA_FEATURES));
+        GEM_CLEANSER_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(GemCleanserBlock.ID,
+                (syncId, inventory, buf) -> new GemCleanserScreenHandler(syncId, inventory,
+                        ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
     }
 }

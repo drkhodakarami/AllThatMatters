@@ -97,7 +97,7 @@ public class ModBlocks
             new EnderiteShulkerBoxBlock(DyeColor.YELLOW));
     //endregion
 
-    public static final Block GEM_CLEANSER = registerBlock("gem_cleanser",
+    public static final GemCleanserBlock GEM_CLEANSER = (GemCleanserBlock) registerBlock("gem_cleanser",
             new GemCleanserBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     private ModBlocks()
