@@ -31,10 +31,6 @@ public class ModScreenHandlers
                 (syncId, inventory, buf) -> new ChunkLoaderScreenHandler(syncId, inventory,
                         ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
 
-        /*GEM_CLEANSER_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(AllThatMatters.identifier("gem_cleanser"),
-                (syncId, inventory, buf) -> new GemCleanserScreenHandler(syncId, inventory,
-                        ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));*/
-
         GEM_CLEANSER_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(GemCleanserBlock.ID,
                 (syncId, inventory, buf) -> new GemCleanserScreenHandler(syncId, inventory,
                         ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));

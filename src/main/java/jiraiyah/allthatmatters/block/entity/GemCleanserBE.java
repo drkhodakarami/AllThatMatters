@@ -18,7 +18,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -30,7 +29,6 @@ import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHolder
@@ -126,9 +124,8 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
     {
-        //sendFluidPacket();
+        sendFluidPacket();
         return new GemCleanserScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos));
-        //return new GemCleanserScreenHandler(syncId, playerInventory, ScreenHandlerContext.create(world, pos));
     }
 
     @Override
@@ -216,7 +213,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     @Override
     protected void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        if (!this.isTankEmpty(this.fluidStorage) && isLiquidOutputReceivable(BASE_OUTPUT_SLOT))
+        if (!this.isTankEmpty(this.fluidStorage) && isLiquidOutputReceivable(FLUID_OUTPUT_SLOT))
         {
             if (this.isItemStackEmptyBucket(FLUID_INPUT_SLOT))
             {
@@ -313,15 +310,6 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     protected boolean shouldUseFluid()
     {
         return true;
-    }
-
-    @Override
-    public void tick(World world, BlockPos pos, BlockState state)
-    {
-        increaseCraftProgress();
-        if(this.progress >= this.maxProgress)
-            resetProgress();
-        //super.tick(world, pos, state);
     }
 
     //region PRIVATE METHODS
