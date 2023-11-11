@@ -321,7 +321,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         increaseCraftProgress();
         if(this.progress >= this.maxProgress)
             resetProgress();
-        super.tick(world, pos, state);
+        //super.tick(world, pos, state);
     }
 
     //region PRIVATE METHODS
