@@ -1,43 +1,43 @@
 {
-	"schemaVersion": 1,
-	"id": "allthatmatters",
-	"version": "${version}",
-	"name": "All That Matters",
-	"description": "This mod is a collection of everything I would like to have in my game play. Some of the features may look op but that is how I like to play minecraft. You can turn them off in the config",
-	"authors": [
-		"Jiraiyah"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "MIT",
-	"icon": "assets/allthatmatters/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"jiraiyah.allthatmatters.AllThatMatters"
-		],
-		"fabric-datagen": [
-			"jiraiyah.allthatmatters.ATMDataGenerator"
-		],
-		"client": [
-			"jiraiyah.allthatmatters.ATMClient"
-		],
-		"rei_client": [
-			"jiraiyah.allthatmatters.compat.ATMREIClientPlugin"
-		]
-	},
-	"mixins": [
-		"allthatmatters.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.14.24",
-		"minecraft": "~1.20.2",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "allthatmatters",
+  "version": "${version}",
+  "name": "All That Matters",
+  "description": "This mod is a collection of everything I would like to have in my game play. Some of the features may look op but that is how I like to play minecraft. You can turn them off in the config",
+  "authors": [
+    "Jiraiyah"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/allthatmatters/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "jiraiyah.allthatmatters.AllThatMatters"
+    ],
+    "fabric-datagen": [
+      "jiraiyah.allthatmatters.ATMDataGenerator"
+    ],
+    "client": [
+      "jiraiyah.allthatmatters.ATMClient"
+    ],
+    "rei_client": [
+      "jiraiyah.allthatmatters.compat.ATMREIClientPlugin"
+    ]
+  },
+  "mixins": [
+    "allthatmatters.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.24",
+    "minecraft": "~1.20.2",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

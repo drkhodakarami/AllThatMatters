@@ -1,0 +1,123 @@
+package jiraiyah.allthatmatters.screen.handler;
+
+import io.github.cottonmc.cotton.gui.SyncedGuiDescription;
+import io.github.cottonmc.cotton.gui.widget.*;
+import io.github.cottonmc.cotton.gui.widget.data.Insets;
+import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
+import jiraiyah.allthatmatters.screen.ModScreenHandlers;
+import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.registry.Registries;
+import net.minecraft.screen.PropertyDelegate;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.text.MutableText;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GemCleanserScreenHandler extends SyncedGuiDescription
+{
+    private final ScreenHandlerContext context;
+    private FluidStackRenderer fluidStackRenderer;
+
+    private static final NumberFormat nf = NumberFormat.getIntegerInstance();
+
+    public GemCleanserBE loaderEntity;
+    public FluidStack fluidStack;
+
+    public GemCleanserScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context)
+    {
+        super(ModScreenHandlers.GEM_CLEANSER_SCREEN_HANDLER, syncId, playerInventory, getBlockInventory(context, GemCleanserBE.TOTAL_SLOTS), getBlockPropertyDelegate(context));
+
+        this.context = context;
+
+        this.context.run((world, pos) -> loaderEntity = (GemCleanserBE) world.getBlockEntity(pos));
+
+        this.fluidStack = new FluidStack(loaderEntity.fluidStorage.variant, loaderEntity.fluidStorage.amount);
+        this.fluidStackRenderer = new FluidStackRenderer(GemCleanserBE.FLUID_CAPACITY, true, 15, 61);
+
+        this.setTitleVisible(false);
+
+        WGridPanel  root = new WGridPanel ();
+        setRootPanel(root);
+
+        root.setSize(300, 168);
+        root.setInsets(Insets.ROOT_PANEL);
+
+        WItemSlot base_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.BASE_INPUT_SLOT);
+        WItemSlot base_output_slot = WItemSlot.of(blockInventory, GemCleanserBE.BASE_OUTPUT_SLOT);
+        WItemSlot fluid_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_INPUT_SLOT);
+        WItemSlot fluid_output_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_OUTPUT_SLOT);
+
+        WBar progressBar = WBar.withConstantMaximum(AllThatMatters.identifier("textures/gui/empty_vertical_progress.png"),
+                AllThatMatters.identifier("textures/gui/full_vertical_progress.png"),
+                loaderEntity.getProgress(), loaderEntity.getMaxProgress(), WBar.Direction.DOWN);
+
+        WDynamicLabel fluidAmount = new WDynamicLabel(() -> this.fluidStackRenderer.getTooltip(this.fluidStack, TooltipContext.BASIC).get(0).getString());
+
+        WSprite fluidBackground = new WSprite(AllThatMatters.identifier("textures/gui/fluid_tank_background.png"));
+
+        WSprite fluidTube = new WSprite(AllThatMatters.identifier("textures/gui/short_tube.png"));
+
+        WSprite connectionTube = new WSprite(AllThatMatters.identifier("textures/gui/gem_cleanser_connection_tube.png"));
+
+        root.add(base_input_slot, 4, 1);
+        /*root.add(base_input_slot, 116, 14);
+        root.add(base_output_slot, 116, 59);
+        root.add(fluid_input_slot, 42, 14);
+        root.add(fluid_output_slot, 42, 59);*/
+
+        //root.add(progressBar, 135, 33, 8, 26);
+
+        //root.add(fluidBackground, 85, 14);
+        //root.add(fluidAmount, 86, 15, 16, 61);
+
+        //root.add(fluidTube, 59, 26);
+        //root.add(connectionTube, 102, 31);
+
+        //root.add(this.createPlayerInventoryPanel(), 7, 85);
+        root.add(this.createPlayerInventoryPanel(), 0, 3);
+        root.validate(this);
+    }
+
+    @Override
+    public boolean canUse(PlayerEntity entity)
+    {
+        return canUse(this.context, entity, ModBlocks.GEM_CLEANSER);
+    }
+
+    public void setFluid(FluidStack stack)
+    {
+        fluidStack = stack;
+    }
+
+
+
+    /*public Text getTooltip()
+    {
+        List<Text> tooltip = new ArrayList<>();
+        FluidVariant fluidType = this.fluidStack.getFluidVariant();
+        if (fluidType == null)
+            return tooltip.get(0);
+
+        MutableText displayName = Text.translatable("block." + Registries.FLUID.getId(this.fluidStack.fluidVariant.getFluid()).toTranslationKey());
+        tooltip.add(displayName);
+
+        long amount = this.fluidStack.getAmount();
+        MutableText amountString = Text.translatable(AllThatMatters.ModID + ".tooltip.liquid.amount.with.capacity", nf.format(amount), nf.format(GemCleanserBE.FLUID_CAPACITY));
+        tooltip.add(amountString.fillStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+
+        return tooltip.get(0);
+    }*/
+}

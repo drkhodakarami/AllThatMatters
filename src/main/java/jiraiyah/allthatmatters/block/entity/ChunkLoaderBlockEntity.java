@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.block.entity.custom;
+package jiraiyah.allthatmatters.block.entity;
 
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
@@ -21,7 +21,7 @@ public class ChunkLoaderBlockEntity extends BlockEntity implements NamedScreenHa
 
     public ChunkLoaderBlockEntity(BlockPos pos, BlockState state)
     {
-        super(ModBlockEntities.CHUNK_LOADER_BLOCK_ENTITY, pos, state);
+        super(ModBlockEntities.CHUNK_LOADER, pos, state);
     }
 
     @Override

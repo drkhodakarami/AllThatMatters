@@ -3,9 +3,9 @@ package jiraiyah.allthatmatters.recipe.custom;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
+import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
-import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
@@ -16,28 +16,28 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
+public class GemCleanserRecipe implements Recipe<Inventory>
 {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
-    public InfusingStationCraftingRecipe(List<Ingredient> ingredients, ItemStack itemStack)
+    public GemCleanserRecipe(List<Ingredient> ingredients, ItemStack itemStack)
     {
         this.output = itemStack;
         this.recipeItems = ingredients;
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world)
+    public boolean matches(Inventory inventory, World world)
     {
         if (world.isClient())
             return false;
 
-        return recipeItems.get(0).test(inventory.getStack(InfusingStationBlockEntity.BASE_INPUT_SLOT));
+        return recipeItems.get(0).test(inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT));
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager)
+    public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager)
     {
         return output;
     }
@@ -74,13 +74,13 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
         return ModRecipes.INFUSING_STATION_TYPE;
     }
 
-    public static class Serializer implements RecipeSerializer<InfusingStationCraftingRecipe>
+    public static class Serializer implements RecipeSerializer<GemCleanserRecipe>
     {
-        public static final Codec<InfusingStationCraftingRecipe> CODEC = RecordCodecBuilder.create(in ->
+        public static final Codec<GemCleanserRecipe> CODEC = RecordCodecBuilder.create(in ->
                 in.group(validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
-                                .fieldOf("ingredients").forGetter(InfusingStationCraftingRecipe::getIngredients),
+                                .fieldOf("ingredients").forGetter(GemCleanserRecipe::getIngredients),
                         RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
-                ).apply(in, InfusingStationCraftingRecipe::new));
+                ).apply(in, GemCleanserRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max)
         {
@@ -90,13 +90,13 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
         }
 
         @Override
-        public Codec<InfusingStationCraftingRecipe> codec()
+        public Codec<GemCleanserRecipe> codec()
         {
             return CODEC;
         }
 
         @Override
-        public InfusingStationCraftingRecipe read(PacketByteBuf buf)
+        public GemCleanserRecipe read(PacketByteBuf buf)
         {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
@@ -104,11 +104,11 @@ public class InfusingStationCraftingRecipe implements Recipe<SimpleInventory>
                 inputs.set(i, Ingredient.fromPacket(buf));
 
             ItemStack output = buf.readItemStack();
-            return new InfusingStationCraftingRecipe(inputs, output);
+            return new GemCleanserRecipe(inputs, output);
         }
 
         @Override
-        public void write(PacketByteBuf buf, InfusingStationCraftingRecipe recipe)
+        public void write(PacketByteBuf buf, GemCleanserRecipe recipe)
         {
             buf.writeInt(recipe.getIngredients().size());
 

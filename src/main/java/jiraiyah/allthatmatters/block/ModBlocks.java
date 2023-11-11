@@ -1,10 +1,7 @@
 package jiraiyah.allthatmatters.block;
 
 import jiraiyah.allthatmatters.AllThatMatters;
-import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
-import jiraiyah.allthatmatters.block.custom.EnderiteOre;
-import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
-import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
+import jiraiyah.allthatmatters.block.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -100,8 +97,8 @@ public class ModBlocks
             new EnderiteShulkerBoxBlock(DyeColor.YELLOW));
     //endregion
 
-    public static final Block INFUSING_STATION = registerBlock("infusing_station",
-            new InfusingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+    public static final Block GEM_CLEANSER = registerBlock("gem_cleanser",
+            new GemCleanserBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     private ModBlocks()
     {

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "allthatmatters:block/gem_cleanser"
+    },
+    "facing=south": {
+      "model": "allthatmatters:block/gem_cleanser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "allthatmatters:block/gem_cleanser",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "allthatmatters:block/gem_cleanser",
+      "y": 90
+    }
+  }
+}

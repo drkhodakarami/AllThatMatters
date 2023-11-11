@@ -1,7 +1,7 @@
 package jiraiyah.allthatmatters.client.renderer;
 
-import jiraiyah.allthatmatters.block.custom.InfusingStationBlock;
-import jiraiyah.allthatmatters.block.entity.custom.InfusingStationBlockEntity;
+import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
+import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -17,14 +17,14 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<InfusingStationBlockEntity>
+public class GemCleanserBERenderer implements BlockEntityRenderer<GemCleanserBE>
 {
-    public InfusingStationBlockEntityRenderer(BlockEntityRendererFactory.Context context)
+    public GemCleanserBERenderer(BlockEntityRendererFactory.Context context)
     {
     }
 
     @Override
-    public void render(InfusingStationBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay)
+    public void render(GemCleanserBE entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay)
     {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack stack = entity.getRenderStack();
@@ -34,7 +34,7 @@ public class InfusingStationBlockEntityRenderer implements BlockEntityRenderer<I
             matrices.scale(0.35f, 0.35f, 0.35f);
             matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(270));
 
-            switch (entity.getCachedState().get(InfusingStationBlock.FACING))
+            switch (entity.getCachedState().get(GemCleanserBlock.FACING))
             {
                 case NORTH -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(180));
                 case EAST -> matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(90));

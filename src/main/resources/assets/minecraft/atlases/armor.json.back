@@ -1,9 +1,0 @@
-{
-    "sources": [
-        {
-            "type": "directory",
-            "source": "armor",
-            "prefix": "armor/"
-        }
-    ]
-}

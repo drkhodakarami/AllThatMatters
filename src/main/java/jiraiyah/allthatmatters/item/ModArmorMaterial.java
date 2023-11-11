@@ -12,25 +12,25 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements ArmorMaterial
 {
-    AMETHYST("amethyst", 20, new int[] { 2, 7, 5, 1 }, 30,
+    AMETHYST("amethyst", 20, new int[]{2, 7, 5, 1}, 30,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             1.5f, 0.05f, () -> Ingredient.ofItems(Items.AMETHYST_SHARD)),
-    CITRINE("citrine", 30, new int[] { 3, 8, 6, 3 }, 25,
+    CITRINE("citrine", 30, new int[]{3, 8, 6, 3}, 25,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             2f, 0.1f, () -> Ingredient.ofItems(ModItems.CITRINE)),
-    COPPER("copper", 25, new int[] { 2, 6, 5, 2 }, 18,
+    COPPER("copper", 25, new int[]{2, 6, 5, 2}, 18,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
             1f, 0.0f, () -> Ingredient.ofItems(Items.COPPER_INGOT)),
-    EMERALD("emerald", 15, new int[] { 2, 7, 5, 1 }, 20,
+    EMERALD("emerald", 15, new int[]{2, 7, 5, 1}, 20,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             1.5f, 0.15f, () -> Ingredient.ofItems(Items.COPPER_INGOT)),
-    ENDERITE("enderite", 42, new int[] { 3, 8, 6, 3 }, 30,
+    ENDERITE("enderite", 42, new int[]{3, 8, 6, 3}, 30,
             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
             3f, 0.2f, () -> Ingredient.ofItems(ModItems.ENDERITE)),
-    RUBY("ruby", 36, new int[] { 3, 8, 6, 3 }, 25,
+    RUBY("ruby", 36, new int[]{3, 8, 6, 3}, 25,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             2f, 0.1f, () -> Ingredient.ofItems(ModItems.RUBY)),
-    SAPPHIRE("sapphire", 36, new int[] { 3, 8, 6, 3 }, 25,
+    SAPPHIRE("sapphire", 36, new int[]{3, 8, 6, 3}, 25,
             SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
             2f, 0.1f, () -> Ingredient.ofItems(ModItems.SAPPHIRE));
 
@@ -56,7 +56,7 @@ public enum ModArmorMaterial implements ArmorMaterial
         this.repairIngredient = repairIngredient;
     }
 
-    private static final int[] BASE_DURABILITY = { 11, 16, 15, 13 };
+    private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
 
     @Override
     public int getDurability(ArmorItem.Type type)

@@ -66,7 +66,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.SHULKER_RED)
                 .add(ModBlocks.SHULKER_WHITE)
                 .add(ModBlocks.SHULKER_YELLOW)
-                .add(ModBlocks.INFUSING_STATION);
+                .add(ModBlocks.GEM_CLEANSER);
 
         /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
 
@@ -87,7 +87,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.ORE_WORLD_CITRINE)
                 .add(ModBlocks.ORE_WORLD_RUBY)
                 .add(ModBlocks.ORE_WORLD_SAPPHIRE)
-                .add(ModBlocks.INFUSING_STATION);
+                .add(ModBlocks.GEM_CLEANSER);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.CITRINE)

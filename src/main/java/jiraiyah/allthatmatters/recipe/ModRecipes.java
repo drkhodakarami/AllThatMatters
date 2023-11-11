@@ -1,17 +1,18 @@
 package jiraiyah.allthatmatters.recipe;
 
 import jiraiyah.allthatmatters.AllThatMatters;
-import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
+import jiraiyah.allthatmatters.recipe.custom.GemCleanserRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 
 public class ModRecipes
 {
-    public static final RecipeType<InfusingStationCraftingRecipe> INFUSING_STATION_TYPE = new RecipeType<>(){};
-    public static final RecipeSerializer<InfusingStationCraftingRecipe> INFUSING_STATION_SERIALIZER = new InfusingStationCraftingRecipe.Serializer();
+    public static final RecipeType<GemCleanserRecipe> INFUSING_STATION_TYPE = new RecipeType<>()
+    {
+    };
+    public static final RecipeSerializer<GemCleanserRecipe> INFUSING_STATION_SERIALIZER = new GemCleanserRecipe.Serializer();
 
     private ModRecipes()
     {
@@ -22,8 +23,8 @@ public class ModRecipes
     {
         AllThatMatters.LOGGER.info(">>> Registering Recipes for : " + AllThatMatters.ModID);
 
-        register("advance_infusing", INFUSING_STATION_TYPE);
-        register("advance_infusing", INFUSING_STATION_SERIALIZER);
+        register("gem_cleanser", INFUSING_STATION_TYPE);
+        register("gem_cleanser", INFUSING_STATION_SERIALIZER);
     }
 
     private static void register(String name, RecipeSerializer<?> serializer)

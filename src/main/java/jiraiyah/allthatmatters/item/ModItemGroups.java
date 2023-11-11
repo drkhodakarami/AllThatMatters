@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 public class ModItemGroups
 {
@@ -19,7 +18,7 @@ public class ModItemGroups
                     .icon(() -> new ItemStack(ModBlocks.CHUNK_LOADER)).entries((displayContext, entries) ->
                     {
                         entries.add(ModBlocks.CHUNK_LOADER);
-                        entries.add(ModBlocks.INFUSING_STATION);
+                        entries.add(ModBlocks.GEM_CLEANSER);
 
                         entries.add(ModItems.CITRINE);
                         entries.add(ModItems.RAW_CITRINE);
@@ -230,7 +229,6 @@ public class ModItemGroups
                         entries.add(ModBlocks.ORE_WORLD_RUBY);
                         entries.add(ModBlocks.ORE_WORLD_SAPPHIRE);
                         entries.add(ModBlocks.ORE_ENDERITE);
-
 
 
                     }).build());

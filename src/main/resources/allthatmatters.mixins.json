@@ -1,18 +1,18 @@
 {
-	"required": true,
-	"package": "jiraiyah.allthatmatters.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ModMixin",
-		"ItemEntityMixin",
-		"ShulkerBoxBlockMixin",
-		"ChunkTicketManagerInvoker",
-		"ChunkTicketTypeAccessor",
-		"MinecraftServerMixin",
-		"ThreadedAnvilChunkStorageInvoker",
-		"AbstractClientPlayerEntityMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "jiraiyah.allthatmatters.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ModMixin",
+    "ItemEntityMixin",
+    "ShulkerBoxBlockMixin",
+    "ChunkTicketManagerInvoker",
+    "ChunkTicketTypeAccessor",
+    "MinecraftServerMixin",
+    "ThreadedAnvilChunkStorageInvoker",
+    "AbstractClientPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

@@ -2,7 +2,7 @@ package jiraiyah.allthatmatters.block.custom;
 
 
 import jiraiyah.allthatmatters.utils.interfaces.UpgradedShulker;
-import jiraiyah.allthatmatters.block.entity.custom.EnderiteShulkerBlockEntity;
+import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
 import net.fabricmc.api.EnvType;
@@ -56,7 +56,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
     {
-        return validateTicker(type, ModBlockEntities.ENDERITE_SHULKER_ENTITY,
+        return validateTicker(type, ModBlockEntities.ENDERITE_SHULKER,
                 (world1, pos, state1, blockEntity) -> blockEntity.customTick(world1, pos, state1));
     }
 

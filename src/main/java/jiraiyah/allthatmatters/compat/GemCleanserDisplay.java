@@ -1,6 +1,6 @@
 package jiraiyah.allthatmatters.compat;
 
-import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
+import jiraiyah.allthatmatters.recipe.custom.GemCleanserRecipe;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
@@ -12,20 +12,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class InfusingStationDisplay extends BasicDisplay
+public class GemCleanserDisplay extends BasicDisplay
 {
-    public InfusingStationDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs)
+    public GemCleanserDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs)
     {
         super(inputs, outputs);
     }
 
-    public InfusingStationDisplay(RecipeEntry<InfusingStationCraftingRecipe> recipe)
+    public GemCleanserDisplay(RecipeEntry<GemCleanserRecipe> recipe)
     {
         super(getInputList(recipe.value()),
                 List.of(EntryIngredient.of(EntryStacks.of(recipe.value().getResult(null)))));
     }
 
-    private static List<EntryIngredient> getInputList(InfusingStationCraftingRecipe recipe)
+    private static List<EntryIngredient> getInputList(GemCleanserRecipe recipe)
     {
         if (recipe == null) return Collections.emptyList();
         List<EntryIngredient> list = new ArrayList<>();
@@ -36,6 +36,6 @@ public class InfusingStationDisplay extends BasicDisplay
     @Override
     public CategoryIdentifier<?> getCategoryIdentifier()
     {
-        return InfusingStationCategory.ADVANCE_INFUSING;
+        return GemCleanserCategory.GEM_CLEANSER;
     }
 }

@@ -2,8 +2,8 @@ package jiraiyah.allthatmatters.compat;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
-import jiraiyah.allthatmatters.recipe.custom.InfusingStationCraftingRecipe;
-import jiraiyah.allthatmatters.screen.custom.InfusingStationScreen;
+import jiraiyah.allthatmatters.recipe.custom.GemCleanserRecipe;
+import jiraiyah.allthatmatters.screen.custom.GemCleanserScreen;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
@@ -16,14 +16,14 @@ public class ATMREIClientPlugin implements REIClientPlugin
     @Override
     public void registerCategories(CategoryRegistry registry)
     {
-        registry.add(new InfusingStationCategory());
-        registry.addWorkstations(InfusingStationCategory.ADVANCE_INFUSING, EntryStacks.of(ModBlocks.INFUSING_STATION));
+        registry.add(new GemCleanserCategory());
+        registry.addWorkstations(GemCleanserCategory.GEM_CLEANSER, EntryStacks.of(ModBlocks.GEM_CLEANSER));
     }
 
     @Override
     public void registerDisplays(DisplayRegistry registry)
     {
-        registry.registerRecipeFiller(InfusingStationCraftingRecipe.class, ModRecipes.INFUSING_STATION_TYPE, InfusingStationDisplay::new);
+        registry.registerRecipeFiller(GemCleanserRecipe.class, ModRecipes.INFUSING_STATION_TYPE, GemCleanserDisplay::new);
     }
 
     @Override
@@ -31,6 +31,6 @@ public class ATMREIClientPlugin implements REIClientPlugin
     {
         registry.registerClickArea(screen ->
                         new Rectangle(75, 30, 20, 30),
-                InfusingStationScreen.class, InfusingStationCategory.ADVANCE_INFUSING);
+                GemCleanserScreen.class, GemCleanserCategory.GEM_CLEANSER);
     }
 }

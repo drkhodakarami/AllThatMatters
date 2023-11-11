@@ -10,7 +10,7 @@ import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import io.github.cottonmc.cotton.gui.widget.data.VerticalAlignment;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
-import jiraiyah.allthatmatters.block.entity.custom.ChunkLoaderBlockEntity;
+import jiraiyah.allthatmatters.block.entity.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.networking.packet.ForcedChunksUpdatePacket;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.utils.data.ChunkData;
@@ -19,7 +19,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 

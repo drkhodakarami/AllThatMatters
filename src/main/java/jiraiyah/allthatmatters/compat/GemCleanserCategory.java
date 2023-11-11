@@ -19,30 +19,30 @@ import java.util.List;
 
 // Done with the help :
 // https://github.com/TeamGalacticraft/Galacticraft/tree/main (MIT License)
-public class InfusingStationCategory implements DisplayCategory<BasicDisplay>
+public class GemCleanserCategory implements DisplayCategory<BasicDisplay>
 {
     public static final Identifier TEXTURE =
-            AllThatMatters.identifier("textures/gui/container/infusing_station.png");
+            AllThatMatters.identifier("textures/gui/container/gem_cleanser.png");
 
-    public static final CategoryIdentifier<InfusingStationDisplay> ADVANCE_INFUSING =
-            CategoryIdentifier.of(AllThatMatters.ModID, "advance_infusing");
+    public static final CategoryIdentifier<GemCleanserDisplay> GEM_CLEANSER =
+            CategoryIdentifier.of(AllThatMatters.ModID, "gem_cleanser");
 
     @Override
     public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier()
     {
-        return ADVANCE_INFUSING;
+        return GEM_CLEANSER;
     }
 
     @Override
     public Text getTitle()
     {
-        return Text.translatable("infusing_station.advance_infusing");
+        return Text.translatable("gem_cleanser.gem_cleanser");
     }
 
     @Override
     public Renderer getIcon()
     {
-        return EntryStacks.of(ModBlocks.INFUSING_STATION.asItem().getDefaultStack());
+        return EntryStacks.of(ModBlocks.GEM_CLEANSER.asItem().getDefaultStack());
     }
 
     @Override
@@ -52,10 +52,10 @@ public class InfusingStationCategory implements DisplayCategory<BasicDisplay>
         List<Widget> widgets = new LinkedList<>();
         widgets.add(Widgets.createTexturedWidget(TEXTURE, new Rectangle(startPoint.x, startPoint.y, 175, 82)));
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 86, startPoint.y + 15))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 117, startPoint.y + 15))
                 .entries(display.getInputEntries().get(0)));
 
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 86, startPoint.y + 60))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 117, startPoint.y + 60))
                 .markOutput().entries(display.getOutputEntries().get(0)));
 
 

@@ -52,9 +52,9 @@ public class ModArmorItem extends ArmorItem
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected)
     {
-        if(!world.isClient())
+        if (!world.isClient())
         {
-            if(entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player))
+            if (entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player))
                 evaluateArmorEffects(player);
         }
 
@@ -79,7 +79,7 @@ public class ModArmorItem extends ArmorItem
             ArmorMaterial mapArmorMaterial = entry.getKey();
             entry.getValue().forEach((effect) ->
             {
-                if(hasCorrectArmorOn(mapArmorMaterial, player) && isStatusEffectFading(player, effect))
+                if (hasCorrectArmorOn(mapArmorMaterial, player) && isStatusEffectFading(player, effect))
                     addStatusEffectForMaterial(player, effect);
             });
         }
@@ -88,14 +88,14 @@ public class ModArmorItem extends ArmorItem
     private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player)
     {
         // In case of Elytra, this will return and prevent game crash because Elytra is not ArmorItem
-        for (ItemStack armorStack: player.getInventory().armor)
+        for (ItemStack armorStack : player.getInventory().armor)
             if (!(armorStack.getItem() instanceof ArmorItem))
                 return false;
 
-        ArmorItem boots = ((ArmorItem)player.getInventory().getArmorStack(0).getItem());
-        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmorStack(1).getItem());
-        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmorStack(2).getItem());
-        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmorStack(3).getItem());
+        ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(0).getItem());
+        ArmorItem leggings = ((ArmorItem) player.getInventory().getArmorStack(1).getItem());
+        ArmorItem breastplate = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
+        ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
 
         return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
                 leggings.getMaterial() == material && boots.getMaterial() == material;
@@ -111,11 +111,11 @@ public class ModArmorItem extends ArmorItem
     private void addStatusEffectForMaterial(PlayerEntity player, StatusEffectInstance mapStatusEffect)
     {
         player.addStatusEffect(new StatusEffectInstance(mapStatusEffect.getEffectType(),
-                                                        mapStatusEffect.getDuration(),
-                                                        mapStatusEffect.getAmplifier(),
-                                                        mapStatusEffect.isAmbient(),
-                                                        mapStatusEffect.shouldShowParticles(),
-                                                        mapStatusEffect.shouldShowIcon()));
+                mapStatusEffect.getDuration(),
+                mapStatusEffect.getAmplifier(),
+                mapStatusEffect.isAmbient(),
+                mapStatusEffect.shouldShowParticles(),
+                mapStatusEffect.shouldShowIcon()));
     }
 
     private static void addValues(ArmorMaterial key, StatusEffectInstance value)
@@ -124,7 +124,7 @@ public class ModArmorItem extends ArmorItem
         if (MATERIAL_TO_EFFECT_MAP.containsKey(key))
         {
             tempList = MATERIAL_TO_EFFECT_MAP.get(key);
-            if(tempList == null)
+            if (tempList == null)
                 tempList = new ArrayList();
             tempList.add(value);
         }
@@ -133,6 +133,6 @@ public class ModArmorItem extends ArmorItem
             tempList = new ArrayList();
             tempList.add(value);
         }
-        MATERIAL_TO_EFFECT_MAP.put(key,tempList);
+        MATERIAL_TO_EFFECT_MAP.put(key, tempList);
     }
 }

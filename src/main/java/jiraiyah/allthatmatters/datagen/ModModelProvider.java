@@ -89,6 +89,7 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.CAST_WIRE, Models.GENERATED);
         //endregion
 
+        //region TOOL HEAD
         itemModelGenerator.register(ModItems.HEAD_CITRINE_AXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEAD_CITRINE_HAMMER, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEAD_CITRINE_HOE, Models.GENERATED);
@@ -154,6 +155,7 @@ public class ModModelProvider extends FabricModelProvider
 
         itemModelGenerator.register(ModItems.HEAD_STONE_HAMMER, Models.GENERATED);
         itemModelGenerator.register(ModItems.HEAD_WOOD_HAMMER, Models.GENERATED);
+        //endregion
 
         //region TOOLS
         itemModelGenerator.register(ModItems.TOOL_CITRINE_AXE, Models.HANDHELD);

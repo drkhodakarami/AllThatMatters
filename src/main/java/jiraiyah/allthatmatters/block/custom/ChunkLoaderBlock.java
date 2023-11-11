@@ -3,7 +3,7 @@ package jiraiyah.allthatmatters.block.custom;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
-import jiraiyah.allthatmatters.block.entity.custom.ChunkLoaderBlockEntity;
+import jiraiyah.allthatmatters.block.entity.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.networking.packet.ForcedChunksUpdatePacket;
 import jiraiyah.allthatmatters.utils.data.PersistentChunks;
 import jiraiyah.allthatmatters.utils.data.ChunkData;

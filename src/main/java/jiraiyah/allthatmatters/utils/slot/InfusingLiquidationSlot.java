@@ -17,10 +17,6 @@ public class InfusingLiquidationSlot extends Slot
     @Override
     public boolean canInsert(ItemStack stack)
     {
-        return stack.isOf(ModItems.ENDERITE) ||
-                stack.isOf(Items.LAVA_BUCKET) ||
-                stack.isOf(Items.WATER_BUCKET) ||
-                stack.isOf(Items.BUCKET) ||
-                stack.isOf(ModFluids.MOLTEN_ENDERITE_BUCKET);
+        return stack.isOf(Items.WATER_BUCKET) || stack.isOf(Items.BUCKET);
     }
 }

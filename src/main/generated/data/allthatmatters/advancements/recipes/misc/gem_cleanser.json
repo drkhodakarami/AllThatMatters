@@ -39,7 +39,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:infusing_station"
+        "recipe": "minecraft:gem_cleanser"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -54,7 +54,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:infusing_station"
+      "minecraft:gem_cleanser"
     ]
   },
   "sends_telemetry_event": false

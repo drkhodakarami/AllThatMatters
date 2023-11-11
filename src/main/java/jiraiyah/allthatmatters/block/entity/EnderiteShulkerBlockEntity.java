@@ -1,25 +1,12 @@
-package jiraiyah.allthatmatters.block.entity.custom;
+package jiraiyah.allthatmatters.block.entity;
 
 import jiraiyah.allthatmatters.block.ModBlockEntities;
-import jiraiyah.allthatmatters.fluid.ModFluids;
-import jiraiyah.allthatmatters.networking.ModMessages;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
@@ -53,7 +40,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     @Override
     public BlockEntityType<?> getType()
     {
-        return ModBlockEntities.ENDERITE_SHULKER_ENTITY;
+        return ModBlockEntities.ENDERITE_SHULKER;
     }
 
     @Override

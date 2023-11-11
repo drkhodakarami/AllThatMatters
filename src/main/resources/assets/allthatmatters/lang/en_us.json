@@ -5,92 +5,76 @@
   "item.allthatmatters.raw_ruby": "Raw Ruby",
   "item.allthatmatters.gem_sapphire": "Sapphire Gem",
   "item.allthatmatters.raw_sapphire": "Raw Sapphire",
-
   "item.allthatmatters.ingot_enderite": "Enderite",
   "item.allthatmatters.raw_enderite": "Raw Enderite",
   "item.allthatmatters.molten_enderite_bucket": "Bucket of Molten Enderite",
-
   "item.allthatmatters.tool_citrine_axe": "Citrine Axe",
   "item.allthatmatters.tool_citrine_hammer": "Citrine Hammer",
   "item.allthatmatters.tool_citrine_hoe": "Citrine Hoe",
   "item.allthatmatters.tool_citrine_pickaxe": "Citrine Pickaxe",
   "item.allthatmatters.tool_citrine_shovel": "Citrine Shovel",
   "item.allthatmatters.tool_citrine_sword": "Citrine Sword",
-
   "item.allthatmatters.tool_copper_axe": "Copper Axe",
   "item.allthatmatters.tool_copper_hammer": "Copper Hammer",
   "item.allthatmatters.tool_copper_hoe": "Copper Hoe",
   "item.allthatmatters.tool_copper_pickaxe": "Copper Pickaxe",
   "item.allthatmatters.tool_copper_shovel": "Copper Shovel",
   "item.allthatmatters.tool_copper_sword": "Copper Sword",
-
   "item.allthatmatters.tool_diamond_hammer": "Diamond Hammer",
   "item.allthatmatters.tool_gold_hammer": "Gold Hammer",
   "item.allthatmatters.tool_iron_hammer": "Iron Hammer",
   "item.allthatmatters.tool_netherite_hammer": "Netherite Hammer",
   "item.allthatmatters.tool_stone_hammer": "Wood Hammer",
   "item.allthatmatters.tool_wood_hammer": "Stone Hammer",
-
   "item.allthatmatters.tool_enderite_axe": "Enderite Axe",
   "item.allthatmatters.tool_enderite_hammer": "Enderite Hammer",
   "item.allthatmatters.tool_enderite_hoe": "Enderite Hoe",
   "item.allthatmatters.tool_enderite_pickaxe": "Enderite Pickaxe",
   "item.allthatmatters.tool_enderite_shovel": "Enderite Shovel",
   "item.allthatmatters.tool_enderite_sword": "Enderite Sword",
-
   "item.allthatmatters.tool_ruby_axe": "Ruby Axe",
   "item.allthatmatters.tool_ruby_hammer": "Ruby Hammer",
   "item.allthatmatters.tool_ruby_hoe": "Ruby Hoe",
   "item.allthatmatters.tool_ruby_pickaxe": "Ruby Pickaxe",
   "item.allthatmatters.tool_ruby_shovel": "Ruby Shovel",
   "item.allthatmatters.tool_ruby_sword": "Ruby Sword",
-
   "item.allthatmatters.tool_sapphire_axe": "Sapphire Axe",
   "item.allthatmatters.tool_sapphire_hammer": "Sapphire Hammer",
   "item.allthatmatters.tool_sapphire_hoe": "Sapphire Hoe",
   "item.allthatmatters.tool_sapphire_pickaxe": "Sapphire Pickaxe",
   "item.allthatmatters.tool_sapphire_shovel": "Sapphire Shovel",
   "item.allthatmatters.tool_sapphire_sword": "Sapphire Sword",
-
   "item.allthatmatters.tool_ruby_bow": "Ruby Bow",
   "item.allthatmatters.tool_sapphire_bow": "Sapphire Bow",
   "item.allthatmatters.tool_enderite_bow": "Enderite Bow",
-
   "item.allthatmatters.armor_amethyst_helmet": "Amethyst Helmet",
   "item.allthatmatters.armor_amethyst_chestplate": "Amethyst Chestplate",
   "item.allthatmatters.armor_amethyst_leggings": "Amethyst Leggings",
   "item.allthatmatters.armor_amethyst_boots": "Amethyst Boots",
-
   "item.allthatmatters.armor_citrine_helmet": "Citrine Helmet",
   "item.allthatmatters.armor_citrine_chestplate": "Citrine Chestplate",
   "item.allthatmatters.armor_citrine_leggings": "Citrine Leggings",
   "item.allthatmatters.armor_citrine_boots": "Citrine Boots",
-
   "item.allthatmatters.armor_copper_helmet": "Copper Helmet",
   "item.allthatmatters.armor_copper_chestplate": "Copper Chestplate",
   "item.allthatmatters.armor_copper_leggings": "Copper Leggings",
   "item.allthatmatters.armor_copper_boots": "Copper Boots",
-
   "item.allthatmatters.armor_emerald_helmet": "Emerald Helmet",
   "item.allthatmatters.armor_emerald_chestplate": "Emerald Chestplate",
   "item.allthatmatters.armor_emerald_leggings": "Emerald Leggings",
   "item.allthatmatters.armor_emerald_boots": "Emerald Boots",
-
   "item.allthatmatters.armor_enderite_helmet": "Enderite Helmet",
   "item.allthatmatters.armor_enderite_chestplate": "Enderite Chestplate",
   "item.allthatmatters.armor_enderite_leggings": "Enderite Leggings",
   "item.allthatmatters.armor_enderite_boots": "Enderite Boots",
-
   "item.allthatmatters.armor_ruby_helmet": "Ruby Helmet",
   "item.allthatmatters.armor_ruby_chestplate": "Ruby Chestplate",
   "item.allthatmatters.armor_ruby_leggings": "Ruby Leggings",
   "item.allthatmatters.armor_ruby_boots": "Ruby Boots",
-
   "item.allthatmatters.armor_sapphire_helmet": "Sapphire Helmet",
   "item.allthatmatters.armor_sapphire_chestplate": "Sapphire Chestplate",
   "item.allthatmatters.armor_sapphire_leggings": "Sapphire Leggings",
   "item.allthatmatters.armor_sapphire_boots": "Sapphire Boots",
-
   "item.allthatmatters.cast_axe": "Cast - Axe",
   "item.allthatmatters.cast_binding": "Cast - Binding",
   "item.allthatmatters.cast_gear": "Cast - Gear",
@@ -106,93 +90,76 @@
   "item.allthatmatters.cast_shovel": "Cast - Shovel",
   "item.allthatmatters.cast_sword": "Cast - Sword",
   "item.allthatmatters.cast_wire": "Cast - Wire",
-
   "item.allthatmatters.head_citrine_axe": "Citrine Axe Head",
   "item.allthatmatters.head_citrine_hammer": "Citrine Hammer Head",
   "item.allthatmatters.head_citrine_hoe": "Citrine Hoe Head",
   "item.allthatmatters.head_citrine_pickaxe": "Citrine Pickaxe Head",
   "item.allthatmatters.head_citrine_shovel": "Citrine Shovel Head",
   "item.allthatmatters.head_citrine_sword": "Citrine Sword Head",
-
   "item.allthatmatters.head_copper_axe": "Copper Axe Head",
   "item.allthatmatters.head_copper_hammer": "Copper Hammer Head",
   "item.allthatmatters.head_copper_hoe": "Copper Hoe Head",
   "item.allthatmatters.head_copper_pickaxe": "Copper Pickaxe Head",
   "item.allthatmatters.head_copper_shovel": "Copper Shovel Head",
   "item.allthatmatters.head_copper_sword": "Copper Sword Head",
-
   "item.allthatmatters.head_diamond_axe": "Diamond Axe Head",
   "item.allthatmatters.head_diamond_hammer": "Diamond Hammer Head",
   "item.allthatmatters.head_diamond_hoe": "Diamond Hoe Head",
   "item.allthatmatters.head_diamond_pickaxe": "Diamond Pickaxe Head",
   "item.allthatmatters.head_diamond_shovel": "Diamond Shovel Head",
   "item.allthatmatters.head_diamond_sword": "Diamond Sword Head",
-
   "item.allthatmatters.head_gold_axe": "Gold Axe Head",
   "item.allthatmatters.head_gold_hammer": "Gold Hammer Head",
   "item.allthatmatters.head_gold_hoe": "Gold Hoe Head",
   "item.allthatmatters.head_gold_pickaxe": "Gold Pickaxe Head",
   "item.allthatmatters.head_gold_shovel": "Gold Shovel Head",
   "item.allthatmatters.head_gold_sword": "Gold Sword Head",
-
   "item.allthatmatters.head_iron_axe": "Iron Axe Head",
   "item.allthatmatters.head_iron_hammer": "Iron Hammer Head",
   "item.allthatmatters.head_iron_hoe": "Iron Hoe Head",
   "item.allthatmatters.head_iron_pickaxe": "Iron Pickaxe Head",
   "item.allthatmatters.head_iron_shovel": "Iron Shovel Head",
   "item.allthatmatters.head_iron_sword": "Iron Sword Head",
-
   "item.allthatmatters.head_netherite_axe": "Netherite Axe Head",
   "item.allthatmatters.head_netherite_hammer": "Netherite Hammer Head",
   "item.allthatmatters.head_netherite_hoe": "Netherite Hoe Head",
   "item.allthatmatters.head_netherite_pickaxe": "Netherite Pickaxe Head",
   "item.allthatmatters.head_netherite_shovel": "Netherite Shovel Head",
   "item.allthatmatters.head_netherite_sword": "Netherite Sword Head",
-
   "item.allthatmatters.head_ruby_axe": "Ruby Axe Head",
   "item.allthatmatters.head_ruby_hammer": "Ruby Hammer Head",
   "item.allthatmatters.head_ruby_hoe": "Ruby Hoe Head",
   "item.allthatmatters.head_ruby_pickaxe": "Ruby Pickaxe Head",
   "item.allthatmatters.head_ruby_shovel": "Ruby Shovel Head",
   "item.allthatmatters.head_ruby_sword": "Ruby Sword Head",
-
   "item.allthatmatters.head_sapphire_axe": "Sapphire Axe Head",
   "item.allthatmatters.head_sapphire_hammer": "Sapphire Hammer Head",
   "item.allthatmatters.head_sapphire_hoe": "Sapphire Hoe Head",
   "item.allthatmatters.head_sapphire_pickaxe": "Sapphire Pickaxe Head",
   "item.allthatmatters.head_sapphire_shovel": "Sapphire Shovel Head",
   "item.allthatmatters.head_sapphire_sword": "Sapphire Sword Head",
-
   "item.allthatmatters.head_stone_hammer": "Stone Hammer Head",
   "item.allthatmatters.head_wood_hammer": "Wooden Hammer Head",
-
   "block.allthatmatters.block_citrine": "Citrine Block",
   "block.allthatmatters.block_ruby": "Ruby Block",
   "block.allthatmatters.block_sapphire": "Sapphire Block",
-
   "block.allthatmatters.ore_deep_citrine": "Deepslate Citrine Ore",
   "block.allthatmatters.ore_deep_ruby": "Deepslate Ruby Ore",
   "block.allthatmatters.ore_deep_sapphire": "Deepslate Sapphire Ore",
-
   "block.allthatmatters.ore_end_citrine": "Citrine Endstone",
   "block.allthatmatters.ore_end_ruby": "Ruby Endstone",
   "block.allthatmatters.ore_end_sapphire": "Sapphire Endstone",
-
   "block.allthatmatters.ore_nether_citrine": "Citrine Nether Rack",
   "block.allthatmatters.ore_nether_ruby": "Ruby Nether Rack",
   "block.allthatmatters.ore_nether_sapphire": "Sapphire Nether Rack",
   "block.allthatmatters.molten_enderite": "Molten Enderite",
-
   "block.allthatmatters.ore_world_citrine": "Citrine Ore",
   "block.allthatmatters.ore_world_ruby": "Ruby Ore",
   "block.allthatmatters.ore_world_sapphire": "Sapphire Ore",
-
   "block.allthatmatters.ore_end_enderite": "Enderite Endstone",
   "block.allthatmatters.ore_enderite": "Enderite Debris",
-
   "block.allthatmatters.chunk_loader": "Chunk Loader",
-  "block.allthatmatters.infusing_station": "Infusing Station",
-
+  "block.allthatmatters.gem_cleanser": "Gem Cleanser",
   "block.allthatmatters.enderite_shulker_normal": "Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_black": "Black Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_blue": "Blue Enderite Shulker Box",
@@ -210,18 +177,13 @@
   "block.allthatmatters.enderite_shulker_red": "Gray Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_white": "Gray Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_yellow": "Gray Enderite Shulker Box",
-
   "block.enderiteshulkers.shulker": "Enderite Shulker Box",
-  "allthatmatters.infusing_station": "Infusing Station",
-
-  "infusing_station.advance_infusing": "Advance Infusing",
-
+  "allthatmatters.gem_cleanser": "Gem Cleanser",
+  "gem_cleanser.gem_cleanser": "Gem Cleanser",
   "itemgroup.allthatmattersgroup": "All That Matters",
-
   "allthatmatters.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "allthatmatters.tooltip.liquid.amount": "%s mB",
   "block.minecraft.empty": "Empty",
-
   "allthatmatters.all": "All",
   "allthatmatters.none": "None"
 }

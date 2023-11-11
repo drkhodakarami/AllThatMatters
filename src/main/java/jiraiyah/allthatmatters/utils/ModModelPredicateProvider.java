@@ -21,11 +21,11 @@ public class ModModelPredicateProvider
         ModelPredicateProviderRegistry.register(bow, new Identifier("pull"),
                 (stack, world, entity, seed) ->
                 {
-                  if(entity == null)
-                      return 0.0f;
-                  if(entity.getActiveItem() != stack)
-                      return 0.0f;
-                  return (float) (stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / GemBow.ANIMATION_DURATION_DIVIDER;
+                    if (entity == null)
+                        return 0.0f;
+                    if (entity.getActiveItem() != stack)
+                        return 0.0f;
+                    return (float) (stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / GemBow.ANIMATION_DURATION_DIVIDER;
                 });
         ModelPredicateProviderRegistry.register(bow, new Identifier("pulling"),
                 (stack, world, entity, seed) -> entity != null &&

@@ -352,7 +352,8 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.SHULKER_YELLOW) + "shapeless"));
         //endregion
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.INFUSING_STATION, 1)
+        //region MACHINES
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.GEM_CLEANSER, 1)
                 .pattern("RIR")
                 .pattern("IBI")
                 .pattern("RFR")
@@ -363,7 +364,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(Items.FURNACE), conditionsFromItem(Items.FURNACE))
                 .criterion(hasItem(Items.IRON_BARS), conditionsFromItem(Items.IRON_BARS))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFUSING_STATION)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GEM_CLEANSER)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CHUNK_LOADER, 1)
                 .pattern("#/#")
@@ -378,6 +379,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.END_ROD), conditionsFromItem(Items.END_ROD))
                 .criterion(hasItem(ModItems.ENDERITE), conditionsFromItem(ModItems.ENDERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHUNK_LOADER)));
+        //endregion
 
         //region CITRINE TOOLS
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.TOOL_CITRINE_AXE, 1)

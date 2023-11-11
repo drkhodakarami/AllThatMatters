@@ -44,12 +44,12 @@ public class GemBow extends RangedWeaponItem implements Vanishable
 
                 int i = this.getMaxUseTime(stack) - remainingUseTicks;
                 float f = getPullProgress(i);
-                if (!((double)f < 0.1))
+                if (!((double) f < 0.1))
                 {
                     boolean bl2 = bl && itemStack.isOf(Items.ARROW);
                     if (!world.isClient)
                     {
-                        ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
+                        ArrowItem arrowItem = (ArrowItem) (itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
                         PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
                         persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * SPEED, 1.0F);
                         if (f == 1.0F)
@@ -57,7 +57,7 @@ public class GemBow extends RangedWeaponItem implements Vanishable
 
                         int j = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
                         if (j > 0)
-                            persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+                            persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double) j * 0.5 + 0.5);
 
                         int k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack);
                         if (k > 0)
@@ -76,7 +76,7 @@ public class GemBow extends RangedWeaponItem implements Vanishable
                         world.spawnEntity(persistentProjectileEntity);
                     }
 
-                    world.playSound((PlayerEntity)null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    world.playSound((PlayerEntity) null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     if (!bl2 && !playerEntity.getAbilities().creativeMode && !this.isInfinit)
                     {
                         itemStack.decrement(1);
@@ -92,9 +92,10 @@ public class GemBow extends RangedWeaponItem implements Vanishable
 
     public static float getPullProgress(int useTicks)
     {
-        float f = (float)useTicks / ANIMATION_DURATION_DIVIDER;
+        float f = (float) useTicks / ANIMATION_DURATION_DIVIDER;
         f = (f * f + f * 2.0F) / 3.0F;
-        if (f > 1.0F) {
+        if (f > 1.0F)
+        {
             f = 1.0F;
         }
 
@@ -106,7 +107,8 @@ public class GemBow extends RangedWeaponItem implements Vanishable
         return 200;
     }
 
-    public UseAction getUseAction(ItemStack stack) {
+    public UseAction getUseAction(ItemStack stack)
+    {
         return UseAction.BOW;
     }
 
@@ -125,11 +127,13 @@ public class GemBow extends RangedWeaponItem implements Vanishable
         }
     }
 
-    public Predicate<ItemStack> getProjectiles() {
+    public Predicate<ItemStack> getProjectiles()
+    {
         return BOW_PROJECTILES;
     }
 
-    public int getRange() {
+    public int getRange()
+    {
         return RANGE;
     }
 }

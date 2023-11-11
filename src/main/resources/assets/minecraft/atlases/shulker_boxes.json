@@ -1,9 +1,9 @@
 {
-    "sources": [
-        {
-            "type": "directory",
-            "source": "shulker",
-            "prefix": "shulker/"
-        }
-    ]
+  "sources": [
+    {
+      "type": "directory",
+      "source": "shulker",
+      "prefix": "shulker/"
+    }
+  ]
 }

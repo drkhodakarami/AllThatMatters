@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-10T03:33:14.4447406	All That Matters/Block Loot Tables
+// 1.20.2	2023-11-11T13:11:37.7794503	All That Matters/Block Loot Tables
 f887ca04c0dfcdb62e56c72d195c096b023061dc data\allthatmatters\loot_tables\blocks\ore_end_sapphire.json
 6ff325f051e1b4f12f040d6e7568434155cd0c14 data\allthatmatters\loot_tables\blocks\ore_nether_sapphire.json
 08fedf6cc4b3ea5e1432525273450a47d359eeac data\allthatmatters\loot_tables\blocks\block_enderite.json
@@ -6,8 +6,8 @@ c05797e92178fb17474162b381cab78219cb6899 data\allthatmatters\loot_tables\blocks\
 b918449deb7d35eadc8982f9089aaabfc9a6c78a data\allthatmatters\loot_tables\blocks\ore_world_ruby.json
 c949eef4c164867f14fd10984ef7933ea2da63a7 data\allthatmatters\loot_tables\blocks\ore_end_ruby.json
 3876f2151d776013e24734f65c7ed04cdfa8bbbb data\allthatmatters\loot_tables\blocks\ore_nether_citrine.json
-495694a175b8fbaf79ebc135bb3d138423e029d1 data\allthatmatters\loot_tables\blocks\infusing_station.json
 a63c70ed1af15b9598bf99b75aed26d035502462 data\allthatmatters\loot_tables\blocks\ore_nether_ruby.json
+1cf17babf3b37af211a35312cda64c269ef18241 data\allthatmatters\loot_tables\blocks\gem_cleanser.json
 61ad8cae90584ef408a67d651c81b79ec01168c0 data\allthatmatters\loot_tables\blocks\ore_world_citrine.json
 f57eab21bde5663ca4dc3f1c0550e0a89195563f data\allthatmatters\loot_tables\blocks\ore_enderite.json
 25eac1514746943b72d83102a868a1983ec218e1 data\allthatmatters\loot_tables\blocks\ore_deep_ruby.json
