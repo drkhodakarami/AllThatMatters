@@ -52,7 +52,7 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         WPlainPanel  root = new WPlainPanel ();
         setRootPanel(root);
 
-        root.setSize(200, 168);
+        root.setSize(200, 178);
         root.setInsets(Insets.ROOT_PANEL);
 
         WItemSlot base_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.BASE_INPUT_SLOT);

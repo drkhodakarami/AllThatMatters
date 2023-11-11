@@ -31,6 +31,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack>
     private final TooltipMode tooltipMode;
     private final int width;
     private final int height;
+    private int zOrder;
 
     enum TooltipMode
     {
@@ -65,6 +66,12 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack>
         this.tooltipMode = tooltipMode;
         this.width = width;
         this.height = height;
+        this.zOrder = 0;
+    }
+
+    public void setzOrder(int index)
+    {
+        this.zOrder = index;
     }
 
     /*
@@ -91,7 +98,10 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack>
         {
             final int curHeight = offsetHeight < iconHeight ? offsetHeight : iconHeight;
 
+            context.getMatrices().push();
+            context.getMatrices().translate(0f, 0f, 0.01f * zOrder);
             context.drawSprite(x, y - offsetHeight, 0, width, curHeight, sprite);
+            context.getMatrices().pop();
             offsetHeight -= curHeight;
             iteration++;
             if (iteration > 50)
