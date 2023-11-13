@@ -26,7 +26,6 @@ public class GemCleanserScreen extends CottonInventoryScreen<GemCleanserScreenHa
         super(container, player, title);
         this.container = container;
         this.fluidStackRenderer = new FluidStackRenderer(GemCleanserBE.FLUID_CAPACITY, true, 15, 61);
-        this.fluidStackRenderer.setzOrder(1);
     }
 
     @Override

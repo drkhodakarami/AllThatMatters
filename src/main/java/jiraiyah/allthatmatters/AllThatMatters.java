@@ -4,6 +4,7 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.command.ModCommands;
 import jiraiyah.allthatmatters.datagen.world.ModWorldGeneration;
+import jiraiyah.allthatmatters.effect.ModEffects;
 import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
@@ -64,6 +65,7 @@ public class AllThatMatters implements ModInitializer
         ModMessages.registerC2SPackets();
 
         ModFluids.register();
+        ModEffects.register();
     }
 
     @NotNull

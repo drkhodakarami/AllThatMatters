@@ -185,5 +185,7 @@
   "allthatmatters.tooltip.liquid.amount": "%s mB",
   "block.minecraft.empty": "Empty",
   "allthatmatters.all": "All",
-  "allthatmatters.none": "None"
+  "allthatmatters.none": "None",
+
+  "effect.allthatmatters.flight": "Flight"
 }

@@ -24,6 +24,15 @@ repositories {
         name = "CottonMC"
         url = "https://server.bbkr.space/artifactory/libs-release"
     }
+
+    maven {
+        name = 'Ladysnake Mods'
+        url = 'https://maven.ladysnake.org/releases'
+        content {
+            includeGroup 'io.github.ladysnake'
+            includeGroupByRegex 'io\\.github\\.onyxstudios.*'
+        }
+    }
 }
 
 loom {
@@ -67,6 +76,9 @@ dependencies {
     modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
 
     include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}")))
+
+    modImplementation "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
+    include "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
 
     modRuntimeOnly "curse.maven:reborncore-237903:4786770"
     modRuntimeOnly "curse.maven:techreborn-233564:4786771"

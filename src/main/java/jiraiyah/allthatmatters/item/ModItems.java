@@ -1,6 +1,7 @@
 package jiraiyah.allthatmatters.item;
 
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.item.custom.HammerItem;
 import jiraiyah.allthatmatters.item.custom.ModArmorItem;
 import jiraiyah.allthatmatters.item.custom.GemBow;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -27,9 +28,8 @@ public class ModItems
     //region CITRINE TOOLS
     public static final Item TOOL_CITRINE_AXE = registerItem("tool_citrine_axe",
             new AxeItem(ModToolMaterial.CITRINE, 3, 1, new FabricItemSettings()));
-    // TODO : HAMMER Item Object
     public static final Item TOOL_CITRINE_HAMMER = registerItem("tool_citrine_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ModToolMaterial.SAPPHIRE, 3, 2));
     public static final Item TOOL_CITRINE_HOE = registerItem("tool_citrine_hoe",
             new HoeItem(ModToolMaterial.CITRINE, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_CITRINE_PICKAXE = registerItem("tool_citrine_pickaxe",
@@ -43,9 +43,8 @@ public class ModItems
     //region COPPER TOOLS
     public static final Item TOOL_COPPER_AXE = registerItem("tool_copper_axe",
             new AxeItem(ModToolMaterial.COPPER, 3, 1, new FabricItemSettings()));
-    // TODO : HAMMER Item Object
     public static final Item TOOL_COPPER_HAMMER = registerItem("tool_copper_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ModToolMaterial.COPPER, 3, 2));
     public static final Item TOOL_COPPER_HOE = registerItem("tool_copper_hoe",
             new HoeItem(ModToolMaterial.COPPER, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_COPPER_PICKAXE = registerItem("tool_copper_pickaxe",
@@ -57,32 +56,25 @@ public class ModItems
     //endregion
 
     //region VANILLA HAMMERS
-    // TODO : HAMMER Item Object
     public static final Item TOOL_DIAMOND_HAMMER = registerItem("tool_diamond_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
-    // TODO : HAMMER Item Object
+            new HammerItem(ToolMaterials.DIAMOND, 5, 2));
     public static final Item TOOL_GOLD_HAMMER = registerItem("tool_gold_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
-    // TODO : HAMMER Item Object
+            new HammerItem(ToolMaterials.GOLD, 5, 1));
     public static final Item TOOL_IRON_HAMMER = registerItem("tool_iron_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
-    // TODO : HAMMER Item Object
+            new HammerItem(ToolMaterials.IRON, 5, 1));
     public static final Item TOOL_NETHERITE_HAMMER = registerItem("tool_netherite_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
-    // TODO : HAMMER Item Object
+            new HammerItem(ToolMaterials.NETHERITE, 5, 3));
     public static final Item TOOL_STONE_HAMMER = registerItem("tool_stone_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
-    // TODO : HAMMER Item Object
+            new HammerItem(ToolMaterials.STONE, 3, 1));
     public static final Item TOOL_WOOD_HAMMER = registerItem("tool_wood_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ToolMaterials.WOOD, 3, 1));
     //endregion
 
     //region ENDERITE TOOLS
     public static final Item TOOL_ENDERITE_AXE = registerItem("tool_enderite_axe",
             new AxeItem(ModToolMaterial.ENDERITE, 3, 1, new FabricItemSettings()));
-    // TODO : HAMMER Item Object
     public static final Item TOOL_ENDERITE_HAMMER = registerItem("tool_enderite_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ModToolMaterial.ENDERITE, 5, 5));
     public static final Item TOOL_ENDERITE_HOE = registerItem("tool_enderite_hoe",
             new HoeItem(ModToolMaterial.ENDERITE, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_ENDERITE_PICKAXE = registerItem("tool_enderite_pickaxe",
@@ -96,9 +88,8 @@ public class ModItems
     //region RUBY TOOLS
     public static final Item TOOL_RUBY_AXE = registerItem("tool_ruby_axe",
             new AxeItem(ModToolMaterial.RUBY, 3, 1, new FabricItemSettings()));
-    // TODO : HAMMER Item Object
     public static final Item TOOL_RUBY_HAMMER = registerItem("tool_ruby_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ModToolMaterial.RUBY, 3, 3));
     public static final Item TOOL_RUBY_HOE = registerItem("tool_ruby_hoe",
             new HoeItem(ModToolMaterial.RUBY, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_RUBY_PICKAXE = registerItem("tool_ruby_pickaxe",
@@ -112,9 +103,8 @@ public class ModItems
     //region SAPPHIRE TOOLS
     public static final Item TOOL_SAPPHIRE_AXE = registerItem("tool_sapphire_axe",
             new AxeItem(ModToolMaterial.SAPPHIRE, 3, 1, new FabricItemSettings()));
-    // TODO : HAMMER Item Object
     public static final Item TOOL_SAPPHIRE_HAMMER = registerItem("tool_sapphire_hammer",
-            new Item(new FabricItemSettings().maxCount(1)));
+            new HammerItem(ModToolMaterial.SAPPHIRE, 3, 3));
     public static final Item TOOL_SAPPHIRE_HOE = registerItem("tool_sapphire_hoe",
             new HoeItem(ModToolMaterial.SAPPHIRE, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_SAPPHIRE_PICKAXE = registerItem("tool_sapphire_pickaxe",

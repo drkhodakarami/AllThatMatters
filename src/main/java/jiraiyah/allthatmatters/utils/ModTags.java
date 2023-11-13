@@ -3,6 +3,7 @@ package jiraiyah.allthatmatters.utils;
 import jiraiyah.allthatmatters.AllThatMatters;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -12,6 +13,7 @@ public class ModTags
     public static class Blocks
     {
         public static final TagKey<Block> GEM_BLOCKS = createCommonTag("gem_blocks");
+        public static final TagKey<Block> HAMMER_NO_SMASHY = createTag("hammer_no_smashy");
 
         private static TagKey<Block> createTag(String name)
         {

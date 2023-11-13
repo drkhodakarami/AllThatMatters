@@ -1,5 +1,6 @@
 package jiraiyah.allthatmatters.item.custom;
 
+import jiraiyah.allthatmatters.effect.ModEffects;
 import jiraiyah.allthatmatters.item.ModArmorMaterial;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -39,9 +40,9 @@ public class ModArmorItem extends ArmorItem
         addValues(ModArmorMaterial.COPPER, new StatusEffectInstance(StatusEffects.SPEED, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.COPPER, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 1200, 3, false, false, true));
 
-        addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(StatusEffects.INVISIBILITY, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(StatusEffects.LUCK, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(ModEffects.FLIGHT_EFFECT, 1200, 3, false, false, true));
     }
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings)

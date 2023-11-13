@@ -66,7 +66,7 @@ public class FluidStackRenderer implements IIngredientRenderer<FluidStack>
         this.tooltipMode = tooltipMode;
         this.width = width;
         this.height = height;
-        this.zOrder = 0;
+        this.zOrder = 1;
     }
 
     public void setzOrder(int index)

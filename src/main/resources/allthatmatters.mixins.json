@@ -10,7 +10,10 @@
     "ChunkTicketTypeAccessor",
     "MinecraftServerMixin",
     "ThreadedAnvilChunkStorageInvoker",
-    "AbstractClientPlayerEntityMixin"
+    "AbstractClientPlayerEntityMixin",
+    "ServerPlayerGameModeMixin",
+    "BlocksMixin",
+    "AbstractBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
