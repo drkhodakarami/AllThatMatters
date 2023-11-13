@@ -105,7 +105,7 @@ public class ModArmorItem extends ArmorItem
     private boolean isStatusEffectFading(PlayerEntity player, StatusEffectInstance effect)
     {
         return !player.hasStatusEffect(effect.getEffectType()) ||
-                player.getStatusEffect(effect.getEffectType()).isDurationBelow(200);
+                player.getStatusEffect(effect.getEffectType()).isDurationBelow(220);
 
     }
 
