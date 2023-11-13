@@ -7,6 +7,7 @@ import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
+import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
@@ -18,10 +19,13 @@ import net.minecraft.client.texture.Sprite;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -30,6 +34,7 @@ import net.minecraft.util.Formatting;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class GemCleanserScreenHandler extends SyncedGuiDescription
 {
@@ -59,6 +64,14 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         WItemSlot base_output_slot = WItemSlot.of(blockInventory, GemCleanserBE.BASE_OUTPUT_SLOT);
         WItemSlot fluid_input_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_INPUT_SLOT);
         WItemSlot fluid_output_slot = WItemSlot.of(blockInventory, GemCleanserBE.FLUID_OUTPUT_SLOT);
+
+        fluid_input_slot.setInputFilter(itemStack -> itemStack.isOf(Items.BUCKET) || itemStack.isOf(Items.WATER_BUCKET));
+        base_input_slot.setInputFilter(itemStack -> itemStack.isOf(ModItems.RAW_ENDERITE) ||
+                                                         itemStack.isOf(ModItems.RAW_CITRINE) ||
+                                                         itemStack.isOf(ModItems.RAW_RUBY) ||
+                                                         itemStack.isOf(ModItems.RAW_SAPPHIRE));
+        base_output_slot.setInsertingAllowed(false);
+        fluid_output_slot.setInsertingAllowed(false);
 
         WBar progressBar = new WBar(AllThatMatters.identifier("textures/gui/empty_vertical_progress.png"),
                 AllThatMatters.identifier("textures/gui/full_vertical_progress.png"),
