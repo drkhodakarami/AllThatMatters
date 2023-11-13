@@ -1,5 +1,6 @@
 package jiraiyah.allthatmatters.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import jiraiyah.allthatmatters.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
@@ -22,25 +23,17 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public class AbstractBlockMixin
 {
     /**
-     * @author Nokko, Edited by Xanthian 2022
+     * @author zOnlyKrocks, dicedpixels, and specially LlamaLad7 for his nice mixin extra library
      **/
 
-    private final float effectiveHardness = 25.0F;
+    private final float effectiveHardness = 36.0F;
 
-    @Inject(at = @At(value = "JUMP", opcode = Opcodes.IFNE, shift = At.Shift.AFTER),
-            method = "Lnet/minecraft/block/AbstractBlock;calcBlockBreakingDelta(" +
-                    "Lnet/minecraft/block/BlockState;" +
-                    "Lnet/minecraft/entity/player/PlayerEntity;" +
-                    "Lnet/minecraft/world/BlockView;" +
-                    "Lnet/minecraft/util/math/BlockPos;)F",
-            cancellable = true,
-            locals = LocalCapture.CAPTURE_FAILSOFT
-    )
-    public void allowBedrockBreaking(BlockState state, PlayerEntity player, BlockView world, BlockPos pos, CallbackInfoReturnable<Float> cir, float hardness)
+    @ModifyReturnValue(method = "calcBlockBreakingDelta", at = @At("RETURN"))
+    public float bedrockBreakingSpeed(float original, BlockState state, PlayerEntity player)
     {
         ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
-
         if (state.getBlock() == Blocks.BEDROCK && (stack.getItem() == ModItems.TOOL_ENDERITE_PICKAXE))
-            cir.setReturnValue(player.getBlockBreakingSpeed(state) / effectiveHardness);
+            return player.getBlockBreakingSpeed(state) / effectiveHardness;
+        return original;
     }
 }
