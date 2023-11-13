@@ -4,6 +4,9 @@
     "allthatmatters:block_citrine",
     "allthatmatters:block_ruby",
     "allthatmatters:block_sapphire",
-    "allthatmatters:block_enderite"
+    "allthatmatters:block_enderite",
+    "allthatmatters:ore_nether_diamond",
+    "allthatmatters:ore_nether_lapis",
+    "allthatmatters:ore_nether_redstone"
   ]
 }

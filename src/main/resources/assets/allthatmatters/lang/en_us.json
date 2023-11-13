@@ -152,6 +152,12 @@
   "block.allthatmatters.ore_nether_citrine": "Citrine Nether Rack",
   "block.allthatmatters.ore_nether_ruby": "Ruby Nether Rack",
   "block.allthatmatters.ore_nether_sapphire": "Sapphire Nether Rack",
+  "block.allthatmatters.ore_nether_coal": "Coal Nether Rack",
+  "block.allthatmatters.ore_nether_copper": "Copper Nether Rack",
+  "block.allthatmatters.ore_nether_diamond": "Diamond Nether Rack",
+  "block.allthatmatters.ore_nether_iron": "Iron Nether Rack",
+  "block.allthatmatters.ore_nether_lapis": "Lapis Nether Rack",
+  "block.allthatmatters.ore_nether_redstone": "Redstone Nether Rack",
   "block.allthatmatters.molten_enderite": "Molten Enderite",
   "block.allthatmatters.ore_world_citrine": "Citrine Ore",
   "block.allthatmatters.ore_world_ruby": "Ruby Ore",
@@ -186,6 +192,5 @@
   "block.minecraft.empty": "Empty",
   "allthatmatters.all": "All",
   "allthatmatters.none": "None",
-
   "effect.allthatmatters.flight": "Flight"
 }

@@ -226,11 +226,15 @@ public class ModItemGroups
                         entries.add(ModBlocks.ORE_NETHER_RUBY);
                         entries.add(ModBlocks.ORE_NETHER_SAPPHIRE);
                         entries.add(ModBlocks.ORE_WORLD_CITRINE);
+                        entries.add(ModBlocks.ORE_NETHER_COAL);
+                        entries.add(ModBlocks.ORE_NETHER_COPPER);
+                        entries.add(ModBlocks.ORE_NETHER_DIAMOND);
+                        entries.add(ModBlocks.ORE_NETHER_IRON);
+                        entries.add(ModBlocks.ORE_NETHER_LAPIS);
+                        entries.add(ModBlocks.ORE_NETHER_REDSTONE);
                         entries.add(ModBlocks.ORE_WORLD_RUBY);
                         entries.add(ModBlocks.ORE_WORLD_SAPPHIRE);
                         entries.add(ModBlocks.ORE_ENDERITE);
-
-
                     }).build());
 
     public static void register()

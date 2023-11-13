@@ -44,6 +44,13 @@ public class ModModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_WORLD_RUBY);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_WORLD_SAPPHIRE);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_COAL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_COPPER);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_DIAMOND);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_IRON);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_LAPIS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORE_NETHER_REDSTONE);
+
         blockStateModelGenerator.registerSingleton(ModBlocks.ORE_ENDERITE, TexturedModel.CUBE_BOTTOM_TOP);
     }
 

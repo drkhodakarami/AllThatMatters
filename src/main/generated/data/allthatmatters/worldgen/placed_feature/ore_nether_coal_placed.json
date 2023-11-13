@@ -1,9 +1,9 @@
 {
-  "feature": "allthatmatters:ore_nether_sapphire",
+  "feature": "allthatmatters:ore_nether_coal",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 6
+      "count": 16
     },
     {
       "type": "minecraft:in_square"

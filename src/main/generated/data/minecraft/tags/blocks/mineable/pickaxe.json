@@ -36,6 +36,12 @@
     "allthatmatters:enderite_shulker_red",
     "allthatmatters:enderite_shulker_white",
     "allthatmatters:enderite_shulker_yellow",
-    "allthatmatters:gem_cleanser"
+    "allthatmatters:gem_cleanser",
+    "allthatmatters:ore_nether_coal",
+    "allthatmatters:ore_nether_copper",
+    "allthatmatters:ore_nether_diamond",
+    "allthatmatters:ore_nether_iron",
+    "allthatmatters:ore_nether_lapis",
+    "allthatmatters:ore_nether_redstone"
   ]
 }

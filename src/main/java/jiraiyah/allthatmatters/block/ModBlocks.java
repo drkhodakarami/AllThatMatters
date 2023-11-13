@@ -33,6 +33,7 @@ public class ModBlocks
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));
     public static final Block ORE_DEEP_SAPPHIRE = registerBlock("ore_deep_sapphire",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));
+
     public static final Block ORE_END_CITRINE = registerBlock("ore_end_citrine",
             new Block(FabricBlockSettings.copyOf(Blocks.END_STONE)));
     public static final Block ORE_END_ENDERITE = registerBlock("ore_end_enderite",
@@ -41,12 +42,27 @@ public class ModBlocks
             new Block(FabricBlockSettings.copyOf(Blocks.END_STONE)));
     public static final Block ORE_END_SAPPHIRE = registerBlock("ore_end_sapphire",
             new Block(FabricBlockSettings.copyOf(Blocks.END_STONE)));
+
     public static final Block ORE_NETHER_CITRINE = registerBlock("ore_nether_citrine",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
     public static final Block ORE_NETHER_RUBY = registerBlock("ore_nether_ruby",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
     public static final Block ORE_NETHER_SAPPHIRE = registerBlock("ore_nether_sapphire",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+
+    public static final Block ORE_NETHER_COAL = registerBlock("ore_nether_coal",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE)));
+    public static final Block ORE_NETHER_COPPER = registerBlock("ore_nether_copper",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+    public static final Block ORE_NETHER_DIAMOND = registerBlock("ore_nether_diamond",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+    public static final Block ORE_NETHER_IRON = registerBlock("ore_nether_iron",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE)));
+    public static final Block ORE_NETHER_LAPIS = registerBlock("ore_nether_lapis",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+    public static final Block ORE_NETHER_REDSTONE = registerBlock("ore_nether_redstone",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
+
     public static final Block ORE_WORLD_CITRINE = registerBlock("ore_world_citrine",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
     public static final Block ORE_WORLD_RUBY = registerBlock("ore_world_ruby",

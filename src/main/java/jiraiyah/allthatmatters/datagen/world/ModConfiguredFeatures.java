@@ -25,6 +25,13 @@ public class ModConfiguredFeatures
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_ruby"));
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_sapphire"));
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_COAL_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_coal"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_COPPER_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_copper"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_DIAMOND_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_diamond"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_IRON_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_iron"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_LAPIS_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_lapis"));
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_NETHER_REDSTONE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_nether_redstone"));
+
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_CITRINE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_citrine"));
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_RUBY_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_ruby"));
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_END_SAPPHIRE_KEY = RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, AllThatMatters.identifier("ore_end_sapphire"));
@@ -60,6 +67,25 @@ public class ModConfiguredFeatures
 
         List<OreFeatureConfig.Target> netherSapphireOres =
                 List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_SAPPHIRE.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherCoalOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_COAL.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherCopperOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_COPPER.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherDiamondOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_DIAMOND.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherIronOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_IRON.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherLapisOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_LAPIS.getDefaultState()));
+
+        List<OreFeatureConfig.Target> netherRedstoneOres =
+                List.of(OreFeatureConfig.createTarget(netherReplaceables, ModBlocks.ORE_NETHER_REDSTONE.getDefaultState()));
+
         //endregion
 
         //region END
@@ -85,6 +111,13 @@ public class ModConfiguredFeatures
         register(context, ORE_NETHER_CITRINE_KEY, Feature.ORE, new OreFeatureConfig(netherCitrineOres, 3));
         register(context, ORE_NETHER_RUBY_KEY, Feature.ORE, new OreFeatureConfig(netherRubyOres, 3));
         register(context, ORE_NETHER_SAPPHIRE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 3));
+
+        register(context, ORE_NETHER_COAL_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 12));
+        register(context, ORE_NETHER_COPPER_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
+        register(context, ORE_NETHER_DIAMOND_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 3));
+        register(context, ORE_NETHER_IRON_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
+        register(context, ORE_NETHER_LAPIS_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
+        register(context, ORE_NETHER_REDSTONE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 6));
 
         register(context, ORE_END_CITRINE_KEY, Feature.ORE, new OreFeatureConfig(endCitrineOres, 3));
         register(context, ORE_END_RUBY_KEY, Feature.ORE, new OreFeatureConfig(endRubyOres, 3));
