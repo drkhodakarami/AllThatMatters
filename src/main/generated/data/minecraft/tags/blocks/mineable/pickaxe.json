@@ -42,6 +42,8 @@
     "allthatmatters:ore_nether_diamond",
     "allthatmatters:ore_nether_iron",
     "allthatmatters:ore_nether_lapis",
-    "allthatmatters:ore_nether_redstone"
+    "allthatmatters:ore_nether_redstone",
+    "allthatmatters:cast_press",
+    "allthatmatters:smeltery"
   ]
 }

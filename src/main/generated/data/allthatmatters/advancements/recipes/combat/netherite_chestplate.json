@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_reinforced_plate_netherite": {
+    "has_plate_netherite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:gem_sapphire"
+              "allthatmatters:plate_netherite"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_reinforced_plate_netherite"
+      "has_plate_netherite"
     ]
   ],
   "rewards": {

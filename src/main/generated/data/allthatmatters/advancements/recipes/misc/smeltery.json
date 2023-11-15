@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_plate_netherite": {
+    "has_iron_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:plate_netherite"
+              "minecraft:iron_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:netherite_helmet"
+        "recipe": "minecraft:smeltery"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_plate_netherite"
+      "has_iron_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:netherite_helmet"
+      "minecraft:smeltery"
     ]
   },
   "sends_telemetry_event": false

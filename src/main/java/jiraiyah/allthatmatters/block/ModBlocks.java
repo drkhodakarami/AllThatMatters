@@ -116,6 +116,12 @@ public class ModBlocks
     public static final GemCleanserBlock GEM_CLEANSER = (GemCleanserBlock) registerBlock("gem_cleanser",
             new GemCleanserBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
+    public static final CastPressBlock CAST_PRESS = (CastPressBlock) registerBlock("cast_press",
+            new CastPressBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    public static final SmelteryBlock SMELTERY = (SmelteryBlock) registerBlock("smeltery",
+            new SmelteryBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
     private ModBlocks()
     {
         throw new AssertionError();

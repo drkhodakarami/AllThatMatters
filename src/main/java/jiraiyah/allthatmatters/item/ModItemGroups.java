@@ -17,8 +17,10 @@ public class ModItemGroups
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.allthatmattersgroup"))
                     .icon(() -> new ItemStack(ModBlocks.CHUNK_LOADER)).entries((displayContext, entries) ->
                     {
-                        entries.add(ModBlocks.CHUNK_LOADER);
+                        entries.add(ModBlocks.CAST_PRESS);
+                        entries.add(ModBlocks.SMELTERY);
                         entries.add(ModBlocks.GEM_CLEANSER);
+                        entries.add(ModBlocks.CHUNK_LOADER);
 
                         entries.add(ModItems.CITRINE);
                         entries.add(ModItems.RAW_CITRINE);

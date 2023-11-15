@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "allthatmatters:block/cast_press",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "allthatmatters:block/cast_press"
+    },
+    "facing=south": {
+      "model": "allthatmatters:block/cast_press",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "allthatmatters:block/cast_press",
+      "y": 270
+    }
+  }
+}

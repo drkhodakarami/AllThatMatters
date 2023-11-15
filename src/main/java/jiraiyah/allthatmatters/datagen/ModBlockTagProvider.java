@@ -72,7 +72,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.ORE_NETHER_DIAMOND)
                 .add(ModBlocks.ORE_NETHER_IRON)
                 .add(ModBlocks.ORE_NETHER_LAPIS)
-                .add(ModBlocks.ORE_NETHER_REDSTONE);
+                .add(ModBlocks.ORE_NETHER_REDSTONE)
+                .add(ModBlocks.CAST_PRESS)
+                .add(ModBlocks.SMELTERY);
 
         /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
 
@@ -96,7 +98,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.GEM_CLEANSER)
                 .add(ModBlocks.ORE_NETHER_COAL)
                 .add(ModBlocks.ORE_NETHER_COPPER)
-                .add(ModBlocks.ORE_NETHER_IRON);
+                .add(ModBlocks.ORE_NETHER_IRON)
+                .add(ModBlocks.CAST_PRESS)
+                .add(ModBlocks.SMELTERY);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.CITRINE)

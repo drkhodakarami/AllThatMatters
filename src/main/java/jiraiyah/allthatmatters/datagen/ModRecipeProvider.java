@@ -348,6 +348,27 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.END_ROD), conditionsFromItem(Items.END_ROD))
                 .criterion(hasItem(ModItems.ENDERITE), conditionsFromItem(ModItems.ENDERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHUNK_LOADER)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.CAST_PRESS, 1)
+                .pattern("W#W")
+                .pattern("#S#")
+                .pattern("SFS")
+                .input('#', Items.IRON_INGOT)
+                .input('F', Items.FURNACE)
+                .input('W', ItemTags.PLANKS)
+                .input('S', Items.SMOOTH_STONE)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CAST_PRESS)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.SMELTERY, 1)
+                .pattern("###")
+                .pattern("#B#")
+                .pattern("#F#")
+                .input('#', Items.IRON_INGOT)
+                .input('F', Items.FURNACE)
+                .input('B', Items.BUCKET)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.SMELTERY)));
         //endregion
 
         //region CITRINE TOOLS
@@ -994,31 +1015,31 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .pattern("III")
                 .pattern("I I")
                 .pattern("   ")
-                .input('I', ModItems.REINFORCED_PLATE_NETHERITE)
-                .criterion(hasItem(ModItems.REINFORCED_PLATE_NETHERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_NETHERITE))
+                .input('I', ModItems.PLATE_NETHERITE)
+                .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_CHESTPLATE, 1)
                 .pattern("I I")
                 .pattern("III")
                 .pattern("III")
-                .input('I', ModItems.REINFORCED_PLATE_NETHERITE)
-                .criterion(hasItem(ModItems.REINFORCED_PLATE_NETHERITE), conditionsFromItem(ModItems.SAPPHIRE))
+                .input('I', ModItems.PLATE_NETHERITE)
+                .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_LEGGINGS, 1)
                 .pattern("III")
                 .pattern("I I")
                 .pattern("I I")
-                .input('I', ModItems.REINFORCED_PLATE_NETHERITE)
-                .criterion(hasItem(ModItems.REINFORCED_PLATE_NETHERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_NETHERITE))
+                .input('I', ModItems.PLATE_NETHERITE)
+                .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_BOOTS, 1)
                 .pattern("I I")
                 .pattern("I I")
-                .input('I', ModItems.REINFORCED_PLATE_NETHERITE)
-                .criterion(hasItem(ModItems.REINFORCED_PLATE_NETHERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_NETHERITE))
+                .input('I', ModItems.PLATE_NETHERITE)
+                .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_BOOTS)));
         //endregion
 

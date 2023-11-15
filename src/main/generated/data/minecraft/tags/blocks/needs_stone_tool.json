@@ -16,6 +16,8 @@
     "allthatmatters:gem_cleanser",
     "allthatmatters:ore_nether_coal",
     "allthatmatters:ore_nether_copper",
-    "allthatmatters:ore_nether_iron"
+    "allthatmatters:ore_nether_iron",
+    "allthatmatters:cast_press",
+    "allthatmatters:smeltery"
   ]
 }

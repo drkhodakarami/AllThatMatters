@@ -1,3 +1,17 @@
 {
-  "type": "minecraft:no_op"
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "sticks",
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "item": "minecraft:air"
+  },
+  "show_notification": true
 }
