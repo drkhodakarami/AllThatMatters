@@ -94,6 +94,9 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.CAST_SHOVEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAST_SWORD, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAST_WIRE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.CAST_WOOD_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CAST_WOOD_PICKAXE, Models.GENERATED);
         //endregion
 
         //region TOOL HEAD

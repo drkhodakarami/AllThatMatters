@@ -52,6 +52,9 @@ public class ModItemGroups
                         entries.add(ModItems.CAST_SWORD);
                         entries.add(ModItems.CAST_WIRE);
 
+                        entries.add(ModItems.CAST_WOOD_INGOT);
+                        entries.add(ModItems.CAST_WOOD_PICKAXE);
+
                         entries.add(ModBlocks.SHULKER_NORMAL);
                         entries.add(ModBlocks.SHULKER_BLACK);
                         entries.add(ModBlocks.SHULKER_BLUE);

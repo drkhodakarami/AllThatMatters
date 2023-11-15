@@ -217,6 +217,9 @@ public class ModItems
     public static final Item CAST_SHOVEL = registerItem("cast_shovel", new Item(new FabricItemSettings()));
     public static final Item CAST_SWORD = registerItem("cast_sword", new Item(new FabricItemSettings()));
     public static final Item CAST_WIRE = registerItem("cast_wire", new Item(new FabricItemSettings()));
+
+    public static final Item CAST_WOOD_PICKAXE = registerItem("cast_wood_pickaxe", new Item(new FabricItemSettings()));
+    public static final Item CAST_WOOD_INGOT = registerItem("cast_wood_ingot", new Item(new FabricItemSettings()));
     //endregion
 
     //region CITRINE HEADS

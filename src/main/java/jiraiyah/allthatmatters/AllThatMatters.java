@@ -21,6 +21,10 @@ import org.slf4j.LoggerFactory;
 // This is the flat world gen custom preset I always use
 // 5*minecraft:bedrock,30*minecraft:light_blue_wool,minecraft:light_blue_carpet;minecraft:plains;village
 
+// TODO : Maybe Engineer Helmet Drawing Info in world and screen
+// TODO : Cast Press Machine
+// TODO : Smelter Machine
+// TODO : Recipe Changes for Tools and Armors (both my mod and vanilla)
 public class AllThatMatters implements ModInitializer
 {
     public static final String ModID = "allthatmatters";

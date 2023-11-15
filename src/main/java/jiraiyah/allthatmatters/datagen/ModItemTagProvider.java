@@ -45,7 +45,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.CAST_ROD)
                 .add(ModItems.CAST_SHOVEL)
                 .add(ModItems.CAST_SWORD)
-                .add(ModItems.CAST_WIRE);
+                .add(ModItems.CAST_WIRE)
+                .add(ModItems.CAST_WOOD_INGOT)
+                .add(ModItems.CAST_WOOD_PICKAXE);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(ModItems.TOOL_CITRINE_AXE)

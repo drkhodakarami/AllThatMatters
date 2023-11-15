@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ModRecipeProvider extends FabricRecipeProvider
 {
-    private static final List<ItemConvertible> CITRINE_SMELTABLES = List.of(
+    /*private static final List<ItemConvertible> CITRINE_SMELTABLES = List.of(
             ModItems.RAW_CITRINE,
             ModBlocks.ORE_WORLD_CITRINE,
             ModBlocks.ORE_DEEP_CITRINE,
@@ -40,7 +40,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
             ModBlocks.ORE_DEEP_SAPPHIRE,
             ModBlocks.ORE_END_SAPPHIRE,
             ModBlocks.ORE_NETHER_SAPPHIRE
-    );
+    );*/
 
     public ModRecipeProvider(FabricDataOutput output)
     {
@@ -50,12 +50,12 @@ public class ModRecipeProvider extends FabricRecipeProvider
     @Override
     public void generate(RecipeExporter exporter)
     {
-        offerSmelting(exporter, CITRINE_SMELTABLES, RecipeCategory.MISC, ModItems.CITRINE, 0.7f, 200, "citrine");
+        /*offerSmelting(exporter, CITRINE_SMELTABLES, RecipeCategory.MISC, ModItems.CITRINE, 0.7f, 200, "citrine");
         offerBlasting(exporter, CITRINE_SMELTABLES, RecipeCategory.MISC, ModItems.CITRINE, 0.7f, 100, "citrine");
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY, 0.7f, 200, "ruby");
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY, 0.7f, 100, "ruby");
         offerSmelting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE, 0.7f, 200, "sapphire");
-        offerBlasting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE, 0.7f, 100, "sapphire");
+        offerBlasting(exporter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE, 0.7f, 100, "sapphire");*/
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.CITRINE, RecipeCategory.DECORATIONS, ModBlocks.CITRINE);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.DECORATIONS, ModBlocks.RUBY);
