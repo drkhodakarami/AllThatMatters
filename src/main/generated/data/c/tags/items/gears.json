@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:gear_copper",
+    "allthatmatters:gear_diamond",
+    "allthatmatters:gear_emerald",
+    "allthatmatters:gear_enderite",
+    "allthatmatters:gear_gold",
+    "allthatmatters:gear_iron",
+    "allthatmatters:gear_lapis",
+    "allthatmatters:gear_netherite",
+    "allthatmatters:gear_obsidian",
+    "allthatmatters:gear_prismarine",
+    "allthatmatters:gear_quartz",
+    "allthatmatters:gear_ruby",
+    "allthatmatters:gear_sapphire",
+    "allthatmatters:gear_stone",
+    "allthatmatters:gear_wood"
+  ]
+}

@@ -73,72 +73,6 @@ public class ModItemGroups
                         entries.add(ModBlocks.SHULKER_WHITE);
                         entries.add(ModBlocks.SHULKER_YELLOW);
 
-                        entries.add(ModItems.HEAD_CITRINE_AXE);
-                        entries.add(ModItems.HEAD_CITRINE_HAMMER);
-                        entries.add(ModItems.HEAD_CITRINE_HOE);
-                        entries.add(ModItems.HEAD_CITRINE_PICKAXE);
-                        entries.add(ModItems.HEAD_CITRINE_SHOVEL);
-                        entries.add(ModItems.HEAD_CITRINE_SWORD);
-
-                        entries.add(ModItems.HEAD_COPPER_AXE);
-                        entries.add(ModItems.HEAD_COPPER_HAMMER);
-                        entries.add(ModItems.HEAD_COPPER_HOE);
-                        entries.add(ModItems.HEAD_COPPER_PICKAXE);
-                        entries.add(ModItems.HEAD_COPPER_SHOVEL);
-                        entries.add(ModItems.HEAD_COPPER_SWORD);
-
-                        entries.add(ModItems.HEAD_DIAMOND_AXE);
-                        entries.add(ModItems.HEAD_DIAMOND_HAMMER);
-                        entries.add(ModItems.HEAD_DIAMOND_HOE);
-                        entries.add(ModItems.HEAD_DIAMOND_PICKAXE);
-                        entries.add(ModItems.HEAD_DIAMOND_SHOVEL);
-                        entries.add(ModItems.HEAD_DIAMOND_SWORD);
-
-                        entries.add(ModItems.HEAD_ENDERITE_AXE);
-                        entries.add(ModItems.HEAD_ENDERITE_HAMMER);
-                        entries.add(ModItems.HEAD_ENDERITE_HOE);
-                        entries.add(ModItems.HEAD_ENDERITE_PICKAXE);
-                        entries.add(ModItems.HEAD_ENDERITE_SHOVEL);
-                        entries.add(ModItems.HEAD_ENDERITE_SWORD);
-
-                        entries.add(ModItems.HEAD_GOLD_AXE);
-                        entries.add(ModItems.HEAD_GOLD_HAMMER);
-                        entries.add(ModItems.HEAD_GOLD_HOE);
-                        entries.add(ModItems.HEAD_GOLD_PICKAXE);
-                        entries.add(ModItems.HEAD_GOLD_SHOVEL);
-                        entries.add(ModItems.HEAD_GOLD_SWORD);
-
-                        entries.add(ModItems.HEAD_IRON_AXE);
-                        entries.add(ModItems.HEAD_IRON_HAMMER);
-                        entries.add(ModItems.HEAD_IRON_HOE);
-                        entries.add(ModItems.HEAD_IRON_PICKAXE);
-                        entries.add(ModItems.HEAD_IRON_SHOVEL);
-                        entries.add(ModItems.HEAD_IRON_SWORD);
-
-                        entries.add(ModItems.HEAD_NETHERITE_AXE);
-                        entries.add(ModItems.HEAD_NETHERITE_HAMMER);
-                        entries.add(ModItems.HEAD_NETHERITE_HOE);
-                        entries.add(ModItems.HEAD_NETHERITE_PICKAXE);
-                        entries.add(ModItems.HEAD_NETHERITE_SHOVEL);
-                        entries.add(ModItems.HEAD_NETHERITE_SWORD);
-
-                        entries.add(ModItems.HEAD_RUBY_AXE);
-                        entries.add(ModItems.HEAD_RUBY_HAMMER);
-                        entries.add(ModItems.HEAD_RUBY_HOE);
-                        entries.add(ModItems.HEAD_RUBY_PICKAXE);
-                        entries.add(ModItems.HEAD_RUBY_SHOVEL);
-                        entries.add(ModItems.HEAD_RUBY_SWORD);
-
-                        entries.add(ModItems.HEAD_SAPPHIRE_AXE);
-                        entries.add(ModItems.HEAD_SAPPHIRE_HAMMER);
-                        entries.add(ModItems.HEAD_SAPPHIRE_HOE);
-                        entries.add(ModItems.HEAD_SAPPHIRE_PICKAXE);
-                        entries.add(ModItems.HEAD_SAPPHIRE_SHOVEL);
-                        entries.add(ModItems.HEAD_SAPPHIRE_SWORD);
-
-                        entries.add(ModItems.HEAD_STONE_HAMMER);
-                        entries.add(ModItems.HEAD_WOOD_HAMMER);
-
                         entries.add(ModItems.TOOL_CITRINE_AXE);
                         entries.add(ModItems.TOOL_CITRINE_HAMMER);
                         entries.add(ModItems.TOOL_CITRINE_HOE);
@@ -217,6 +151,121 @@ public class ModItemGroups
                         entries.add(ModItems.ARMOR_ENDERITE_BOOTS);
                         entries.add(ModItems.ARMOR_RUBY_BOOTS);
                         entries.add(ModItems.ARMOR_SAPPHIRE_BOOTS);
+
+                        entries.add(ModItems.BINDING);
+
+                        entries.add(ModItems.HEAD_CITRINE_AXE);
+                        entries.add(ModItems.HEAD_CITRINE_HAMMER);
+                        entries.add(ModItems.HEAD_CITRINE_HOE);
+                        entries.add(ModItems.HEAD_CITRINE_PICKAXE);
+                        entries.add(ModItems.HEAD_CITRINE_SHOVEL);
+                        entries.add(ModItems.HEAD_CITRINE_SWORD);
+
+                        entries.add(ModItems.HEAD_COPPER_AXE);
+                        entries.add(ModItems.HEAD_COPPER_HAMMER);
+                        entries.add(ModItems.HEAD_COPPER_HOE);
+                        entries.add(ModItems.HEAD_COPPER_PICKAXE);
+                        entries.add(ModItems.HEAD_COPPER_SHOVEL);
+                        entries.add(ModItems.HEAD_COPPER_SWORD);
+
+                        entries.add(ModItems.HEAD_DIAMOND_AXE);
+                        entries.add(ModItems.HEAD_DIAMOND_HAMMER);
+                        entries.add(ModItems.HEAD_DIAMOND_HOE);
+                        entries.add(ModItems.HEAD_DIAMOND_PICKAXE);
+                        entries.add(ModItems.HEAD_DIAMOND_SHOVEL);
+                        entries.add(ModItems.HEAD_DIAMOND_SWORD);
+
+                        entries.add(ModItems.HEAD_ENDERITE_AXE);
+                        entries.add(ModItems.HEAD_ENDERITE_HAMMER);
+                        entries.add(ModItems.HEAD_ENDERITE_HOE);
+                        entries.add(ModItems.HEAD_ENDERITE_PICKAXE);
+                        entries.add(ModItems.HEAD_ENDERITE_SHOVEL);
+                        entries.add(ModItems.HEAD_ENDERITE_SWORD);
+
+                        entries.add(ModItems.HEAD_GOLD_AXE);
+                        entries.add(ModItems.HEAD_GOLD_HAMMER);
+                        entries.add(ModItems.HEAD_GOLD_HOE);
+                        entries.add(ModItems.HEAD_GOLD_PICKAXE);
+                        entries.add(ModItems.HEAD_GOLD_SHOVEL);
+                        entries.add(ModItems.HEAD_GOLD_SWORD);
+
+                        entries.add(ModItems.HEAD_IRON_AXE);
+                        entries.add(ModItems.HEAD_IRON_HAMMER);
+                        entries.add(ModItems.HEAD_IRON_HOE);
+                        entries.add(ModItems.HEAD_IRON_PICKAXE);
+                        entries.add(ModItems.HEAD_IRON_SHOVEL);
+                        entries.add(ModItems.HEAD_IRON_SWORD);
+
+                        entries.add(ModItems.HEAD_NETHERITE_AXE);
+                        entries.add(ModItems.HEAD_NETHERITE_HAMMER);
+                        entries.add(ModItems.HEAD_NETHERITE_HOE);
+                        entries.add(ModItems.HEAD_NETHERITE_PICKAXE);
+                        entries.add(ModItems.HEAD_NETHERITE_SHOVEL);
+                        entries.add(ModItems.HEAD_NETHERITE_SWORD);
+
+                        entries.add(ModItems.HEAD_RUBY_AXE);
+                        entries.add(ModItems.HEAD_RUBY_HAMMER);
+                        entries.add(ModItems.HEAD_RUBY_HOE);
+                        entries.add(ModItems.HEAD_RUBY_PICKAXE);
+                        entries.add(ModItems.HEAD_RUBY_SHOVEL);
+                        entries.add(ModItems.HEAD_RUBY_SWORD);
+
+                        entries.add(ModItems.HEAD_SAPPHIRE_AXE);
+                        entries.add(ModItems.HEAD_SAPPHIRE_HAMMER);
+                        entries.add(ModItems.HEAD_SAPPHIRE_HOE);
+                        entries.add(ModItems.HEAD_SAPPHIRE_PICKAXE);
+                        entries.add(ModItems.HEAD_SAPPHIRE_SHOVEL);
+                        entries.add(ModItems.HEAD_SAPPHIRE_SWORD);
+
+                        entries.add(ModItems.HEAD_STONE_HAMMER);
+                        entries.add(ModItems.HEAD_WOOD_HAMMER);
+
+                        entries.add(ModItems.GEAR_COPPER);
+                        entries.add(ModItems.GEAR_DIAMOND);
+                        entries.add(ModItems.GEAR_EMERALD);
+                        entries.add(ModItems.GEAR_ENDERITE);
+                        entries.add(ModItems.GEAR_GOLD);
+                        entries.add(ModItems.GEAR_IRON);
+                        entries.add(ModItems.GEAR_LAPIS);
+                        entries.add(ModItems.GEAR_NETHERITE);
+                        entries.add(ModItems.GEAR_OBSIDIAN);
+                        entries.add(ModItems.GEAR_PRISMARINE);
+                        entries.add(ModItems.GEAR_QUARTZ);
+                        entries.add(ModItems.GEAR_RUBY);
+                        entries.add(ModItems.GEAR_SAPPHIRE);
+                        entries.add(ModItems.GEAR_STONE);
+                        entries.add(ModItems.GEAR_WOOD);
+
+                        entries.add(ModItems.PLATE_AMETHYST);
+                        entries.add(ModItems.PLATE_CITRINE);
+                        entries.add(ModItems.PLATE_COPPER);
+                        entries.add(ModItems.PLATE_DIAMOND);
+                        entries.add(ModItems.PLATE_EMERALD);
+                        entries.add(ModItems.PLATE_ENDERITE);
+                        entries.add(ModItems.PLATE_GOLD);
+                        entries.add(ModItems.PLATE_IRON);
+                        entries.add(ModItems.PLATE_NETHERITE);
+                        entries.add(ModItems.PLATE_RUBY);
+                        entries.add(ModItems.PLATE_SAPPHIRE);
+
+                        entries.add(ModItems.REINFORCED_PLATE_AMETHYST);
+                        entries.add(ModItems.REINFORCED_PLATE_CITRINE);
+                        entries.add(ModItems.REINFORCED_PLATE_COPPER);
+                        entries.add(ModItems.REINFORCED_PLATE_DIAMOND);
+                        entries.add(ModItems.REINFORCED_PLATE_EMERALD);
+                        entries.add(ModItems.REINFORCED_PLATE_ENDERITE);
+                        entries.add(ModItems.REINFORCED_PLATE_GOLD);
+                        entries.add(ModItems.REINFORCED_PLATE_IRON);
+                        entries.add(ModItems.REINFORCED_PLATE_NETHERITE);
+                        entries.add(ModItems.REINFORCED_PLATE_RUBY);
+                        entries.add(ModItems.REINFORCED_PLATE_SAPPHIRE);
+
+                        entries.add(ModItems.ROD_COPPER);
+                        entries.add(ModItems.ROD_ENDERITE);
+                        entries.add(ModItems.ROD_GLOWSTONE);
+                        entries.add(ModItems.ROD_GOLD);
+                        entries.add(ModItems.ROD_IRON);
+                        entries.add(ModItems.ROD_OBSIDIAN);
 
                         entries.add(ModBlocks.ORE_DEEP_CITRINE);
                         entries.add(ModBlocks.ORE_DEEP_RUBY);

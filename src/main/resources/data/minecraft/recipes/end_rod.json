@@ -7,11 +7,15 @@
     },
     "/": {
       "item": "minecraft:blaze_rod"
+    },
+    "E": {
+      "item": "allthatmatters:rod_enderite"
     }
   },
   "pattern": [
     "/",
-    "#"
+    "#",
+    "E"
   ],
   "result": {
     "count": 4,

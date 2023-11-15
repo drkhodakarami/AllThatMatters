@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "tag": "minecraft:stone_tool_materials"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_stone_hammer"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "CSC",
-    "CSC",
-    " S "
+    "H",
+    "B",
+    "S"
   ],
   "result": {
     "item": "allthatmatters:tool_stone_hammer"

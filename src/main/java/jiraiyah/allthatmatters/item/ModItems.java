@@ -222,6 +222,61 @@ public class ModItems
     public static final Item CAST_WOOD_INGOT = registerItem("cast_wood_ingot", new Item(new FabricItemSettings()));
     //endregion
 
+    public static final Item BINDING = registerItem("binding", new Item(new FabricItemSettings()));
+
+    //region GEARS
+    public static final Item GEAR_COPPER = registerItem("gear_copper", new Item(new FabricItemSettings()));
+    public static final Item GEAR_DIAMOND = registerItem("gear_diamond", new Item(new FabricItemSettings()));
+    public static final Item GEAR_EMERALD = registerItem("gear_emerald", new Item(new FabricItemSettings()));
+    public static final Item GEAR_ENDERITE = registerItem("gear_enderite", new Item(new FabricItemSettings()));
+    public static final Item GEAR_GOLD = registerItem("gear_gold", new Item(new FabricItemSettings()));
+    public static final Item GEAR_IRON = registerItem("gear_iron", new Item(new FabricItemSettings()));
+    public static final Item GEAR_LAPIS = registerItem("gear_lapis", new Item(new FabricItemSettings()));
+    public static final Item GEAR_NETHERITE = registerItem("gear_netherite", new Item(new FabricItemSettings()));
+    public static final Item GEAR_OBSIDIAN = registerItem("gear_obsidian", new Item(new FabricItemSettings()));
+    public static final Item GEAR_PRISMARINE = registerItem("gear_prismarine", new Item(new FabricItemSettings()));
+    public static final Item GEAR_QUARTZ = registerItem("gear_quartz", new Item(new FabricItemSettings()));
+    public static final Item GEAR_RUBY = registerItem("gear_ruby", new Item(new FabricItemSettings()));
+    public static final Item GEAR_SAPPHIRE = registerItem("gear_sapphire", new Item(new FabricItemSettings()));
+    public static final Item GEAR_STONE = registerItem("gear_stone", new Item(new FabricItemSettings()));
+    public static final Item GEAR_WOOD = registerItem("gear_wood", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region PLATES
+    public static final Item PLATE_AMETHYST = registerItem("plate_amethyst", new Item(new FabricItemSettings()));
+    public static final Item PLATE_CITRINE = registerItem("plate_citrine", new Item(new FabricItemSettings()));
+    public static final Item PLATE_COPPER = registerItem("plate_copper", new Item(new FabricItemSettings()));
+    public static final Item PLATE_DIAMOND = registerItem("plate_diamond", new Item(new FabricItemSettings()));
+    public static final Item PLATE_EMERALD = registerItem("plate_emerald", new Item(new FabricItemSettings()));
+    public static final Item PLATE_ENDERITE = registerItem("plate_enderite", new Item(new FabricItemSettings()));
+    public static final Item PLATE_GOLD = registerItem("plate_gold", new Item(new FabricItemSettings()));
+    public static final Item PLATE_IRON = registerItem("plate_iron", new Item(new FabricItemSettings()));
+    public static final Item PLATE_NETHERITE = registerItem("plate_netherite", new Item(new FabricItemSettings()));
+    public static final Item PLATE_RUBY = registerItem("plate_ruby", new Item(new FabricItemSettings()));
+    public static final Item PLATE_SAPPHIRE = registerItem("plate_sapphire", new Item(new FabricItemSettings()));
+
+    public static final Item REINFORCED_PLATE_AMETHYST = registerItem("reinforced_plate_amethyst", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_CITRINE = registerItem("reinforced_plate_citrine", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_COPPER = registerItem("reinforced_plate_copper", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_DIAMOND = registerItem("reinforced_plate_diamond", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_EMERALD = registerItem("reinforced_plate_emerald", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_ENDERITE = registerItem("reinforced_plate_enderite", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_GOLD = registerItem("reinforced_plate_gold", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_IRON = registerItem("reinforced_plate_iron", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_NETHERITE = registerItem("reinforced_plate_netherite", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_RUBY = registerItem("reinforced_plate_ruby", new Item(new FabricItemSettings()));
+    public static final Item REINFORCED_PLATE_SAPPHIRE = registerItem("reinforced_plate_sapphire", new Item(new FabricItemSettings()));
+    //endregion
+
+    //region RODS
+    public static final Item ROD_COPPER = registerItem("rod_copper", new Item(new FabricItemSettings()));
+    public static final Item ROD_ENDERITE = registerItem("rod_enderite", new Item(new FabricItemSettings()));
+    public static final Item ROD_GLOWSTONE = registerItem("rod_glowstone", new Item(new FabricItemSettings()));
+    public static final Item ROD_GOLD = registerItem("rod_gold", new Item(new FabricItemSettings()));
+    public static final Item ROD_IRON = registerItem("rod_iron", new Item(new FabricItemSettings()));
+    public static final Item ROD_OBSIDIAN = registerItem("rod_obsidian", new Item(new FabricItemSettings()));
+    //endregion
+
     //region CITRINE HEADS
     public static final Item HEAD_CITRINE_AXE = registerItem("head_citrine_axe", new Item(new FabricItemSettings()));
     public static final Item HEAD_CITRINE_HAMMER = registerItem("head_citrine_hammer", new Item(new FabricItemSettings()));

@@ -2,15 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "H": {
+      "item": "allthatmatters:head_iron_sword"
     },
     "X": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:binding"
+    },
+    "#": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "X",
+    "H",
     "X",
     "#"
   ],

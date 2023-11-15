@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "I": {
-      "item": "minecraft:emerald"
+      "item": "allthatmatters:reinforced_plate_emerald"
     }
   },
   "pattern": [

@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "allthatmatters:gem_citrine"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_citrine_hammer"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "CSC",
-    "CSC",
-    " S "
+    "H",
+    "B",
+    "S"
   ],
   "result": {
     "item": "allthatmatters:tool_citrine_hammer"

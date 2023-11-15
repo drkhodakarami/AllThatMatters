@@ -3,22 +3,22 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "minecraft:furnace"
+      "item": "minecraft:bucket"
     },
     "F": {
-      "item": "minecraft:blast_furnace"
-    },
-    "I": {
-      "item": "minecraft:iron_bars"
+      "item": "minecraft:furnace"
     },
     "R": {
-      "item": "minecraft:redstone"
+      "item": "allthatmatters:plate_ruby"
+    },
+    "S": {
+      "item": "allthatmatters:plate_iron"
     }
   },
   "pattern": [
-    "RIR",
-    "IBI",
-    "RFR"
+    "RRR",
+    "SBS",
+    "SFS"
   ],
   "result": {
     "item": "allthatmatters:gem_cleanser"

@@ -9,10 +9,10 @@
       "item": "minecraft:redstone"
     },
     "T": {
-      "tag": "minecraft:planks"
+      "tag": "allthatmatters:reinforced_plate_iron"
     },
     "X": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:rod_iron"
     }
   },
   "pattern": [

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gem_ruby": {
+    "has_reinforced_plate_ruby": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:gem_ruby"
+              "allthatmatters:reinforced_plate_ruby"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_gem_ruby"
+      "has_reinforced_plate_ruby"
     ]
   ],
   "rewards": {

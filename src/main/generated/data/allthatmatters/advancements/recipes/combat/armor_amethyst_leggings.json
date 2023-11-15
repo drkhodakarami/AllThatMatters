@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_amethyst_shard": {
+    "has_reinforced_plate_amethyst": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:amethyst_shard"
+              "allthatmatters:reinforced_plate_amethyst"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_amethyst_shard"
+      "has_reinforced_plate_amethyst"
     ]
   ],
   "rewards": {

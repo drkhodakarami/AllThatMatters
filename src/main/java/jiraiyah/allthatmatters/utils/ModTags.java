@@ -31,6 +31,11 @@ public class ModTags
         public static final TagKey<Item> FLUID_BUCKETS = createCommonTag("fluid_buckets");
         public static final TagKey<Item> TOOL_HAMMER = createCommonTag("hammers");
         public static final TagKey<Item> CASTS = createCommonTag("casts");
+        public static final TagKey<Item> WOOD_CASTS = createCommonTag("wood_casts");
+        public static final TagKey<Item> GEAR = createCommonTag("gears");
+        public static final TagKey<Item> PLATE = createCommonTag("plates");
+        public static final TagKey<Item> REINFORCED = createCommonTag("reinforced_plates");
+        public static final TagKey<Item> ROD = createCommonTag("rods");
 
         private static TagKey<Item> createTag(String name)
         {

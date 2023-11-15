@@ -3,11 +3,14 @@
   "category": "redstone",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:plate_iron"
+    },
+    "R": {
+      "item": "allthatmatters:rod_iron"
     }
   },
   "pattern": [
-    "##",
+    "RR",
     "##"
   ],
   "result": {

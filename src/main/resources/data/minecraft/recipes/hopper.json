@@ -6,7 +6,7 @@
       "item": "minecraft:chest"
     },
     "I": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:plate_iron"
     }
   },
   "pattern": [

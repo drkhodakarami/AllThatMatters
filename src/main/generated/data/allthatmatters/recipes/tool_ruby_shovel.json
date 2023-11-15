@@ -2,16 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "allthatmatters:gem_ruby"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_ruby_shovel"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "C",
-    "S",
+    "H",
+    "B",
     "S"
   ],
   "result": {

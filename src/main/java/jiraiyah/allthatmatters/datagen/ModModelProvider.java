@@ -78,6 +78,8 @@ public class ModModelProvider extends FabricModelProvider
 
         itemModelGenerator.register(ModFluids.MOLTEN_ENDERITE_BUCKET, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.BINDING, Models.GENERATED);
+
         //region CASTS
         itemModelGenerator.register(ModItems.CAST_AXE, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAST_BINDING, Models.GENERATED);
@@ -98,6 +100,60 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.CAST_WOOD_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAST_WOOD_PICKAXE, Models.GENERATED);
         //endregion
+
+        //region GEARS
+        itemModelGenerator.register(ModItems.GEAR_COPPER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_EMERALD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_ENDERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_GOLD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_IRON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_LAPIS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_NETHERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_OBSIDIAN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_PRISMARINE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_QUARTZ, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_RUBY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_SAPPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_STONE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GEAR_WOOD, Models.GENERATED);
+        //endregion
+
+        //region PLATES
+        itemModelGenerator.register(ModItems.PLATE_AMETHYST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_CITRINE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_COPPER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_EMERALD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_ENDERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_GOLD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_IRON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_NETHERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_RUBY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_SAPPHIRE, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_AMETHYST, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_CITRINE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_COPPER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_EMERALD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_ENDERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_GOLD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_IRON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_NETHERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_RUBY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REINFORCED_PLATE_SAPPHIRE, Models.GENERATED);
+        //endregion
+
+        //region RODS
+        itemModelGenerator.register(ModItems.ROD_COPPER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROD_ENDERITE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROD_GLOWSTONE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROD_GOLD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROD_IRON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ROD_OBSIDIAN, Models.GENERATED);
+
+        //
 
         //region TOOL HEAD
         itemModelGenerator.register(ModItems.HEAD_CITRINE_AXE, Models.GENERATED);

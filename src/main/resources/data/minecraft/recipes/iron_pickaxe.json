@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "H": {
+      "item": "allthatmatters:head_iron_pickaxe"
     },
     "X": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:binding"
+    },
+    "#": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "XXX",
-    " # ",
-    " # "
+    "H",
+    "X",
+    "#"
   ],
   "result": {
     "item": "minecraft:iron_pickaxe"

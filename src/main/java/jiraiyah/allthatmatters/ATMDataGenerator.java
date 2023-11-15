@@ -13,6 +13,7 @@ public class ATMDataGenerator implements DataGeneratorEntrypoint
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator)
     {
+        AllThatMatters.LOGGER.info(">>> Generating Data");
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
@@ -25,6 +26,7 @@ public class ATMDataGenerator implements DataGeneratorEntrypoint
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder)
     {
+        AllThatMatters.LOGGER.info(">>> Registering Data Generation Features");
         registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }

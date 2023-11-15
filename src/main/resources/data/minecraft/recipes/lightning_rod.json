@@ -3,7 +3,7 @@
   "category": "redstone",
   "key": {
     "#": {
-      "item": "minecraft:copper_ingot"
+      "item": "allthatmatters:rod_copper"
     }
   },
   "pattern": [

@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "X": {
-      "item": "minecraft:diamond"
+      "item": "allthatmatters:reinforced_plate_diamond"
     }
   },
   "pattern": [

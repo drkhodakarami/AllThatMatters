@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "allthatmatters:item/reinforced_plate_amethyst"
+  }
+}

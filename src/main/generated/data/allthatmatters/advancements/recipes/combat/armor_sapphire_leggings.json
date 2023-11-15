@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gem_sapphire": {
+    "has_reinforced_plate_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:gem_sapphire"
+              "allthatmatters:reinforced_plate_sapphire"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_gem_sapphire"
+      "has_reinforced_plate_sapphire"
     ]
   ],
   "rewards": {

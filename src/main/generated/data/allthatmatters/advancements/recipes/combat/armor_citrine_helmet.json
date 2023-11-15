@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gem_citrine": {
+    "has_reinforced_plate_citrine": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:gem_citrine"
+              "allthatmatters:reinforced_plate_citrine"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_gem_citrine"
+      "has_reinforced_plate_citrine"
     ]
   ],
   "rewards": {

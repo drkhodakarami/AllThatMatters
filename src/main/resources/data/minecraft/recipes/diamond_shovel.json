@@ -2,16 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "H": {
+      "item": "allthatmatters:head_diamond_shovel"
     },
     "X": {
-      "item": "minecraft:diamond"
+      "item": "allthatmatters:binding"
+    },
+    "#": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
+    "H",
     "X",
-    "#",
     "#"
   ],
   "result": {

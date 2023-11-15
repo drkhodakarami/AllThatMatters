@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "minecraft:gold_ingot"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_gold_hammer"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "CSC",
-    "CSC",
-    " S "
+    "H",
+    "B",
+    "S"
   ],
   "result": {
     "item": "allthatmatters:tool_gold_hammer"

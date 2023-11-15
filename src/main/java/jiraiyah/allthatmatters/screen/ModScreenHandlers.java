@@ -25,7 +25,7 @@ public class ModScreenHandlers
 
     public static void register()
     {
-        AllThatMatters.LOGGER.info(">>> Registering Screen Handlers for : " + AllThatMatters.ModID);
+        AllThatMatters.LOGGER.info(">>> Registering Screen Handlers");
 
         CHUNK_LOADER_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(ChunkLoaderBlock.ID,
                 (syncId, inventory, buf) -> new ChunkLoaderScreenHandler(syncId, inventory,

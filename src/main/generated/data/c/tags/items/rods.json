@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:rod_copper",
+    "allthatmatters:rod_enderite",
+    "allthatmatters:rod_glowstone",
+    "allthatmatters:rod_gold",
+    "allthatmatters:rod_iron",
+    "allthatmatters:rod_obsidian"
+  ]
+}

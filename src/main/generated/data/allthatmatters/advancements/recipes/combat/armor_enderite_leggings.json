@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ingot_enderite": {
+    "has_reinforced_plate_enderite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "allthatmatters:ingot_enderite"
+              "allthatmatters:reinforced_plate_enderite"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ingot_enderite"
+      "has_reinforced_plate_enderite"
     ]
   ],
   "rewards": {

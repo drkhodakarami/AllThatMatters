@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "I": {
-      "item": "minecraft:copper_ingot"
+      "item": "allthatmatters:reinforced_plate_copper"
     }
   },
   "pattern": [

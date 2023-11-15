@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "allthatmatters:ingot_enderite"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_enderite_hoe"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "CC",
-    " S",
-    " S"
+    "H",
+    "B",
+    "S"
   ],
   "result": {
     "item": "allthatmatters:tool_enderite_hoe"

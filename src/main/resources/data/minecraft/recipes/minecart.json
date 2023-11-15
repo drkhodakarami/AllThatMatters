@@ -3,12 +3,15 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:plate_iron"
+    },
+    "G": {
+      "item": "allthatmatters:gear_iron"
     }
   },
   "pattern": [
     "# #",
-    "###"
+    "G#G"
   ],
   "result": {
     "item": "minecraft:minecart"

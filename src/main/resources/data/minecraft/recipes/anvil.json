@@ -3,15 +3,18 @@
   "category": "misc",
   "key": {
     "I": {
-      "item": "minecraft:iron_block"
+      "item": "allthatmatters:reinforced_plate_iron"
+    },
+    "R": {
+      "item": "allthatmatters:rod_iron"
     },
     "i": {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:iron_block"
     }
   },
   "pattern": [
     "III",
-    " i ",
+    " R ",
     "iii"
   ],
   "result": {

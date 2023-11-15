@@ -36,7 +36,7 @@ public class ModBlockEntities
 
     public static void register()
     {
-        AllThatMatters.LOGGER.info(">>> Registering Block Entities for : " + AllThatMatters.ModID);
+        AllThatMatters.LOGGER.info(">>> Registering Block Entities");
 
         //region HANDLING SHULKER BOXES
         List<EnderiteShulkerBoxBlock> boxes = new ArrayList<>();

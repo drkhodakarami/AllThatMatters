@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_reinforced_plate_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:reinforced_plate_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:netherite_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_reinforced_plate_netherite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:netherite_helmet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

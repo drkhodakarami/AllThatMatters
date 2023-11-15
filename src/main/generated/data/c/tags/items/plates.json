@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:plate_copper",
+    "allthatmatters:plate_diamond",
+    "allthatmatters:plate_emerald",
+    "allthatmatters:plate_enderite",
+    "allthatmatters:plate_gold",
+    "allthatmatters:plate_iron",
+    "allthatmatters:plate_netherite",
+    "allthatmatters:plate_ruby",
+    "allthatmatters:plate_sapphire"
+  ]
+}

@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "X": {
-      "item": "minecraft:gold_ingot"
+      "item": "allthatmatters:reinforced_plate_gold"
     }
   },
   "pattern": [

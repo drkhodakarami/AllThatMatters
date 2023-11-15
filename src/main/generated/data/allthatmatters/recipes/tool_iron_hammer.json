@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "minecraft:iron_ingot"
+    "B": {
+      "item": "allthatmatters:binding"
+    },
+    "H": {
+      "item": "allthatmatters:head_iron_hammer"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "CSC",
-    "CSC",
-    " S "
+    "H",
+    "B",
+    "S"
   ],
   "result": {
     "item": "allthatmatters:tool_iron_hammer"

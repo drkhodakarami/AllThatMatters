@@ -6,7 +6,7 @@
       "tag": "minecraft:planks"
     },
     "@": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:reinforced_plate_iron"
     }
   },
   "pattern": [

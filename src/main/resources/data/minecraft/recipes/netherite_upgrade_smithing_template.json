@@ -6,19 +6,19 @@
       "item": "minecraft:diamond"
     },
     "C": {
-      "item": "minecraft:netherrack"
+      "item": "allthatmatters:ingot_enderite"
     },
     "S": {
       "item": "minecraft:netherite_upgrade_smithing_template"
     }
   },
   "pattern": [
-    "#S#",
-    "#C#",
-    "###"
+    "CSC",
+    "C#C",
+    "CCC"
   ],
   "result": {
-    "count": 2,
+    "count": 4,
     "item": "minecraft:netherite_upgrade_smithing_template"
   },
   "show_notification": true

@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "B": {
+      "item": "allthatmatters:binding"
+    },
     "G": {
       "item": "allthatmatters:gem_sapphire"
     },
@@ -13,9 +16,9 @@
     }
   },
   "pattern": [
-    " IS",
+    " IB",
     "G S",
-    " IS"
+    " IB"
   ],
   "result": {
     "item": "allthatmatters:tool_sapphire_bow"

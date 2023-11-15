@@ -1,10 +1,15 @@
-// 1.20.2	2023-11-15T11:32:23.4891518	All That Matters/Tags for minecraft:item
-6685354eef25a14eb9effbee283aa1fc4bf60491 data\minecraft\tags\items\hoes.json
-9f03126831ab3f1a21836315ef3a52634c428369 data\c\tags\items\casts.json
+// 1.20.2	2023-11-15T17:40:27.4148162	All That Matters/Tags for minecraft:item
+572d7d80d10f03c8d6f51e2925a9ea3b372fe5be data\c\tags\items\casts.json
 3234976729a598e706a52e4c0b5936fd6dba9911 data\minecraft\tags\items\swords.json
+b72c8913e2ade469fc4c391401f39c9b141f344e data\c\tags\items\rods.json
+ced0b814e94f62ab79fa9d8236933cf2b16af49e data\c\tags\items\fluid_buckets.json
+da57beb21743034855790ac26897b689c0238607 data\minecraft\tags\items\pickaxes.json
+498f18c5d32df75ed950bfc1b22fa0dae7215157 data\c\tags\items\reinforced_plates.json
+6685354eef25a14eb9effbee283aa1fc4bf60491 data\minecraft\tags\items\hoes.json
 f0d8d4087862899e709bb28143208f1d014bb849 data\c\tags\items\hammers.json
 99e1287e2d762554e51e38b7b1de025738495b49 data\minecraft\tags\items\shovels.json
 a1d95bda43e07576d260c806cd8571ee5afa08d4 data\minecraft\tags\items\trimmable_armor.json
-ced0b814e94f62ab79fa9d8236933cf2b16af49e data\c\tags\items\fluid_buckets.json
+c401941011dc3e081e71e057e331ee5eb63a5cdb data\c\tags\items\gears.json
+ba3132a80d00d2c80a5f4d9ca4932707d550758f data\c\tags\items\plates.json
 d572722fbbc22ca7856e70e1bcb3474a4db6342c data\minecraft\tags\items\axes.json
-da57beb21743034855790ac26897b689c0238607 data\minecraft\tags\items\pickaxes.json
+0e99304f0180d060bb1cd96555d4d56fa45a50f3 data\c\tags\items\wood_casts.json

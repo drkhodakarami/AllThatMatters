@@ -15,8 +15,6 @@
     "allthatmatters:cast_rod",
     "allthatmatters:cast_shovel",
     "allthatmatters:cast_sword",
-    "allthatmatters:cast_wire",
-    "allthatmatters:cast_wood_ingot",
-    "allthatmatters:cast_wood_pickaxe"
+    "allthatmatters:cast_wire"
   ]
 }

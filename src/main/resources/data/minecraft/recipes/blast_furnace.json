@@ -3,10 +3,13 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:smooth_stone"
+      "item": "minecraft:obsidian"
     },
     "I": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:plate_iron"
+    },
+    "R": {
+      "item": "allthatmatters:rod_iron"
     },
     "X": {
       "item": "minecraft:furnace"
@@ -14,7 +17,7 @@
   },
   "pattern": [
     "III",
-    "IXI",
+    "RXR",
     "###"
   ],
   "result": {

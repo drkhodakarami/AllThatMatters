@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_emerald": {
+    "has_reinforced_plate_emerald": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:emerald"
+              "allthatmatters:reinforced_plate_emerald"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_emerald"
+      "has_reinforced_plate_emerald"
     ]
   ],
   "rewards": {

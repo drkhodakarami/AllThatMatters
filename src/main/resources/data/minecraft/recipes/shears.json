@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "allthatmatters:plate_iron"
     }
   },
   "pattern": [

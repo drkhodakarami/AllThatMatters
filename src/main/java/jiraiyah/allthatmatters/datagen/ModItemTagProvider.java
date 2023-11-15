@@ -45,9 +45,58 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.CAST_ROD)
                 .add(ModItems.CAST_SHOVEL)
                 .add(ModItems.CAST_SWORD)
-                .add(ModItems.CAST_WIRE)
+                .add(ModItems.CAST_WIRE);
+
+        getOrCreateTagBuilder(ModTags.Items.WOOD_CASTS)
                 .add(ModItems.CAST_WOOD_INGOT)
                 .add(ModItems.CAST_WOOD_PICKAXE);
+
+        getOrCreateTagBuilder(ModTags.Items.GEAR)
+                .add(ModItems.GEAR_COPPER)
+                .add(ModItems.GEAR_DIAMOND)
+                .add(ModItems.GEAR_EMERALD)
+                .add(ModItems.GEAR_ENDERITE)
+                .add(ModItems.GEAR_GOLD)
+                .add(ModItems.GEAR_IRON)
+                .add(ModItems.GEAR_LAPIS)
+                .add(ModItems.GEAR_NETHERITE)
+                .add(ModItems.GEAR_OBSIDIAN)
+                .add(ModItems.GEAR_PRISMARINE)
+                .add(ModItems.GEAR_QUARTZ)
+                .add(ModItems.GEAR_RUBY)
+                .add(ModItems.GEAR_SAPPHIRE)
+                .add(ModItems.GEAR_STONE)
+                .add(ModItems.GEAR_WOOD);
+
+        getOrCreateTagBuilder(ModTags.Items.PLATE)
+                .add(ModItems.PLATE_COPPER)
+                .add(ModItems.PLATE_DIAMOND)
+                .add(ModItems.PLATE_EMERALD)
+                .add(ModItems.PLATE_ENDERITE)
+                .add(ModItems.PLATE_GOLD)
+                .add(ModItems.PLATE_IRON)
+                .add(ModItems.PLATE_NETHERITE)
+                .add(ModItems.PLATE_RUBY)
+                .add(ModItems.PLATE_SAPPHIRE);
+
+        getOrCreateTagBuilder(ModTags.Items.REINFORCED)
+                .add(ModItems.REINFORCED_PLATE_COPPER)
+                .add(ModItems.REINFORCED_PLATE_DIAMOND)
+                .add(ModItems.REINFORCED_PLATE_EMERALD)
+                .add(ModItems.REINFORCED_PLATE_ENDERITE)
+                .add(ModItems.REINFORCED_PLATE_GOLD)
+                .add(ModItems.REINFORCED_PLATE_IRON)
+                .add(ModItems.REINFORCED_PLATE_NETHERITE)
+                .add(ModItems.REINFORCED_PLATE_RUBY)
+                .add(ModItems.REINFORCED_PLATE_SAPPHIRE);
+
+        getOrCreateTagBuilder(ModTags.Items.ROD)
+                .add(ModItems.ROD_COPPER)
+                .add(ModItems.ROD_ENDERITE)
+                .add(ModItems.ROD_GLOWSTONE)
+                .add(ModItems.ROD_GOLD)
+                .add(ModItems.ROD_IRON)
+                .add(ModItems.ROD_OBSIDIAN);
 
         getOrCreateTagBuilder(ItemTags.AXES)
                 .add(ModItems.TOOL_CITRINE_AXE)

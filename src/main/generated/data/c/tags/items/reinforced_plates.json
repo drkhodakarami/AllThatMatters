@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:reinforced_plate_copper",
+    "allthatmatters:reinforced_plate_diamond",
+    "allthatmatters:reinforced_plate_emerald",
+    "allthatmatters:reinforced_plate_enderite",
+    "allthatmatters:reinforced_plate_gold",
+    "allthatmatters:reinforced_plate_iron",
+    "allthatmatters:reinforced_plate_netherite",
+    "allthatmatters:reinforced_plate_ruby",
+    "allthatmatters:reinforced_plate_sapphire"
+  ]
+}
