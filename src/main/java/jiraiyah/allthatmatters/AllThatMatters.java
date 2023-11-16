@@ -24,7 +24,6 @@ import org.slf4j.LoggerFactory;
 // TODO : Maybe Engineer Helmet Drawing Info in world and screen
 // TODO : Cast Press Machine
 // TODO : Smelter Machine
-// TODO : Recipe Changes for Tools and Armors (both my mod and vanilla)
 public class AllThatMatters implements ModInitializer
 {
     public static final String ModID = "allthatmatters";

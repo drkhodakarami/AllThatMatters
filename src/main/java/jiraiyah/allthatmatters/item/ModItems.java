@@ -202,24 +202,24 @@ public class ModItems
     //endregion
 
     //region CASTS
-    public static final Item CAST_AXE = registerItem("cast_axe", new Item(new FabricItemSettings()));
-    public static final Item CAST_BINDING = registerItem("cast_binding", new Item(new FabricItemSettings()));
-    public static final Item CAST_GEAR = registerItem("cast_gear", new Item(new FabricItemSettings()));
-    public static final Item CAST_GEM = registerItem("cast_gem", new Item(new FabricItemSettings()));
-    public static final Item CAST_HAMMER = registerItem("cast_hammer", new Item(new FabricItemSettings()));
-    public static final Item CAST_HANDLE = registerItem("cast_handle", new Item(new FabricItemSettings()));
-    public static final Item CAST_HOE = registerItem("cast_hoe", new Item(new FabricItemSettings()));
-    public static final Item CAST_INGOT = registerItem("cast_ingot", new Item(new FabricItemSettings()));
-    public static final Item CAST_NUGGET = registerItem("cast_nugget", new Item(new FabricItemSettings()));
-    public static final Item CAST_PICKAXE = registerItem("cast_pickaxe", new Item(new FabricItemSettings()));
-    public static final Item CAST_PLATE = registerItem("cast_plate", new Item(new FabricItemSettings()));
-    public static final Item CAST_ROD = registerItem("cast_rod", new Item(new FabricItemSettings()));
-    public static final Item CAST_SHOVEL = registerItem("cast_shovel", new Item(new FabricItemSettings()));
-    public static final Item CAST_SWORD = registerItem("cast_sword", new Item(new FabricItemSettings()));
-    public static final Item CAST_WIRE = registerItem("cast_wire", new Item(new FabricItemSettings()));
+    public static final Item CAST_AXE = registerItem("cast_axe", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_BINDING = registerItem("cast_binding", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_GEAR = registerItem("cast_gear", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_GEM = registerItem("cast_gem", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_HAMMER = registerItem("cast_hammer", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_HANDLE = registerItem("cast_handle", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_HOE = registerItem("cast_hoe", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_INGOT = registerItem("cast_ingot", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_NUGGET = registerItem("cast_nugget", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_PICKAXE = registerItem("cast_pickaxe", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_PLATE = registerItem("cast_plate", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_ROD = registerItem("cast_rod", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_SHOVEL = registerItem("cast_shovel", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_SWORD = registerItem("cast_sword", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_WIRE = registerItem("cast_wire", new Item(new FabricItemSettings().maxCount(1)));
 
-    public static final Item CAST_WOOD_PICKAXE = registerItem("cast_wood_pickaxe", new Item(new FabricItemSettings()));
-    public static final Item CAST_WOOD_INGOT = registerItem("cast_wood_ingot", new Item(new FabricItemSettings()));
+    public static final Item CAST_WOOD_PICKAXE = registerItem("cast_wood_pickaxe", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item CAST_WOOD_INGOT = registerItem("cast_wood_ingot", new Item(new FabricItemSettings().maxCount(1)));
     //endregion
 
     public static final Item BINDING = registerItem("binding", new Item(new FabricItemSettings()));

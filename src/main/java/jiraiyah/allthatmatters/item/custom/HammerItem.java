@@ -9,6 +9,8 @@ import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -54,15 +56,17 @@ public class HammerItem extends MiningToolItem
         tooltip.add(Text.translatable("allthatmatters.tooltip.hammer_size", this.radius, this.radius, this.depth).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
     }
 
-    /*// TODO : make decision, do you want to prevent it from breaking?
+    // TODO : make the mixin, prevent items from breaking when they have mending
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state)
     {
+        if(EnchantmentHelper.getLevel(Enchantments.MENDING, stack) == 0)
+            return super.getMiningSpeedMultiplier(stack, state);
         if(stack.getMaxDamage() - stack.getDamage() <= 1)
             return -1f;
         return super.getMiningSpeedMultiplier(stack, state);
 
-    }*/
+    }
 
     @Override
     public boolean isSuitableFor(BlockState state)

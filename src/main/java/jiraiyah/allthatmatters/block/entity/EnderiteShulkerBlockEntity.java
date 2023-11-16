@@ -18,7 +18,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.IntStream;
 
-//TODO : Add fluid tank support
 public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 {
     private final int[] AVAILABLE_SLOTS;

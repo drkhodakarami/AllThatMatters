@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.block.custom;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.block.entity.CastPressBE;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -32,15 +33,13 @@ public class CastPressBlock extends BlockWithEntity
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state)
     {
-        //TODO : Return Block Entity
-        return null;
+        return new CastPressBE(pos, state);
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
-        //TODO Handle Screen
-        //player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
+        player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
         return ActionResult.SUCCESS;
     }
 
@@ -48,10 +47,8 @@ public class CastPressBlock extends BlockWithEntity
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
     {
-        //TODO : Handle Block Entity Tick
-        /*return validateTicker(type, ModBlockEntities.GEM_CLEANSER,
-                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));*/
-        return null;
+        return validateTicker(type, ModBlockEntities.CAST_PRESS,
+                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 
     @Override
@@ -60,12 +57,11 @@ public class CastPressBlock extends BlockWithEntity
         if (state.getBlock() != newState.getBlock())
         {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            //TODO : Handle Block Entity
-            /*if (blockEntity instanceof GemCleanserBE)
+            if (blockEntity instanceof CastPressBE)
             {
-                ItemScatterer.spawn(world, pos, (GemCleanserBE) blockEntity);
+                ItemScatterer.spawn(world, pos, (CastPressBE) blockEntity);
                 world.updateComparators(pos, this);
-            }*/
+            }
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }

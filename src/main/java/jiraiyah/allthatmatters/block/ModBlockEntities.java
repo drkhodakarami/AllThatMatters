@@ -1,9 +1,11 @@
 package jiraiyah.allthatmatters.block;
 
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.block.custom.CastPressBlock;
 import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
+import jiraiyah.allthatmatters.block.entity.CastPressBE;
 import jiraiyah.allthatmatters.block.entity.ChunkLoaderBlockEntity;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
@@ -19,6 +21,10 @@ import java.util.List;
 
 public class ModBlockEntities
 {
+    public static BlockEntityType<CastPressBE> CAST_PRESS =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":" + CastPressBlock.ID.getPath(),
+                    FabricBlockEntityTypeBuilder.create(CastPressBE::new, ModBlocks.CAST_PRESS).build());
+
     public static BlockEntityType<GemCleanserBE> GEM_CLEANSER =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":" + GemCleanserBlock.ID.getPath(),
                     FabricBlockEntityTypeBuilder.create(GemCleanserBE::new, ModBlocks.GEM_CLEANSER).build());

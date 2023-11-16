@@ -32,8 +32,9 @@ public class AbstractBlockMixin
     public float bedrockBreakingSpeed(float original, BlockState state, PlayerEntity player)
     {
         ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
-        if (state.getBlock() == Blocks.BEDROCK && (stack.getItem() == ModItems.TOOL_ENDERITE_PICKAXE))
-            return player.getBlockBreakingSpeed(state) / effectiveHardness;
+        if ((state.getBlock() == Blocks.BEDROCK && (stack.getItem() == ModItems.TOOL_ENDERITE_PICKAXE)) ||
+            (state.getBlock() == Blocks.END_PORTAL_FRAME  && (stack.getItem() == ModItems.TOOL_ENDERITE_PICKAXE)))
+                return player.getBlockBreakingSpeed(state) / effectiveHardness;
         return original;
     }
 }

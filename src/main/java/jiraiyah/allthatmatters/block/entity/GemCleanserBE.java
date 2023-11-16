@@ -341,7 +341,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         fluidStorage.variant.toPacket(data);
         data.writeLong(fluidStorage.amount);
         data.writeBlockPos(getPos());
-        ModMessages.sendToServerPlayerEntities(world, getPos(), ModMessages.INFUSING_STATION_FLUID_SYNC, data);
+        ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.INFUSING_STATION_FLUID_SYNC, data);
     }
     //endregion
 }
