@@ -22,7 +22,6 @@ import org.slf4j.LoggerFactory;
 // 5*minecraft:bedrock,30*minecraft:light_blue_wool,minecraft:light_blue_carpet;minecraft:plains;village
 
 // TODO : Maybe Engineer Helmet Drawing Info in world and screen
-// TODO : Cast Press Machine
 // TODO : Smelter Machine
 public class AllThatMatters implements ModInitializer
 {

@@ -13,7 +13,8 @@
     "AbstractClientPlayerEntityMixin",
     "ServerPlayerGameModeMixin",
     "BlocksMixin",
-    "AbstractBlockMixin"
+    "AbstractBlockMixin",
+    "ItemUseOnBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
