@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    },
+    {
+      "item": "allthatmatters:cast_wire"
+    }
+  ],
+  "output": {
+    "item": "minecraft:string",
+    "count": 8
+  }
+}

@@ -1,5 +1,6 @@
 package jiraiyah.allthatmatters.datagen;
 
+import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.utils.ModTags;
@@ -7,9 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -69,6 +68,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.GEAR_WOOD);
 
         getOrCreateTagBuilder(ModTags.Items.PLATE)
+                .add(ModItems.PLATE_AMETHYST)
+                .add(ModItems.PLATE_CITRINE)
                 .add(ModItems.PLATE_COPPER)
                 .add(ModItems.PLATE_DIAMOND)
                 .add(ModItems.PLATE_EMERALD)
@@ -80,6 +81,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.PLATE_SAPPHIRE);
 
         getOrCreateTagBuilder(ModTags.Items.REINFORCED)
+                .add(ModItems.REINFORCED_PLATE_AMETHYST)
+                .add(ModItems.REINFORCED_PLATE_CITRINE)
                 .add(ModItems.REINFORCED_PLATE_COPPER)
                 .add(ModItems.REINFORCED_PLATE_DIAMOND)
                 .add(ModItems.REINFORCED_PLATE_EMERALD)
@@ -175,5 +178,45 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.ARMOR_SAPPHIRE_CHESTPLATE)
                 .add(ModItems.ARMOR_SAPPHIRE_LEGGINGS)
                 .add(ModItems.ARMOR_SAPPHIRE_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.COPPER_ORES)
+                .add(ModBlocks.ORE_NETHER_COPPER.asItem());
+        getOrCreateTagBuilder(ItemTags.REDSTONE_ORES)
+                .add(ModBlocks.ORE_NETHER_REDSTONE.asItem());
+        getOrCreateTagBuilder(ItemTags.LAPIS_ORES)
+                .add(ModBlocks.ORE_NETHER_LAPIS.asItem());
+        getOrCreateTagBuilder(ItemTags.IRON_ORES)
+                .add(ModBlocks.ORE_NETHER_IRON.asItem());
+        getOrCreateTagBuilder(ItemTags.DIAMOND_ORES)
+                .add(ModBlocks.ORE_NETHER_DIAMOND.asItem());
+        getOrCreateTagBuilder(ItemTags.COAL_ORES)
+                .add(ModBlocks.ORE_NETHER_COAL.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.SMELTERY)
+                .add(ModItems.CITRINE)
+                .add(ModItems.RUBY)
+                .add(ModItems.SAPPHIRE)
+                .add(Items.DIAMOND)
+                .add(Items.EMERALD)
+                .add(Items.PRISMARINE_SHARD)
+                .add(Items.AMETHYST_SHARD)
+                .add(Items.COPPER_INGOT)
+                .add(ModItems.ENDERITE)
+                .add(Items.GLOWSTONE)
+                .add(Items.GOLD_INGOT)
+                .add(Items.IRON_INGOT)
+                .add(Items.LAPIS_LAZULI)
+                .add(Items.NETHERITE_INGOT)
+                .add(Items.OBSIDIAN)
+                .add(Items.QUARTZ)
+                .add(ModBlocks.ORE_NETHER_COAL.asItem())
+                .add(ModBlocks.ORE_NETHER_IRON.asItem())
+                .add(ModBlocks.ORE_NETHER_LAPIS.asItem())
+                .add(ModBlocks.ORE_NETHER_REDSTONE.asItem())
+                .add(ModBlocks.ORE_NETHER_COPPER.asItem())
+                .add(ModBlocks.ORE_NETHER_DIAMOND.asItem())
+                .add(Items.RAW_COPPER)
+                .add(Items.RAW_IRON)
+                .add(Items.RAW_GOLD);
     }
 }

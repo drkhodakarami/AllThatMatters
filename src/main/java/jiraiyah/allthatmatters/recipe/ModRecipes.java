@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.recipe;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.recipe.custom.GemCleanserRecipe;
+import jiraiyah.allthatmatters.recipe.custom.SmelteryRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
@@ -9,10 +10,11 @@ import net.minecraft.registry.Registry;
 
 public class ModRecipes
 {
-    public static final RecipeType<GemCleanserRecipe> INFUSING_STATION_TYPE = new RecipeType<>()
-    {
-    };
-    public static final RecipeSerializer<GemCleanserRecipe> INFUSING_STATION_SERIALIZER = new GemCleanserRecipe.Serializer();
+    public static final RecipeType<GemCleanserRecipe> GEM_CLEANSE_TYPE = new RecipeType<>(){};
+    public static final RecipeSerializer<GemCleanserRecipe> GEM_CLEANSER_SERIALIZER = new GemCleanserRecipe.Serializer();
+
+    public static final RecipeType<SmelteryRecipe> SMELTERY_TYPE = new RecipeType<>(){};
+    public static final RecipeSerializer<SmelteryRecipe> SMELTERY_SERIALIZER = new SmelteryRecipe.Serializer();
 
     private ModRecipes()
     {
@@ -21,10 +23,13 @@ public class ModRecipes
 
     public static void register()
     {
-        AllThatMatters.LOGGER.info(">>> Registering Recipes for : " + AllThatMatters.ModID);
+        AllThatMatters.LOGGER.info(">>> Registering Recipes");
 
-        register("gem_cleanser", INFUSING_STATION_TYPE);
-        register("gem_cleanser", INFUSING_STATION_SERIALIZER);
+        register("gem_cleanser", GEM_CLEANSE_TYPE);
+        register("gem_cleanser", GEM_CLEANSER_SERIALIZER);
+
+        register("smeltery", SMELTERY_TYPE);
+        register("smeltery", SMELTERY_SERIALIZER);
     }
 
     private static void register(String name, RecipeSerializer<?> serializer)

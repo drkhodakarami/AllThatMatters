@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "allthatmatters:cast_shovel"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_diamond_shovel",
+    "count": 1
+  }
+}

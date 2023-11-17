@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_citrine"
+    },
+    {
+      "item": "allthatmatters:cast_pickaxe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_citrine_pickaxe",
+    "count": 1
+  }
+}

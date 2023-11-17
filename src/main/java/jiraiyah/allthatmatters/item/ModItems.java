@@ -1,9 +1,9 @@
 package jiraiyah.allthatmatters.item;
 
 import jiraiyah.allthatmatters.AllThatMatters;
+import jiraiyah.allthatmatters.item.custom.GemBow;
 import jiraiyah.allthatmatters.item.custom.HammerItem;
 import jiraiyah.allthatmatters.item.custom.ModArmorItem;
-import jiraiyah.allthatmatters.item.custom.GemBow;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -304,7 +304,7 @@ public class ModItems
     public static final Item HEAD_DIAMOND_SWORD = registerItem("head_diamond_sword", new Item(new FabricItemSettings()));
     //endregion
 
-    //region DIAMOND HEADS
+    //region ENDERITE HEADS
     public static final Item HEAD_ENDERITE_AXE = registerItem("head_enderite_axe", new Item(new FabricItemSettings()));
     public static final Item HEAD_ENDERITE_HAMMER = registerItem("head_enderite_hammer", new Item(new FabricItemSettings()));
     public static final Item HEAD_ENDERITE_HOE = registerItem("head_enderite_hoe", new Item(new FabricItemSettings()));
@@ -313,7 +313,7 @@ public class ModItems
     public static final Item HEAD_ENDERITE_SWORD = registerItem("head_enderite_sword", new Item(new FabricItemSettings()));
     //endregion
 
-    //region DIAMOND HEADS
+    //region GOLD HEADS
     public static final Item HEAD_GOLD_AXE = registerItem("head_gold_axe", new Item(new FabricItemSettings()));
     public static final Item HEAD_GOLD_HAMMER = registerItem("head_gold_hammer", new Item(new FabricItemSettings()));
     public static final Item HEAD_GOLD_HOE = registerItem("head_gold_hoe", new Item(new FabricItemSettings()));

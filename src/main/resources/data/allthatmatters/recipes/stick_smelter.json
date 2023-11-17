@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "allthatmatters:cast_handle"
+    }
+  ],
+  "output": {
+    "item": "minecraft:stick",
+    "count": 8
+  }
+}

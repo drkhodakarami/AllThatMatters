@@ -65,13 +65,13 @@ public class GemCleanserRecipe implements Recipe<Inventory>
     @Override
     public RecipeSerializer<?> getSerializer()
     {
-        return ModRecipes.INFUSING_STATION_SERIALIZER;
+        return ModRecipes.GEM_CLEANSER_SERIALIZER;
     }
 
     @Override
     public RecipeType<?> getType()
     {
-        return ModRecipes.INFUSING_STATION_TYPE;
+        return ModRecipes.GEM_CLEANSE_TYPE;
     }
 
     public static class Serializer implements RecipeSerializer<GemCleanserRecipe>

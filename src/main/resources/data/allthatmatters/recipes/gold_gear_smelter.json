@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_gear"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gear_gold",
+    "count": 1
+  }
+}

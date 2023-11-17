@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    },
+    {
+      "item": "allthatmatters:cast_binding"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:binding",
+    "count": 4
+  }
+}

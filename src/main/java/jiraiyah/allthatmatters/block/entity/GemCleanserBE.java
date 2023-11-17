@@ -240,7 +240,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     {
         if (this.isOutputSlotEmptyOrReceivable(BASE_OUTPUT_SLOT))
         {
-            if (this.hasRecipe(ModRecipes.INFUSING_STATION_TYPE, BASE_OUTPUT_SLOT))
+            if (this.hasRecipe(ModRecipes.GEM_CLEANSE_TYPE, BASE_OUTPUT_SLOT))
             {
                 if (this.shouldUseFluid() &&
                     this.hasEnoughFluid(this.fluidStorage, FLUID_PER_CRAFT) &&
@@ -250,7 +250,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
                     if (hasCraftingFinished())
                     {
                         this.useFluid(this.fluidStorage, FLUID_PER_CRAFT);
-                        this.craftItem(ModRecipes.INFUSING_STATION_TYPE, BASE_INPUT_SLOT, BASE_OUTPUT_SLOT);
+                        this.craftItem(ModRecipes.GEM_CLEANSE_TYPE, BASE_INPUT_SLOT, BASE_OUTPUT_SLOT);
                         this.resetProgress();
                     }
                     markDirty(world, pos, state);
@@ -341,7 +341,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         fluidStorage.variant.toPacket(data);
         data.writeLong(fluidStorage.amount);
         data.writeBlockPos(getPos());
-        ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.INFUSING_STATION_FLUID_SYNC, data);
+        ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.GEM_CLEANSER_FLUID_SYNC, data);
     }
     //endregion
 }

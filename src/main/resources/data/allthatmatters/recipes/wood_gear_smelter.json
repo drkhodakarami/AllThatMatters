@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "allthatmatters:cast_gear"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gear_wood",
+    "count": 1
+  }
+}

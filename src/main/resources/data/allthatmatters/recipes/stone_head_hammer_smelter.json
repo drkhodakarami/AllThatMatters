@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:stone_tool_materials"
+    },
+    {
+      "item": "allthatmatters:cast_hammer"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_stone_hammer",
+    "count": 1
+  }
+}

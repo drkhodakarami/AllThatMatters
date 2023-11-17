@@ -3,6 +3,7 @@ package jiraiyah.allthatmatters.networking;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.networking.packet.ForcedChunksUpdatePacket;
 import jiraiyah.allthatmatters.networking.packet.GemCleanserFluidSyncS2CPacket;
+import jiraiyah.allthatmatters.networking.packet.SmelteryFluidSyncS2CPacket;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -15,7 +16,8 @@ import net.minecraft.world.World;
 
 public class ModMessages
 {
-    public static final Identifier INFUSING_STATION_FLUID_SYNC = AllThatMatters.identifier("infusing_station_fluid_sync");
+    public static final Identifier GEM_CLEANSER_FLUID_SYNC = AllThatMatters.identifier("gem_cleanser_fluid_sync");
+    public static final Identifier SMELTERY_FLUID_SYNC = AllThatMatters.identifier("smelter_fluid_sync");
 
     private ModMessages()
     {
@@ -30,7 +32,8 @@ public class ModMessages
 
     public static void registerS2CPackets()
     {
-        ClientPlayNetworking.registerGlobalReceiver(INFUSING_STATION_FLUID_SYNC, GemCleanserFluidSyncS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(GEM_CLEANSER_FLUID_SYNC, GemCleanserFluidSyncS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(SMELTERY_FLUID_SYNC, SmelteryFluidSyncS2CPacket::receive);
 
         ClientPlayNetworking.registerGlobalReceiver(ForcedChunksUpdatePacket.PACKET_ID, (client, handler, buf, responseSender) -> ForcedChunksUpdatePacket.read(buf).onClientReceive(client, handler, buf, responseSender));
     }

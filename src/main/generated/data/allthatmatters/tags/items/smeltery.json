@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "allthatmatters:gem_citrine",
+    "allthatmatters:gem_ruby",
+    "allthatmatters:gem_sapphire",
+    "minecraft:diamond",
+    "minecraft:emerald",
+    "minecraft:prismarine_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:copper_ingot",
+    "allthatmatters:ingot_enderite",
+    "minecraft:glowstone",
+    "minecraft:gold_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:lapis_lazuli",
+    "minecraft:netherite_ingot",
+    "minecraft:obsidian",
+    "minecraft:quartz",
+    "allthatmatters:ore_nether_coal",
+    "allthatmatters:ore_nether_iron",
+    "allthatmatters:ore_nether_lapis",
+    "allthatmatters:ore_nether_redstone",
+    "allthatmatters:ore_nether_copper",
+    "allthatmatters:ore_nether_diamond",
+    "minecraft:raw_copper",
+    "minecraft:raw_iron",
+    "minecraft:raw_gold"
+  ]
+}

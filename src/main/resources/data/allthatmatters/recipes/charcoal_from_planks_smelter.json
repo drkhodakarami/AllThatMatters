@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "item": "minecraft:charcoal",
+    "count": 2
+  }
+}

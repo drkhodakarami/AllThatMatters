@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_gear"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gear_copper",
+    "count": 1
+  }
+}

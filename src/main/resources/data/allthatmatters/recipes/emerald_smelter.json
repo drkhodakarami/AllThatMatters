@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:emerald_ores"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "item": "minecraft:emerald",
+    "count": 2
+  }
+}

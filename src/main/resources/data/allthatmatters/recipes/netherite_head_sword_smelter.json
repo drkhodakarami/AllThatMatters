@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_sword"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_netherite_sword",
+    "count": 1
+  }
+}

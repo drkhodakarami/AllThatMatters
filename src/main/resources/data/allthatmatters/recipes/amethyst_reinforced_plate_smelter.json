@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "allthatmatters:plate_amethyst"
+    },
+    {
+      "item": "allthatmatters:cast_plate"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:reinforced_plate_amethyst",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "allthatmatters:cast_gear"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:gear_quartz",
+    "count": 1
+  }
+}

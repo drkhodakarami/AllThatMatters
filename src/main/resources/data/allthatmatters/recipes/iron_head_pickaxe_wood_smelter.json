@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_wood_pickaxe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_iron_pickaxe",
+    "count": 1
+  }
+}

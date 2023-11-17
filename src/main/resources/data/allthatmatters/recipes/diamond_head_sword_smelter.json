@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "allthatmatters:cast_sword"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_diamond_sword",
+    "count": 1
+  }
+}

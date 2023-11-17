@@ -1,20 +1,18 @@
 package jiraiyah.allthatmatters;
 
+import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
-import jiraiyah.allthatmatters.block.ModBlockEntities;
-import jiraiyah.allthatmatters.client.renderer.GemCleanserBERenderer;
 import jiraiyah.allthatmatters.client.renderer.EnderiteShulkerBoxRenderer;
+import jiraiyah.allthatmatters.client.renderer.GemCleanserBERenderer;
 import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.networking.ModMessages;
-import jiraiyah.allthatmatters.screen.custom.CastPressScreen;
-import jiraiyah.allthatmatters.screen.custom.ChunkLoaderScreen;
-import jiraiyah.allthatmatters.screen.custom.EnderiteShulkerScreen;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
-import jiraiyah.allthatmatters.screen.custom.GemCleanserScreen;
+import jiraiyah.allthatmatters.screen.custom.*;
 import jiraiyah.allthatmatters.screen.handler.CastPressScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
+import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
 import jiraiyah.allthatmatters.utils.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -41,12 +39,18 @@ public class ATMClient implements ClientModInitializer
         //noinspection RedundantTypeArguments
         HandledScreens.<ChunkLoaderScreenHandler, ChunkLoaderScreen>register(ModScreenHandlers.CHUNK_LOADER_SCREEN_HANDLER,
                 (gui, inventory, title) -> new ChunkLoaderScreen(gui, inventory.player, title));
+
         //noinspection RedundantTypeArguments
         HandledScreens.<GemCleanserScreenHandler, GemCleanserScreen>register(ModScreenHandlers.GEM_CLEANSER_SCREEN_HANDLER,
                 (gui, inventory, title) -> new GemCleanserScreen(gui, inventory.player, title));
+
         //noinspection RedundantTypeArguments
         HandledScreens.<CastPressScreenHandler, CastPressScreen>register(ModScreenHandlers.CAST_PRESS_SCREEN_HANDLER,
                 (gui, inventory, title) -> new CastPressScreen(gui, inventory.player, title));
+
+        //noinspection RedundantTypeArguments
+        HandledScreens.<SmelteryScreenHandler, SmelteryScreen>register(ModScreenHandlers.SMELTERY_SCREEN_HANDLER,
+                (gui, inventory, title) -> new SmelteryScreen(gui, inventory.player, title));
 
 
         //region Block Entity Handling

@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:lapis_ores"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "item": "minecraft:lapis_lazuli",
+    "count": 18
+  }
+}

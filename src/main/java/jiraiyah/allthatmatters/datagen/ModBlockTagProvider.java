@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
@@ -116,5 +117,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
 
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")));
+
+        getOrCreateTagBuilder(BlockTags.COPPER_ORES)
+                .add(ModBlocks.ORE_NETHER_COPPER);
+        getOrCreateTagBuilder(BlockTags.REDSTONE_ORES)
+                .add(ModBlocks.ORE_NETHER_REDSTONE);
+        getOrCreateTagBuilder(BlockTags.LAPIS_ORES)
+                .add(ModBlocks.ORE_NETHER_LAPIS);
+        getOrCreateTagBuilder(BlockTags.IRON_ORES)
+                .add(ModBlocks.ORE_NETHER_IRON);
+        getOrCreateTagBuilder(BlockTags.DIAMOND_ORES)
+                .add(ModBlocks.ORE_NETHER_DIAMOND);
+        getOrCreateTagBuilder(BlockTags.COAL_ORES)
+                .add(ModBlocks.ORE_NETHER_COAL);
     }
 }

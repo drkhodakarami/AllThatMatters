@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_citrine"
+    },
+    {
+      "item": "allthatmatters:cast_shovel"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_citrine_shovel",
+    "count": 1
+  }
+}

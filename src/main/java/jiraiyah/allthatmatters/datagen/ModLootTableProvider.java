@@ -38,12 +38,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.CAST_PRESS);
         addDrop(ModBlocks.SMELTERY);
 
-        addDrop(ModBlocks.ORE_DEEP_CITRINE, customOreDrops(ModBlocks.ORE_DEEP_CITRINE, ModItems.RAW_CITRINE));
+        addDrop(ModBlocks.ORE_DEEP_CITRINE, customOreDrops(ModBlocks.ORE_DEEP_CITRINE, ModItems.RAW_CITRINE, 2.0f, 3.0f));
         addDrop(ModBlocks.ORE_END_CITRINE, customOreDrops(ModBlocks.ORE_END_CITRINE, ModItems.RAW_CITRINE));
         addDrop(ModBlocks.ORE_NETHER_CITRINE, customOreDrops(ModBlocks.ORE_NETHER_CITRINE, ModItems.RAW_CITRINE, 2.0f, 4.0f));
         addDrop(ModBlocks.ORE_WORLD_CITRINE, customOreDrops(ModBlocks.ORE_WORLD_CITRINE, ModItems.RAW_CITRINE, 2.0f, 3.0f));
 
-        addDrop(ModBlocks.ORE_DEEP_RUBY, customOreDrops(ModBlocks.ORE_DEEP_RUBY, ModItems.RAW_RUBY));
+        addDrop(ModBlocks.ORE_DEEP_RUBY, customOreDrops(ModBlocks.ORE_DEEP_RUBY, ModItems.RAW_RUBY, 2.0f, 3.0f));
         addDrop(ModBlocks.ORE_END_RUBY, customOreDrops(ModBlocks.ORE_END_RUBY, ModItems.RAW_RUBY));
         addDrop(ModBlocks.ORE_NETHER_RUBY, customOreDrops(ModBlocks.ORE_NETHER_RUBY, ModItems.RAW_RUBY, 2.0f, 4.0f));
         addDrop(ModBlocks.ORE_WORLD_RUBY, customOreDrops(ModBlocks.ORE_WORLD_RUBY, ModItems.RAW_RUBY, 2.0f, 3.0f));
@@ -55,7 +55,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider
         addDrop(ModBlocks.ORE_NETHER_LAPIS, customOreDrops(ModBlocks.ORE_NETHER_LAPIS, Items.LAPIS_LAZULI, 2.0f, 4.0f));
         addDrop(ModBlocks.ORE_NETHER_REDSTONE, customOreDrops(ModBlocks.ORE_NETHER_REDSTONE, Items.REDSTONE, 2.0f, 4.0f));
 
-        addDrop(ModBlocks.ORE_DEEP_SAPPHIRE, customOreDrops(ModBlocks.ORE_DEEP_SAPPHIRE, ModItems.RAW_SAPPHIRE));
+        addDrop(ModBlocks.ORE_DEEP_SAPPHIRE, customOreDrops(ModBlocks.ORE_DEEP_SAPPHIRE, ModItems.RAW_SAPPHIRE, 2.0f, 3.0f));
         addDrop(ModBlocks.ORE_END_SAPPHIRE, customOreDrops(ModBlocks.ORE_END_SAPPHIRE, ModItems.RAW_SAPPHIRE));
         addDrop(ModBlocks.ORE_NETHER_SAPPHIRE, customOreDrops(ModBlocks.ORE_NETHER_SAPPHIRE, ModItems.RAW_SAPPHIRE, 2.0f, 4.0f));
         addDrop(ModBlocks.ORE_WORLD_SAPPHIRE, customOreDrops(ModBlocks.ORE_WORLD_SAPPHIRE, ModItems.RAW_SAPPHIRE, 2.0f, 3.0f));

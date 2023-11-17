@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "allthatmatters:ingot_enderite"
+    },
+    {
+      "item": "allthatmatters:cast_axe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_enderite_axe",
+    "count": 1
+  }
+}

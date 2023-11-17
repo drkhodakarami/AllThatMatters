@@ -23,7 +23,7 @@ public class ATMREIClientPlugin implements REIClientPlugin
     @Override
     public void registerDisplays(DisplayRegistry registry)
     {
-        registry.registerRecipeFiller(GemCleanserRecipe.class, ModRecipes.INFUSING_STATION_TYPE, GemCleanserDisplay::new);
+        registry.registerRecipeFiller(GemCleanserRecipe.class, ModRecipes.GEM_CLEANSE_TYPE, GemCleanserDisplay::new);
     }
 
     @Override

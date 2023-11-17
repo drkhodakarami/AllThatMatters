@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "allthatmatters:reinforced_plate_amethyst",
+    "allthatmatters:reinforced_plate_citrine",
     "allthatmatters:reinforced_plate_copper",
     "allthatmatters:reinforced_plate_diamond",
     "allthatmatters:reinforced_plate_emerald",

@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "tag": "minecraft:redstone_ores"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "item": "minecraft:redstone",
+    "count": 10
+  }
+}

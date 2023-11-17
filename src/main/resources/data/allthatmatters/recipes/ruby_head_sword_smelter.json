@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:smeltery",
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_ruby"
+    },
+    {
+      "item": "allthatmatters:cast_sword"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_ruby_sword",
+    "count": 1
+  }
+}

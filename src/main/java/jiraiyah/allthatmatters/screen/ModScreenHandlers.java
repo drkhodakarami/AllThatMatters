@@ -4,15 +4,12 @@ import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.custom.CastPressBlock;
 import jiraiyah.allthatmatters.block.custom.ChunkLoaderBlock;
 import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
-import jiraiyah.allthatmatters.screen.handler.CastPressScreenHandler;
-import jiraiyah.allthatmatters.screen.handler.ChunkLoaderScreenHandler;
-import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
-import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
+import jiraiyah.allthatmatters.block.custom.SmelteryBlock;
+import jiraiyah.allthatmatters.screen.handler.*;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.ScreenHandlerType;
 
@@ -24,6 +21,7 @@ public class ModScreenHandlers
 
     public static ScreenHandlerType CHUNK_LOADER_SCREEN_HANDLER;
     public static ScreenHandlerType GEM_CLEANSER_SCREEN_HANDLER;
+    public static ScreenHandlerType SMELTERY_SCREEN_HANDLER;
     public static ScreenHandlerType CAST_PRESS_SCREEN_HANDLER;
 
     public static void register()
@@ -40,6 +38,10 @@ public class ModScreenHandlers
 
         CAST_PRESS_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(CastPressBlock.ID,
                 (syncId, inventory, buf) -> new CastPressScreenHandler(syncId, inventory,
+                        ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
+
+        SMELTERY_SCREEN_HANDLER = ScreenHandlerRegistry.registerExtended(SmelteryBlock.ID,
+                (syncId, inventory, buf) -> new SmelteryScreenHandler(syncId, inventory,
                         ScreenHandlerContext.create(inventory.player.getWorld(), buf.readBlockPos())));
     }
 }

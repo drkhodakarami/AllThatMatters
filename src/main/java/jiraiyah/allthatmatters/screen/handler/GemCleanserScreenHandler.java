@@ -1,8 +1,10 @@
 package jiraiyah.allthatmatters.screen.handler;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.cottonmc.cotton.gui.SyncedGuiDescription;
-import io.github.cottonmc.cotton.gui.widget.*;
+import io.github.cottonmc.cotton.gui.widget.WBar;
+import io.github.cottonmc.cotton.gui.widget.WItemSlot;
+import io.github.cottonmc.cotton.gui.widget.WPlainPanel;
+import io.github.cottonmc.cotton.gui.widget.WSprite;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
@@ -10,31 +12,10 @@ import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
-import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
-import net.fabricmc.fabric.api.transfer.v1.client.fluid.FluidVariantRendering;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.texture.Sprite;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandlerContext;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Predicate;
 
 public class GemCleanserScreenHandler extends SyncedGuiDescription
 {
@@ -79,6 +60,8 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
 
         WSprite fluidBackground = new WSprite(AllThatMatters.identifier("textures/gui/fluid_tank_background.png"));
 
+        WSprite bucketBackground = new WSprite(AllThatMatters.identifier("textures/gui/slot_bucket.png"));
+
         WSprite fluidTube = new WSprite(AllThatMatters.identifier("textures/gui/short_tube.png"));
         WSprite connectionTube = new WSprite(AllThatMatters.identifier("textures/gui/gem_cleanser_connection_tube.png"));
         WSprite littleArrowDown = new WSprite(AllThatMatters.identifier("textures/gui/little_arrow_down.png"));
@@ -93,6 +76,7 @@ public class GemCleanserScreenHandler extends SyncedGuiDescription
         root.add(progressBar, 135, 33, 8, 26);
         root.add(littleArrowDown, 46, 42, 9, 8);
         root.add(fluidBackground, 85, 14, 18, 63);
+        root.add(bucketBackground, 45, 16, 12, 14);
         root.add(fluidTube, 59, 26, 27, 20);
         root.add(connectionTube, 102, 31, 25, 29);
         root.add(this.createPlayerInventoryPanel(), 7, 85);
