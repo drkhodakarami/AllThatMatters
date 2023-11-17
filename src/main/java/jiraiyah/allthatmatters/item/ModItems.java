@@ -1,9 +1,7 @@
 package jiraiyah.allthatmatters.item;
 
 import jiraiyah.allthatmatters.AllThatMatters;
-import jiraiyah.allthatmatters.item.custom.GemBow;
-import jiraiyah.allthatmatters.item.custom.HammerItem;
-import jiraiyah.allthatmatters.item.custom.ModArmorItem;
+import jiraiyah.allthatmatters.item.custom.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -365,6 +363,9 @@ public class ModItems
     //region WOOD HEADS
     public static final Item HEAD_WOOD_HAMMER = registerItem("head_wood_hammer", new Item(new FabricItemSettings()));
     //endregion
+
+    public static final Item BACKPACK = registerItem("backpack", new BackpackItem(new FabricItemSettings()));
+    public static final Item ENDER_BACKPACK = registerItem("ender_backpack", new EnderBackpackItem(new FabricItemSettings()));
 
     private ModItems()
     {

@@ -7,14 +7,11 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
-
-import java.util.List;
 
 public class ModRecipeProvider extends FabricRecipeProvider
 {
@@ -1082,6 +1079,37 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(ModItems.SAPPHIRE), conditionsFromItem(ModItems.SAPPHIRE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_SAPPHIRE_BOW)));
+        //endregion
+
+        //region BACKPACK
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BACKPACK, 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .input('#', Items.LEATHER)
+                .input('C', Items.CHEST)
+                .criterion(hasItem(Items.CHEST), conditionsFromItem(Items.CHEST))
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.BACKPACK)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ENDER_BACKPACK, 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .input('#', Items.LEATHER)
+                .input('C', Items.ENDER_CHEST)
+                .criterion(hasItem(Items.ENDER_CHEST), conditionsFromItem(Items.ENDER_CHEST))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.ENDER_BACKPACK)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ENDER_BACKPACK, 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .input('#', ModItems.ENDERITE)
+                .input('C', ModItems.BACKPACK)
+                .criterion(hasItem(ModItems.ENDERITE), conditionsFromItem(ModItems.ENDERITE))
+                .criterion(hasItem(ModItems.BACKPACK), conditionsFromItem(ModItems.BACKPACK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.ENDER_BACKPACK) + ".enderite"));
         //endregion
     }
 }

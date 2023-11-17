@@ -22,6 +22,9 @@ public class ModItemGroups
                         entries.add(ModBlocks.GEM_CLEANSER);
                         entries.add(ModBlocks.CHUNK_LOADER);
 
+                        entries.add(ModItems.BACKPACK);
+                        entries.add(ModItems.ENDER_BACKPACK);
+
                         entries.add(ModItems.CITRINE);
                         entries.add(ModItems.RAW_CITRINE);
                         entries.add(ModBlocks.CITRINE);

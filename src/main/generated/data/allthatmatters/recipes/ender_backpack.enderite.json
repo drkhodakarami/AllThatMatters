@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "allthatmatters:ingot_enderite"
+    },
+    "C": {
+      "item": "allthatmatters:backpack"
+    }
+  },
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "item": "allthatmatters:ender_backpack"
+  },
+  "show_notification": true
+}

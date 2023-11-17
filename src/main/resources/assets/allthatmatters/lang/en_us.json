@@ -116,6 +116,8 @@
   "item.allthatmatters.plate_netherite": "Netherite Plate",
   "item.allthatmatters.plate_ruby": "Ruby Plate",
   "item.allthatmatters.plate_sapphire": "Sapphire Plate",
+  "item.allthatmatters.reinforced_plate_amethyst": "Reinforced Amethyst Plate",
+  "item.allthatmatters.reinforced_plate_citrine": "Reinforced Citrine Plate",
   "item.allthatmatters.reinforced_plate_copper": "Reinforced Copper Plate",
   "item.allthatmatters.reinforced_plate_diamond": "Reinforced Diamond Plate",
   "item.allthatmatters.reinforced_plate_emerald": "Reinforced Emerald Plate",
@@ -149,6 +151,12 @@
   "item.allthatmatters.head_diamond_pickaxe": "Diamond Pickaxe Head",
   "item.allthatmatters.head_diamond_shovel": "Diamond Shovel Head",
   "item.allthatmatters.head_diamond_sword": "Diamond Sword Head",
+  "item.allthatmatters.head_enderite_axe": "Enderite Axe Head",
+  "item.allthatmatters.head_enderite_hammer": "Enderite Hammer Head",
+  "item.allthatmatters.head_enderite_hoe": "Enderite Hoe Head",
+  "item.allthatmatters.head_enderite_pickaxe": "Enderite Pickaxe Head",
+  "item.allthatmatters.head_enderite_shovel": "Enderite Shovel Head",
+  "item.allthatmatters.head_enderite_sword": "Enderite Sword Head",
   "item.allthatmatters.head_gold_axe": "Gold Axe Head",
   "item.allthatmatters.head_gold_hammer": "Gold Hammer Head",
   "item.allthatmatters.head_gold_hoe": "Gold Hoe Head",
@@ -182,6 +190,10 @@
   "item.allthatmatters.head_stone_hammer": "Stone Hammer Head",
   "item.allthatmatters.head_wood_hammer": "Wooden Hammer Head",
   "item.allthatmatters.binding": "Tool Binding",
+  "item.allthatmatters.ender_backpack": "Ender Bag",
+  "item.allthatmatters.backpack": "Traveller Bag",
+  "item.allthatmatters.cast_wood_ingot": "Cast - Ingot",
+  "item.allthatmatters.cast_wood_pickaxe": "Cast - Pickaxe",
 
   "block.allthatmatters.block_citrine": "Citrine Block",
   "block.allthatmatters.block_ruby": "Ruby Block",
@@ -228,6 +240,7 @@
   "block.allthatmatters.enderite_shulker_red": "Gray Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_white": "Gray Enderite Shulker Box",
   "block.allthatmatters.enderite_shulker_yellow": "Gray Enderite Shulker Box",
+  "block.allthatmatters.block_enderite": "Enderite Block",
   "block.enderiteshulkers.shulker": "Enderite Shulker Box",
 
   "allthatmatters.gem_cleanser": "Gem Cleanser",
@@ -241,5 +254,6 @@
   "block.minecraft.empty": "Empty",
   "allthatmatters.all": "All",
   "allthatmatters.none": "None",
-  "effect.allthatmatters.flight": "Flight"
+  "effect.allthatmatters.flight": "Flight",
+  "allthatmatters.container.enderchest": "Ender Chest"
 }

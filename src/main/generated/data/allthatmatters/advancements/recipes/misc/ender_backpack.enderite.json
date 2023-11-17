@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_backpack": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:backpack"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ingot_enderite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:ingot_enderite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ender_backpack.enderite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ingot_enderite",
+      "has_backpack"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ender_backpack.enderite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

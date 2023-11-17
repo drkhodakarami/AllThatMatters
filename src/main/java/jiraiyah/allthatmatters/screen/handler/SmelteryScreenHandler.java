@@ -39,8 +39,7 @@ public class SmelteryScreenHandler extends SyncedGuiDescription
         WPlainPanel  root = new WPlainPanel ();
         setRootPanel(root);
 
-        //root.setSize(200, 178);
-        root.setSize(176, 221);
+        root.setSize(200, 221);
         root.setInsets(Insets.ROOT_PANEL);
 
         WItemSlot base_input_slot = WItemSlot.of(blockInventory, SmelteryBE.BASE_INPUT_SLOT);
