@@ -304,15 +304,20 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
         try (Transaction transaction = Transaction.openOuter())
         {
-            if(tank.extract(resource, FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction) ==
-                    slotStorage.insert(resource, FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction))
+            var bucketSize = FluidStack.convertDropletsToMb(FluidConstants.BUCKET);
+            long buckeTransfer = slotStorage.insert(resource, FluidConstants.BUCKET, transaction);
+            long tankTransfer = tank.extract(resource, bucketSize, transaction);
+            if(FluidStack.convertDropletsToMb(buckeTransfer) == tankTransfer)
             {
                 transaction.commit();
                 SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-                ItemStack stack = getStack(inputSlot);
+                ItemStack stack = slotStorage.iterator().next();
+
                 this.removeStack(inputSlot, 1);
+
                 this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+
                 return true;
             }
         }
@@ -344,8 +349,8 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
                 SoundEvent sound = FluidVariantAttributes.getEmptySound(resource);
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
                 ItemStack stack = getStack(inputSlot);
-                //this.removeStack(inputSlot, 1);
-                //this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+                this.removeStack(inputSlot, 1);
+                this.setStack(outputSlot, new ItemStack(Items.BUCKET, getStack(outputSlot).getCount() + 1));
                 return true;
             }
         }
@@ -361,6 +366,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
         data.writeLong(leftFluidStorage.amount);
         data.writeLong(rightFluidStorage.amount);
         data.writeBlockPos(getPos());
-        ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.GEM_CLEANSER_FLUID_SYNC, data);
+        ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.SHULKER_FLUID_SYNC, data);
     }
 }
