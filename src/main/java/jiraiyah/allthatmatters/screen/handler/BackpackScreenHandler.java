@@ -118,7 +118,7 @@ public class BackpackScreenHandler extends ScreenHandler
         if (slotIndex >= 0 && player.getInventory().selectedSlot + 27 + this.inv.size() == slotIndex) {
             if (type != SlotActionType.CLONE)
             {
-                this.inv.markDirty();
+                //this.inv.markDirty();
                 return;
             }
         }
