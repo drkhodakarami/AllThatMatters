@@ -52,6 +52,7 @@ public class ATMClient implements ClientModInitializer
         HandledScreens.<SmelteryScreenHandler, SmelteryScreen>register(ModScreenHandlers.SMELTERY_SCREEN_HANDLER,
                 (gui, inventory, title) -> new SmelteryScreen(gui, inventory.player, title));
 
+        HandledScreens.register(ModScreenHandlers.BACKPACK_SCREEN_HANDLER, BackpackScreen::new);
 
         //region Block Entity Handling
         BlockEntityRendererFactories.register(ModBlockEntities.GEM_CLEANSER, GemCleanserBERenderer::new);

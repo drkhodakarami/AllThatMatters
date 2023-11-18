@@ -255,5 +255,14 @@
   "allthatmatters.all": "All",
   "allthatmatters.none": "None",
   "effect.allthatmatters.flight": "Flight",
-  "allthatmatters.container.enderchest": "Ender Chest"
+
+  "allthatmatters.container.enderchest": "Ender Chest",
+  "allthatmatters.tooltip.size": "Size: %sx%s (%s) slots",
+  "allthatmatters.screen.title.rename": "Rename Backpack",
+  "allthatmatters.screen.button.default.name": "Reset name",
+  "allthatmatters.screen.button.rename": "Rename",
+  "allthatmatters.screen.rename.max.length": "Max length : %s",
+  "allthatmatters.tooltip.how.to.rename": "Sneak + Right click to rename",
+  "allthatmatters.tooltip.fireproof": "Fire proof (like netherite items)",
+  "allthatmatters.screen.button.close": "Close"
 }

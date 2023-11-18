@@ -19,6 +19,10 @@ public class ModScreenHandlers
             Registry.register(Registries.SCREEN_HANDLER, AllThatMatters.identifier("enderiteshulker"),
                     new ExtendedScreenHandlerType<>(EnderiteShulkerScreenHandler::new));
 
+    public final static ScreenHandlerType<BackpackScreenHandler> BACKPACK_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, BackpackScreenHandler.IDENTIFIER,
+                    new ExtendedScreenHandlerType<>(BackpackScreenHandler::new));
+
     public static ScreenHandlerType CHUNK_LOADER_SCREEN_HANDLER;
     public static ScreenHandlerType GEM_CLEANSER_SCREEN_HANDLER;
     public static ScreenHandlerType SMELTERY_SCREEN_HANDLER;
