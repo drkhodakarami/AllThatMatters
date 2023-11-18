@@ -37,14 +37,9 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
         this(ModScreenHandlers.ENDERITE_SCREEN_HANDLER_TYPE, syncId, playerInventory, inventory, blockEntity);
     }
 
-    public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf, BlockEntity blockEntity)
-    {
-        this(syncId, playerInventory, new SimpleInventory(buf.readInt()), blockEntity);
-    }
-
     public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf)
     {
-        this(syncId, playerInventory, buf, null);
+        this(syncId, playerInventory, new SimpleInventory(buf.readInt()), playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
 
     protected EnderiteShulkerScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory, BlockEntity blockEntity)
@@ -96,11 +91,11 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             this.addSlot(new Slot(playerInventory, row, largeInvXOffset + offsetX + row * 18, offsetY));
         }
 
-        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_INPUT_SLOT, 15, 193));
-        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_INPUT_SLOT, 197, 193));
+        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_INPUT_SLOT, 16, 194));
+        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_INPUT_SLOT, 198, 194));
 
-        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_OUTPUT_SLOT, 15, 229));
-        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_OUTPUT_SLOT, 197, 229));
+        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_OUTPUT_SLOT, 16, 230));
+        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_OUTPUT_SLOT, 198, 230));
     }
 
     public static ExtendedScreenHandlerFactory createScreenHandlerFactory(Inventory inventory, Text text, BlockEntity blockEntity)
@@ -123,6 +118,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf)
             {
                 buf.writeInt(inventory.size());
+                buf.writeBlockPos(blockEntity.getPos());
             }
         };
     }

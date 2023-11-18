@@ -4,6 +4,7 @@
     "allthatmatters:molten_enderite_bucket",
     "minecraft:lava_bucket",
     "minecraft:water_bucket",
-    "minecraft:milk_bucket"
+    "minecraft:milk_bucket",
+    "minecraft:bucket"
   ]
 }

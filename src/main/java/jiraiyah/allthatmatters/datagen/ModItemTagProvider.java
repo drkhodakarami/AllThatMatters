@@ -27,7 +27,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModFluids.MOLTEN_ENDERITE_BUCKET)
                 .add(Items.LAVA_BUCKET)
                 .add(Items.WATER_BUCKET)
-                .add(Items.MILK_BUCKET);
+                .add(Items.MILK_BUCKET)
+                .add(Items.BUCKET);
 
         getOrCreateTagBuilder(ModTags.Items.CASTS)
                 .add(ModItems.CAST_AXE)

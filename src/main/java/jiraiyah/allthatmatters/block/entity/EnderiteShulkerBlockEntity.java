@@ -18,9 +18,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -154,6 +151,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory)
     {
+        sendFluidPacket();
         return null;
     }
 
@@ -242,85 +240,37 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
     private void handleTank(World world, BlockPos pos, BlockState state, SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
     {
-        /*Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
-        if(slotStorage == null)
-            return;
-        Item slotItem = getStack(inputSlot).getItem();
-        try
-        {
-            if(!moveWithSound(world, pos, tank, slotStorage, true, slotItem))
-                moveWithSound(world, pos, slotStorage, tank, false, slotItem);
-        }
-        catch (Exception e)
-        {
-            LOGGER.info(e.getMessage());
-        }*/
-
-        if (!this.isTankEmpty(tank) && isLiquidOutputReceivable(outputSlot))
+        /*if (!this.isTankEmpty(tank) && isLiquidOutputReceivable(outputSlot))
         {
             if (this.isItemStackEmptyBucket(inputSlot))
             {
-                this.transferFromTank(tank, inputSlot, outputSlot);
-                markDirty(world, pos, state);
+                if(this.transferFromTank(tank, inputSlot, outputSlot))
+                    markDirty(world, pos, state);
             }
         }
         if ((this.isTankEmpty(tank) || this.isTankReceivable(tank)) && isLiquidOutputReceivable(outputSlot))
         {
             if (!this.isItemStackEmptyBucket(inputSlot))
             {
-                if (this.isItemStackCompatibleWithTank(tank, inputSlot))
-                {
-                    this.transferToTank(tank, Fluids.WATER, Items.BUCKET, inputSlot, outputSlot);
+                if(this.transferToTank(tank, inputSlot, outputSlot))
                     markDirty(world, pos, state);
-                }
+            }
+        }*/
+
+        if(isLiquidOutputReceivable(outputSlot))
+        {
+            if (this.isItemStackEmptyBucket(inputSlot))
+            {
+                if(this.transferFromTank(tank, inputSlot, outputSlot))
+                    markDirty(world, pos, state);
+            }
+            else if(!this.getStack(inputSlot).isEmpty())
+            {
+                if(this.transferToTank(tank, inputSlot, outputSlot))
+                    markDirty(world, pos, state);
             }
         }
     }
-
-    /*private static boolean moveWithSound(World world, BlockPos pos, Storage<FluidVariant> from, Storage<FluidVariant> to, boolean fill, Item handItem)
-    {
-        for (StorageView<FluidVariant> view : from)
-        {
-            if (view.isResourceBlank())
-                continue;
-
-            FluidVariant resource = view.getResource();
-            long maxExtracted;
-
-            // check how much can be extracted
-            try (Transaction extractionTestTransaction = Transaction.openOuter())
-            {
-                maxExtracted = view.extract(resource, Long.MAX_VALUE, extractionTestTransaction);
-                extractionTestTransaction.abort();
-            }
-
-            try (Transaction transferTransaction = Transaction.openOuter())
-            {
-                // check how much can be inserted
-                long accepted = to.insert(resource, maxExtracted, transferTransaction);
-
-                // extract it, or rollback if the amounts don't match
-                if (accepted > 0 && view.extract(resource, accepted, transferTransaction) == accepted)
-                {
-                    transferTransaction.commit();
-
-                    SoundEvent sound = fill ? FluidVariantAttributes.getFillSound(resource) : FluidVariantAttributes.getEmptySound(resource);
-
-                    if (resource.isOf(Fluids.WATER))
-                    {
-                        if (fill && handItem == Items.GLASS_BOTTLE) sound = SoundEvents.ITEM_BOTTLE_FILL;
-                        if (!fill && handItem == Items.POTION) sound = SoundEvents.ITEM_BOTTLE_EMPTY;
-                    }
-
-                    world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }*/
 
     private boolean isTankEmpty(SingleVariantStorage<FluidVariant> tank)
     {
@@ -343,67 +293,64 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
         return tank.amount <= tank.getCapacity() - 1000;
     }
 
-    protected boolean isItemStackCompatibleWithTank(SingleVariantStorage<FluidVariant> tank, int slotIndex)
+    private boolean transferFromTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
     {
-        long maxExtracted;
-        long accepted;
-        long result;
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(slotIndex)).find(FluidStorage.ITEM);
+        FluidVariant resource = tank.getResource();
+
+        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
+
+        if(slotStorage == null || resource.isBlank())
+            return false;
+
+        try (Transaction transaction = Transaction.openOuter())
+        {
+            if(tank.extract(resource, FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction) ==
+                    slotStorage.insert(resource, FluidStack.convertDropletsToMb(FluidConstants.BUCKET), transaction))
+            {
+                transaction.commit();
+                SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
+                world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
+                ItemStack stack = getStack(inputSlot);
+                this.removeStack(inputSlot, 1);
+                this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean transferToTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
+    {
+        //FluidVariant resource = tank.getResource();
+
+        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
 
         if(slotStorage == null)
             return false;
 
-        FluidVariant resource = tank.getResource();
-        try (Transaction extractionTestTransaction = Transaction.openOuter())
-        {
-            maxExtracted = slotStorage.extract(resource, Long.MAX_VALUE, extractionTestTransaction);
-            extractionTestTransaction.abort();
-        }
-        try (Transaction extractionTestTransaction = Transaction.openOuter())
-        {
-            accepted = tank.insert(resource, maxExtracted, extractionTestTransaction);
-            result = slotStorage.extract(resource, accepted, extractionTestTransaction);
-            extractionTestTransaction.abort();
-        }
-        return accepted > 0 && result == accepted;
-    }
+        FluidVariant resource = slotStorage.iterator().next().getResource();
 
-    private void transferFromTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
-    {
-        FluidVariant resource = tank.getResource();
-
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
+        if(resource.isBlank())
+            return false;
 
         try (Transaction transaction = Transaction.openOuter())
         {
-            tank.extract(resource, FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            slotStorage.insert(resource, FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            transaction.commit();
-            SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
-            world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-            ItemStack stack = getStack(inputSlot);
-            this.removeStack(inputSlot, 1);
-            this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+            var bucketSize = FluidStack.convertDropletsToMb(FluidConstants.BUCKET);
+            long buckeTransfer = slotStorage.extract(resource, FluidConstants.BUCKET, transaction);
+            long tankTransfer = tank.insert(resource, bucketSize, transaction);
+            if(FluidStack.convertDropletsToMb(buckeTransfer) == tankTransfer)
+            {
+                transaction.commit();
+                SoundEvent sound = FluidVariantAttributes.getEmptySound(resource);
+                world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
+                ItemStack stack = getStack(inputSlot);
+                //this.removeStack(inputSlot, 1);
+                //this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+                return true;
+            }
         }
-    }
 
-    private void transferToTank(SingleVariantStorage<FluidVariant> tank, FlowableFluid water, Item bucket, int inputSlot, int outputSlot)
-    {
-        FluidVariant resource = tank.getResource();
-
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
-
-        try (Transaction transaction = Transaction.openOuter())
-        {
-            slotStorage.extract(resource, FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            tank.insert(resource, FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            transaction.commit();
-            SoundEvent sound = FluidVariantAttributes.getEmptySound(resource);
-            world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-            ItemStack stack = getStack(inputSlot);
-            this.removeStack(inputSlot, 1);
-            this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
-        }
+        return false;
     }
 
     private void sendFluidPacket()

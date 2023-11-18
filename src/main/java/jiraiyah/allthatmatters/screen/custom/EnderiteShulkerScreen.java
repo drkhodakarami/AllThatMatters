@@ -60,8 +60,8 @@ public class EnderiteShulkerScreen extends HandledScreen<EnderiteShulkerScreenHa
         context.drawTexture(this.selectedTexture, x, y, 0, 0, backgroundWidth - 2, backgroundHeight, 256, Math.max(256, backgroundHeight));
         fluidStackRenderer.drawFluid(context,handler.leftFluidStack,x + 5,y + 192,8,76,EnderiteShulkerBlockEntity.FLUID_CAPACITY);
         fluidStackRenderer.drawFluid(context,handler.rightFluidStack,x + 217,y + 192,8,76,EnderiteShulkerBlockEntity.FLUID_CAPACITY);
-        context.drawTexture(selectedTexture,x + 4, y + 191,231,0,10,78,width,height);
-        context.drawTexture(selectedTexture,x + 216, y + 191,231,0,10,78,width,height);
+        context.drawTexture(selectedTexture,x + 4, y + 191,231,0,10,78,256, Math.max(256, backgroundHeight));
+        context.drawTexture(selectedTexture,x + 216, y + 191,231,0,10,78,256, Math.max(256, backgroundHeight));
     }
 
     @Override
