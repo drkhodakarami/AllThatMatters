@@ -108,6 +108,7 @@ public class BackpackScreenHandler extends ScreenHandler
             else
                 slot.markDirty();
         }
+        //this.inv.onClose(player);
         return stack;
     }
 
@@ -121,7 +122,7 @@ public class BackpackScreenHandler extends ScreenHandler
                 return;
             }
         }
-        this.inv.markDirty();
+        //this.inv.markDirty();
         super.onSlotClick(slotIndex, button, type, player);
     }
 
