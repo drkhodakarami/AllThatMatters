@@ -28,6 +28,11 @@ public class ModScreenHandlers
     public static ScreenHandlerType SMELTERY_SCREEN_HANDLER;
     public static ScreenHandlerType CAST_PRESS_SCREEN_HANDLER;
 
+    public ModScreenHandlers()
+    {
+        throw new AssertionError();
+    }
+
     public static void register()
     {
         AllThatMatters.LOGGER.info(">>> Registering Screen Handlers");

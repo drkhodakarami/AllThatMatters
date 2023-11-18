@@ -1,3 +1,4 @@
+/*
 package jiraiyah.allthatmatters.fluid.custom;
 
 import jiraiyah.allthatmatters.fluid.ModFluids;
@@ -140,4 +141,4 @@ public abstract class MoltenEnderite extends FlowableFluid
             return true;
         }
     }
-}
+}*/

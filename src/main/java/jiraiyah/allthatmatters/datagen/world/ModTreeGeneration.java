@@ -1,12 +1,12 @@
 package jiraiyah.allthatmatters.datagen.world;
 
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep;
-
 public class ModTreeGeneration
 {
+    public ModTreeGeneration()
+    {
+        throw new AssertionError();
+    }
+
     public static void generateTrees()
     {
         //BiomeModifications.addFeature(BiomeSelectors.foundInOverworld());

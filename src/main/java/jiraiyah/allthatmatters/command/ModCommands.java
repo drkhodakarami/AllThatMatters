@@ -25,6 +25,11 @@ import static com.mojang.brigadier.arguments.StringArgumentType.word;
 
 public class ModCommands
 {
+    public ModCommands()
+    {
+        throw new AssertionError();
+    }
+
     public static void register()
     {
         AllThatMatters.LOGGER.info(">>> Registering Commands");

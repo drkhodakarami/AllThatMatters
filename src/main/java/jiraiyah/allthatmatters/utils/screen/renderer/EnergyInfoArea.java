@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.screen.custom.renderer;
+package jiraiyah.allthatmatters.utils.screen.renderer;
 
 import jiraiyah.allthatmatters.utils.screen.InfoArea;
 import net.minecraft.client.MinecraftClient;

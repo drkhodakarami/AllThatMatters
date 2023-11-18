@@ -6,6 +6,11 @@ import net.minecraft.world.gen.GenerationStep;
 
 public class ModOreGeneration
 {
+    public ModOreGeneration()
+    {
+        throw new AssertionError();
+    }
+
     public static void generateOres()
     {
         //region OVERWORLD

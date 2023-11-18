@@ -3,7 +3,7 @@ package jiraiyah.allthatmatters.screen.custom;
 import com.mojang.blaze3d.systems.RenderSystem;
 import io.netty.buffer.Unpooled;
 import jiraiyah.allthatmatters.AllThatMatters;
-import jiraiyah.allthatmatters.screen.custom.renderer.ButtonIconWidget;
+import jiraiyah.allthatmatters.utils.screen.renderer.ButtonIconWidget;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;

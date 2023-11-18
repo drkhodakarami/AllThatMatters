@@ -1,4 +1,4 @@
-package jiraiyah.allthatmatters.screen.custom.renderer;
+package jiraiyah.allthatmatters.utils.screen.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;

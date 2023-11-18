@@ -12,6 +12,11 @@ public class ModEffects
     public static StatusEffect FLIGHT_EFFECT = Registry.register(Registries.STATUS_EFFECT, AllThatMatters.identifier("flight"),
             new FlightEffect(StatusEffectCategory.BENEFICIAL, 0xFFFFFF));
 
+    public ModEffects()
+    {
+        throw new AssertionError();
+    }
+
     public static void register()
     {
         AllThatMatters.LOGGER.info(">>> Registering Effects");

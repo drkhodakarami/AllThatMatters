@@ -5,7 +5,6 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.client.renderer.EnderiteShulkerBoxRenderer;
 import jiraiyah.allthatmatters.client.renderer.GemCleanserBERenderer;
-import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import jiraiyah.allthatmatters.screen.custom.*;
@@ -15,13 +14,9 @@ import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
 import jiraiyah.allthatmatters.utils.ModModelPredicateProvider;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
@@ -63,13 +58,13 @@ public class ATMClient implements ClientModInitializer
         //endregion
 
         //region Fluid Handling
-        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.FLOWING_MOLTEN_ENDERITE,
+        /*FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.FLOWING_MOLTEN_ENDERITE,
                 new SimpleFluidRenderHandler(
                         AllThatMatters.identifier("block/liquid"),
                         AllThatMatters.identifier("block/liquid_flow"),
                         0xA10C5E7C));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
-                ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.FLOWING_MOLTEN_ENDERITE);
+                ModFluids.STILL_MOLTEN_ENDERITE, ModFluids.FLOWING_MOLTEN_ENDERITE);*/
         //endregion
 
         ModModelPredicateProvider.registerModels();

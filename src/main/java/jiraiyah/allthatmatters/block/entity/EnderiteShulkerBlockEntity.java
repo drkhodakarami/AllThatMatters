@@ -7,17 +7,19 @@ import jiraiyah.allthatmatters.utils.ModTags;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.context.ContainerItemContext;
-import net.fabricmc.fabric.api.transfer.v1.fluid.*;
-import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
 import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
-import net.fabricmc.fabric.impl.transfer.context.ConstantContainerItemContext;
-import net.fabricmc.fabric.impl.transfer.fluid.EmptyBucketStorage;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -278,12 +280,18 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     private boolean transferFromTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
     {
         FluidVariant resource = tank.getResource();
-
         // TODO : first issue, this is constant and not mutated
-        Storage<FluidVariant> slotStorage = new EmptyBucketStorage(new ConstantContainerItemContext(ItemVariant.of(getStack(inputSlot)), getStack(inputSlot).getCount()));
+        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
 
         if(slotStorage == null || resource.isBlank())
             return false;
+
+        Item item = null;
+
+        if(resource.isOf(Fluids.LAVA))
+            item = Items.LAVA_BUCKET;
+        else if (resource.isOf(Fluids.WATER))
+            item = Items.WATER_BUCKET;
 
         try (Transaction transaction = Transaction.openOuter())
         {
@@ -295,12 +303,11 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
                 transaction.commit();
                 SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-                // todo : second issue, this is empty ?!
-                ItemStack stack = getStack(inputSlot);
 
                 this.removeStack(inputSlot, 1);
-                // todo : third issue, how to get proper fluid bucket to put in output?!
-                this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+                // todo : find a way to automatically handle other mod fluids
+                //this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
+                this.setStack(outputSlot, new ItemStack(item, getStack(outputSlot).getCount() + 1));
 
                 return true;
             }

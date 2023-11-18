@@ -1,7 +1,6 @@
 package jiraiyah.allthatmatters.datagen;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
-import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.utils.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -24,7 +23,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
         getOrCreateTagBuilder(ModTags.Items.FLUID_BUCKETS)
-                .add(ModFluids.MOLTEN_ENDERITE_BUCKET)
+                //.add(ModFluids.MOLTEN_ENDERITE_BUCKET)
                 .add(Items.LAVA_BUCKET)
                 .add(Items.WATER_BUCKET)
                 .add(Items.MILK_BUCKET)

@@ -1,12 +1,16 @@
 package jiraiyah.allthatmatters.datagen.world;
 
-import net.minecraft.world.gen.feature.OrePlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
 
 public class ModOrePlacement
 {
+    public ModOrePlacement()
+    {
+        throw new AssertionError();
+    }
+
     public static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier)
     {
         return List.of(countModifier, SquarePlacementModifier.of(), heightModifier, BiomePlacementModifier.of());
