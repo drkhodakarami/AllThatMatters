@@ -57,5 +57,8 @@ public class ModBlockEntities
         //endregion
 
         FluidStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.fluidStorage, GEM_CLEANSER);
+        FluidStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.fluidStorage, SMELTERY);
+        FluidStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.leftFluidStorage, ENDERITE_SHULKER);
+        FluidStorage.SIDED.registerForBlockEntity((entity, direction) -> entity.rightFluidStorage, ENDERITE_SHULKER);
     }
 }

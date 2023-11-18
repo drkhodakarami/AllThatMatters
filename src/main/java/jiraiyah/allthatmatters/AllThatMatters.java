@@ -37,28 +37,6 @@ public class AllThatMatters implements ModInitializer
     {
         LOGGER.info(">>> Initializing");
 
-        /*ServerWorldEvents.LOAD.register((world, entity) ->
-        {
-            var server = world.getOverworld().getServer();
-            ModStatsHandler stats = ModStatsHandler.getServerState(server);
-            if (!stats.worldCreated)
-            {
-                BlockState blockState;
-
-                var blockStates = BlockPos.iterate(-500, 40, -500, 500, 130, 500);
-                var overworld = world.getOverworld();
-
-                for (var position : blockStates)
-                {
-                    blockState = overworld.getBlockState(position);
-                    if (blockState.isOf(Blocks.GRASS) || blockState.isOf(Blocks.TALL_GRASS))
-                        overworld.setBlockState(position, Blocks.AIR.getDefaultState());
-                }
-                stats.worldCreated = true;
-                stats.markDirty();
-            }
-        });*/
-
         ModTicker.initialize();
         ModItems.register();
         ModBlocks.register();

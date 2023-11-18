@@ -1,6 +1,10 @@
 package jiraiyah.allthatmatters.screen.handler;
 
+import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
+import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.slot.FluidInputSlot;
+import jiraiyah.allthatmatters.utils.slot.FluidOutputSlot;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
@@ -24,25 +28,40 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
     private final Inventory inventory;
     private final int rows, columns;
 
-    public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory)
+    public EnderiteShulkerBlockEntity loaderEntity;
+    public FluidStack leftFluidStack;
+    public FluidStack rightFluidStack;
+
+    public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, BlockEntity blockEntity)
     {
-        this(ModScreenHandlers.ENDERITE_SCREEN_HANDLER_TYPE, syncId, playerInventory, inventory);
+        this(ModScreenHandlers.ENDERITE_SCREEN_HANDLER_TYPE, syncId, playerInventory, inventory, blockEntity);
+    }
+
+    public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf, BlockEntity blockEntity)
+    {
+        this(syncId, playerInventory, new SimpleInventory(buf.readInt()), blockEntity);
     }
 
     public EnderiteShulkerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf)
     {
-        this(syncId, playerInventory, new SimpleInventory(buf.readInt()));
+        this(syncId, playerInventory, buf, null);
     }
 
-    protected EnderiteShulkerScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory)
+    protected EnderiteShulkerScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, PlayerInventory playerInventory, Inventory inventory, BlockEntity blockEntity)
     {
         super(type, syncId);
 
-        if (inventory.size() <= 81)
+        loaderEntity = (EnderiteShulkerBlockEntity) blockEntity;
+        this.leftFluidStack = new FluidStack(loaderEntity.leftFluidStorage.variant,
+                loaderEntity.leftFluidStorage.amount);
+        this.rightFluidStack = new FluidStack(loaderEntity.rightFluidStorage.variant,
+                loaderEntity.rightFluidStorage.amount);
+
+        if (inventory.size() - 4 <= 81)
             columns = 9;
         else
             columns = 12;
-        rows = inventory.size() / columns;
+        rows = (inventory.size() - 4) / columns;
         checkSize(inventory, rows * 9);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
@@ -76,6 +95,12 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
         {
             this.addSlot(new Slot(playerInventory, row, largeInvXOffset + offsetX + row * 18, offsetY));
         }
+
+        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_INPUT_SLOT, 15, 193));
+        this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_INPUT_SLOT, 197, 193));
+
+        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_OUTPUT_SLOT, 15, 229));
+        this.addSlot(new FluidOutputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_OUTPUT_SLOT, 197, 229));
     }
 
     public static ExtendedScreenHandlerFactory createScreenHandlerFactory(Inventory inventory, Text text, BlockEntity blockEntity)
@@ -85,7 +110,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             @Override
             public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
             {
-                return new EnderiteShulkerScreenHandler(syncId, playerInventory, inventory);
+                return new EnderiteShulkerScreenHandler(syncId, playerInventory, inventory, blockEntity);
             }
 
             @Override
@@ -170,5 +195,11 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
     public int getColumns()
     {
         return this.columns;
+    }
+
+    public void setFluid(FluidStack left, FluidStack right)
+    {
+        this.leftFluidStack = left;
+        this.rightFluidStack = right;
     }
 }
