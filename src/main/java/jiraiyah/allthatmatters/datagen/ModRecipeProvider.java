@@ -1114,15 +1114,17 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PLAYER_TELEPORT, 1)
                 .pattern("PEP")
-                .pattern("GCG")
+                .pattern("DCD")
                 .pattern("GGG")
                 .input('G', ModItems.REINFORCED_PLATE_GOLD)
+                .input('D', ModItems.REINFORCED_PLATE_DIAMOND)
                 .input('C', Items.COMPASS)
                 .input('P', Items.ENDER_PEARL)
                 .input('E', Items.ENDER_EYE)
                 .criterion(hasItem(Items.COMPASS), conditionsFromItem(Items.COMPASS))
                 .criterion(hasItem(Items.ENDER_EYE), conditionsFromItem(Items.ENDER_EYE))
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_GOLD), conditionsFromItem(ModItems.REINFORCED_PLATE_GOLD))
+                .criterion(hasItem(ModItems.REINFORCED_PLATE_DIAMOND), conditionsFromItem(ModItems.REINFORCED_PLATE_DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PLAYER_TELEPORT)));
     }
 }

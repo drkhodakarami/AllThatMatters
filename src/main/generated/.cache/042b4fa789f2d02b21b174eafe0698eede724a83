@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-18T14:08:12.2924639	All That Matters/Tags for minecraft:block
+// 1.20.2	2023-11-18T14:15:16.4588291	All That Matters/Tags for minecraft:block
 1f9bdd1045dccd95466410e12579545b8cbca675 data\minecraft\tags\blocks\lapis_ores.json
 1d31e2156524120781d25e2046706c128e9e445e data\minecraft\tags\blocks\needs_iron_tool.json
 6895288c69659b400340acf63661097c3d574c87 data\minecraft\tags\blocks\diamond_ores.json
@@ -10,5 +10,5 @@ ccfcb5ecb24b5a9d5e0946cabb8cbbb308c8d5b6 data\minecraft\tags\blocks\copper_ores.
 b0d06695c3b27e22724b2d8ad70fd6ea964e5118 data\minecraft\tags\blocks\needs_stone_tool.json
 be68c7cf758c4a85f2a636278e341e901714fc6a data\minecraft\tags\blocks\iron_ores.json
 495e39cd6637871f928d4a47f2fbe93cdf282cf5 data\minecraft\tags\blocks\redstone_ores.json
-09a2ae92540badc81ac57242964ad153ba18d077 data\minecraft\tags\blocks\needs_diamond_tool.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
+09a2ae92540badc81ac57242964ad153ba18d077 data\minecraft\tags\blocks\needs_diamond_tool.json
