@@ -29,7 +29,10 @@ public class BackpackInventory extends SimpleInventory
             blockEntityTag = itemStack.getOrCreateSubNbt(getNBTTag());
 
         if (isEmpty())
-            if (blockEntityTag.contains("Items")) blockEntityTag.remove("Items");
+        {
+            if (blockEntityTag.contains("Items"))
+                blockEntityTag.remove("Items");
+        }
         else
         {
             DefaultedList<ItemStack> itemStacks = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);
