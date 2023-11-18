@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_compass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:compass"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ender_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ender_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_reinforced_plate_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:reinforced_plate_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tool_player_teleport"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_compass",
+      "has_ender_eye",
+      "has_reinforced_plate_gold"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tool_player_teleport"
+    ]
+  },
+  "sends_telemetry_event": false
+}

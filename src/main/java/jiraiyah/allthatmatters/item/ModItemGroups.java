@@ -24,6 +24,7 @@ public class ModItemGroups
 
                         entries.add(ModItems.BACKPACK);
                         entries.add(ModItems.ENDER_BACKPACK);
+                        entries.add(ModItems.PLAYER_TELEPORT);
 
                         entries.add(ModItems.CITRINE);
                         entries.add(ModItems.RAW_CITRINE);

@@ -82,6 +82,8 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.BACKPACK, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENDER_BACKPACK, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.PLAYER_TELEPORT, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.BINDING, Models.GENERATED);
 
         //region CASTS

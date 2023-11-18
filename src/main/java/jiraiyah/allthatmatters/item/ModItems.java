@@ -367,6 +367,8 @@ public class ModItems
     public static final Item BACKPACK = registerItem("backpack", new BackpackItem(new FabricItemSettings()));
     public static final Item ENDER_BACKPACK = registerItem("ender_backpack", new EnderBackpackItem(new FabricItemSettings()));
 
+    public static final Item PLAYER_TELEPORT = registerItem("tool_player_teleport", new TeleportItem(new FabricItemSettings().maxCount(1)));
+
     private ModItems()
     {
         throw new AssertionError();

@@ -1111,5 +1111,18 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(ModItems.BACKPACK), conditionsFromItem(ModItems.BACKPACK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ENDER_BACKPACK) + ".enderite"));
         //endregion
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.PLAYER_TELEPORT, 1)
+                .pattern("PEP")
+                .pattern("GCG")
+                .pattern("GGG")
+                .input('G', ModItems.REINFORCED_PLATE_GOLD)
+                .input('C', Items.COMPASS)
+                .input('P', Items.ENDER_PEARL)
+                .input('E', Items.ENDER_EYE)
+                .criterion(hasItem(Items.COMPASS), conditionsFromItem(Items.COMPASS))
+                .criterion(hasItem(Items.ENDER_EYE), conditionsFromItem(Items.ENDER_EYE))
+                .criterion(hasItem(ModItems.REINFORCED_PLATE_GOLD), conditionsFromItem(ModItems.REINFORCED_PLATE_GOLD))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.PLAYER_TELEPORT)));
     }
 }

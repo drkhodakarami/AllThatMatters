@@ -194,6 +194,7 @@
   "item.allthatmatters.backpack": "Traveller Bag",
   "item.allthatmatters.cast_wood_ingot": "Cast - Ingot",
   "item.allthatmatters.cast_wood_pickaxe": "Cast - Pickaxe",
+  "item.allthatmatters.tool_player_teleport": "Player Teleport",
 
   "block.allthatmatters.block_citrine": "Citrine Block",
   "block.allthatmatters.block_ruby": "Ruby Block",
@@ -264,5 +265,6 @@
   "allthatmatters.screen.rename.max.length": "Max length : %s",
   "allthatmatters.tooltip.how.to.rename": "Sneak + Right click to rename",
   "allthatmatters.tooltip.fireproof": "Fire proof (like netherite items)",
-  "allthatmatters.screen.button.close": "Close"
+  "allthatmatters.screen.button.close": "Close",
+  "allthatmatters.teleporter.tooltip": "Bound to: (%d, %d, %d) -> %d"
 }
