@@ -7,13 +7,13 @@ import jiraiyah.allthatmatters.utils.ModTags;
 import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.context.ContainerItemContext;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
+import net.fabricmc.fabric.api.transfer.v1.fluid.*;
+import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import net.fabricmc.fabric.impl.transfer.context.ConstantContainerItemContext;
+import net.fabricmc.fabric.impl.transfer.fluid.EmptyBucketStorage;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
@@ -151,7 +151,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory)
     {
-        sendFluidPacket();
         return null;
     }
 
@@ -240,23 +239,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
     private void handleTank(World world, BlockPos pos, BlockState state, SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
     {
-        /*if (!this.isTankEmpty(tank) && isLiquidOutputReceivable(outputSlot))
-        {
-            if (this.isItemStackEmptyBucket(inputSlot))
-            {
-                if(this.transferFromTank(tank, inputSlot, outputSlot))
-                    markDirty(world, pos, state);
-            }
-        }
-        if ((this.isTankEmpty(tank) || this.isTankReceivable(tank)) && isLiquidOutputReceivable(outputSlot))
-        {
-            if (!this.isItemStackEmptyBucket(inputSlot))
-            {
-                if(this.transferToTank(tank, inputSlot, outputSlot))
-                    markDirty(world, pos, state);
-            }
-        }*/
-
         if(isLiquidOutputReceivable(outputSlot))
         {
             if (this.isItemStackEmptyBucket(inputSlot))
@@ -297,7 +279,8 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     {
         FluidVariant resource = tank.getResource();
 
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
+        // TODO : first issue, this is constant and not mutated
+        Storage<FluidVariant> slotStorage = new EmptyBucketStorage(new ConstantContainerItemContext(ItemVariant.of(getStack(inputSlot)), getStack(inputSlot).getCount()));
 
         if(slotStorage == null || resource.isBlank())
             return false;
@@ -312,10 +295,11 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
                 transaction.commit();
                 SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-                ItemStack stack = slotStorage.iterator().next();
+                // todo : second issue, this is empty ?!
+                ItemStack stack = getStack(inputSlot);
 
                 this.removeStack(inputSlot, 1);
-
+                // todo : third issue, how to get proper fluid bucket to put in output?!
                 this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
 
                 return true;
@@ -326,8 +310,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
     private boolean transferToTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
     {
-        //FluidVariant resource = tank.getResource();
-
         Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
 
         if(slotStorage == null)
@@ -348,7 +330,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
                 transaction.commit();
                 SoundEvent sound = FluidVariantAttributes.getEmptySound(resource);
                 world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-                ItemStack stack = getStack(inputSlot);
                 this.removeStack(inputSlot, 1);
                 this.setStack(outputSlot, new ItemStack(Items.BUCKET, getStack(outputSlot).getCount() + 1));
                 return true;
@@ -358,7 +339,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
         return false;
     }
 
-    private void sendFluidPacket()
+    public void sendFluidPacket()
     {
         PacketByteBuf data = PacketByteBufs.create();
         leftFluidStorage.variant.toPacket(data);

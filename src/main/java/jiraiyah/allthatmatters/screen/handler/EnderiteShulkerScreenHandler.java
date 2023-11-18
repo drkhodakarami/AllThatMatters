@@ -105,6 +105,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             @Override
             public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
             {
+                ((EnderiteShulkerBlockEntity)blockEntity).sendFluidPacket();
                 return new EnderiteShulkerScreenHandler(syncId, playerInventory, inventory, blockEntity);
             }
 

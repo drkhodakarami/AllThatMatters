@@ -159,6 +159,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof EnderiteShulkerBlockEntity shulkerBoxBlockEntity)
         {
+            shulkerBoxBlockEntity.sendFluidPacket();
             return EnderiteShulkerScreenHandler.createScreenHandlerFactory(shulkerBoxBlockEntity, shulkerBoxBlockEntity.getDisplayName(), blockEntity);
         }
         return null;
