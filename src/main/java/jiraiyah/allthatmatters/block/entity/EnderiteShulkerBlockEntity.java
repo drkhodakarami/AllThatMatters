@@ -4,29 +4,20 @@ import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.utils.ModTags;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.fabricmc.fabric.api.transfer.v1.context.ContainerItemContext;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
-import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.collection.DefaultedList;
@@ -49,7 +40,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     public static int RIGHT_FLUID_OUTPUT_SLOT = 111;
 
     // NEW SECTION
-    public static long FLUID_CAPACITY = FluidStack.convertDropletsToMb(FluidConstants.BLOCK) * 100; // 20k mb
+    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 100; // 20k mb
 
     public final SingleVariantStorage<FluidVariant> leftFluidStorage = new SingleVariantStorage<FluidVariant>()
     {
@@ -102,8 +93,6 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
             }
         }
     };
-    //
-
 
     //region SHULKER
     public EnderiteShulkerBlockEntity(@Nullable DyeColor color, BlockPos pos, BlockState state)
@@ -235,116 +224,17 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
     private void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        handleTank(world, pos, state, this.leftFluidStorage, LEFT_FLUID_INPUT_SLOT, LEFT_FLUID_OUTPUT_SLOT);
-        handleTank(world, pos, state, this.rightFluidStorage, RIGHT_FLUID_INPUT_SLOT, RIGHT_FLUID_OUTPUT_SLOT);
+        FluidUtils.handleTankTransfer(world,pos,this,this.leftFluidStorage,LEFT_FLUID_INPUT_SLOT,LEFT_FLUID_OUTPUT_SLOT);
+        FluidUtils.handleTankTransfer(world,pos,this,this.rightFluidStorage,RIGHT_FLUID_INPUT_SLOT,RIGHT_FLUID_OUTPUT_SLOT);
     }
 
-    private void handleTank(World world, BlockPos pos, BlockState state, SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
-    {
-        if(isLiquidOutputReceivable(outputSlot))
-        {
-            if (this.isItemStackEmptyBucket(inputSlot))
-            {
-                if(this.transferFromTank(tank, inputSlot, outputSlot))
-                    markDirty(world, pos, state);
-            }
-            else if(!this.getStack(inputSlot).isEmpty())
-            {
-                if(this.transferToTank(tank, inputSlot, outputSlot))
-                    markDirty(world, pos, state);
-            }
-        }
-    }
 
-    private boolean isTankEmpty(SingleVariantStorage<FluidVariant> tank)
-    {
-        return tank.amount == 0;
-    }
 
-    private boolean isLiquidOutputReceivable(int outputSlot)
-    {
-        return getStack(outputSlot).isEmpty() ||
-                getStack(outputSlot).getCount() < getStack(outputSlot).getMaxCount();
-    }
 
-    private boolean isItemStackEmptyBucket(int slotIndex)
-    {
-        return getStack(slotIndex).isOf(Items.BUCKET);
-    }
 
-    private boolean isTankReceivable(SingleVariantStorage<FluidVariant> tank)
-    {
-        return tank.amount <= tank.getCapacity() - 1000;
-    }
 
-    private boolean transferFromTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
-    {
-        FluidVariant resource = tank.getResource();
-        // TODO : first issue, this is constant and not mutated
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
 
-        if(slotStorage == null || resource.isBlank())
-            return false;
 
-        Item item = null;
-
-        if(resource.isOf(Fluids.LAVA))
-            item = Items.LAVA_BUCKET;
-        else if (resource.isOf(Fluids.WATER))
-            item = Items.WATER_BUCKET;
-
-        try (Transaction transaction = Transaction.openOuter())
-        {
-            var bucketSize = FluidStack.convertDropletsToMb(FluidConstants.BUCKET);
-            long buckeTransfer = slotStorage.insert(resource, FluidConstants.BUCKET, transaction);
-            long tankTransfer = tank.extract(resource, bucketSize, transaction);
-            if(FluidStack.convertDropletsToMb(buckeTransfer) == tankTransfer)
-            {
-                transaction.commit();
-                SoundEvent sound = FluidVariantAttributes.getFillSound(resource);
-                world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-
-                this.removeStack(inputSlot, 1);
-                // todo : find a way to automatically handle other mod fluids
-                //this.setStack(outputSlot, new ItemStack(stack.getItem(), getStack(outputSlot).getCount() + 1));
-                this.setStack(outputSlot, new ItemStack(item, getStack(outputSlot).getCount() + 1));
-
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean transferToTank(SingleVariantStorage<FluidVariant> tank, int inputSlot, int outputSlot)
-    {
-        Storage<FluidVariant> slotStorage = ContainerItemContext.withConstant(getStack(inputSlot)).find(FluidStorage.ITEM);
-
-        if(slotStorage == null)
-            return false;
-
-        FluidVariant resource = slotStorage.iterator().next().getResource();
-
-        if(resource.isBlank())
-            return false;
-
-        try (Transaction transaction = Transaction.openOuter())
-        {
-            var bucketSize = FluidStack.convertDropletsToMb(FluidConstants.BUCKET);
-            long buckeTransfer = slotStorage.extract(resource, FluidConstants.BUCKET, transaction);
-            long tankTransfer = tank.insert(resource, bucketSize, transaction);
-            if(FluidStack.convertDropletsToMb(buckeTransfer) == tankTransfer)
-            {
-                transaction.commit();
-                SoundEvent sound = FluidVariantAttributes.getEmptySound(resource);
-                world.playSound(pos.getX(), pos.getY(), pos.getZ(), sound, SoundCategory.BLOCKS, 1, 1, true);
-                this.removeStack(inputSlot, 1);
-                this.setStack(outputSlot, new ItemStack(Items.BUCKET, getStack(outputSlot).getCount() + 1));
-                return true;
-            }
-        }
-
-        return false;
-    }
 
     public void sendFluidPacket()
     {

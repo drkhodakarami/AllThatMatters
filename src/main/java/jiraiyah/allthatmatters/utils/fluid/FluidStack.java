@@ -33,14 +33,4 @@ public class FluidStack
     {
         this.amount = amount;
     }
-
-    public static long convertDropletsToMb(long droplets)
-    {
-        return droplets / FluidConstants.BUCKET * 1000;
-    }
-
-    public static long convetMbToDroplets(long mb)
-    {
-        return mb / 1000 * FluidConstants.BUCKET;
-    }
 }

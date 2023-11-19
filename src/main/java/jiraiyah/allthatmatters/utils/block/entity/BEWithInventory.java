@@ -1,7 +1,6 @@
 package jiraiyah.allthatmatters.utils.block.entity;
 
-import jiraiyah.allthatmatters.recipe.ModRecipes;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
 import jiraiyah.allthatmatters.utils.interfaces.ImplementedInventory;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
@@ -171,7 +170,7 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
         try (Transaction transaction = Transaction.openOuter())
         {
             tank.extract(FluidVariant.of(fluid),
-                    FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
+                    FluidUtils.convertDropletsToMb(FluidConstants.BLOCK), transaction);
             transaction.commit();
 
             this.removeStack(inputSlot, 1);
@@ -187,7 +186,7 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
         {
 
             tank.insert(FluidVariant.of(fluid),
-                    FluidStack.convertDropletsToMb(FluidConstants.BLOCK), transaction);
+                    FluidUtils.convertDropletsToMb(FluidConstants.BLOCK), transaction);
             transaction.commit();
 
             this.removeStack(inputSlot, 1);

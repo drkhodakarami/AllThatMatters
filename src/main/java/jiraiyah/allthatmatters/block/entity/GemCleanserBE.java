@@ -8,7 +8,7 @@ import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -42,7 +42,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
 
     public static final int DELEGATE_SIZE = 2;
 
-    public static long FLUID_CAPACITY = FluidStack.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
+    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
     public static final int FLUID_PER_CRAFT = 125; //mb amount
 
     public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>()

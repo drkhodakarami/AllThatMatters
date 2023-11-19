@@ -10,7 +10,7 @@ import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
 import jiraiyah.allthatmatters.utils.ModTags;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -72,7 +72,7 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
 
     public static final int DELEGATE_SIZE = 2;
 
-    public static long FLUID_CAPACITY = FluidStack.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
+    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
     public static final int FLUID_PER_INGOT_CRAFT = 25; //mb amount
     public static final int FLUID_PER_TOOL_CRAFT = 100; //mb amount
     public static final int FLUID_PER_BINDING_CRAFT = 25; //mb amount
