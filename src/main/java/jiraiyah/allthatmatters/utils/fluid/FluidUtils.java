@@ -215,11 +215,23 @@ public class FluidUtils
         return tank.amount <= tank.getCapacity() - size;
     }
 
+    /**
+     * Converts the fabric fluid units into milli buckets. Basically, each BUCKET constant 81000L, is 1000 milli buckets
+     *
+     * @param droplets the droplet amount from the fabric unit system
+     * @return the milli bucket unit of the fluid amount
+     */
     public static long convertDropletsToMb(long droplets)
     {
         return droplets / FluidConstants.BUCKET * 1000;
     }
 
+    /**
+     * Converts the milli bucket unit back to Fabric fluid unit. 1000 milli buckets is equal to 81000L or a BUCKET constant
+     *
+     * @param mb the milli bucket amount of fluid
+     * @return the droplet unity of the fluid amount
+     */
     public static long convetMbToDroplets(long mb)
     {
         return mb / 1000 * FluidConstants.BUCKET;
