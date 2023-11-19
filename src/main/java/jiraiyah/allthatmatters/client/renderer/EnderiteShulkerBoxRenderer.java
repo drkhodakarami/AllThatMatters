@@ -39,13 +39,6 @@ public class EnderiteShulkerBoxRenderer<T extends EnderiteShulkerBlockEntity> im
                 direction = blockState.get(ShulkerBoxBlock.FACING);
             }
         }
-        /*String modifier = "";
-        if (entity.hasUpgrades())
-        {
-            entity.getUpgrades().getKeys();
-            for (String upgrade : entity.getUpgrades().getKeys())
-                modifier += "_" + upgrade;
-        }*/
         SpriteIdentifier spriteIdentifier;
         Identifier id = ModBlocks.getTextureForShulker(entity.getColor());
         spriteIdentifier = new SpriteIdentifier(TexturedRenderLayers.SHULKER_BOXES_ATLAS_TEXTURE, id);

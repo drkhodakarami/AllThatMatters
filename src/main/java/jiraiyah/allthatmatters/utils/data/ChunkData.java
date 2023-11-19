@@ -24,9 +24,7 @@ public class ChunkData implements Serializable
     public void addLoaderPos(SerializableChunkPos chunk)
     {
         if (!loadersChunks.contains(chunk))
-        {
             loadersChunks.add(chunk);
-        }
     }
 
     public void removeLoaderPos(SerializableChunkPos chunk)
@@ -39,14 +37,10 @@ public class ChunkData implements Serializable
         if (state)
         {
             if (!isChunkForceLoaded(chunk))
-            {
                 chunks.add(chunk);
-            }
         }
         else
-        {
             chunks.remove(chunk);
-        }
     }
 
     public ArrayList<SerializableChunkPos> getChunks()

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "allthatmatters:gear_copper"
+    },
+    "I": {
+      "item": "allthatmatters:plate_stone"
+    },
+    "X": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "#X#",
+    "III"
+  ],
+  "result": {
+    "item": "minecraft:repeater"
+  },
+  "show_notification": true
+}

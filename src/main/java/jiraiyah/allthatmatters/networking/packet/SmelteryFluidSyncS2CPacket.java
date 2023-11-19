@@ -2,7 +2,7 @@ package jiraiyah.allthatmatters.networking.packet;
 
 import jiraiyah.allthatmatters.block.entity.SmelteryBE;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.fluidutils.FluidStack;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.minecraft.client.MinecraftClient;

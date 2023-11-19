@@ -83,9 +83,8 @@ public class BackpackRenameScreen extends Screen
         buf.writeBoolean(def);
         buf.writeEnumConstant(hand);
 
-        if (!def) {
+        if (!def)
             buf.writeString(this.textField.getText().trim());
-        }
 
         ClientPlayNetworking.send(AllThatMatters.PACKET_RENAME_BACKPACK, buf);
         this.close();
@@ -95,7 +94,6 @@ public class BackpackRenameScreen extends Screen
     public void tick()
     {
         super.tick();
-        //this.textField.tick();
     }
 
     @Override

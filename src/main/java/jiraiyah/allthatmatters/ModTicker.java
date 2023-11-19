@@ -50,23 +50,17 @@ public final class ModTicker
         ChunkTicketManagerInvoker ticketManager = (ChunkTicketManagerInvoker) storage.invokeGetTicketManager();
         int randomTickSpeed = world.getGameRules().getInt(GameRules.RANDOM_TICK_SPEED);
         if (randomTickSpeed == 0)
-        {
             return;
-        }
         storage.invokeEntryIterator().forEach(chunkHolder ->
         {
             // Ensure the chunk is force loaded rather than a "regular" chunk outside the 128-block radius
             boolean forced = ticketManager.invokeGetTicketSet(chunkHolder.getPos().toLong()).stream().anyMatch(chunkTicket -> ((ChunkTicketTypeAccessor) chunkTicket.getType()).getName().equals("forced"));
             if (!forced)
-            {
                 return;
-            }
 
             Optional<WorldChunk> optionalWorldChunk = chunkHolder.getTickingFuture().getNow(ChunkHolder.UNLOADED_WORLD_CHUNK).left();
             if (optionalWorldChunk.isEmpty())
-            {
                 return;
-            }
             // Make sure it's too far to get regular random ticks
             if (storage.invokeIsTooFarFromPlayersToSpawnMobs(chunkHolder.getPos()))
             {
@@ -85,14 +79,10 @@ public final class ModTicker
                             profiler.push("randomTick");
                             BlockState blockState = chunkSection.getBlockState(randomPosInChunk.getX() - startX, randomPosInChunk.getY() - startY, randomPosInChunk.getZ() - startZ);
                             if (blockState.hasRandomTicks())
-                            {
                                 blockState.randomTick(world, randomPosInChunk, world.random);
-                            }
                             FluidState fluidState = blockState.getFluidState();
                             if (fluidState.hasRandomTicks())
-                            {
                                 fluidState.onRandomTick(world, randomPosInChunk, world.random);
-                            }
                             profiler.pop();
                         }
                     }

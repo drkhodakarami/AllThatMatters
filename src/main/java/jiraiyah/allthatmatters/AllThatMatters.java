@@ -5,7 +5,6 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.command.ModCommands;
 import jiraiyah.allthatmatters.datagen.world.ModWorldGeneration;
 import jiraiyah.allthatmatters.effect.ModEffects;
-import jiraiyah.allthatmatters.fluid.ModFluids;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.item.custom.BackpackItem;
@@ -26,6 +25,8 @@ import org.slf4j.LoggerFactory;
 // This is the flat world gen custom preset I always use
 // 5*minecraft:bedrock,30*minecraft:light_blue_wool,minecraft:light_blue_carpet;minecraft:plains;village
 
+//TODO : Smeltery compatibility for rei
+//TODO : Stone Plate for Redstone Logic items
 public class AllThatMatters implements ModInitializer
 {
     public static final Identifier PACKET_RENAME_BACKPACK = identifier("packet_rename_backpack");
@@ -48,7 +49,6 @@ public class AllThatMatters implements ModInitializer
         ModWorldGeneration.generateModWorldGen();
         ModMessages.registerC2SPackets();
 
-        ModFluids.register();
         ModEffects.register();
 
         ServerPlayNetworking.registerGlobalReceiver(PACKET_RENAME_BACKPACK,
@@ -58,10 +58,12 @@ public class AllThatMatters implements ModInitializer
                     final Hand hand = buf.readEnumConstant(Hand.class);
                     final ItemStack stack = player.getStackInHand(hand);
 
-                    if (!stack.isEmpty() && stack.getItem() instanceof BackpackItem) {
-                        if (def) {
+                    if (!stack.isEmpty() && stack.getItem() instanceof BackpackItem)
+                    {
+                        if (def)
                             stack.removeCustomName();
-                        } else {
+                        else
+                        {
                             final String name = buf.readString(32);
                             stack.setCustomName(Text.of(name));
                         }

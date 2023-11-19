@@ -4,7 +4,8 @@ import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.custom.EnderiteShulkerBoxBlock;
 import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.utils.ModTags;
-import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
+import jiraiyah.fluidutils.FluidUtils;
+import jiraiyah.fluidutils.ImplementedInventory;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -28,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.IntStream;
 
-public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
+public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity implements ImplementedInventory
 {
     private final int[] AVAILABLE_SLOTS;
 
@@ -39,8 +40,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
     public static int RIGHT_FLUID_INPUT_SLOT = 110;
     public static int RIGHT_FLUID_OUTPUT_SLOT = 111;
 
-    // NEW SECTION
-    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 100; // 20k mb
+    public static long FLUID_CAPACITY = FluidConstants.BUCKET * 100; // 100k mb
 
     public final SingleVariantStorage<FluidVariant> leftFluidStorage = new SingleVariantStorage<FluidVariant>()
     {
@@ -62,9 +62,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
             markDirty();
 
             if (!world.isClient())
-            {
                 sendFluidPacket();
-            }
         }
     };
 
@@ -88,9 +86,7 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
             markDirty();
 
             if (!world.isClient())
-            {
                 sendFluidPacket();
-            }
         }
     };
 
@@ -131,6 +127,12 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
         tag.putLong("atm.shulker_box.left_fluid_level", leftFluidStorage.amount);
         tag.put("atm.shulker_box.right_fluid_variant", rightFluidStorage.variant.toNbt());
         tag.putLong("atm.shulker_box.right_fluid_level", rightFluidStorage.amount);
+    }
+
+    @Override
+    public DefaultedList<ItemStack> getItems()
+    {
+        return getInvStackList();
     }
 
     @Override
@@ -224,17 +226,9 @@ public class EnderiteShulkerBlockEntity extends ShulkerBoxBlockEntity
 
     private void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        FluidUtils.handleTankTransfer(world,pos,this,this.leftFluidStorage,LEFT_FLUID_INPUT_SLOT,LEFT_FLUID_OUTPUT_SLOT);
-        FluidUtils.handleTankTransfer(world,pos,this,this.rightFluidStorage,RIGHT_FLUID_INPUT_SLOT,RIGHT_FLUID_OUTPUT_SLOT);
+        FluidUtils.handleTankTransfer(world, pos, this, this.leftFluidStorage, LEFT_FLUID_INPUT_SLOT, LEFT_FLUID_OUTPUT_SLOT);
+        FluidUtils.handleTankTransfer(world, pos, this, this.rightFluidStorage, RIGHT_FLUID_INPUT_SLOT, RIGHT_FLUID_OUTPUT_SLOT);
     }
-
-
-
-
-
-
-
-
 
     public void sendFluidPacket()
     {

@@ -27,9 +27,7 @@ public class EnderBackpackItem extends Item
         if(!world.isClient)
         {
             if(user.getEnderChestInventory() != null)
-            {
                 openScreen(user, user.getStackInHand(hand));
-            }
         }
         else
             user.playSound(SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1.0f, 1.0f);

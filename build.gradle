@@ -33,6 +33,8 @@ repositories {
             includeGroupByRegex 'io\\.github\\.onyxstudios.*'
         }
     }
+
+    maven { url 'https://jitpack.io' }
 }
 
 loom {
@@ -80,6 +82,8 @@ dependencies {
     modImplementation "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
     include "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
 
+    modImplementation "com.github.drkhodakarami:fluidutils:${fluidutils_version}"
+
     modRuntimeOnly "curse.maven:reborncore-237903:4786770"
     modRuntimeOnly "curse.maven:techreborn-233564:4786771"
 }
@@ -119,3 +123,16 @@ publishing {
     repositories {
     }
 }
+
+tasks.create("checkVersionFileValidation") {
+    doFirst {
+        File testFile = new File("${remapJar.archiveFile.get()}");
+        if ( testFile.isFile() ) {
+            throw new GradleException("project version is built before, change the project version >>> ${project.mod_version}")
+        } else {
+            println "Project version needs building >>> ${project.archives_base_name}-${project.mod_version}"
+        }
+    }
+}
+
+compileJava.dependsOn checkVersionFileValidation

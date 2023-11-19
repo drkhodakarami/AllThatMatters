@@ -252,6 +252,7 @@ public class ModItems
     public static final Item PLATE_NETHERITE = registerItem("plate_netherite", new Item(new FabricItemSettings()));
     public static final Item PLATE_RUBY = registerItem("plate_ruby", new Item(new FabricItemSettings()));
     public static final Item PLATE_SAPPHIRE = registerItem("plate_sapphire", new Item(new FabricItemSettings()));
+    public static final Item PLATE_STONE = registerItem("plate_stone", new Item(new FabricItemSettings()));
 
     public static final Item REINFORCED_PLATE_AMETHYST = registerItem("reinforced_plate_amethyst", new Item(new FabricItemSettings()));
     public static final Item REINFORCED_PLATE_CITRINE = registerItem("reinforced_plate_citrine", new Item(new FabricItemSettings()));

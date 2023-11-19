@@ -109,8 +109,7 @@ public class ModConfiguredFeatures
                 List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ORE_END_ENDERITE.getDefaultState()));
         //endregion
 
-
-        // 3 : The number is vein size
+        // 3 --> The number is vein size
         register(context, ORE_CITRINE_KEY, Feature.ORE, new OreFeatureConfig(overworldCitrineOres, 3));
         register(context, ORE_RUBY_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 3));
         register(context, ORE_SAPPHIRE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 3));
@@ -119,12 +118,12 @@ public class ModConfiguredFeatures
         register(context, ORE_NETHER_RUBY_KEY, Feature.ORE, new OreFeatureConfig(netherRubyOres, 3));
         register(context, ORE_NETHER_SAPPHIRE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 3));
 
-        register(context, ORE_NETHER_COAL_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 12));
-        register(context, ORE_NETHER_COPPER_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
-        register(context, ORE_NETHER_DIAMOND_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 3));
-        register(context, ORE_NETHER_IRON_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
-        register(context, ORE_NETHER_LAPIS_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 8));
-        register(context, ORE_NETHER_REDSTONE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 6));
+        register(context, ORE_NETHER_COAL_KEY, Feature.ORE, new OreFeatureConfig(netherCoalOres, 12));
+        register(context, ORE_NETHER_COPPER_KEY, Feature.ORE, new OreFeatureConfig(netherCopperOres, 8));
+        register(context, ORE_NETHER_DIAMOND_KEY, Feature.ORE, new OreFeatureConfig(netherDiamondOres, 3));
+        register(context, ORE_NETHER_IRON_KEY, Feature.ORE, new OreFeatureConfig(netherIronOres, 8));
+        register(context, ORE_NETHER_LAPIS_KEY, Feature.ORE, new OreFeatureConfig(netherLapisOres, 8));
+        register(context, ORE_NETHER_REDSTONE_KEY, Feature.ORE, new OreFeatureConfig(netherRedstoneOres, 6));
 
         register(context, ORE_END_CITRINE_KEY, Feature.ORE, new OreFeatureConfig(endCitrineOres, 3));
         register(context, ORE_END_RUBY_KEY, Feature.ORE, new OreFeatureConfig(endRubyOres, 3));

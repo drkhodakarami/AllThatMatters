@@ -67,16 +67,17 @@ public class GemBow extends RangedWeaponItem implements Vanishable
                             persistentProjectileEntity.setOnFireFor(100);
 
                         stack.damage(1, playerEntity, (p) ->
-                        {
-                            p.sendToolBreakStatus(playerEntity.getActiveHand());
-                        });
-                        if (bl2 || playerEntity.getAbilities().creativeMode && (itemStack.isOf(Items.SPECTRAL_ARROW) || itemStack.isOf(Items.TIPPED_ARROW)))
+                                p.sendToolBreakStatus(playerEntity.getActiveHand()));
+                        if (bl2 || playerEntity.getAbilities().creativeMode &&
+                                (itemStack.isOf(Items.SPECTRAL_ARROW) || itemStack.isOf(Items.TIPPED_ARROW)))
                             persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
 
                         world.spawnEntity(persistentProjectileEntity);
                     }
 
-                    world.playSound((PlayerEntity) null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                    world.playSound((PlayerEntity) null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(),
+                            SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F,
+                            1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
                     if (!bl2 && !playerEntity.getAbilities().creativeMode && !this.isInfinit)
                     {
                         itemStack.decrement(1);
@@ -95,9 +96,7 @@ public class GemBow extends RangedWeaponItem implements Vanishable
         float f = (float) useTicks / ANIMATION_DURATION_DIVIDER;
         f = (f * f + f * 2.0F) / 3.0F;
         if (f > 1.0F)
-        {
             f = 1.0F;
-        }
 
         return f;
     }
@@ -117,14 +116,9 @@ public class GemBow extends RangedWeaponItem implements Vanishable
         ItemStack itemStack = user.getStackInHand(hand);
         boolean bl = !user.getProjectileType(itemStack).isEmpty();
         if (!user.getAbilities().creativeMode && !bl && !this.isInfinit)
-        {
             return TypedActionResult.fail(itemStack);
-        }
-        else
-        {
-            user.setCurrentHand(hand);
-            return TypedActionResult.consume(itemStack);
-        }
+        user.setCurrentHand(hand);
+        return TypedActionResult.consume(itemStack);
     }
 
     public Predicate<ItemStack> getProjectiles()

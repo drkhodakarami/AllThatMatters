@@ -86,8 +86,12 @@ public class SmelteryRecipe implements Recipe<Inventory>
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max)
         {
             return Codecs.validate(Codecs.validate(
-                    delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
-            ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
+                    delegate.listOf(), list -> list.size() > max ?
+                            DataResult.error(() -> "Recipe has too many ingredients!") :
+                            DataResult.success(list)),
+                    list -> list.isEmpty() ?
+                        DataResult.error(() -> "Recipe has no ingredients!") :
+                        DataResult.success(list));
         }
 
         @Override

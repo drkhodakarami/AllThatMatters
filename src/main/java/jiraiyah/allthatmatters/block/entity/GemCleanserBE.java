@@ -8,7 +8,7 @@ import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
-import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
+import jiraiyah.fluidutils.FluidUtils;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -42,8 +42,9 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
 
     public static final int DELEGATE_SIZE = 2;
 
-    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
-    public static final int FLUID_PER_CRAFT = 125; //mb amount
+    public static long FLUID_CAPACITY = FluidConstants.BUCKET * 20; // 20k mb
+
+    public static final long FLUID_PER_CRAFT = FluidUtils.MILLI_BUCKET * 125; //mb amount
 
     public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>()
     {
@@ -65,9 +66,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
             markDirty();
 
             if (!world.isClient())
-            {
                 sendFluidPacket();
-            }
         }
     };
 
@@ -140,22 +139,17 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         if (side == Direction.DOWN)
             return false;
 
-        // RIGHT --> TOOL SLOTS
         // LEFT --> LIQUIDATION SLOT
 
         return switch (localDir)
         {
             default -> side.getOpposite() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
-                    /*side.getOpposite() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT*/
                     side.getOpposite() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
             case EAST -> side.rotateYClockwise() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
-                    /*side.rotateYClockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT*/
                     side.rotateYClockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
             case SOUTH -> side == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
-                    /*side == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT*/
                     side == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
             case WEST -> side.rotateYCounterclockwise() == Direction.NORTH && slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot) || // TOP
-                    /*side.rotateYCounterclockwise() == Direction.EAST && slot == MAIN_TOOL_SLOT && StackAcceptableInSlot(stack, slot) || //RIGHT*/
                     side.rotateYCounterclockwise() == Direction.WEST && slot == FLUID_INPUT_SLOT && StackAcceptableInSlot(stack, slot); // LEFT
         };
 
@@ -213,38 +207,18 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     @Override
     protected void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        if (!this.isTankEmpty(this.fluidStorage) && isLiquidOutputReceivable(FLUID_OUTPUT_SLOT))
-        {
-            if (this.isItemStackEmptyBucket(FLUID_INPUT_SLOT))
-            {
-                this.transferFromFluidTank(this.fluidStorage, Fluids.WATER, Items.WATER_BUCKET, FLUID_INPUT_SLOT, FLUID_OUTPUT_SLOT);
-                markDirty(world, pos, state);
-            }
-        }
-        if ((this.isTankEmpty(this.fluidStorage) || this.isTankReceivable(this.fluidStorage)) && isLiquidOutputReceivable(FLUID_OUTPUT_SLOT))
-        {
-            if (this.hasFluidSourceInSlot(FLUID_INPUT_SLOT, Items.WATER_BUCKET))
-            {
-                if (this.isItemStackCompatibleWithTank(this.fluidStorage, Fluids.WATER, Items.WATER_BUCKET, FLUID_INPUT_SLOT))
-                {
-                    if (this.isItemStackLiquidBucket(FLUID_INPUT_SLOT, Items.WATER_BUCKET))
-                        this.transferToFluidTank(this.fluidStorage, Fluids.WATER, Items.BUCKET, FLUID_INPUT_SLOT, FLUID_OUTPUT_SLOT);
-                    markDirty(world, pos, state);
-                }
-            }
-        }
+        FluidUtils.handleTankTransfer(world,pos,this,this.fluidStorage,FLUID_INPUT_SLOT,FLUID_OUTPUT_SLOT);
     }
 
     @Override
     protected void handleItemCraftingTick(World world, BlockPos pos, BlockState state)
     {
-        if (this.isOutputSlotEmptyOrReceivable(BASE_OUTPUT_SLOT))
-        {
+        if (FluidUtils.isOutputReceivable(this, BASE_OUTPUT_SLOT))
             if (this.hasRecipe(ModRecipes.GEM_CLEANSE_TYPE, BASE_OUTPUT_SLOT))
             {
                 if (this.shouldUseFluid() &&
-                    this.hasEnoughFluid(this.fluidStorage, FLUID_PER_CRAFT) &&
-                    this.fluidIsAcceptable(this.fluidStorage, Fluids.WATER))
+                        this.hasEnoughFluid(this.fluidStorage, FLUID_PER_CRAFT) &&
+                        this.fluidIsAcceptable(this.fluidStorage, Fluids.WATER))
                 {
                     this.increaseCraftProgress();
                     if (hasCraftingFinished())
@@ -258,7 +232,6 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
             }
             else
                 this.resetProgress();
-        }
         else
         {
             if (this.progress != 0)

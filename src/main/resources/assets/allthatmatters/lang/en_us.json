@@ -116,6 +116,7 @@
   "item.allthatmatters.plate_netherite": "Netherite Plate",
   "item.allthatmatters.plate_ruby": "Ruby Plate",
   "item.allthatmatters.plate_sapphire": "Sapphire Plate",
+  "item.allthatmatters.plate_stone": "Stone Plate",
   "item.allthatmatters.reinforced_plate_amethyst": "Reinforced Amethyst Plate",
   "item.allthatmatters.reinforced_plate_citrine": "Reinforced Citrine Plate",
   "item.allthatmatters.reinforced_plate_copper": "Reinforced Copper Plate",
@@ -251,8 +252,8 @@
 
   "allthatmatters.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "allthatmatters.tooltip.liquid.amount": "%s mB",
-
   "block.minecraft.empty": "Empty",
+
   "allthatmatters.all": "All",
   "allthatmatters.none": "None",
   "effect.allthatmatters.flight": "Flight",

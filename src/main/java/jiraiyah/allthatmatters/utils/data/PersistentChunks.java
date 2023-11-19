@@ -28,12 +28,8 @@ public final class PersistentChunks
     private static void resetLoaderArea(MinecraftServer server, SerializableChunkPos chunk)
     {
         for (int i = 0; i < ChunkData.SIZE; i++)
-        {
             for (int j = 0; j < ChunkData.SIZE; j++)
-            {
                 forceLoadChunk(server, chunk.getChunkAtRelativeOffset(i, j), false);
-            }
-        }
     }
 
     public static boolean loaderAdded(SerializableChunkPos chunk)
@@ -67,9 +63,7 @@ public final class PersistentChunks
             AllThatMatters.LOGGER.info("Found: " + data.getLoadersChunks().size() + " Loaders placed");
             ArrayList<SerializableChunkPos> chunks = data.getChunks();
             for (SerializableChunkPos chunk : chunks)
-            {
                 setChunkForceLoaded(server, chunk, true);
-            }
         }
     }
 
@@ -82,9 +76,7 @@ public final class PersistentChunks
         {
             boolean res = serverWorld.setChunkForced(chunk.getX(), chunk.getZ(), state);
             if (res)
-            {
                 AllThatMatters.LOGGER.info("Setting chunk: " + chunk + " forceloaded = " + state);
-            }
         }
     }
 

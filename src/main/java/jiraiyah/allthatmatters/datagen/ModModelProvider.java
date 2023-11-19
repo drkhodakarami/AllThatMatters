@@ -76,8 +76,6 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.RAW_ENDERITE, Models.GENERATED);
         //endregion
 
-        //itemModelGenerator.register(ModFluids.MOLTEN_ENDERITE_BUCKET, Models.GENERATED);
-
         itemModelGenerator.register(ModItems.BACKPACK, Models.GENERATED);
         itemModelGenerator.register(ModItems.ENDER_BACKPACK, Models.GENERATED);
 
@@ -136,6 +134,7 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.PLATE_NETHERITE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PLATE_RUBY, Models.GENERATED);
         itemModelGenerator.register(ModItems.PLATE_SAPPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLATE_STONE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.REINFORCED_PLATE_AMETHYST, Models.GENERATED);
         itemModelGenerator.register(ModItems.REINFORCED_PLATE_CITRINE, Models.GENERATED);
@@ -157,8 +156,7 @@ public class ModModelProvider extends FabricModelProvider
         itemModelGenerator.register(ModItems.ROD_GOLD, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROD_IRON, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROD_OBSIDIAN, Models.GENERATED);
-
-        //
+        //endregion
 
         //region TOOL HEAD
         itemModelGenerator.register(ModItems.HEAD_CITRINE_AXE, Models.GENERATED);

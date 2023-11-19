@@ -4,9 +4,9 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
-import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
 import jiraiyah.allthatmatters.utils.screen.MouseUtil;
+import jiraiyah.fluidutils.FluidStack;
+import jiraiyah.fluidutils.FluidStackRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.item.TooltipContext;
@@ -76,7 +76,7 @@ public class EnderiteShulkerScreen extends HandledScreen<EnderiteShulkerScreenHa
     private void renderFluidTooltips(DrawContext context, int mouseX, int mouseY, int x, int y, FluidStack fluidStack, int offsetX, int offsetY, FluidStackRenderer renderer)
     {
         if(isMouseAboveArea(mouseX, mouseY,x,y, offsetX, offsetY, renderer))
-            context.drawTooltip(this.textRenderer,renderer.getTooltip(fluidStack, TooltipContext.BASIC),
+            context.drawTooltip(this.textRenderer,renderer.getTooltip(fluidStack, TooltipContext.BASIC, AllThatMatters.ModID),
                     Optional.empty(),mouseX - x, mouseY - y);
     }
 

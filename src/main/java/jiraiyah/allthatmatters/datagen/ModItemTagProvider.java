@@ -23,7 +23,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
         getOrCreateTagBuilder(ModTags.Items.FLUID_BUCKETS)
-                //.add(ModFluids.MOLTEN_ENDERITE_BUCKET)
                 .add(Items.LAVA_BUCKET)
                 .add(Items.WATER_BUCKET)
                 .add(Items.MILK_BUCKET)
@@ -78,7 +77,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider
                 .add(ModItems.PLATE_IRON)
                 .add(ModItems.PLATE_NETHERITE)
                 .add(ModItems.PLATE_RUBY)
-                .add(ModItems.PLATE_SAPPHIRE);
+                .add(ModItems.PLATE_SAPPHIRE)
+                .add(ModItems.PLATE_STONE);
 
         getOrCreateTagBuilder(ModTags.Items.REINFORCED)
                 .add(ModItems.REINFORCED_PLATE_AMETHYST)

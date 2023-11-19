@@ -5,7 +5,7 @@ import jiraiyah.allthatmatters.block.custom.CastPressBlock;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.screen.handler.CastPressScreenHandler;
 import jiraiyah.allthatmatters.utils.CastType;
-import jiraiyah.allthatmatters.utils.interfaces.ImplementedInventory;
+import jiraiyah.fluidutils.ImplementedInventory;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.InventoryProvider;
@@ -109,15 +109,12 @@ public final class CastPressBE extends BlockEntity implements NamedScreenHandler
     {
         Direction localDir = this.getWorld().getBlockState(this.pos).get(CastPressBlock.FACING);
 
-        // TOP --> RAW SLOT
+        // TOP
 
         if (side == Direction.UP)
             return slot == BASE_INPUT_SLOT && StackAcceptableInSlot(stack, slot);
         if (side == Direction.DOWN)
             return false;
-
-        // RIGHT --> TOOL SLOTS
-        // LEFT --> LIQUIDATION SLOT
 
         return switch (localDir)
         {

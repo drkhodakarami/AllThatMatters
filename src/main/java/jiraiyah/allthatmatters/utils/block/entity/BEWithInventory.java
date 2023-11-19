@@ -1,9 +1,7 @@
 package jiraiyah.allthatmatters.utils.block.entity;
 
-import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
-import jiraiyah.allthatmatters.utils.interfaces.ImplementedInventory;
+import jiraiyah.fluidutils.ImplementedInventory;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
@@ -20,7 +18,6 @@ import net.minecraft.inventory.SidedInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.listener.ClientPlayPacketListener;
@@ -129,97 +126,13 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
     {
         var inv = new SimpleInventory(this.size());
         for (int i = 0; i < this.size(); i++)
-        {
             inv.setStack(i, this.getStack(i));
-        }
         return inv;
     }
 
     protected abstract void handleFluidTick(World world, BlockPos pos, BlockState state);
     protected abstract void handleEnergyCreationTick(World world, BlockPos pos, BlockState state);
     protected abstract void handleItemCraftingTick(World world, BlockPos pos, BlockState state);
-
-    protected boolean isTankEmpty(SingleVariantStorage<FluidVariant> tank)
-    {
-        return tank.amount == 0;
-    }
-
-    protected boolean isLiquidOutputReceivable(int outputSlot)
-    {
-        return getStack(outputSlot).isEmpty() ||
-               getStack(outputSlot).getCount() < getStack(outputSlot).getMaxCount();
-    }
-
-    protected boolean isItemStackEmptyBucket(int slotIndex)
-    {
-        return getStack(slotIndex).isOf(Items.BUCKET);
-    }
-
-    protected void transferFromFluidTank(SingleVariantStorage<FluidVariant> tank, FlowableFluid fluid, Item item, int inputSlot, int outputSlot)
-    {
-        extractFluid(tank, fluid, item, inputSlot, outputSlot);
-    }
-
-    protected void transferToFluidTank(SingleVariantStorage<FluidVariant> tank, FlowableFluid fluid, Item item, int inputSlot, int outputSlot)
-    {
-        insertFluid(tank, fluid, item, inputSlot, outputSlot);
-    }
-
-    protected void extractFluid(SingleVariantStorage<FluidVariant> tank, FlowableFluid fluid, Item item, int inputSlot, int outputSlot)
-    {
-        try (Transaction transaction = Transaction.openOuter())
-        {
-            tank.extract(FluidVariant.of(fluid),
-                    FluidUtils.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            transaction.commit();
-
-            this.removeStack(inputSlot, 1);
-
-            if(item != null)
-                this.setStack(outputSlot, new ItemStack(item, getStack(outputSlot).getCount() + 1));
-        }
-    }
-
-    private void insertFluid(SingleVariantStorage<FluidVariant> tank, FlowableFluid fluid, Item item, int inputSlot, int outputSlot)
-    {
-        try (Transaction transaction = Transaction.openOuter())
-        {
-
-            tank.insert(FluidVariant.of(fluid),
-                    FluidUtils.convertDropletsToMb(FluidConstants.BLOCK), transaction);
-            transaction.commit();
-
-            this.removeStack(inputSlot, 1);
-            if (item != null)
-                this.setStack(outputSlot, new ItemStack(item, getStack(outputSlot).getCount() + 1));
-        }
-    }
-
-    protected boolean isTankReceivable(SingleVariantStorage<FluidVariant> tank)
-    {
-        return tank.amount <= tank.getCapacity() - 1000;
-    }
-
-    protected boolean hasFluidSourceInSlot(int slotIndex, Item item)
-    {
-        return getStack(slotIndex).isOf(item);
-    }
-
-    protected boolean isItemStackCompatibleWithTank(SingleVariantStorage<FluidVariant> tank, FlowableFluid fluid, Item item, int slotIndex)
-    {
-        return (getStack(slotIndex).isOf(item) && (tank.variant.isOf(fluid) || isTankEmpty(tank)));
-    }
-
-    protected boolean isItemStackLiquidBucket(int slotIndex, Item item)
-    {
-        return getStack(slotIndex).isOf(item);
-    }
-
-    protected boolean isOutputSlotEmptyOrReceivable(int slotIndex)
-    {
-        return this.getStack(slotIndex).isEmpty() ||
-                this.getStack(slotIndex).getCount() < this.getStack(slotIndex).getMaxCount();
-    }
 
     protected <C extends Inventory, T extends Recipe<C>> boolean hasRecipe(RecipeType<T> type, int outputSlot)
     {
@@ -234,7 +147,7 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
         return false;
     }
 
-    protected boolean hasEnoughFluid(SingleVariantStorage<FluidVariant> tank, int amount)
+    protected boolean hasEnoughFluid(SingleVariantStorage<FluidVariant> tank, long amount)
     {
         return tank.amount >= amount;
     }
@@ -259,7 +172,7 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
         this.progress = 0;
     }
 
-    protected void useFluid(SingleVariantStorage<FluidVariant> tank, int amount)
+    protected void useFluid(SingleVariantStorage<FluidVariant> tank, long amount)
     {
         try (Transaction transaction = Transaction.openOuter())
         {
@@ -294,15 +207,4 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
 
         return getWorld().getRecipeManager().getFirstMatch(type, (C)inv, getWorld());
     }
-
-    /*private Optional<RecipeEntry<InfusingStationCraftingRecipe>> getCurrentRecipe()
-    {
-        SimpleInventory inv = new SimpleInventory(this.size());
-        for (int i = 0; i < this.size(); i++)
-        {
-            inv.setStack(i, this.getStack(i));
-        }
-
-        return getWorld().getRecipeManager().getFirstMatch(ModRecipes.INFUSING_STATION_TYPE, inv, getWorld());
-    }*/
 }

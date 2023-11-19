@@ -17,7 +17,6 @@ public class BackpackInventory extends SimpleInventory
         super(getStacks(stack, SIZE).toArray(new ItemStack[SIZE]));
         itemStack = stack;
         this.SIZE = SIZE;
-
     }
 
     @Override
@@ -70,9 +69,8 @@ public class BackpackInventory extends SimpleInventory
     {
         NbtCompound compoundTag = usedStack.getSubNbt(getNBTTag());
         DefaultedList<ItemStack> itemStacks = DefaultedList.ofSize(SIZE, ItemStack.EMPTY);
-        if (compoundTag != null && compoundTag.contains("Items", 9)) {
+        if (compoundTag != null && compoundTag.contains("Items", 9))
             Inventories.readNbt(compoundTag, itemStacks);
-        }
         return itemStacks;
     }
 

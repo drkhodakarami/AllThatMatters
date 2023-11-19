@@ -54,10 +54,8 @@ public class ModArmorItem extends ArmorItem
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected)
     {
         if (!world.isClient())
-        {
             if (entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player))
                 evaluateArmorEffects(player);
-        }
 
         super.inventoryTick(stack, world, entity, slot, selected);
     }

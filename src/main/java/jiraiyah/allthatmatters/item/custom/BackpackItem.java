@@ -131,7 +131,6 @@ public class BackpackItem extends Item
 
     public static void openScreen(PlayerEntity user, ItemStack stack) {
         final var bp = (BackpackItem) stack.getItem();
-        // Getting existing UUID or generated new one
         var uuid = getOrBindUUID(stack);
 
         user.openHandledScreen(new ExtendedScreenHandlerFactory() {

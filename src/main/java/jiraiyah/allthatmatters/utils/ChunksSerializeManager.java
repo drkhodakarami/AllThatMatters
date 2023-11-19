@@ -61,23 +61,17 @@ public final class ChunksSerializeManager
         try
         {
             if (nonExistentFile(worldName))
-            {
                 return null;
-            }
+
             inputStream = new FileInputStream(getCompletePath(worldName));
             objectInputStream = new ObjectInputStream(inputStream);
             Object areasData = objectInputStream.readObject();
             inputStream.close();
             objectInputStream.close();
             if (areasData instanceof ChunkData)
-            {
                 return (ChunkData) areasData;
-            }
-            else
-            {
-                AllThatMatters.LOGGER.error("Unable to cast deserialized data to type class");
-                return null;
-            }
+            AllThatMatters.LOGGER.error("Unable to cast deserialized data to type class");
+            return null;
         }
         catch (Exception e)
         {

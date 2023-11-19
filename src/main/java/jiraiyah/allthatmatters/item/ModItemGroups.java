@@ -39,8 +39,6 @@ public class ModItemGroups
                         entries.add(ModItems.RAW_ENDERITE);
                         entries.add(ModBlocks.ENDERITE);
 
-                        //entries.add(ModFluids.MOLTEN_ENDERITE_BUCKET);
-
                         entries.add(ModItems.CAST_AXE);
                         entries.add(ModItems.CAST_BINDING);
                         entries.add(ModItems.CAST_GEAR);
@@ -252,6 +250,7 @@ public class ModItemGroups
                         entries.add(ModItems.PLATE_NETHERITE);
                         entries.add(ModItems.PLATE_RUBY);
                         entries.add(ModItems.PLATE_SAPPHIRE);
+                        entries.add(ModItems.PLATE_STONE);
 
                         entries.add(ModItems.REINFORCED_PLATE_AMETHYST);
                         entries.add(ModItems.REINFORCED_PLATE_CITRINE);

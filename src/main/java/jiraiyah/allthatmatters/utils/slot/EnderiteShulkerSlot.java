@@ -23,9 +23,7 @@ public class EnderiteShulkerSlot extends ShulkerBoxSlot
     public void setStack(ItemStack stack)
     {
         if (Block.getBlockFromItem(stack.getItem()) instanceof EnderiteShulkerBoxBlock)
-        {
             this.inventory.markDirty();
-        }
         super.setStack(stack);
     }
 }

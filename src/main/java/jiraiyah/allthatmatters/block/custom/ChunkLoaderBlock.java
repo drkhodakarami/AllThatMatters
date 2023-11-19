@@ -45,7 +45,6 @@ public class ChunkLoaderBlock extends BlockWithEntity
     static
     {
         FACING = HorizontalFacingBlock.FACING;
-        //FACING = FacingBlock.FACING;
     }
 
     public ChunkLoaderBlock()

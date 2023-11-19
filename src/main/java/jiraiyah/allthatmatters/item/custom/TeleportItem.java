@@ -83,7 +83,6 @@ public class TeleportItem extends Item
             dimensionName = dimensionName.substring(dimensionName.indexOf(':') + 1).replace('_', ' ');
             outputCoordinatesToChat(pos, dimensionName, player);
         }
-        //return super.useOnBlock(context);
         return ActionResult.SUCCESS;
     }
 

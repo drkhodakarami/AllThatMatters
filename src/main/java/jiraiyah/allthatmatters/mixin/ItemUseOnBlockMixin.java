@@ -42,13 +42,9 @@ public abstract class ItemUseOnBlockMixin
     {
         ItemStack stack = context.getStack();
         if(EnchantmentHelper.getLevel(Enchantments.MENDING, stack) != 0)
-        {
             if (stack.isIn(ItemTags.AXES) || stack.isIn(ItemTags.SHOVELS) || stack.isIn(ItemTags.HOES))
-            {
                 if (stack.getMaxDamage() - stack.getDamage() <= 1)
                     cir.setReturnValue(ActionResult.FAIL);
-            }
-        }
     }
 
     @ModifyReturnValue(at = @At("RETURN"), method = "isDamageable")

@@ -66,9 +66,7 @@ public class ForcedChunksUpdatePacket
         boolean state = buf.readBoolean();
         int size = buf.readInt();
         for (int i = 0; i < size; i++)
-        {
             chunks.add(SerializableChunkPos.read(buf));
-        }
         return new ForcedChunksUpdatePacket(x, z, state, chunks);
     }
 
@@ -87,9 +85,7 @@ public class ForcedChunksUpdatePacket
         int size = getChunksPos().size();
         buf.writeInt(size);
         for (SerializableChunkPos chunksPo : getChunksPos())
-        {
             chunksPo.write(buf);
-        }
     }
 
     public void onClientReceive(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender)
@@ -100,13 +96,11 @@ public class ForcedChunksUpdatePacket
             assert player != null;
             ScreenHandler screenHandler = player.currentScreenHandler;
             if (screenHandler != null)
-            {
                 if (screenHandler instanceof ChunkLoaderScreenHandler)
                 {
                     ChunkLoaderScreenHandler clHandler = (ChunkLoaderScreenHandler) screenHandler;
                     clHandler.refreshGUI(this);
                 }
-            }
         });
     }
 
@@ -120,14 +114,10 @@ public class ForcedChunksUpdatePacket
     public void onServerReceive(MinecraftServer server, ServerPlayerEntity playerEntity, ServerPlayNetworkHandler handler, PacketByteBuf buf, PacketSender sender)
     {
         for (SerializableChunkPos chunksPo : getChunksPos())
-        {
             PersistentChunks.forceLoadChunk(server, chunksPo, isState());
-        }
         List<ServerPlayerEntity> targets = server.getPlayerManager().getPlayerList();
         for (ServerPlayerEntity target : targets)
-        {
             sendTo(target);
-        }
     }
 
     public ArrayList<SerializableChunkPos> getChunksPos()

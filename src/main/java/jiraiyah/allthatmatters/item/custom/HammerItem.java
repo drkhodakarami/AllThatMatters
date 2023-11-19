@@ -49,7 +49,8 @@ public class HammerItem extends MiningToolItem
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable("allthatmatters.tooltip.hammer_size", this.radius, this.radius, this.depth).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
+        tooltip.add(Text.translatable("allthatmatters.tooltip.hammer_size",
+                this.radius, this.radius, this.depth).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
     }
 
     @Override
@@ -139,7 +140,6 @@ public class HammerItem extends MiningToolItem
             if (pos == blockPos || removedPos.contains(pos) || !canDestroy(targetState, world, pos))
                 continue;
 
-            // Throw event out there and let mods block us breaking this block
             EventResult eventResult = BlockEvent.BREAK.invoker().breakBlock(world, pos, targetState, (ServerPlayerEntity) miner, null);
             if (eventResult.isFalse())
                 continue;
@@ -161,9 +161,7 @@ public class HammerItem extends MiningToolItem
 
         if (damage != 0 && !player.isCreative())
             stack.damage(damage, miner, (livingEntityx) ->
-            {
-                livingEntityx.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
-            });
+                    livingEntityx.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
     }
 
     private boolean canDestroy(BlockState targetState, World world, BlockPos pos)
@@ -173,10 +171,6 @@ public class HammerItem extends MiningToolItem
 
         if(!this.isSuitableFor(targetState))
             return false;
-
-        /*if (toolMiningLevel < MiningLevelManager.getRequiredMiningLevel(state)) {
-            info.setReturnValue(false);
-        }*/
 
         if (targetState.isIn(ModTags.Blocks.HAMMER_NO_SMASHY))
             return false;

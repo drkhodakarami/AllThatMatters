@@ -50,9 +50,7 @@ public class BackpackScreen extends HandledScreen<BackpackScreenHandler>
         context.fill(7, 17, this.backgroundWidth - 10, this.backgroundHeight - 7, 0xFFC6C6C6);
 
         this.handler.slots.forEach(s ->
-        {
-            context.drawTexture(GENERIC_54, s.x - 1, s.y - 1, 7, 17, 18, 18);
-        });
+                context.drawTexture(GENERIC_54, s.x - 1, s.y - 1, 7, 17, 18, 18));
 
         context.getMatrices().pop();
     }

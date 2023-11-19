@@ -28,8 +28,9 @@ public class ModMessages
 
     public static void registerC2SPackets()
     {
-        ServerPlayNetworking.registerGlobalReceiver(ForcedChunksUpdatePacket.PACKET_ID, (server, servPlayer, handler, buf, sender) ->
-                ForcedChunksUpdatePacket.read(buf).onServerReceive(server, servPlayer, handler, buf, sender));
+        ServerPlayNetworking.registerGlobalReceiver(ForcedChunksUpdatePacket.PACKET_ID,
+                (server, servPlayer, handler, buf, sender) ->
+                    ForcedChunksUpdatePacket.read(buf).onServerReceive(server, servPlayer, handler, buf, sender));
     }
 
     public static void registerS2CPackets()
@@ -46,10 +47,5 @@ public class ModMessages
     {
         for (ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, pos))
             ServerPlayNetworking.send(player, message, data);
-    }
-
-    public static void sendToServerPlayerEntities(Identifier message, PacketByteBuf data)
-    {
-        ClientPlayNetworking.send(message, data);
     }
 }

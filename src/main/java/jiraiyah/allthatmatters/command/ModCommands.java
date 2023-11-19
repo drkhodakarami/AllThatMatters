@@ -53,26 +53,17 @@ public class ModCommands
                 int size = loaders.size();
                 StringBuilder response = new StringBuilder("Found " + size + " placed loaders ");
                 if (!dimension.equals("all"))
-                {
                     response.append("in dimension: ").append(dimension).append("\n");
-
-                }
                 else
-                {
                     response.append(": \n");
-                }
                 for (int i = 0; i < size; i++)
                 {
                     SerializableChunkPos current = loaders.get(i);
                     response.append("[").append(current.getX()).append(", ").append(current.getZ()).append("]");
                     if (dimension.equals("all"))
-                    {
                         response.append(" in ").append(current.getDimension());
-                    }
                     if (i < size - 1)
-                    {
                         response.append(", ");
-                    }
                 }
                 ctx.getSource().sendFeedback(() -> Text.of(response.toString()), false);
                 return 1;
@@ -94,18 +85,12 @@ public class ModCommands
             String remaining = builder.getRemaining().toLowerCase(Locale.ROOT);
 
             if (list.isEmpty())
-            { // If the list is empty then return no suggestions
-                return Suggestions.empty(); // No suggestions
-            }
+                return Suggestions.empty();
 
             for (String str : list)
-            { // Iterate through the supplied list
                 if (str.toLowerCase(Locale.ROOT).startsWith(remaining))
-                {
-                    builder.suggest(str); // Add every single entry to suggestions list.
-                }
-            }
-            return builder.buildFuture(); // Create the CompletableFuture containing all the suggestions
+                    builder.suggest(str);
+            return builder.buildFuture();
         }
 
         private static ArrayList<SerializableChunkPos> getLoadersInDimension(CommandContext<ServerCommandSource> ctx, String dimension)
@@ -113,22 +98,14 @@ public class ModCommands
             ArrayList<SerializableChunkPos> res = new ArrayList<>();
             ChunkData areasData = ChunksSerializeManager.deserialize(ctx.getSource().getWorld().getServer().getSaveProperties().getLevelName());
             if (areasData == null)
-            {
                 return res;
-            }
             ArrayList<SerializableChunkPos> all = areasData.getLoadersChunks();
             if (dimension.equals("all"))
-            {
                 return all;
-            }
 
             for (SerializableChunkPos chunk : all)
-            {
                 if (chunk.getDimension().equals(dimension))
-                {
                     res.add(chunk);
-                }
-            }
             return res;
         }
     }

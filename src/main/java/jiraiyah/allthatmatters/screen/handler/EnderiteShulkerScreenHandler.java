@@ -2,9 +2,9 @@ package jiraiyah.allthatmatters.screen.handler;
 
 import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
 import jiraiyah.allthatmatters.utils.slot.FluidInputSlot;
 import jiraiyah.allthatmatters.utils.slot.FluidOutputSlot;
+import jiraiyah.fluidutils.FluidStack;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
@@ -78,18 +78,12 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
         if (columns > 9)
             offsetX = 34;
         for (int row = 0; row < 3; ++row)
-        {
             for (int collumn = 0; collumn < 9; ++collumn)
-            {
                 this.addSlot(new Slot(playerInventory, collumn + row * 9 + 9, largeInvXOffset + offsetX + collumn * 18, offsetY + (row * 18)));
-            }
-        }
 
         offsetY += (3 * 18) + 4;
         for (int row = 0; row < 9; ++row)
-        {
             this.addSlot(new Slot(playerInventory, row, largeInvXOffset + offsetX + row * 18, offsetY));
-        }
 
         this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.LEFT_FLUID_INPUT_SLOT, 16, 194));
         this.addSlot(new FluidInputSlot(inventory, EnderiteShulkerBlockEntity.RIGHT_FLUID_INPUT_SLOT, 198, 194));
@@ -136,9 +130,7 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             if (index < this.rows * this.columns)
             {
                 if (!this.insertItem(itemStack2, this.rows * this.columns, this.slots.size(), true))
-                {
                     return ItemStack.EMPTY;
-                }
             }
             else if (!this.insertItem(itemStack2, 0, this.rows * columns, false))
             {
@@ -146,13 +138,9 @@ public class EnderiteShulkerScreenHandler extends ScreenHandler
             }
 
             if (itemStack2.isEmpty())
-            {
                 slot.setStack(ItemStack.EMPTY);
-            }
             else
-            {
                 slot.markDirty();
-            }
         }
 
         return itemStack;

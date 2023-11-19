@@ -1,12 +1,13 @@
 package jiraiyah.allthatmatters.screen.custom;
 
 import io.github.cottonmc.cotton.gui.client.CottonInventoryScreen;
+import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import jiraiyah.allthatmatters.block.entity.SmelteryBE;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
-import jiraiyah.allthatmatters.utils.fluid.FluidStackRenderer;
 import jiraiyah.allthatmatters.utils.screen.MouseUtil;
+import jiraiyah.fluidutils.FluidStack;
+import jiraiyah.fluidutils.FluidStackRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
@@ -50,7 +51,7 @@ public class SmelteryScreen extends CottonInventoryScreen<SmelteryScreenHandler>
     private void renderFLuidTooltip(DrawContext context, int mouseX, int mouseY, int x, int y, FluidStack fluidStack, int offsetX, int offsetY, FluidStackRenderer renderer)
     {
         if(isMouseAboveAre(mouseX, mouseY, x, y, offsetX, offsetY, renderer))
-            context.drawTooltip(textRenderer, renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC),
+            context.drawTooltip(textRenderer, renderer.getTooltip(fluidStack, TooltipContext.Default.BASIC, AllThatMatters.ModID),
                     Optional.empty(), mouseX - x, mouseY - y);
     }
 

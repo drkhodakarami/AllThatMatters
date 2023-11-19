@@ -1,20 +1,21 @@
 package jiraiyah.allthatmatters.block.custom;
 
 
-import jiraiyah.allthatmatters.utils.interfaces.UpgradedShulker;
-import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
+import jiraiyah.allthatmatters.block.entity.EnderiteShulkerBlockEntity;
 import jiraiyah.allthatmatters.screen.handler.EnderiteShulkerScreenHandler;
+import jiraiyah.allthatmatters.utils.interfaces.UpgradedShulker;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.mob.ShulkerEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -60,16 +61,6 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
                 (world1, pos, state1, blockEntity) -> blockEntity.customTick(world1, pos, state1));
     }
 
-    @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack)
-    {
-        super.onPlaced(world, pos, state, placer, itemStack);
-        if (itemStack.hasNbt())
-        {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-        }
-    }
-
     @Environment(EnvType.CLIENT)
     public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state)
     {
@@ -81,13 +72,9 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
         if (world.isClient)
-        {
             return ActionResult.SUCCESS;
-        }
         else if (player.isSpectator())
-        {
             return ActionResult.CONSUME;
-        }
         else
         {
             BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -100,9 +87,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
                     bl2 = world.isSpaceEmpty(box);
                 }
                 else
-                {
                     bl2 = true;
-                }
 
                 if (bl2)
                 {
@@ -115,9 +100,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
                 return ActionResult.CONSUME;
             }
             else
-            {
                 return ActionResult.PASS;
-            }
         }
     }
 
@@ -131,23 +114,15 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
             {
                 ItemStack itemStack = new ItemStack(this);
                 if (!shulkerBoxBlockEntity.isEmpty())
-                {
                     blockEntity.setStackNbt(itemStack);
-                }
                 if (shulkerBoxBlockEntity.hasCustomName())
-                {
                     itemStack.setCustomName(shulkerBoxBlockEntity.getCustomName());
-                }
-                /*if (shulkerBoxBlockEntity.hasUpgrades())
-                    itemStack.setSubNbt(KEY, shulkerBoxBlockEntity.getUpgrades());*/
                 ItemEntity itemEntity = new ItemEntity(world, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, itemStack);
                 itemEntity.setToDefaultPickupDelay();
                 world.spawnEntity(itemEntity);
             }
             else
-            {
                 shulkerBoxBlockEntity.checkLootInteraction(player);
-            }
         }
 
         super.onBreak(world, pos, state, player);
@@ -173,9 +148,7 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
         if (compoundTag != null)
         {
             if (compoundTag.contains("LootTable", 8))
-            {
                 tooltip.add(Text.translatable("upgradedenderiteshulkers.tooltip.?"));
-            }
 
             if (compoundTag.contains("Items", 9))
             {
@@ -200,12 +173,9 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
                 }
 
                 if (j - i > 0)
-                {
                     tooltip.add((Text.translatable("container.shulkerBox.more", j - i)).formatted(Formatting.ITALIC));
-                }
             }
         }
-
     }
 
     @Override
@@ -216,6 +186,6 @@ public class EnderiteShulkerBoxBlock extends ShulkerBoxBlock implements Upgraded
 
     public int getInventorySize()
     {
-        return 108;
+        return 112;
     }
 }

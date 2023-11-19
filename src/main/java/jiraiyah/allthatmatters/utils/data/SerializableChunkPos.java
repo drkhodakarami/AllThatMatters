@@ -60,9 +60,7 @@ public class SerializableChunkPos implements Serializable
     public boolean equals(Object obj)
     {
         if (obj instanceof SerializableChunkPos other)
-        {
             return this.getDimension().equals(other.getDimension()) && x == other.getX() && z == other.getZ();
-        }
         return super.equals(obj);
     }
 
@@ -106,17 +104,11 @@ public class SerializableChunkPos implements Serializable
     public RegistryKey<World> getDimensionRegistryKey()
     {
         if (dimension.equals(World.OVERWORLD.getValue().getPath()))
-        {
             return World.OVERWORLD;
-        }
         else if (dimension.equals(World.NETHER.getValue().getPath()))
-        {
             return World.NETHER;
-        }
         else if (dimension.equals(World.END.getValue().getPath()))
-        {
             return World.END;
-        }
         return null;
     }
 }

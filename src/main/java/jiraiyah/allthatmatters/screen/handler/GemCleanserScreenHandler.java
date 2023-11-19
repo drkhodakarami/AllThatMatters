@@ -11,7 +11,7 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.block.entity.GemCleanserBE;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
-import jiraiyah.allthatmatters.utils.fluid.FluidStack;
+import jiraiyah.fluidutils.FluidStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Items;

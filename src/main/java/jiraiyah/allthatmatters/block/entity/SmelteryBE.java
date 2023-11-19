@@ -10,7 +10,7 @@ import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
 import jiraiyah.allthatmatters.utils.ModTags;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
-import jiraiyah.allthatmatters.utils.fluid.FluidUtils;
+import jiraiyah.fluidutils.FluidUtils;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
@@ -22,7 +22,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -72,18 +71,19 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
 
     public static final int DELEGATE_SIZE = 2;
 
-    public static long FLUID_CAPACITY = FluidUtils.convertDropletsToMb(FluidConstants.BLOCK) * 20; // 20k mb
-    public static final int FLUID_PER_INGOT_CRAFT = 25; //mb amount
-    public static final int FLUID_PER_TOOL_CRAFT = 100; //mb amount
-    public static final int FLUID_PER_BINDING_CRAFT = 25; //mb amount
-    public static final int FLUID_PER_GEAR_CRAFT = 250; //mb amount
-    public static final int FLUID_PER_GEM_CRAFT = 100; //mb amount
-    public static final int FLUID_PER_HANDLE_CRAFT = 10; //mb amount
-    public static final int FLUID_PER_NUGGET_CRAFT = 25; //mb amount
-    public static final int FLUID_PER_PLATE_CRAFT = 250; //mb amount
-    public static final int FLUID_PER_REINFORCED_PLATE_CRAFT = 500; //mb amount
-    public static final int FLUID_PER_ROD_CRAFT = 100; //mb amount
-    public static final int FLUID_PER_WIRE_CRAFT = 10; //mb amount
+    public static long FLUID_CAPACITY = FluidConstants.BUCKET * 20; // 20k mb
+
+    public static final long FLUID_PER_INGOT_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
+    public static final long FLUID_PER_TOOL_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
+    public static final long FLUID_PER_BINDING_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
+    public static final long FLUID_PER_GEAR_CRAFT = FluidUtils.MILLI_BUCKET * 250; //mb amount
+    public static final long FLUID_PER_GEM_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
+    public static final long FLUID_PER_HANDLE_CRAFT = FluidUtils.MILLI_BUCKET * 10; //mb amount
+    public static final long FLUID_PER_NUGGET_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
+    public static final long FLUID_PER_PLATE_CRAFT = FluidUtils.MILLI_BUCKET * 250; //mb amount
+    public static final long FLUID_PER_REINFORCED_PLATE_CRAFT = FluidUtils.MILLI_BUCKET * 500; //mb amount
+    public static final long FLUID_PER_ROD_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
+    public static final long FLUID_PER_WIRE_CRAFT = FluidUtils.MILLI_BUCKET * 10; //mb amount
 
     public static final int REINFORCED_INGREDIENT_COUNT = 4;
 
@@ -107,9 +107,7 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
             markDirty();
 
             if (!world.isClient())
-            {
                 sendFluidPacket();
-            }
         }
     };
 
@@ -224,9 +222,9 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("atm.infusing_station.progress", progress);
-        nbt.put("atm.infusing_station.fluid_variant", fluidStorage.variant.toNbt());
-        nbt.putLong("atm.infusing_station.fluid_level", fluidStorage.amount);
+        nbt.putInt("atm.smeltery.progress", progress);
+        nbt.put("atm.smeltery.fluid_variant", fluidStorage.variant.toNbt());
+        nbt.putLong("atm.smeltery.fluid_level", fluidStorage.amount);
     }
 
     @Override
@@ -234,9 +232,9 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("atm.infusing_station.progress");
-        fluidStorage.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("atm.infusing_station.fluid_variant"));
-        fluidStorage.amount = nbt.getLong("atm.infusing_station.fluid_level");
+        progress = nbt.getInt("atm.smeltery.progress");
+        fluidStorage.variant = FluidVariant.fromNbt((NbtCompound) nbt.get("atm.smeltery.fluid_variant"));
+        fluidStorage.amount = nbt.getLong("atm.smeltery.fluid_level");
     }
 
     @Override
@@ -248,32 +246,13 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     @Override
     protected void handleFluidTick(World world, BlockPos pos, BlockState state)
     {
-        if (!this.isTankEmpty(this.fluidStorage) && isLiquidOutputReceivable(FLUID_OUTPUT_SLOT))
-        {
-            if (this.isItemStackEmptyBucket(FLUID_INPUT_SLOT))
-            {
-                this.transferFromFluidTank(this.fluidStorage, Fluids.LAVA, Items.LAVA_BUCKET, FLUID_INPUT_SLOT, FLUID_OUTPUT_SLOT);
-                markDirty(world, pos, state);
-            }
-        }
-        if ((this.isTankEmpty(this.fluidStorage) || this.isTankReceivable(this.fluidStorage)) && isLiquidOutputReceivable(FLUID_OUTPUT_SLOT))
-        {
-            if (this.hasFluidSourceInSlot(FLUID_INPUT_SLOT, Items.LAVA_BUCKET))
-            {
-                if (this.isItemStackCompatibleWithTank(this.fluidStorage, Fluids.LAVA, Items.LAVA_BUCKET, FLUID_INPUT_SLOT))
-                {
-                    if (this.isItemStackLiquidBucket(FLUID_INPUT_SLOT, Items.LAVA_BUCKET))
-                        this.transferToFluidTank(this.fluidStorage, Fluids.LAVA, Items.BUCKET, FLUID_INPUT_SLOT, FLUID_OUTPUT_SLOT);
-                    markDirty(world, pos, state);
-                }
-            }
-        }
+        FluidUtils.handleTankTransfer(world, pos, this, this.fluidStorage, FLUID_INPUT_SLOT, FLUID_OUTPUT_SLOT);
     }
 
     @Override
     protected void handleItemCraftingTick(World world, BlockPos pos, BlockState state)
     {
-        if (this.isOutputSlotEmptyOrReceivable(BASE_OUTPUT_SLOT))
+        if (FluidUtils.isOutputReceivable(this, BASE_OUTPUT_SLOT))
         {
             if (this.hasRecipe(ModRecipes.SMELTERY_TYPE, BASE_OUTPUT_SLOT))
             {
@@ -310,19 +289,13 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
 
     private boolean hasEnoughIngredient(int baseInputSlot)
     {
-        if(getStack(CAST_SLOT).isOf(ModItems.CAST_PLATE) && getStack(BASE_INPUT_SLOT).isIn(ModTags.Items.PLATE))
-            return getStack(BASE_INPUT_SLOT).getCount() >= REINFORCED_INGREDIENT_COUNT;
-        return getStack(BASE_INPUT_SLOT).getCount() >= 1;
+        if(getStack(CAST_SLOT).isOf(ModItems.CAST_PLATE))
+            return getStack(baseInputSlot).getCount() >= REINFORCED_INGREDIENT_COUNT;
+        return getStack(baseInputSlot).getCount() >= 1;
     }
 
     @Override
-    protected boolean hasEnoughFluid(SingleVariantStorage<FluidVariant> tank, int amount)
-    {
-        return tank.amount >= getFlidUsageAmount();
-    }
-
-    @Override
-    protected void useFluid(SingleVariantStorage<FluidVariant> tank, int amount)
+    protected void useFluid(SingleVariantStorage<FluidVariant> tank, long amount)
     {
         try (Transaction transaction = Transaction.openOuter())
         {
@@ -374,12 +347,6 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
                 markDirty(world, pos, state);
             }
         }*/
-    }
-
-    @Override
-    protected boolean hasFluidSourceInSlot(int slotIndex, Item item)
-    {
-        return getStack(slotIndex).isOf(item);
     }
 
     @Override
@@ -438,9 +405,9 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
         ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.SMELTERY_FLUID_SYNC, data);
     }
 
-    private int getFlidUsageAmount()
+    private long getFlidUsageAmount()
     {
-        int finalAmount = 0;
+        long finalAmount = 0;
         if(getStack(CAST_SLOT).isOf(ModItems.CAST_INGOT) || getStack(CAST_SLOT).isOf(ModItems.CAST_WOOD_INGOT))
             finalAmount = FLUID_PER_INGOT_CRAFT;
         else if(getStack(CAST_SLOT).isOf(ModItems.CAST_AXE) ||

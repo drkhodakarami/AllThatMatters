@@ -46,9 +46,7 @@ public class ModBlockEntities
         List<EnderiteShulkerBoxBlock> boxes = new ArrayList<>();
         boxes.add(ModBlocks.getShulkerBlock(null));
         for (DyeColor color : DyeColor.values())
-        {
             boxes.add(ModBlocks.getShulkerBlock(color));
-        }
 
         ENDERITE_SHULKER =
                 Registry.register(Registries.BLOCK_ENTITY_TYPE, AllThatMatters.ModID + ":shulker",

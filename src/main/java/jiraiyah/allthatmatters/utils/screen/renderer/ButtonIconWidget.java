@@ -1,7 +1,6 @@
 package jiraiyah.allthatmatters.utils.screen.renderer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.render.GameRenderer;
@@ -29,7 +28,6 @@ public class ButtonIconWidget extends ButtonWidget
     @Override
     protected void renderButton(DrawContext context, int mouseX, int mouseY, float delta)
     {
-        final MinecraftClient client = MinecraftClient.getInstance();
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, this.alpha);
         int i = this.getYImage(this.isHovered());
@@ -39,8 +37,6 @@ public class ButtonIconWidget extends ButtonWidget
         RenderSystem.setShaderTexture(0, WIDGETS_TEXTURE);
         context.drawTexture(icon, this.getX(), this.getY(), 0, 46 + i * 20, this.width / 2, this.height);
         context.drawTexture(icon, this.getX() + this.width / 2, this.getY(), 200 - this.width / 2, 46 + i * 20, this.width / 2, this.height);
-
-        //this.renderBackground(matrices, client, mouseX, mouseY);
 
         RenderSystem.setShaderTexture(0, icon);
         context.drawTexture(icon, this.getX() + 2, this.getY() + 2, this.ix, this.iy, 16, 16);

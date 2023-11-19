@@ -4,12 +4,8 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.utils.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -77,12 +73,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.CAST_PRESS)
                 .add(ModBlocks.SMELTERY);
 
-        /*getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);*/
-
-        /*getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE);*/
-
-        /*getOrCreateTagBuilder(BlockTags.HOE_MINEABLE);*/
-
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.ORE_DEEP_CITRINE)
                 .add(ModBlocks.ORE_DEEP_RUBY)
@@ -114,9 +104,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.ORE_ENDERITE);
-
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")));
 
         getOrCreateTagBuilder(BlockTags.COPPER_ORES)
                 .add(ModBlocks.ORE_NETHER_COPPER);
