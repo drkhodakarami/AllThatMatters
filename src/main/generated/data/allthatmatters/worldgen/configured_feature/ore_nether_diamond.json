@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "allthatmatters:ore_nether_sapphire"
+          "Name": "allthatmatters:ore_nether_diamond"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

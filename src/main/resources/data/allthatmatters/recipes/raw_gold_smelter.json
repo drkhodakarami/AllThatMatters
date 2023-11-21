@@ -2,7 +2,7 @@
   "type": "allthatmatters:smeltery",
   "ingredients": [
     {
-      "tag": "minecraft:raw_gold"
+      "item": "minecraft:raw_gold"
     },
     {
       "item": "allthatmatters:cast_ingot"

@@ -24,21 +24,27 @@ public class ModArmorItem extends ArmorItem
         MATERIAL_TO_EFFECT_MAP = new HashMap<>();
         addValues(ModArmorMaterial.EMERALD, new StatusEffectInstance(StatusEffects.HERO_OF_THE_VILLAGE, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.EMERALD, new StatusEffectInstance(StatusEffects.BAD_OMEN, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.EMERALD, new StatusEffectInstance(StatusEffects.REGENERATION, 1200, 3, false, false, true));
 
         addValues(ModArmorMaterial.CITRINE, new StatusEffectInstance(StatusEffects.HASTE, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.CITRINE, new StatusEffectInstance(StatusEffects.INVISIBILITY, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.CITRINE, new StatusEffectInstance(StatusEffects.SATURATION, 1200, 3, false, false, true));
 
         addValues(ModArmorMaterial.AMETHYST, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.AMETHYST, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.AMETHYST, new StatusEffectInstance(StatusEffects.LUCK, 1200, 3, false, false, true));
 
+        addValues(ModArmorMaterial.RUBY, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.RUBY, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.RUBY, new StatusEffectInstance(StatusEffects.LUCK, 1200, 3, false, false, true));
 
         addValues(ModArmorMaterial.SAPPHIRE, new StatusEffectInstance(StatusEffects.CONDUIT_POWER, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.SAPPHIRE, new StatusEffectInstance(StatusEffects.DOLPHINS_GRACE, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.SAPPHIRE, new StatusEffectInstance(StatusEffects.INVISIBILITY, 1200, 3, false, false, true));
 
         addValues(ModArmorMaterial.COPPER, new StatusEffectInstance(StatusEffects.SPEED, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.COPPER, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 1200, 3, false, false, true));
+        addValues(ModArmorMaterial.COPPER, new StatusEffectInstance(StatusEffects.SLOW_FALLING, 1200, 3, false, false, true));
 
         addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(StatusEffects.LUCK, 1200, 3, false, false, true));
         addValues(ModArmorMaterial.ENDERITE, new StatusEffectInstance(StatusEffects.NIGHT_VISION, 1200, 3, false, false, true));

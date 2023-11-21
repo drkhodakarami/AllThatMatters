@@ -1,6 +1,18 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_gear_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gear_sapphire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_reinforced_plate_sapphire": {
       "conditions": {
         "items": [
@@ -23,7 +35,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_reinforced_plate_sapphire"
+      "has_reinforced_plate_sapphire",
+      "has_gear_sapphire"
     ]
   ],
   "rewards": {

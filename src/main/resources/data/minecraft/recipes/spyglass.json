@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "X": {
+      "item": "minecraft:copper_ingot"
+    },
+    "I": {
+      "item": "allthatmatters:rod_copper"
+    }
+  },
+  "pattern": [
+    " # ",
+    " I ",
+    " X "
+  ],
+  "result": {
+    "item": "minecraft:spyglass"
+  },
+  "show_notification": true
+}

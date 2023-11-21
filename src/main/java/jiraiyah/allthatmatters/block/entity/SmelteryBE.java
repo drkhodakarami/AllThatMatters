@@ -1,7 +1,6 @@
 package jiraiyah.allthatmatters.block.entity;
 
 import io.github.cottonmc.cotton.gui.PropertyDelegateHolder;
-import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlockEntities;
 import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
 import jiraiyah.allthatmatters.item.ModItems;
@@ -256,7 +255,6 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
         {
             if (this.hasRecipe(ModRecipes.SMELTERY_TYPE, BASE_OUTPUT_SLOT))
             {
-                AllThatMatters.LOGGER.info("Has Recipe");
                 if(this.hasEnoughIngredient(BASE_INPUT_SLOT))
                 {
                     if (this.shouldUseFluid() &&

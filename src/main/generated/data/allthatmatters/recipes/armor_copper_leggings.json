@@ -2,12 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "G": {
+      "item": "allthatmatters:gear_copper"
+    },
     "I": {
       "item": "allthatmatters:reinforced_plate_copper"
     }
   },
   "pattern": [
-    "III",
+    "IGI",
     "I I",
     "I I"
   ],

@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.utils;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -36,6 +37,7 @@ public class ModTags
         public static final TagKey<Item> REINFORCED = createCommonTag("reinforced_plates");
         public static final TagKey<Item> ROD = createCommonTag("rods");
         public static final TagKey<Item> SMELTERY = createTag("smeltery");
+        public static final TagKey<Item> NO_ENCHANT = createTag("only_mending_allowed");
 
         private static TagKey<Item> createTag(String name)
         {
@@ -45,6 +47,16 @@ public class ModTags
         private static TagKey<Item> createCommonTag(String name)
         {
             return TagKey.of(RegistryKeys.ITEM, new Identifier("c", name));
+        }
+    }
+
+    public static class Entities
+    {
+        public static final TagKey<EntityType<?>> RUBY_SWORD_IGNITES = createTag("ruby_sword_ignites");
+
+        private static TagKey<EntityType<?>> createTag(String name)
+        {
+            return TagKey.of(RegistryKeys.ENTITY_TYPE, AllThatMatters.identifier(name));
         }
     }
 }

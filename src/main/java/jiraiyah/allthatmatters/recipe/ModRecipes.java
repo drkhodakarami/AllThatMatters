@@ -16,6 +16,9 @@ public class ModRecipes
     public static final RecipeType<SmelteryRecipe> SMELTERY_TYPE = new RecipeType<>(){};
     public static final RecipeSerializer<SmelteryRecipe> SMELTERY_SERIALIZER = new SmelteryRecipe.Serializer();
 
+    public static final String GEM_CLEANSER_ID = "gem_cleanser";
+    public static final String SMELTERY_ID = "smeltery";
+
     private ModRecipes()
     {
         throw new AssertionError();
@@ -25,11 +28,11 @@ public class ModRecipes
     {
         AllThatMatters.LOGGER.info(">>> Registering Recipes");
 
-        register("gem_cleanser", GEM_CLEANSE_TYPE);
-        register("gem_cleanser", GEM_CLEANSER_SERIALIZER);
+        register(GEM_CLEANSER_ID, GEM_CLEANSE_TYPE);
+        register(GEM_CLEANSER_ID, GEM_CLEANSER_SERIALIZER);
 
-        register("smeltery", SMELTERY_TYPE);
-        register("smeltery", SMELTERY_SERIALIZER);
+        register(SMELTERY_ID, SMELTERY_TYPE);
+        register(SMELTERY_ID, SMELTERY_SERIALIZER);
     }
 
     private static void register(String name, RecipeSerializer<?> serializer)

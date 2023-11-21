@@ -18,7 +18,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -273,11 +272,10 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         }*/
     }
 
-    @Override
-    protected boolean hasFluidSourceInSlot(int slotIndex, Item item)
+    /*protected boolean hasFluidSourceInSlot(int slotIndex, Item item)
     {
         return getStack(slotIndex).isOf(item);
-    }
+    }*/
 
     @Override
     protected boolean shouldUseFluid()

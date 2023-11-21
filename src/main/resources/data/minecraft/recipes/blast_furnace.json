@@ -12,13 +12,16 @@
       "item": "allthatmatters:rod_iron"
     },
     "X": {
-      "item": "minecraft:furnace"
+      "item": "allthatmatters:gear_stone"
+    },
+    "G": {
+      "item": "allthatmatters:gear_ruby"
     }
   },
   "pattern": [
     "III",
     "RXR",
-    "###"
+    "#G#"
   ],
   "result": {
     "item": "minecraft:blast_furnace"

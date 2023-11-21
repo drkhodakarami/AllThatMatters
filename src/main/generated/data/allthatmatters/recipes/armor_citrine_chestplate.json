@@ -2,12 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "G": {
+      "item": "allthatmatters:gear_gold"
+    },
     "I": {
       "item": "allthatmatters:reinforced_plate_citrine"
     }
   },
   "pattern": [
-    "I I",
+    "IGI",
     "III",
     "III"
   ],

@@ -70,11 +70,6 @@ dependencies {
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 
-    include modApi("teamreborn:energy:${project.energy_api_version}")
-    {
-        transitive = false
-    }
-
     modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
 
     include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}")))
@@ -83,9 +78,6 @@ dependencies {
     include "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
 
     modImplementation "com.github.drkhodakarami:fluidutils:${fluidutils_version}"
-
-    modRuntimeOnly "curse.maven:reborncore-237903:4786770"
-    modRuntimeOnly "curse.maven:techreborn-233564:4786771"
 }
 
 processResources {

@@ -2,13 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "G": {
+      "item": "allthatmatters:gear_ruby"
+    },
     "I": {
       "item": "allthatmatters:reinforced_plate_ruby"
     }
   },
   "pattern": [
     "III",
-    "I I",
+    "IGI",
     "   "
   ],
   "result": {

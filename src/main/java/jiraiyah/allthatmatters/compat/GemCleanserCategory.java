@@ -2,6 +2,7 @@ package jiraiyah.allthatmatters.compat;
 
 import jiraiyah.allthatmatters.AllThatMatters;
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.recipe.ModRecipes;
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
@@ -11,6 +12,8 @@ import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.util.EntryStacks;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -22,10 +25,10 @@ import java.util.List;
 public class GemCleanserCategory implements DisplayCategory<BasicDisplay>
 {
     public static final Identifier TEXTURE =
-            AllThatMatters.identifier("textures/gui/container/gem_cleanser.png");
+            AllThatMatters.identifier("textures/gui/gem_cleanser.png");
 
     public static final CategoryIdentifier<GemCleanserDisplay> GEM_CLEANSER =
-            CategoryIdentifier.of(AllThatMatters.ModID, "gem_cleanser");
+            CategoryIdentifier.of(AllThatMatters.ModID, ModRecipes.GEM_CLEANSER_ID);
 
     @Override
     public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier()
@@ -36,7 +39,7 @@ public class GemCleanserCategory implements DisplayCategory<BasicDisplay>
     @Override
     public Text getTitle()
     {
-        return Text.translatable("gem_cleanser.gem_cleanser");
+        return AllThatMatters.translate(ModRecipes.GEM_CLEANSER_ID);
     }
 
     @Override
@@ -58,6 +61,14 @@ public class GemCleanserCategory implements DisplayCategory<BasicDisplay>
         widgets.add(Widgets.createSlot(new Point(startPoint.x + 117, startPoint.y + 60))
                 .markOutput().entries(display.getOutputEntries().get(0)));
 
+        var slot = Widgets.createSlot(new Rectangle(startPoint.x + 85, startPoint.y + 14, 18, 63));
+        slot.entry(EntryStacks.of(Fluids.WATER, FluidConstants.BUCKET * 20));
+        slot.disableBackground();
+
+        widgets.add(slot);
+
+        widgets.add(Widgets.createTooltip(new Rectangle(startPoint.x + 86, startPoint.y + 15, 16, 61),
+                AllThatMatters.translate("water")));
 
         return widgets;
     }

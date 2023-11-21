@@ -5,6 +5,7 @@ import jiraiyah.allthatmatters.block.ModBlocks;
 import jiraiyah.allthatmatters.command.ModCommands;
 import jiraiyah.allthatmatters.datagen.world.ModWorldGeneration;
 import jiraiyah.allthatmatters.effect.ModEffects;
+import jiraiyah.allthatmatters.event.KillingEntityHandler;
 import jiraiyah.allthatmatters.item.ModItemGroups;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.item.custom.BackpackItem;
@@ -12,6 +13,7 @@ import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
 import jiraiyah.allthatmatters.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerEntityCombatEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.MutableText;
@@ -25,8 +27,8 @@ import org.slf4j.LoggerFactory;
 // This is the flat world gen custom preset I always use
 // 5*minecraft:bedrock,30*minecraft:light_blue_wool,minecraft:light_blue_carpet;minecraft:plains;village
 
-//TODO : Smeltery compatibility for rei
-//TODO : Stone Plate for Redstone Logic items
+//TODO : Creeper no explosion
+//TODO : Tree Capitator for my mod's axes only
 public class AllThatMatters implements ModInitializer
 {
     public static final Identifier PACKET_RENAME_BACKPACK = identifier("packet_rename_backpack");
@@ -69,6 +71,8 @@ public class AllThatMatters implements ModInitializer
                         }
                     }
                 });
+
+        ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register(new KillingEntityHandler());
     }
 
     @NotNull

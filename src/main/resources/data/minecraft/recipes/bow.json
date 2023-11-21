@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:string"
+    },
+    "B": {
+      "item": "allthatmatters:binding"
+    }
+  },
+  "pattern": [
+    " #B",
+    "# X",
+    " #B"
+  ],
+  "result": {
+    "item": "minecraft:bow"
+  },
+  "show_notification": true
+}

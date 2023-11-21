@@ -50,7 +50,7 @@ public class ModItems
     public static final Item TOOL_COPPER_SHOVEL = registerItem("tool_copper_shovel",
             new ShovelItem(ModToolMaterial.COPPER, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_COPPER_SWORD = registerItem("tool_copper_sword",
-            new SwordItem(ModToolMaterial.COPPER, 5, 3, new FabricItemSettings()));
+            new CopperSword(ModToolMaterial.COPPER, 5, 3, new FabricItemSettings()));
     //endregion
 
     //region VANILLA HAMMERS
@@ -110,7 +110,7 @@ public class ModItems
     public static final Item TOOL_SAPPHIRE_SHOVEL = registerItem("tool_sapphire_shovel",
             new ShovelItem(ModToolMaterial.SAPPHIRE, 0, 0, new FabricItemSettings()));
     public static final Item TOOL_SAPPHIRE_SWORD = registerItem("tool_sapphire_sword",
-            new SwordItem(ModToolMaterial.SAPPHIRE, 5, 3, new FabricItemSettings()));
+            new SapphireSwordItem(ModToolMaterial.SAPPHIRE, 5, 3, new FabricItemSettings()));
     //endregion
 
     //region AMETHYST ARMOR

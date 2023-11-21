@@ -14,7 +14,10 @@
     "ServerPlayerGameModeMixin",
     "BlocksMixin",
     "AbstractBlockMixin",
-    "ItemUseOnBlockMixin"
+    "ItemUseOnBlockMixin",
+    "LivingEntityMixin",
+    "EndermanEntityMixin",
+    "AnvilScreenHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

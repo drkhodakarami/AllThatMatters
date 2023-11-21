@@ -4,11 +4,14 @@
   "key": {
     "I": {
       "item": "allthatmatters:plate_netherite"
+    },
+    "R": {
+      "item": "allthatmatters:reinforced_plate_netherite"
     }
   },
   "pattern": [
     "I I",
-    "I I"
+    "R R"
   ],
   "result": {
     "item": "minecraft:netherite_boots"

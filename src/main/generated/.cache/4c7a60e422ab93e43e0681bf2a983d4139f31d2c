@@ -1,7 +1,8 @@
-// 1.20.2	2023-11-19T08:12:20.4715926	All That Matters/Tags for minecraft:item
+// 1.20.2	2023-11-21T07:21:03.7545515	All That Matters/Tags for minecraft:item
 572d7d80d10f03c8d6f51e2925a9ea3b372fe5be data\c\tags\items\casts.json
 3234976729a598e706a52e4c0b5936fd6dba9911 data\minecraft\tags\items\swords.json
 78af564205e8c82467224b545583d00b3e08dc27 data\allthatmatters\tags\items\smeltery.json
+5ba5f6e9cd828c5f7f8cc516587ac1fa46be5d69 data\allthatmatters\tags\items\only_mending_allowed.json
 b72c8913e2ade469fc4c391401f39c9b141f344e data\c\tags\items\rods.json
 6895288c69659b400340acf63661097c3d574c87 data\minecraft\tags\items\diamond_ores.json
 495e39cd6637871f928d4a47f2fbe93cdf282cf5 data\minecraft\tags\items\redstone_ores.json
@@ -16,7 +17,7 @@ f0d8d4087862899e709bb28143208f1d014bb849 data\c\tags\items\hammers.json
 99e1287e2d762554e51e38b7b1de025738495b49 data\minecraft\tags\items\shovels.json
 a1d95bda43e07576d260c806cd8571ee5afa08d4 data\minecraft\tags\items\trimmable_armor.json
 c401941011dc3e081e71e057e331ee5eb63a5cdb data\c\tags\items\gears.json
-d6940f24cab418b9f31affe19368318c4c0a3274 data\c\tags\items\plates.json
+3df55126d71c51c51f8571e15e9664d47956eb21 data\c\tags\items\plates.json
 d572722fbbc22ca7856e70e1bcb3474a4db6342c data\minecraft\tags\items\axes.json
 0e99304f0180d060bb1cd96555d4d56fa45a50f3 data\c\tags\items\wood_casts.json
 1f9bdd1045dccd95466410e12579545b8cbca675 data\minecraft\tags\items\lapis_ores.json

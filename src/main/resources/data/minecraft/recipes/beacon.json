@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "allthatmatters:gear_prismarine"
+    },
+    "O": {
+      "item": "allthatmatters:gear_ruby"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    },
+    "R": {
+      "item": "allthatmatters:rod_glowstone"
+    },
+    "X": {
+      "item": "allthatmatters:gear_sapphire"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "RSR",
+    "XOX"
+  ],
+  "result": {
+    "item": "minecraft:beacon"
+  },
+  "show_notification": true
+}

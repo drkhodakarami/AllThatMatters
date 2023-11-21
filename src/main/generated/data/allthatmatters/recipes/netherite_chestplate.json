@@ -4,12 +4,15 @@
   "key": {
     "I": {
       "item": "allthatmatters:plate_netherite"
+    },
+    "R": {
+      "item": "allthatmatters:reinforced_plate_netherite"
     }
   },
   "pattern": [
     "I I",
-    "III",
-    "III"
+    "IRI",
+    "IRI"
   ],
   "result": {
     "item": "minecraft:netherite_chestplate"

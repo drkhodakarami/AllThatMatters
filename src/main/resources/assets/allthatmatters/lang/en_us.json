@@ -246,13 +246,15 @@
   "block.enderiteshulkers.shulker": "Enderite Shulker Box",
 
   "allthatmatters.gem_cleanser": "Gem Cleanser",
-  "gem_cleanser.gem_cleanser": "Gem Cleanser",
+  "allthatmatters.smeltery": "Smeltery",
 
   "itemgroup.allthatmattersgroup": "All That Matters",
 
   "allthatmatters.tooltip.liquid.amount.with.capacity": "%s / %s mB",
   "allthatmatters.tooltip.liquid.amount": "%s mB",
   "block.minecraft.empty": "Empty",
+  "allthatmatters.water": "Uses Water",
+  "allthatmatters.lava": "Uses Lava",
 
   "allthatmatters.all": "All",
   "allthatmatters.none": "None",

@@ -779,26 +779,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         //region AMETHYST ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_AMETHYST_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_AMETHYST)
+                .input('G', ModItems.GEAR_DIAMOND)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_AMETHYST), conditionsFromItem(ModItems.REINFORCED_PLATE_AMETHYST))
+                .criterion(hasItem(ModItems.GEAR_DIAMOND), conditionsFromItem(ModItems.GEAR_DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_AMETHYST_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_AMETHYST_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_AMETHYST)
+                .input('G', ModItems.GEAR_DIAMOND)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_AMETHYST), conditionsFromItem(ModItems.REINFORCED_PLATE_AMETHYST))
+                .criterion(hasItem(ModItems.GEAR_DIAMOND), conditionsFromItem(ModItems.GEAR_DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_AMETHYST_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_AMETHYST_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_AMETHYST)
+                .input('G', ModItems.GEAR_DIAMOND)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_AMETHYST), conditionsFromItem(ModItems.REINFORCED_PLATE_AMETHYST))
+                .criterion(hasItem(ModItems.GEAR_DIAMOND), conditionsFromItem(ModItems.GEAR_DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_AMETHYST_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_AMETHYST_BOOTS, 1)
@@ -812,26 +818,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         //region CITRINE ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_CITRINE_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_CITRINE)
+                .input('G', ModItems.GEAR_GOLD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_CITRINE), conditionsFromItem(ModItems.REINFORCED_PLATE_CITRINE))
+                .criterion(hasItem(ModItems.GEAR_GOLD), conditionsFromItem(ModItems.GEAR_GOLD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_CITRINE_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_CITRINE_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_CITRINE)
+                .input('G', ModItems.GEAR_GOLD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_CITRINE), conditionsFromItem(ModItems.REINFORCED_PLATE_CITRINE))
+                .criterion(hasItem(ModItems.GEAR_GOLD), conditionsFromItem(ModItems.GEAR_GOLD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_CITRINE_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_CITRINE_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_CITRINE)
+                .input('G', ModItems.GEAR_GOLD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_CITRINE), conditionsFromItem(ModItems.REINFORCED_PLATE_CITRINE))
+                .criterion(hasItem(ModItems.GEAR_GOLD), conditionsFromItem(ModItems.GEAR_GOLD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_CITRINE_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_CITRINE_BOOTS, 1)
@@ -845,26 +857,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         //region COPPER ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_COPPER_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_COPPER)
+                .input('G', ModItems.GEAR_COPPER)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_COPPER), conditionsFromItem(ModItems.REINFORCED_PLATE_COPPER))
+                .criterion(hasItem(ModItems.GEAR_COPPER), conditionsFromItem(ModItems.GEAR_COPPER))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_COPPER_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_COPPER_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_COPPER)
+                .input('G', ModItems.GEAR_COPPER)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_COPPER), conditionsFromItem(ModItems.REINFORCED_PLATE_COPPER))
+                .criterion(hasItem(ModItems.GEAR_COPPER), conditionsFromItem(ModItems.GEAR_COPPER))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_COPPER_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_COPPER_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_COPPER)
+                .input('G', ModItems.GEAR_COPPER)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_COPPER), conditionsFromItem(ModItems.REINFORCED_PLATE_COPPER))
+                .criterion(hasItem(ModItems.GEAR_COPPER), conditionsFromItem(ModItems.GEAR_COPPER))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_COPPER_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_COPPER_BOOTS, 1)
@@ -878,26 +896,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         // region EMERALD ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_EMERALD_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_EMERALD)
+                .input('G', ModItems.GEAR_EMERALD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_EMERALD), conditionsFromItem(ModItems.REINFORCED_PLATE_EMERALD))
+                .criterion(hasItem(ModItems.GEAR_EMERALD), conditionsFromItem(ModItems.GEAR_EMERALD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_EMERALD_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_EMERALD_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_EMERALD)
+                .input('G', ModItems.GEAR_EMERALD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_EMERALD), conditionsFromItem(ModItems.REINFORCED_PLATE_EMERALD))
+                .criterion(hasItem(ModItems.GEAR_EMERALD), conditionsFromItem(ModItems.GEAR_EMERALD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_EMERALD_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_EMERALD_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_EMERALD)
+                .input('G', ModItems.GEAR_EMERALD)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_EMERALD), conditionsFromItem(ModItems.REINFORCED_PLATE_EMERALD))
+                .criterion(hasItem(ModItems.GEAR_EMERALD), conditionsFromItem(ModItems.GEAR_EMERALD))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_EMERALD_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_EMERALD_BOOTS, 1)
@@ -911,26 +935,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         // region ENDERITE ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_ENDERITE_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_ENDERITE)
+                .input('G', ModItems.GEAR_ENDERITE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_ENDERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_ENDERITE))
+                .criterion(hasItem(ModItems.GEAR_ENDERITE), conditionsFromItem(ModItems.GEAR_ENDERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_ENDERITE_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_ENDERITE_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_ENDERITE)
+                .input('G', ModItems.GEAR_ENDERITE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_ENDERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_ENDERITE))
+                .criterion(hasItem(ModItems.GEAR_ENDERITE), conditionsFromItem(ModItems.GEAR_ENDERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_ENDERITE_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_ENDERITE_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_ENDERITE)
+                .input('G', ModItems.GEAR_ENDERITE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_ENDERITE), conditionsFromItem(ModItems.REINFORCED_PLATE_ENDERITE))
+                .criterion(hasItem(ModItems.GEAR_ENDERITE), conditionsFromItem(ModItems.GEAR_ENDERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_ENDERITE_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_ENDERITE_BOOTS, 1)
@@ -944,26 +974,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         // region RUBY ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_RUBY_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_RUBY)
+                .input('G', ModItems.GEAR_RUBY)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_RUBY), conditionsFromItem(ModItems.REINFORCED_PLATE_RUBY))
+                .criterion(hasItem(ModItems.GEAR_RUBY), conditionsFromItem(ModItems.GEAR_RUBY))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_RUBY_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_RUBY_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_RUBY)
+                .input('G', ModItems.GEAR_RUBY)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_RUBY), conditionsFromItem(ModItems.REINFORCED_PLATE_RUBY))
+                .criterion(hasItem(ModItems.GEAR_RUBY), conditionsFromItem(ModItems.GEAR_RUBY))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_RUBY_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_RUBY_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_RUBY)
+                .input('G', ModItems.GEAR_RUBY)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_RUBY), conditionsFromItem(ModItems.REINFORCED_PLATE_RUBY))
+                .criterion(hasItem(ModItems.GEAR_RUBY), conditionsFromItem(ModItems.GEAR_RUBY))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_RUBY_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_RUBY_BOOTS, 1)
@@ -977,26 +1013,32 @@ public class ModRecipeProvider extends FabricRecipeProvider
         // region SAPPHIRE ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_SAPPHIRE_HELMET, 1)
                 .pattern("III")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("   ")
                 .input('I', ModItems.REINFORCED_PLATE_SAPPHIRE)
+                .input('G', ModItems.GEAR_SAPPHIRE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_SAPPHIRE), conditionsFromItem(ModItems.REINFORCED_PLATE_SAPPHIRE))
+                .criterion(hasItem(ModItems.GEAR_SAPPHIRE), conditionsFromItem(ModItems.GEAR_SAPPHIRE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_SAPPHIRE_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_SAPPHIRE_CHESTPLATE, 1)
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern("III")
                 .pattern("III")
                 .input('I', ModItems.REINFORCED_PLATE_SAPPHIRE)
+                .input('G', ModItems.GEAR_SAPPHIRE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_SAPPHIRE), conditionsFromItem(ModItems.REINFORCED_PLATE_SAPPHIRE))
+                .criterion(hasItem(ModItems.GEAR_SAPPHIRE), conditionsFromItem(ModItems.GEAR_SAPPHIRE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_SAPPHIRE_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_SAPPHIRE_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IGI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.REINFORCED_PLATE_SAPPHIRE)
+                .input('G', ModItems.GEAR_SAPPHIRE)
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_SAPPHIRE), conditionsFromItem(ModItems.REINFORCED_PLATE_SAPPHIRE))
+                .criterion(hasItem(ModItems.GEAR_SAPPHIRE), conditionsFromItem(ModItems.GEAR_SAPPHIRE))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.ARMOR_SAPPHIRE_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.ARMOR_SAPPHIRE_BOOTS, 1)
@@ -1009,45 +1051,49 @@ public class ModRecipeProvider extends FabricRecipeProvider
 
         // region NETHERITE ARMOR
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_HELMET, 1)
-                .pattern("III")
+                .pattern("IRI")
                 .pattern("I I")
                 .pattern("   ")
                 .input('I', ModItems.PLATE_NETHERITE)
+                .input('R', ModItems.REINFORCED_PLATE_NETHERITE)
                 .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_CHESTPLATE, 1)
                 .pattern("I I")
-                .pattern("III")
-                .pattern("III")
+                .pattern("IRI")
+                .pattern("IRI")
                 .input('I', ModItems.PLATE_NETHERITE)
+                .input('R', ModItems.REINFORCED_PLATE_NETHERITE)
                 .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_LEGGINGS, 1)
-                .pattern("III")
+                .pattern("IRI")
                 .pattern("I I")
                 .pattern("I I")
                 .input('I', ModItems.PLATE_NETHERITE)
+                .input('R', ModItems.REINFORCED_PLATE_NETHERITE)
                 .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.NETHERITE_BOOTS, 1)
                 .pattern("I I")
-                .pattern("I I")
+                .pattern("R R")
                 .input('I', ModItems.PLATE_NETHERITE)
+                .input('R', ModItems.REINFORCED_PLATE_NETHERITE)
                 .criterion(hasItem(ModItems.PLATE_NETHERITE), conditionsFromItem(ModItems.PLATE_NETHERITE))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NETHERITE_BOOTS)));
         //endregion
 
         //region GEM BOWS
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_ENDERITE_BOW, 1)
-                .pattern(" IB")
-                .pattern("G S")
-                .pattern(" IB")
+                .pattern(" GB")
+                .pattern("O S")
+                .pattern(" GB")
                 .input('S', Items.STRING)
-                .input('I', Items.STICK)
-                .input('G', ModItems.ENDERITE)
+                .input('G', ModItems.GEAR_ENDERITE)
+                .input('O', ModItems.ROD_OBSIDIAN)
                 .input('B', ModItems.BINDING)
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
@@ -1055,12 +1101,12 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_ENDERITE_BOW)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_RUBY_BOW, 1)
-                .pattern(" IB")
-                .pattern("G S")
-                .pattern(" IB")
+                .pattern(" GB")
+                .pattern("O S")
+                .pattern(" GB")
                 .input('S', Items.STRING)
-                .input('I', Items.STICK)
-                .input('G', ModItems.RUBY)
+                .input('G', ModItems.GEAR_RUBY)
+                .input('O', ModItems.ROD_OBSIDIAN)
                 .input('B', ModItems.BINDING)
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
@@ -1068,12 +1114,12 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOOL_RUBY_BOW)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOOL_SAPPHIRE_BOW, 1)
-                .pattern(" IB")
-                .pattern("G S")
-                .pattern(" IB")
+                .pattern(" GB")
+                .pattern("O S")
+                .pattern(" GB")
                 .input('S', Items.STRING)
-                .input('I', Items.STICK)
-                .input('G', ModItems.SAPPHIRE)
+                .input('G', ModItems.GEAR_SAPPHIRE)
+                .input('O', ModItems.ROD_OBSIDIAN)
                 .input('B', ModItems.BINDING)
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
@@ -1126,5 +1172,12 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_GOLD), conditionsFromItem(ModItems.REINFORCED_PLATE_GOLD))
                 .criterion(hasItem(ModItems.REINFORCED_PLATE_DIAMOND), conditionsFromItem(ModItems.REINFORCED_PLATE_DIAMOND))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.PLAYER_TELEPORT)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.NAME_TAG, 1)
+                .input(Items.PAPER)
+                .input(ModItems.ROD_IRON)
+                .criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER))
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter, new Identifier(getRecipeName(Items.NAME_TAG) + "shapeless"));
     }
 }

@@ -6,19 +6,19 @@
       "item": "allthatmatters:binding"
     },
     "G": {
-      "item": "allthatmatters:gem_ruby"
+      "item": "allthatmatters:gear_ruby"
     },
-    "I": {
-      "item": "minecraft:stick"
+    "O": {
+      "item": "allthatmatters:rod_obsidian"
     },
     "S": {
       "item": "minecraft:string"
     }
   },
   "pattern": [
-    " IB",
-    "G S",
-    " IB"
+    " GB",
+    "O S",
+    " GB"
   ],
   "result": {
     "item": "allthatmatters:tool_ruby_bow"

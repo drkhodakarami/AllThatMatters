@@ -2,7 +2,7 @@
   "type": "allthatmatters:smeltery",
   "ingredients": [
     {
-      "tag": "minecraft:raw_copper"
+      "item": "minecraft:raw_copper"
     },
     {
       "item": "allthatmatters:cast_ingot"
