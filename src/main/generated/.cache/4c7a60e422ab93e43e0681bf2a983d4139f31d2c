@@ -1,8 +1,8 @@
-// 1.20.2	2023-11-21T07:21:03.7545515	All That Matters/Tags for minecraft:item
+// 1.20.2	2023-11-21T08:08:21.6122159	All That Matters/Tags for minecraft:item
 572d7d80d10f03c8d6f51e2925a9ea3b372fe5be data\c\tags\items\casts.json
 3234976729a598e706a52e4c0b5936fd6dba9911 data\minecraft\tags\items\swords.json
-78af564205e8c82467224b545583d00b3e08dc27 data\allthatmatters\tags\items\smeltery.json
 5ba5f6e9cd828c5f7f8cc516587ac1fa46be5d69 data\allthatmatters\tags\items\only_mending_allowed.json
+78af564205e8c82467224b545583d00b3e08dc27 data\allthatmatters\tags\items\smeltery.json
 b72c8913e2ade469fc4c391401f39c9b141f344e data\c\tags\items\rods.json
 6895288c69659b400340acf63661097c3d574c87 data\minecraft\tags\items\diamond_ores.json
 495e39cd6637871f928d4a47f2fbe93cdf282cf5 data\minecraft\tags\items\redstone_ores.json

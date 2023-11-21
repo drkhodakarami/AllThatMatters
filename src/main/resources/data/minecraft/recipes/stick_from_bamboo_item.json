@@ -11,7 +11,8 @@
     "#"
   ],
   "result": {
-    "item": "minecraft:air"
+    "count": 1,
+    "item": "minecraft:stick"
   },
   "show_notification": true
 }

@@ -27,8 +27,6 @@ import org.slf4j.LoggerFactory;
 // This is the flat world gen custom preset I always use
 // 5*minecraft:bedrock,30*minecraft:light_blue_wool,minecraft:light_blue_carpet;minecraft:plains;village
 
-//TODO : Creeper no explosion
-//TODO : Tree Capitator for my mod's axes only
 public class AllThatMatters implements ModInitializer
 {
     public static final Identifier PACKET_RENAME_BACKPACK = identifier("packet_rename_backpack");
