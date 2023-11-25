@@ -77,7 +77,7 @@ dependencies {
     modImplementation "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
     include "io.github.ladysnake:PlayerAbilityLib:${pal_version}"
 
-    modImplementation "com.github.drkhodakarami:fluidutils:${fluidutils_version}"
+    modImplementation include("com.github.drkhodakarami:fluidutils:${fluidutils_version}")
 }
 
 processResources {

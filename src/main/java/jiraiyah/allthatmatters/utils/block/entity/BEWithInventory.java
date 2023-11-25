@@ -201,7 +201,7 @@ public abstract class BEWithInventory extends BlockEntity implements NamedScreen
         return this.getStack(slotIndex).getCount() + result.getCount() <= getStack(slotIndex).getMaxCount();
     }
 
-    private <C extends Inventory, T extends Recipe<C>> Optional<RecipeEntry<T>> getCurrentRecipe(RecipeType<T> type)
+    protected <C extends Inventory, T extends Recipe<C>> Optional<RecipeEntry<T>> getCurrentRecipe(RecipeType<T> type)
     {
         var inv = getSimpleInventory();
 

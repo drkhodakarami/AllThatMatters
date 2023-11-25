@@ -33,7 +33,8 @@ public class GemCleanserRecipe implements Recipe<Inventory>
         if (world.isClient())
             return false;
 
-        return recipeItems.get(0).test(inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT));
+        return recipeItems.get(0).test(inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT)) &&
+               inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT).getCount() >= recipeItems.get(0).getMatchingStacks()[0].getCount();
     }
 
     @Override

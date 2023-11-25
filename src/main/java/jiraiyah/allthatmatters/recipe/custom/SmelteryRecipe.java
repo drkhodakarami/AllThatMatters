@@ -34,6 +34,7 @@ public class SmelteryRecipe implements Recipe<Inventory>
             return false;
 
         return recipeItems.get(0).test(inventory.getStack(SmelteryBE.BASE_INPUT_SLOT)) &&
+               //inventory.getStack(SmelteryBE.BASE_INPUT_SLOT).getCount() >= recipeItems.get(0).getMatchingStacks()[0].getCount() &&
                recipeItems.get(1).test(inventory.getStack(SmelteryBE.CAST_SLOT));
     }
 

@@ -309,6 +309,7 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
         var result = recipe.get().value().getResult(null);
 
         this.removeStack(inputSlot, result.isIn(ModTags.Items.REINFORCED) ? REINFORCED_INGREDIENT_COUNT : 1);
+        //this.removeStack(inputSlot, recipe.get().value().getIngredients().get(0).getMatchingStacks()[0].getCount());
 
         if(getStack(CAST_SLOT).isIn(ModTags.Items.WOOD_CASTS))
             this.removeStack(CAST_SLOT, 1);
@@ -353,7 +354,7 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
         return true;
     }
 
-    private <C extends Inventory, T extends Recipe<C>> Optional<RecipeEntry<T>> getCurrentRecipe(RecipeType<T> type)
+    protected <C extends Inventory, T extends Recipe<C>> Optional<RecipeEntry<T>> getCurrentRecipe(RecipeType<T> type)
     {
         var inv = getSimpleInventory();
 

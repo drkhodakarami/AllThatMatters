@@ -323,7 +323,7 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .pattern("RRR")
                 .pattern("SBS")
                 .pattern("SFS")
-                .input('R', ModItems.PLATE_RUBY)
+                .input('R', Items.IRON_INGOT)
                 .input('F', Items.FURNACE)
                 .input('B', Items.BUCKET)
                 .input('S', ModItems.PLATE_IRON)

@@ -18,10 +18,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -239,6 +242,19 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
                 markDirty(world, pos, state);
             }
         }
+    }
+
+    @Override
+    protected <C extends Inventory, T extends Recipe<C>> void craftItem(RecipeType<T> type, int inputSlot, int outputSlot)
+    {
+        var recipe = getCurrentRecipe(type);
+
+        this.removeStack(inputSlot, recipe.get().value().getIngredients().get(0).getMatchingStacks()[0].getCount());
+
+        this.setStack(outputSlot, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                getStack(outputSlot).getCount() + recipe.get().value().getResult(null).getCount()));
+
+        //super.craftItem(type, inputSlot, outputSlot);
     }
 
     @Override

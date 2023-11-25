@@ -2,11 +2,12 @@
   "type": "allthatmatters:gem_cleanser",
   "ingredients": [
     {
-      "item": "allthatmatters:raw_citrine"
+      "item": "allthatmatters:raw_citrine",
+      "count": 4
     }
   ],
   "output": {
     "item": "allthatmatters:gem_citrine",
-    "count": 3
+    "count": 1
   }
 }

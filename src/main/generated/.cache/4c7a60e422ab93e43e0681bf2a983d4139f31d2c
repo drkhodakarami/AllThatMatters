@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-21T08:08:21.6122159	All That Matters/Tags for minecraft:item
+// 1.20.2	2023-11-24T14:01:45.6843579	All That Matters/Tags for minecraft:item
 572d7d80d10f03c8d6f51e2925a9ea3b372fe5be data\c\tags\items\casts.json
 3234976729a598e706a52e4c0b5936fd6dba9911 data\minecraft\tags\items\swords.json
 5ba5f6e9cd828c5f7f8cc516587ac1fa46be5d69 data\allthatmatters\tags\items\only_mending_allowed.json
@@ -10,8 +10,8 @@ be68c7cf758c4a85f2a636278e341e901714fc6a data\minecraft\tags\items\iron_ores.jso
 17e1316d0e1ec4370ec851bf9bde5db76a39b36b data\c\tags\items\fluid_buckets.json
 da57beb21743034855790ac26897b689c0238607 data\minecraft\tags\items\pickaxes.json
 37a7695df05efdf03cd7af7f57cdc06b709f580a data\c\tags\items\reinforced_plates.json
-6685354eef25a14eb9effbee283aa1fc4bf60491 data\minecraft\tags\items\hoes.json
 ccfcb5ecb24b5a9d5e0946cabb8cbbb308c8d5b6 data\minecraft\tags\items\copper_ores.json
+6685354eef25a14eb9effbee283aa1fc4bf60491 data\minecraft\tags\items\hoes.json
 f0d8d4087862899e709bb28143208f1d014bb849 data\c\tags\items\hammers.json
 6077b4e8cc4e148d19a5a4a5f3100cbcdec80b6d data\minecraft\tags\items\coal_ores.json
 99e1287e2d762554e51e38b7b1de025738495b49 data\minecraft\tags\items\shovels.json
