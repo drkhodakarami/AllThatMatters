@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_raw_copper_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_copper_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_copper_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

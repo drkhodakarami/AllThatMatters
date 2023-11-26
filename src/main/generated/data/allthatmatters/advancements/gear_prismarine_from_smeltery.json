@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_prismarine_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:prismarine_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_prismarine_shard"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

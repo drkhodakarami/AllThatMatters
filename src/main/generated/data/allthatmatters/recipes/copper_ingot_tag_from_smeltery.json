@@ -1,0 +1,18 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 288,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "tag": "minecraft:copper_ores"
+    },
+    {
+      "item": "allthatmatters:cast_ingot"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "minecraft:copper_ingot"
+  }
+}

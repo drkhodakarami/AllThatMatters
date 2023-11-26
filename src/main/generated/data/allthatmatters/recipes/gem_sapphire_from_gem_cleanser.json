@@ -1,0 +1,15 @@
+{
+  "type": "allthatmatters:gem_cleanser",
+  "craftingTime": 144,
+  "fluidAmount": 200,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:raw_sapphire"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "allthatmatters:gem_sapphire"
+  }
+}

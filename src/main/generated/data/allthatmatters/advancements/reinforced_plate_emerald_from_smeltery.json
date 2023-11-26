@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_plate_emerald": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:plate_emerald"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_plate_emerald"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

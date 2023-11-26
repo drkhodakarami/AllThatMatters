@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 18,
+  "fluidAmount": 10,
+  "ingredientCount": 2,
+  "ingredients": [
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "allthatmatters:cast_binding"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:binding"
+  }
+}

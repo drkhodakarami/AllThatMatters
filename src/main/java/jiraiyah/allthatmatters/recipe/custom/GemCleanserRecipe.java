@@ -20,11 +20,17 @@ public class GemCleanserRecipe implements Recipe<Inventory>
 {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
+    private final int craftTime;
+    private final int fluidAmount;
+    private final int ingredientCount;
 
-    public GemCleanserRecipe(List<Ingredient> ingredients, ItemStack itemStack)
+    public GemCleanserRecipe(List<Ingredient> ingredients, ItemStack output, int ingredientCount, int craftTime, int fluidAmount)
     {
-        this.output = itemStack;
+        this.output = output;
         this.recipeItems = ingredients;
+        this.craftTime = craftTime;
+        this.fluidAmount = fluidAmount;
+        this.ingredientCount = ingredientCount;
     }
 
     @Override
@@ -33,14 +39,15 @@ public class GemCleanserRecipe implements Recipe<Inventory>
         if (world.isClient())
             return false;
 
-        return recipeItems.get(0).test(inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT)) &&
-               inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT).getCount() >= recipeItems.get(0).getMatchingStacks()[0].getCount();
+        return recipeItems.get(0).test(inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT))
+                && this.craftTime > 0
+                && inventory.getStack(GemCleanserBE.BASE_INPUT_SLOT).getCount() >= this.ingredientCount;
     }
 
     @Override
     public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager)
     {
-        return output;
+        return output.copy();
     }
 
     @Override
@@ -52,15 +59,30 @@ public class GemCleanserRecipe implements Recipe<Inventory>
     @Override
     public ItemStack getResult(DynamicRegistryManager registryManager)
     {
-        return output;
+        return output.copy();
     }
 
     @Override
     public DefaultedList<Ingredient> getIngredients()
     {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
+        DefaultedList list = DefaultedList.ofSize(this.recipeItems.size());
         list.addAll(recipeItems);
         return list;
+    }
+
+    public int getCraftTime()
+    {
+        return this.craftTime;
+    }
+
+    public int getFluidAmount()
+    {
+        return this.fluidAmount;
+    }
+
+    public int getIngredientCount()
+    {
+        return this.ingredientCount;
     }
 
     @Override
@@ -80,7 +102,10 @@ public class GemCleanserRecipe implements Recipe<Inventory>
         public static final Codec<GemCleanserRecipe> CODEC = RecordCodecBuilder.create(in ->
                 in.group(validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
                                 .fieldOf("ingredients").forGetter(GemCleanserRecipe::getIngredients),
-                        RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
+                        RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output),
+                        Codecs.POSITIVE_INT.fieldOf("ingredientCount").forGetter(r -> r.ingredientCount),
+                        Codecs.POSITIVE_INT.fieldOf("craftingTime").forGetter(r -> r.craftTime),
+                        Codecs.POSITIVE_INT.fieldOf("fluidAmount").forGetter(r -> r.fluidAmount)
                 ).apply(in, GemCleanserRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max)
@@ -100,6 +125,7 @@ public class GemCleanserRecipe implements Recipe<Inventory>
             return CODEC;
         }
 
+
         @Override
         public GemCleanserRecipe read(PacketByteBuf buf)
         {
@@ -108,8 +134,11 @@ public class GemCleanserRecipe implements Recipe<Inventory>
             for (int i = 0; i < inputs.size(); i++)
                 inputs.set(i, Ingredient.fromPacket(buf));
 
+            int craftTime = buf.readInt();
+            int fluidAmount = buf.readInt();
+            int ingredientCount = buf.readInt();
             ItemStack output = buf.readItemStack();
-            return new GemCleanserRecipe(inputs, output);
+            return new GemCleanserRecipe(inputs, output, ingredientCount, craftTime, fluidAmount);
         }
 
         @Override
@@ -119,6 +148,10 @@ public class GemCleanserRecipe implements Recipe<Inventory>
 
             for (Ingredient ingredient : recipe.getIngredients())
                 ingredient.write(buf);
+
+            buf.writeInt(recipe.craftTime);
+            buf.writeInt(recipe.fluidAmount);
+            buf.writeInt(recipe.ingredientCount);
 
             buf.writeItemStack(recipe.getResult(null));
         }

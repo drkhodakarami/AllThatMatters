@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_ingot_enderite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:ingot_enderite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ingot_enderite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

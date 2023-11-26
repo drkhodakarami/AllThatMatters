@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_gem_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gem_ruby"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_gem_ruby"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

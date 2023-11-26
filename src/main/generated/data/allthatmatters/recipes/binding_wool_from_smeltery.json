@@ -1,0 +1,18 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 36,
+  "fluidAmount": 50,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "tag": "minecraft:wool"
+    },
+    {
+      "item": "allthatmatters:cast_binding"
+    }
+  ],
+  "output": {
+    "count": 4,
+    "item": "allthatmatters:binding"
+  }
+}

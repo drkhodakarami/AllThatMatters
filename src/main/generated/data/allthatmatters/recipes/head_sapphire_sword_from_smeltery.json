@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_sapphire"
+    },
+    {
+      "item": "allthatmatters:cast_sword"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_sapphire_sword"
+  }
+}

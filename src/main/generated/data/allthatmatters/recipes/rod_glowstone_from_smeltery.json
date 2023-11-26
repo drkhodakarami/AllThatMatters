@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 288,
+  "fluidAmount": 150,
+  "ingredientCount": 2,
+  "ingredients": [
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "allthatmatters:cast_rod"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:rod_glowstone"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_citrine"
+    },
+    {
+      "item": "allthatmatters:cast_hammer"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_citrine_hammer"
+  }
+}

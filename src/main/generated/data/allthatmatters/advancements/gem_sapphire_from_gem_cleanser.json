@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_raw_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:raw_sapphire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_sapphire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

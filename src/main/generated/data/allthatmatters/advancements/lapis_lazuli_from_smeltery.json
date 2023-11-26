@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "has_lapis_lazuli": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:lapis_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_lapis_lazuli"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

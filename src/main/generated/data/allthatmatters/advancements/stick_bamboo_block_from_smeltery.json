@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_bamboo_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bamboo_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_bamboo_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "allthatmatters:gem_cleanser",
+  "craftingTime": 576,
+  "fluidAmount": 500,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:raw_enderite"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:ingot_enderite"
+  }
+}

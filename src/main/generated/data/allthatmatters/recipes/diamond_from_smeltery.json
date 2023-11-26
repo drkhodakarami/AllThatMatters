@@ -1,0 +1,18 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 288,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "tag": "minecraft:diamond_ores"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "minecraft:diamond"
+  }
+}

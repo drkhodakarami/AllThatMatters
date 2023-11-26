@@ -1,0 +1,18 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 288,
+  "fluidAmount": 400,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo_block"
+    },
+    {
+      "item": "allthatmatters:cast_handle"
+    }
+  ],
+  "output": {
+    "count": 32,
+    "item": "minecraft:stick"
+  }
+}

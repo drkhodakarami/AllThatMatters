@@ -269,5 +269,21 @@
   "allthatmatters.tooltip.how.to.rename": "Sneak + Right click to rename",
   "allthatmatters.tooltip.fireproof": "Fire proof (like netherite items)",
   "allthatmatters.screen.button.close": "Close",
-  "allthatmatters.teleporter.tooltip": "Bound to: (%d, %d, %d) -> %d"
+  "allthatmatters.teleporter.tooltip": "Bound to: (%d, %d, %d) -> %d",
+
+  "allthatmatters.cast.press.axe.button": "Axe",
+  "allthatmatters.cast.press.binding.button": "Binding",
+  "allthatmatters.cast.press.gear.button": "Gear",
+  "allthatmatters.cast.press.hammer.button": "Hammer",
+  "allthatmatters.cast.press.handle.button": "Handle",
+  "allthatmatters.cast.press.gem.button": "Gem",
+  "allthatmatters.cast.press.hoe.button": "Hoe",
+  "allthatmatters.cast.press.ingot.button": "Ingot",
+  "allthatmatters.cast.press.nugget.button": "Nugget",
+  "allthatmatters.cast.press.pickaxe.button": "Pickaxe",
+  "allthatmatters.cast.press.plate.button": "Plate",
+  "allthatmatters.cast.press.rod.button": "Rod",
+  "allthatmatters.cast.press.shovel.button": "Shovel",
+  "allthatmatters.cast.press.sword.button": "Sword",
+  "allthatmatters.cast.press.wire.button": "Wire"
 }

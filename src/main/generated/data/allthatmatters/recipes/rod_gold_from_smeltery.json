@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 288,
+  "fluidAmount": 150,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_rod"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:rod_gold"
+  }
+}

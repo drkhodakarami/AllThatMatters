@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 200,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_sapphire"
+    },
+    {
+      "item": "allthatmatters:cast_axe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_sapphire_axe"
+  }
+}

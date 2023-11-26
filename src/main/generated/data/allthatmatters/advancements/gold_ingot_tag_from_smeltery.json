@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "has_gold": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:gold_ores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_gold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

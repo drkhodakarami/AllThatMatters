@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_plate_ruby": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:plate_ruby"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_plate_ruby"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

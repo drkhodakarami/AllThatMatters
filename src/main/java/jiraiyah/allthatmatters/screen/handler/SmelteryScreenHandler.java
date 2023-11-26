@@ -99,6 +99,7 @@ public class SmelteryScreenHandler extends SyncedGuiDescription
                                                 stack.isIn(ItemTags.LAPIS_ORES) ||
                                                 stack.isIn(ItemTags.REDSTONE_ORES) ||
                                                 stack.isOf(Items.NETHER_QUARTZ_ORE) ||
+                                                stack.isOf(Items.STRING) ||
                                                 stack.isIn(ModTags.Items.SMELTERY)||
                                                 stack.isIn(ItemTags.WOOL) ||
                                                 stack.isIn(ItemTags.PLANKS) ||

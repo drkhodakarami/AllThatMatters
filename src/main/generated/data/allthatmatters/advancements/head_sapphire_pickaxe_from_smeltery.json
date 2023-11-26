@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_gem_sapphire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gem_sapphire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_gem_sapphire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

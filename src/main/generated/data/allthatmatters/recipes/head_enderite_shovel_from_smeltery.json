@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 200,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:ingot_enderite"
+    },
+    {
+      "item": "allthatmatters:cast_shovel"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_enderite_shovel"
+  }
+}

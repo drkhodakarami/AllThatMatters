@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_raw_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_gold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

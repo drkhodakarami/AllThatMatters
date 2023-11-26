@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 100,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "allthatmatters:cast_hoe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_diamond_hoe"
+  }
+}

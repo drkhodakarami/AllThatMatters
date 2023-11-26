@@ -6,6 +6,7 @@ import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
+import jiraiyah.allthatmatters.recipe.custom.GemCleanserRecipe;
 import jiraiyah.allthatmatters.screen.handler.GemCleanserScreenHandler;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
 import jiraiyah.fluidutils.FluidUtils;
@@ -18,13 +19,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
@@ -32,6 +32,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHolder
 {
@@ -46,7 +48,7 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
 
     public static long FLUID_CAPACITY = FluidConstants.BUCKET * 20; // 20k mb
 
-    public static final long FLUID_PER_CRAFT = FluidUtils.MILLI_BUCKET * 125; //mb amount
+    //public static final long FLUID_PER_CRAFT = FluidUtils.MILLI_BUCKET * 125; //mb amount
 
     public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>()
     {
@@ -216,17 +218,20 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
     protected void handleItemCraftingTick(World world, BlockPos pos, BlockState state)
     {
         if (FluidUtils.isOutputReceivable(this, BASE_OUTPUT_SLOT))
-            if (this.hasRecipe(ModRecipes.GEM_CLEANSE_TYPE, BASE_OUTPUT_SLOT))
+            if (this.hasRecipe())
             {
+                var recipe = getCurrentRecipe().get().value();
+                this.maxProgress = recipe.getCraftTime();
+
                 if (this.shouldUseFluid() &&
-                        this.hasEnoughFluid(this.fluidStorage, FLUID_PER_CRAFT) &&
+                        this.hasEnoughFluid(this.fluidStorage, recipe.getFluidAmount()) &&
                         this.fluidIsAcceptable(this.fluidStorage, Fluids.WATER))
                 {
                     this.increaseCraftProgress();
                     if (hasCraftingFinished())
                     {
-                        this.useFluid(this.fluidStorage, FLUID_PER_CRAFT);
-                        this.craftItem(ModRecipes.GEM_CLEANSE_TYPE, BASE_INPUT_SLOT, BASE_OUTPUT_SLOT);
+                        this.useFluid(this.fluidStorage, Fluids.WATER, recipe.getFluidAmount());
+                        this.craftItem();
                         this.resetProgress();
                     }
                     markDirty(world, pos, state);
@@ -242,19 +247,6 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
                 markDirty(world, pos, state);
             }
         }
-    }
-
-    @Override
-    protected <C extends Inventory, T extends Recipe<C>> void craftItem(RecipeType<T> type, int inputSlot, int outputSlot)
-    {
-        var recipe = getCurrentRecipe(type);
-
-        this.removeStack(inputSlot, recipe.get().value().getIngredients().get(0).getMatchingStacks()[0].getCount());
-
-        this.setStack(outputSlot, new ItemStack(recipe.get().value().getResult(null).getItem(),
-                getStack(outputSlot).getCount() + recipe.get().value().getResult(null).getCount()));
-
-        //super.craftItem(type, inputSlot, outputSlot);
     }
 
     @Override
@@ -287,11 +279,6 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
             }
         }*/
     }
-
-    /*protected boolean hasFluidSourceInSlot(int slotIndex, Item item)
-    {
-        return getStack(slotIndex).isOf(item);
-    }*/
 
     @Override
     protected boolean shouldUseFluid()
@@ -330,5 +317,49 @@ public class GemCleanserBE extends BEWithInventory implements PropertyDelegateHo
         data.writeBlockPos(getPos());
         ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.GEM_CLEANSER_FLUID_SYNC, data);
     }
+
+    private boolean hasRecipe()
+    {
+        var recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty())
+            return false;
+
+        var recipePresent = recipe.isPresent();
+
+        if(!recipePresent)
+            return false;
+
+        var amountAcceptable = canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null), BASE_OUTPUT_SLOT);
+        var itemAcceptable = canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem(), BASE_OUTPUT_SLOT);
+
+        return amountAcceptable && itemAcceptable;
+    }
+
+    private Optional<RecipeEntry<GemCleanserRecipe>> getCurrentRecipe()
+    {
+        return getWorld().getRecipeManager().getFirstMatch(ModRecipes.GEM_CLEANSE_TYPE, getSimpleInventory(), getWorld());
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item, int slotIndex)
+    {
+        return this.getStack(slotIndex).getItem() == item || this.getStack(slotIndex).isEmpty();
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(ItemStack result, int slotIndex)
+    {
+        return this.getStack(slotIndex).getCount() + result.getCount() <= getStack(slotIndex).getMaxCount();
+    }
+
+    private void craftItem()
+    {
+        var recipe = getCurrentRecipe().get().value();
+
+        this.removeStack(BASE_INPUT_SLOT, recipe.getIngredientCount());
+
+        this.setStack(BASE_OUTPUT_SLOT, new ItemStack(recipe.getResult(null).getItem(),
+                getStack(BASE_OUTPUT_SLOT).getCount() + recipe.getResult(null).getCount()));
+    }
+
     //endregion
 }

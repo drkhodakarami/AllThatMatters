@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_plate_enderite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:plate_enderite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_plate_enderite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

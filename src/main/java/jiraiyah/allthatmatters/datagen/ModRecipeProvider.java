@@ -1,6 +1,8 @@
 package jiraiyah.allthatmatters.datagen;
 
 import jiraiyah.allthatmatters.block.ModBlocks;
+import jiraiyah.allthatmatters.datagen.recipe.GemCleanserRecipeBuilder;
+import jiraiyah.allthatmatters.datagen.recipe.SmelteryRecipeBuilder;
 import jiraiyah.allthatmatters.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -1179,5 +1181,683 @@ public class ModRecipeProvider extends FabricRecipeProvider
                 .criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER))
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(Items.NAME_TAG) + "shapeless"));
+
+        //region GEM CLEANSER
+        new GemCleanserRecipeBuilder(ModItems.RAW_CITRINE, 1, ModItems.CITRINE, 2,144,200)
+                .criterion(hasItem(ModItems.RAW_CITRINE), conditionsFromItem(ModItems.RAW_CITRINE))
+                .offerTo(exporter);
+
+        new GemCleanserRecipeBuilder(ModItems.RAW_ENDERITE, 1, ModItems.ENDERITE, 1, 576, 500)
+                .criterion(hasItem(ModItems.RAW_ENDERITE), conditionsFromItem(ModItems.RAW_ENDERITE))
+                .offerTo(exporter);
+
+        new GemCleanserRecipeBuilder(ModItems.RAW_RUBY, 1, ModItems.RUBY, 2, 144, 200)
+                .criterion(hasItem(ModItems.RAW_RUBY), conditionsFromItem(ModItems.RAW_RUBY))
+                .offerTo(exporter);
+
+        new GemCleanserRecipeBuilder(ModItems.RAW_SAPPHIRE, 1, ModItems.SAPPHIRE, 2,144,200)
+                .criterion(hasItem(ModItems.RAW_SAPPHIRE), conditionsFromItem(ModItems.RAW_SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - BINDING
+        new SmelteryRecipeBuilder(Items.STRING, 2, ModItems.CAST_BINDING ,
+                ModItems.BINDING,1,18,10, "string")
+                .criterion(hasItem(Items.STRING),conditionsFromItem(Items.STRING))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.WOOL,1, ModItems.CAST_BINDING ,
+                ModItems.BINDING,4,36,50, "wool")
+                .criterion("has_wool",conditionsFromTag(ItemTags.WOOL))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - WIRE
+        new SmelteryRecipeBuilder(ItemTags.WOOL,1, ModItems.CAST_WIRE ,
+                Items.STRING,8,36,50)
+                .criterion("has_wool",conditionsFromTag(ItemTags.WOOL))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - CHARCOAL
+        new SmelteryRecipeBuilder(ItemTags.PLANKS,1, ModItems.CAST_GEM ,
+                Items.CHARCOAL,4, 144,125, "planks")
+                .criterion("has_planks",conditionsFromTag(ItemTags.PLANKS))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.LOGS,1, ModItems.CAST_GEM ,
+                Items.CHARCOAL,16, 576,500, "logs")
+                .criterion("has_logs",conditionsFromTag(ItemTags.LOGS))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - AXE HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_CITRINE_AXE,1, 144,200)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_COPPER_AXE,1, 144,200)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_DIAMOND_AXE,1, 144,200)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_ENDERITE_AXE,1, 144,200)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_GOLD_AXE,1, 144,200)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_IRON_AXE,1, 144,200)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_NETHERITE_AXE,1, 144,200)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_RUBY_AXE,1, 144,200)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_AXE ,
+                ModItems.HEAD_SAPPHIRE_AXE,1, 144,200)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - HAMMER HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_CITRINE_HAMMER,1, 144,250)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_COPPER_HAMMER,1, 144,250)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_DIAMOND_HAMMER,1, 144,250)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_ENDERITE_HAMMER,1, 144,250)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_GOLD_HAMMER,1, 144,250)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_IRON_HAMMER,1, 144,250)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_NETHERITE_HAMMER,1, 144,250)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_RUBY_HAMMER,1, 144,250)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_SAPPHIRE_HAMMER,1, 144,250)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.STONE_TOOL_MATERIALS,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_STONE_HAMMER,1, 144,250)
+                .criterion("has_cobblestone",conditionsFromTag(ItemTags.STONE_TOOL_MATERIALS))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.PLANKS,1, ModItems.CAST_HAMMER ,
+                ModItems.HEAD_WOOD_HAMMER,1, 144,250)
+                .criterion("has_planks",conditionsFromTag(ItemTags.PLANKS))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - HOE HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_CITRINE_HOE,1, 144,100)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_COPPER_HOE,1, 144,100)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_DIAMOND_HOE,1, 144,100)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_ENDERITE_HOE,1, 144,100)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_GOLD_HOE,1, 144,100)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_IRON_HOE,1, 144,100)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_NETHERITE_HOE,1, 144,100)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_RUBY_HOE,1, 144,100)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_HOE ,
+                ModItems.HEAD_SAPPHIRE_HOE,1, 144,100)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - PICKAXE HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_CITRINE_PICKAXE,1, 144,200)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_COPPER_PICKAXE,1, 144,200)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_DIAMOND_PICKAXE,1, 144,200)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_ENDERITE_PICKAXE,1, 144,200)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_GOLD_PICKAXE,1, 144,200)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_IRON_PICKAXE,1, 144,200)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_WOOD_PICKAXE ,
+                ModItems.HEAD_IRON_PICKAXE,1, 144,200, "wood")
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_NETHERITE_PICKAXE,1, 144,200)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_RUBY_PICKAXE,1, 144,200)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_PICKAXE ,
+                ModItems.HEAD_SAPPHIRE_PICKAXE,1, 144,200)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - SHOVEL HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_CITRINE_SHOVEL,1, 144,200)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_COPPER_SHOVEL,1, 144,200)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_DIAMOND_SHOVEL,1, 144,200)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_ENDERITE_SHOVEL,1, 144,200)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_GOLD_SHOVEL,1, 144,200)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_IRON_SHOVEL,1, 144,200)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_NETHERITE_SHOVEL,1, 144,200)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_RUBY_SHOVEL,1, 144,200)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_SHOVEL ,
+                ModItems.HEAD_SAPPHIRE_SHOVEL,1, 144,200)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - SWORD HEAD
+        new SmelteryRecipeBuilder(ModItems.CITRINE,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_CITRINE_SWORD,1, 144,250)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_COPPER_SWORD,1, 144,250)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_DIAMOND_SWORD,1, 144,250)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_ENDERITE_SWORD,1, 144,250)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_GOLD_SWORD,1, 144,250)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_IRON_SWORD,1, 144,250)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_NETHERITE_SWORD,1, 144,250)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_RUBY_SWORD,1, 144,250)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_SWORD ,
+                ModItems.HEAD_SAPPHIRE_SWORD,1, 144,250)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - PLATE
+        new SmelteryRecipeBuilder(Items.AMETHYST_SHARD,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_AMETHYST,1,576,250)
+                .criterion(hasItem(Items.AMETHYST_SHARD),conditionsFromItem(Items.AMETHYST_SHARD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.CITRINE,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_CITRINE,1, 576,250)
+                .criterion(hasItem(ModItems.CITRINE),conditionsFromItem(ModItems.CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_COPPER,1, 576,250)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_DIAMOND,1, 576,250)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.EMERALD,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_EMERALD,1, 576,250)
+                .criterion(hasItem(Items.EMERALD),conditionsFromItem(Items.EMERALD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_ENDERITE,1, 576,250)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_GOLD,1, 576,250)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_IRON,1, 576,250)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_NETHERITE,1, 576,250)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_RUBY,1, 576,250)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_SAPPHIRE,1, 576,250)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.STONE_CRAFTING_MATERIALS,4, ModItems.CAST_PLATE ,
+                ModItems.PLATE_STONE,1, 576,250)
+                .criterion("has_cobblestone",conditionsFromTag(ItemTags.STONE_CRAFTING_MATERIALS))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - REINFORCED PLATE
+        new SmelteryRecipeBuilder(ModItems.PLATE_AMETHYST,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_AMETHYST,1,2304,1000)
+                .criterion(hasItem(ModItems.PLATE_AMETHYST),conditionsFromItem(ModItems.PLATE_AMETHYST))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_CITRINE,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_CITRINE,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_CITRINE),conditionsFromItem(ModItems.PLATE_CITRINE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_COPPER,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_COPPER,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_COPPER),conditionsFromItem(ModItems.PLATE_COPPER))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_DIAMOND,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_DIAMOND,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_DIAMOND),conditionsFromItem(ModItems.PLATE_DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_EMERALD,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_EMERALD,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_EMERALD),conditionsFromItem(ModItems.PLATE_EMERALD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_ENDERITE,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_ENDERITE,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_ENDERITE),conditionsFromItem(ModItems.PLATE_ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_GOLD,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_GOLD,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_GOLD),conditionsFromItem(ModItems.PLATE_GOLD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_IRON,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_IRON,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_IRON),conditionsFromItem(ModItems.PLATE_IRON))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_NETHERITE,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_NETHERITE,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_NETHERITE),conditionsFromItem(ModItems.PLATE_NETHERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_RUBY,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_RUBY,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_RUBY),conditionsFromItem(ModItems.PLATE_RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.PLATE_SAPPHIRE,4, ModItems.CAST_PLATE ,
+                ModItems.REINFORCED_PLATE_SAPPHIRE,1, 2304,1000)
+                .criterion(hasItem(ModItems.PLATE_SAPPHIRE),conditionsFromItem(ModItems.PLATE_SAPPHIRE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - GEAR
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_COPPER,1,288,250)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.DIAMOND,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_DIAMOND,1,288,250)
+                .criterion(hasItem(Items.DIAMOND),conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.EMERALD,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_EMERALD,1,288,250)
+                .criterion(hasItem(Items.EMERALD),conditionsFromItem(Items.EMERALD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_ENDERITE,1,288,250)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_GOLD,1,288,250)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_IRON,1,288,250)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.LAPIS_LAZULI,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_LAPIS,1,288,250)
+                .criterion(hasItem(Items.LAPIS_LAZULI),conditionsFromItem(Items.LAPIS_LAZULI))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHERITE_INGOT,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_NETHERITE,1,288,250)
+                .criterion(hasItem(Items.NETHERITE_INGOT),conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.OBSIDIAN,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_OBSIDIAN,1,288,250)
+                .criterion(hasItem(Items.OBSIDIAN),conditionsFromItem(Items.OBSIDIAN))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.PRISMARINE_SHARD,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_PRISMARINE,1,288,250)
+                .criterion(hasItem(Items.PRISMARINE_SHARD),conditionsFromItem(Items.PRISMARINE_SHARD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.QUARTZ,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_QUARTZ,1,288,250)
+                .criterion(hasItem(Items.QUARTZ),conditionsFromItem(Items.QUARTZ))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.RUBY,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_RUBY,1,288,250)
+                .criterion(hasItem(ModItems.RUBY),conditionsFromItem(ModItems.RUBY))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.SAPPHIRE,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_SAPPHIRE,1,288,250)
+                .criterion(hasItem(ModItems.SAPPHIRE),conditionsFromItem(ModItems.SAPPHIRE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.STONE_CRAFTING_MATERIALS,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_STONE,1,288,250)
+                .criterion("has_cobblestone",conditionsFromTag(ItemTags.STONE_CRAFTING_MATERIALS))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.PLANKS,1, ModItems.CAST_GEAR ,
+                ModItems.GEAR_WOOD,1,288,250)
+                .criterion("has_planks",conditionsFromTag(ItemTags.PLANKS))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - ROD
+        new SmelteryRecipeBuilder(Items.COPPER_INGOT,1, ModItems.CAST_ROD ,
+                ModItems.ROD_COPPER,1,288,150)
+                .criterion(hasItem(Items.COPPER_INGOT),conditionsFromItem(Items.COPPER_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ModItems.ENDERITE,1, ModItems.CAST_ROD ,
+                ModItems.ROD_ENDERITE,1,288,150)
+                .criterion(hasItem(ModItems.ENDERITE),conditionsFromItem(ModItems.ENDERITE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GLOWSTONE_DUST,2, ModItems.CAST_ROD ,
+                ModItems.ROD_GLOWSTONE,1,288,150)
+                .criterion(hasItem(Items.GLOWSTONE_DUST),conditionsFromItem(Items.GLOWSTONE_DUST))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.GOLD_INGOT,1, ModItems.CAST_ROD ,
+                ModItems.ROD_GOLD,1,288,150)
+                .criterion(hasItem(Items.GOLD_INGOT),conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.IRON_INGOT,1, ModItems.CAST_ROD ,
+                ModItems.ROD_IRON,1,288,150)
+                .criterion(hasItem(Items.IRON_INGOT),conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.OBSIDIAN,1, ModItems.CAST_ROD ,
+                ModItems.ROD_OBSIDIAN,1,288,150)
+                .criterion(hasItem(Items.OBSIDIAN),conditionsFromItem(Items.OBSIDIAN))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - ORE
+        new SmelteryRecipeBuilder(ItemTags.COAL_ORES,1, ModItems.CAST_GEM ,
+                Items.COAL,2, 288,250)
+                .criterion("has_coal",conditionsFromTag(ItemTags.COAL_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.COPPER_ORES,1, ModItems.CAST_INGOT ,
+                Items.COPPER_INGOT,4, 288,250, "tag")
+                .criterion("has_copper",conditionsFromTag(ItemTags.COPPER_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.DIAMOND_ORES,1, ModItems.CAST_GEM ,
+                Items.DIAMOND,2, 288,250)
+                .criterion("has_diamond",conditionsFromTag(ItemTags.DIAMOND_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.EMERALD_ORES,1, ModItems.CAST_GEM ,
+                Items.EMERALD,2, 288,250)
+                .criterion("has_emerald",conditionsFromTag(ItemTags.EMERALD_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.GOLD_ORES,1, ModItems.CAST_INGOT ,
+                Items.GOLD_INGOT,4, 288,250, "tag")
+                .criterion("has_gold",conditionsFromTag(ItemTags.GOLD_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.IRON_ORES,1, ModItems.CAST_INGOT ,
+                Items.IRON_INGOT,4, 288,250, "tag")
+                .criterion("has_iron",conditionsFromTag(ItemTags.IRON_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.IRON_ORES,1, ModItems.CAST_WOOD_INGOT ,
+                Items.IRON_INGOT,4, 288,250, "wood")
+                .criterion("has_iron",conditionsFromTag(ItemTags.IRON_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.LAPIS_ORES,1, ModItems.CAST_GEM ,
+                Items.LAPIS_LAZULI,18, 288,250)
+                .criterion("has_lapis_lazuli",conditionsFromTag(ItemTags.LAPIS_ORES))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.NETHER_QUARTZ_ORE,1, ModItems.CAST_GEM ,
+                Items.QUARTZ,2, 288,250)
+                .criterion(hasItem(Items.NETHER_QUARTZ_ORE),conditionsFromItem(Items.NETHER_QUARTZ_ORE))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_COPPER_BLOCK,1, ModItems.CAST_INGOT ,
+                Items.COPPER_INGOT,18, 3000,2250, "raw_block")
+                .criterion(hasItem(Items.RAW_COPPER_BLOCK),conditionsFromItem(Items.RAW_COPPER_BLOCK))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_GOLD_BLOCK,1, ModItems.CAST_INGOT ,
+                Items.GOLD_INGOT,18, 3000,2250, "raw_block")
+                .criterion(hasItem(Items.RAW_GOLD_BLOCK),conditionsFromItem(Items.RAW_GOLD_BLOCK))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_IRON_BLOCK,1, ModItems.CAST_INGOT ,
+                Items.IRON_INGOT,18, 3000,2250, "raw_block")
+                .criterion(hasItem(Items.RAW_IRON_BLOCK),conditionsFromItem(Items.RAW_IRON_BLOCK))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_COPPER,1, ModItems.CAST_INGOT ,
+                Items.COPPER_INGOT,2, 288,250, "raw")
+                .criterion(hasItem(Items.RAW_COPPER),conditionsFromItem(Items.RAW_COPPER))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_GOLD,1, ModItems.CAST_INGOT ,
+                Items.GOLD_INGOT,2, 288,250, "raw")
+                .criterion(hasItem(Items.RAW_GOLD),conditionsFromItem(Items.RAW_GOLD))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.RAW_IRON,1, ModItems.CAST_INGOT ,
+                Items.IRON_INGOT,2, 288,250, "raw")
+                .criterion(hasItem(Items.RAW_IRON),conditionsFromItem(Items.RAW_IRON))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.REDSTONE_ORE,1, ModItems.CAST_GEM ,
+                Items.REDSTONE,10, 288,250)
+                .criterion(hasItem(Items.REDSTONE_ORE),conditionsFromItem(Items.REDSTONE_ORE))
+                .offerTo(exporter);
+        //endregion
+
+        //region SMELTER - STICK
+        new SmelteryRecipeBuilder(ItemTags.PLANKS,1, ModItems.CAST_HANDLE ,
+                Items.STICK,8, 36,50, "planks")
+                .criterion("has_planks",conditionsFromTag(ItemTags.PLANKS))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(ItemTags.LOGS,1, ModItems.CAST_HANDLE ,
+                Items.STICK,32, 144,200, "logs")
+                .criterion("has_logs",conditionsFromTag(ItemTags.LOGS))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.BAMBOO,1, ModItems.CAST_HANDLE ,
+                Items.STICK,4, 36,50, "bamboo")
+                .criterion(hasItem(Items.BAMBOO),conditionsFromItem(Items.BAMBOO))
+                .offerTo(exporter);
+
+        new SmelteryRecipeBuilder(Items.BAMBOO_BLOCK,1, ModItems.CAST_HANDLE ,
+                Items.STICK,32, 288,400, "bamboo_block")
+                .criterion(hasItem(Items.BAMBOO_BLOCK),conditionsFromItem(Items.BAMBOO_BLOCK))
+                .offerTo(exporter);
+        //endregion
     }
 }

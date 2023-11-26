@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_gem_citrine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "allthatmatters:gem_citrine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_gem_citrine"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

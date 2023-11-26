@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "allthatmatters:cast_sword"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_iron_sword"
+  }
+}

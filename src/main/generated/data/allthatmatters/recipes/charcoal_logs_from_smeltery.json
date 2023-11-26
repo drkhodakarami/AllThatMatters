@@ -1,0 +1,18 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 576,
+  "fluidAmount": 500,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "tag": "minecraft:logs"
+    },
+    {
+      "item": "allthatmatters:cast_gem"
+    }
+  ],
+  "output": {
+    "count": 16,
+    "item": "minecraft:charcoal"
+  }
+}

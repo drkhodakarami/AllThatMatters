@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 250,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "tag": "minecraft:planks"
+    },
+    {
+      "item": "allthatmatters:cast_hammer"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_wood_hammer"
+  }
+}

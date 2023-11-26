@@ -6,6 +6,7 @@ import jiraiyah.allthatmatters.block.custom.GemCleanserBlock;
 import jiraiyah.allthatmatters.item.ModItems;
 import jiraiyah.allthatmatters.networking.ModMessages;
 import jiraiyah.allthatmatters.recipe.ModRecipes;
+import jiraiyah.allthatmatters.recipe.custom.SmelteryRecipe;
 import jiraiyah.allthatmatters.screen.handler.SmelteryScreenHandler;
 import jiraiyah.allthatmatters.utils.ModTags;
 import jiraiyah.allthatmatters.utils.block.entity.BEWithInventory;
@@ -14,20 +15,17 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SingleVariantStorage;
-import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -71,20 +69,6 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     public static final int DELEGATE_SIZE = 2;
 
     public static long FLUID_CAPACITY = FluidConstants.BUCKET * 20; // 20k mb
-
-    public static final long FLUID_PER_INGOT_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
-    public static final long FLUID_PER_TOOL_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
-    public static final long FLUID_PER_BINDING_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
-    public static final long FLUID_PER_GEAR_CRAFT = FluidUtils.MILLI_BUCKET * 250; //mb amount
-    public static final long FLUID_PER_GEM_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
-    public static final long FLUID_PER_HANDLE_CRAFT = FluidUtils.MILLI_BUCKET * 10; //mb amount
-    public static final long FLUID_PER_NUGGET_CRAFT = FluidUtils.MILLI_BUCKET * 25; //mb amount
-    public static final long FLUID_PER_PLATE_CRAFT = FluidUtils.MILLI_BUCKET * 250; //mb amount
-    public static final long FLUID_PER_REINFORCED_PLATE_CRAFT = FluidUtils.MILLI_BUCKET * 500; //mb amount
-    public static final long FLUID_PER_ROD_CRAFT = FluidUtils.MILLI_BUCKET * 100; //mb amount
-    public static final long FLUID_PER_WIRE_CRAFT = FluidUtils.MILLI_BUCKET * 10; //mb amount
-
-    public static final int REINFORCED_INGREDIENT_COUNT = 4;
 
     public final SingleVariantStorage<FluidVariant> fluidStorage = new SingleVariantStorage<FluidVariant>()
     {
@@ -253,19 +237,22 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     {
         if (FluidUtils.isOutputReceivable(this, BASE_OUTPUT_SLOT))
         {
-            if (this.hasRecipe(ModRecipes.SMELTERY_TYPE, BASE_OUTPUT_SLOT))
+            if (this.hasRecipe())
             {
                 if(this.hasEnoughIngredient(BASE_INPUT_SLOT))
                 {
+                    var recipe = getCurrentRecipe().get().value();
+                    this.maxProgress = recipe.getCraftTime();
+
                     if (this.shouldUseFluid() &&
-                            this.hasEnoughFluid(this.fluidStorage, -1) &&
+                            this.hasEnoughFluid(this.fluidStorage, recipe.getFluidAmount()) &&
                             this.fluidIsAcceptable(this.fluidStorage, Fluids.LAVA))
                     {
                         this.increaseCraftProgress();
                         if (hasCraftingFinished())
                         {
-                            this.useFluid(this.fluidStorage, -1);
-                            this.craftItem(ModRecipes.SMELTERY_TYPE, BASE_INPUT_SLOT, BASE_OUTPUT_SLOT);
+                            this.useFluid(this.fluidStorage, Fluids.LAVA, recipe.getFluidAmount());
+                            this.craftItem();
                             this.resetProgress();
                         }
                         markDirty(world, pos, state);
@@ -288,33 +275,8 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     private boolean hasEnoughIngredient(int baseInputSlot)
     {
         if(getStack(CAST_SLOT).isOf(ModItems.CAST_PLATE))
-            return getStack(baseInputSlot).getCount() >= REINFORCED_INGREDIENT_COUNT;
+            return getStack(baseInputSlot).getCount() >= 1; // TODO
         return getStack(baseInputSlot).getCount() >= 1;
-    }
-
-    @Override
-    protected void useFluid(SingleVariantStorage<FluidVariant> tank, long amount)
-    {
-        try (Transaction transaction = Transaction.openOuter())
-        {
-            tank.extract(FluidVariant.of(Fluids.LAVA), getFlidUsageAmount(), transaction);
-            transaction.commit();
-        }
-    }
-
-    @Override
-    protected <C extends Inventory, T extends Recipe<C>> void craftItem(RecipeType<T> type, int inputSlot, int outputSlot)
-    {
-        var recipe = getCurrentRecipe(type);
-        var result = recipe.get().value().getResult(null);
-
-        this.removeStack(inputSlot, result.isIn(ModTags.Items.REINFORCED) ? REINFORCED_INGREDIENT_COUNT : 1);
-        //this.removeStack(inputSlot, recipe.get().value().getIngredients().get(0).getMatchingStacks()[0].getCount());
-
-        if(getStack(CAST_SLOT).isIn(ModTags.Items.WOOD_CASTS))
-            this.removeStack(CAST_SLOT, 1);
-
-        this.setStack(outputSlot, new ItemStack(result.getItem(), getStack(outputSlot).getCount() + result.getCount()));
     }
 
     @Override
@@ -352,13 +314,6 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
     protected boolean shouldUseFluid()
     {
         return true;
-    }
-
-    protected <C extends Inventory, T extends Recipe<C>> Optional<RecipeEntry<T>> getCurrentRecipe(RecipeType<T> type)
-    {
-        var inv = getSimpleInventory();
-
-        return getWorld().getRecipeManager().getFirstMatch(type, (C)inv, getWorld());
     }
 
     //region PRIVATE METHODS
@@ -404,38 +359,50 @@ public class SmelteryBE extends BEWithInventory implements PropertyDelegateHolde
         ModMessages.sendToClientPlayerEntities(world, getPos(), ModMessages.SMELTERY_FLUID_SYNC, data);
     }
 
-    private long getFlidUsageAmount()
+    private boolean hasRecipe()
     {
-        long finalAmount = 0;
-        if(getStack(CAST_SLOT).isOf(ModItems.CAST_INGOT) || getStack(CAST_SLOT).isOf(ModItems.CAST_WOOD_INGOT))
-            finalAmount = FLUID_PER_INGOT_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_AXE) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_HAMMER) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_HOE) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_PICKAXE) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_WOOD_PICKAXE) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_SHOVEL) ||
-                getStack(CAST_SLOT).isOf(ModItems.CAST_SWORD))
-            finalAmount = FLUID_PER_TOOL_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_BINDING))
-            finalAmount = FLUID_PER_BINDING_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_GEAR))
-            finalAmount = FLUID_PER_GEAR_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_GEM))
-            finalAmount = FLUID_PER_GEM_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_HANDLE))
-            finalAmount = FLUID_PER_HANDLE_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_NUGGET))
-            finalAmount = FLUID_PER_NUGGET_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_PLATE) && getStack(BASE_INPUT_SLOT).isIn(ModTags.Items.PLATE))
-            finalAmount = FLUID_PER_PLATE_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_PLATE) && getStack(BASE_INPUT_SLOT).isIn(ModTags.Items.REINFORCED))
-            finalAmount = FLUID_PER_REINFORCED_PLATE_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_ROD))
-            finalAmount = FLUID_PER_ROD_CRAFT;
-        else if(getStack(CAST_SLOT).isOf(ModItems.CAST_WIRE))
-            finalAmount = FLUID_PER_WIRE_CRAFT;
-        return finalAmount;
+        var recipe = getCurrentRecipe();
+
+        if (recipe.isEmpty())
+            return false;
+
+        var recipePresent = recipe.isPresent();
+
+        if(!recipePresent)
+            return false;
+
+        var amountAcceptable = canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null), BASE_OUTPUT_SLOT);
+        var itemAcceptable = canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem(), BASE_OUTPUT_SLOT);
+
+        return amountAcceptable && itemAcceptable;
+    }
+
+    private Optional<RecipeEntry<SmelteryRecipe>> getCurrentRecipe()
+    {
+        return getWorld().getRecipeManager().getFirstMatch(ModRecipes.SMELTERY_TYPE, getSimpleInventory(), getWorld());
+    }
+
+    private boolean canInsertItemIntoOutputSlot(Item item, int slotIndex)
+    {
+        return this.getStack(slotIndex).getItem() == item || this.getStack(slotIndex).isEmpty();
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(ItemStack result, int slotIndex)
+    {
+        return this.getStack(slotIndex).getCount() + result.getCount() <= getStack(slotIndex).getMaxCount();
+    }
+
+    private void craftItem()
+    {
+        var recipe = getCurrentRecipe().get().value();
+
+        this.removeStack(BASE_INPUT_SLOT, recipe.getIngredientCount());
+
+        if(getStack(CAST_SLOT).isIn(ModTags.Items.WOOD_CASTS))
+            this.removeStack(CAST_SLOT, 1);
+
+        this.setStack(BASE_OUTPUT_SLOT, new ItemStack(recipe.getResult(null).getItem(),
+                getStack(BASE_OUTPUT_SLOT).getCount() + recipe.getResult(null).getCount()));
     }
     //endregion
 }

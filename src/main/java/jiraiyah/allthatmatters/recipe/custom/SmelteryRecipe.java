@@ -20,11 +20,17 @@ public class SmelteryRecipe implements Recipe<Inventory>
 {
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
+    private final int craftTime;
+    private final int fluidAmount;
+    private final int ingredientCount;
 
-    public SmelteryRecipe(List<Ingredient> ingredients, ItemStack itemStack)
+    public SmelteryRecipe(List<Ingredient> ingredients, ItemStack output, int ingredientCount, int craftTime, int fluidAmount)
     {
-        this.output = itemStack;
+        this.output = output;
         this.recipeItems = ingredients;
+        this.craftTime = craftTime;
+        this.fluidAmount = fluidAmount;
+        this.ingredientCount = ingredientCount;
     }
 
     @Override
@@ -34,8 +40,9 @@ public class SmelteryRecipe implements Recipe<Inventory>
             return false;
 
         return recipeItems.get(0).test(inventory.getStack(SmelteryBE.BASE_INPUT_SLOT)) &&
-               //inventory.getStack(SmelteryBE.BASE_INPUT_SLOT).getCount() >= recipeItems.get(0).getMatchingStacks()[0].getCount() &&
-               recipeItems.get(1).test(inventory.getStack(SmelteryBE.CAST_SLOT));
+               recipeItems.get(1).test(inventory.getStack(SmelteryBE.CAST_SLOT)) &&
+               this.craftTime > 0 &&
+               inventory.getStack(SmelteryBE.BASE_INPUT_SLOT).getCount() >= this.ingredientCount;
     }
 
     @Override
@@ -64,6 +71,21 @@ public class SmelteryRecipe implements Recipe<Inventory>
         return list;
     }
 
+    public int getCraftTime()
+    {
+        return this.craftTime;
+    }
+
+    public int getFluidAmount()
+    {
+        return this.fluidAmount;
+    }
+
+    public int getIngredientCount()
+    {
+        return this.ingredientCount;
+    }
+
     @Override
     public RecipeSerializer<?> getSerializer()
     {
@@ -81,7 +103,10 @@ public class SmelteryRecipe implements Recipe<Inventory>
         public static final Codec<SmelteryRecipe> CODEC = RecordCodecBuilder.create(in ->
                 in.group(validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9)
                                 .fieldOf("ingredients").forGetter(SmelteryRecipe::getIngredients),
-                        RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
+                        RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output),
+                        Codecs.POSITIVE_INT.fieldOf("ingredientCount").forGetter(r -> r.ingredientCount),
+                        Codecs.POSITIVE_INT.fieldOf("craftingTime").forGetter(r -> r.craftTime),
+                        Codecs.POSITIVE_INT.fieldOf("fluidAmount").forGetter(r -> r.fluidAmount)
                 ).apply(in, SmelteryRecipe::new));
 
         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max)
@@ -109,8 +134,11 @@ public class SmelteryRecipe implements Recipe<Inventory>
             for (int i = 0; i < inputs.size(); i++)
                 inputs.set(i, Ingredient.fromPacket(buf));
 
+            int craftTime = buf.readInt();
+            int fluidAmount = buf.readInt();
+            int ingredientCount = buf.readInt();
             ItemStack output = buf.readItemStack();
-            return new SmelteryRecipe(inputs, output);
+            return new SmelteryRecipe(inputs, output, ingredientCount, craftTime, fluidAmount);
         }
 
         @Override
@@ -120,6 +148,10 @@ public class SmelteryRecipe implements Recipe<Inventory>
 
             for (Ingredient ingredient : recipe.getIngredients())
                 ingredient.write(buf);
+
+            buf.writeInt(recipe.craftTime);
+            buf.writeInt(recipe.fluidAmount);
+            buf.writeInt(recipe.ingredientCount);
 
             buf.writeItemStack(recipe.getResult(null));
         }

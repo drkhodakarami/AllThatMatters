@@ -1,0 +1,17 @@
+{
+  "type": "allthatmatters:smeltery",
+  "craftingTime": 144,
+  "fluidAmount": 200,
+  "ingredientCount": 1,
+  "ingredients": [
+    {
+      "item": "allthatmatters:gem_ruby"
+    },
+    {
+      "item": "allthatmatters:cast_pickaxe"
+    }
+  ],
+  "output": {
+    "item": "allthatmatters:head_ruby_pickaxe"
+  }
+}

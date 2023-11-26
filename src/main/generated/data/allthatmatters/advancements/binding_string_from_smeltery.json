@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_string": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:string"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_string"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
